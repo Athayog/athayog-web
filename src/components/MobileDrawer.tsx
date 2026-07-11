@@ -60,7 +60,9 @@ function BurgerIcon() {
 export default function MobileDrawer() {
 	const pathname = usePathname();
 	const isActive = (path?: string) => pathname === path;
-	const { user, isAuthenticated, loading, handleLogout } = useAuthStore();
+	const { user, userSnapshot, isAuthenticated, loading, handleLogout } = useAuthStore();
+	const displayUser = user || userSnapshot;
+	const isLoggedIn = isAuthenticated || userSnapshot !== null;
 
 	const renderChildren = (children: NavItem[], depth = 0) => {
 		return (
@@ -200,34 +202,34 @@ export default function MobileDrawer() {
 						</nav>
 
 					<div className={styles.drawerCtaGroup}>
-						{!loading && isAuthenticated ? (
+						{isLoggedIn ? (
 							<div className={styles.drawerAccount}>
 								<div className={styles.drawerAccountInfo}>
-									{user?.photoURL ? (
+									{displayUser?.photoURL ? (
 										<img
-											src={user.photoURL}
-											alt={user.displayName || "User"}
+											src={displayUser.photoURL}
+											alt={displayUser.displayName || "User"}
 											className={styles.drawerAccountAvatar}
 										/>
 									) : (
 										<span className={styles.drawerAccountFallback}>
-											{user?.displayName
-												? user.displayName
+											{displayUser?.displayName
+												? displayUser.displayName
 														.split(" ")
 														.map((n) => n[0])
 														.join("")
 														.toUpperCase()
 														.slice(0, 2)
-												: user?.email?.[0].toUpperCase() || "U"}
+												: displayUser?.email?.[0].toUpperCase() || "U"}
 										</span>
 									)}
 									<div>
 										<p className={styles.drawerAccountName}>
-											{user?.displayName || "User"}
+											{displayUser?.displayName || "User"}
 										</p>
-										{user?.email && (
+										{displayUser?.email && (
 											<p className={styles.drawerAccountEmail}>
-												{user.email}
+												{displayUser.email}
 											</p>
 										)}
 									</div>

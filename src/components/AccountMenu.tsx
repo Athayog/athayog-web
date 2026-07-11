@@ -19,11 +19,12 @@ function getInitials(name: string | null, email: string | null) {
 }
 
 export default function AccountMenu() {
-	const { user, loading, handleLogout } = useAuthStore();
+	const { user, userSnapshot, loading, handleLogout } = useAuthStore();
+	const displayUser = user || userSnapshot;
 
-	if (loading || !user) return null;
+	if (loading || !displayUser) return null;
 
-	const initials = getInitials(user.displayName, user.email);
+	const initials = getInitials(displayUser.displayName, displayUser.email);
 
 	return (
 		<DropdownMenu.Root>
@@ -33,10 +34,10 @@ export default function AccountMenu() {
 					className={styles.trigger}
 					aria-label="Account menu"
 				>
-					{user.photoURL ? (
+					{displayUser.photoURL ? (
 						<img
-							src={user.photoURL}
-							alt={user.displayName || "User"}
+							src={displayUser.photoURL}
+							alt={displayUser.displayName || "User"}
 							className={styles.avatar}
 						/>
 					) : (
@@ -53,10 +54,10 @@ export default function AccountMenu() {
 				>
 					<div className={styles.userInfo}>
 						<p className={styles.userName}>
-							{user.displayName || "User"}
+							{displayUser.displayName || "User"}
 						</p>
-						{user.email && (
-							<p className={styles.userEmail}>{user.email}</p>
+						{displayUser.email && (
+							<p className={styles.userEmail}>{displayUser.email}</p>
 						)}
 					</div>
 
