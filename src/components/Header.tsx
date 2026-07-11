@@ -98,7 +98,7 @@ function renderDropdownItems(children: NavItem[], isActive: (path?: string) => b
 export default function Header() {
 	const pathname = usePathname();
 	const isActive = (path?: string) => pathname === path;
-	const { isAuthenticated, userSnapshot, loading } = useAuthStore();
+	const { isAuthenticated, userSnapshot } = useAuthStore();
 	const isLoggedIn = isAuthenticated || userSnapshot !== null;
 
 	return (
@@ -161,7 +161,7 @@ export default function Header() {
 				<div className={styles.ctaGroup}>
 					{isLoggedIn ? (
 						<AccountMenu />
-					) : loading ? null : (
+					) : (
 						<>
 							<Link href="/login" className={styles.loginBtn}>
 								Login

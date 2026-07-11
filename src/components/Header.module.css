@@ -138,8 +138,10 @@
 .ctaGroup {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	gap: 12px;
 	flex-shrink: 0;
+	min-width: 200px;
 }
 
 .loginBtn {
