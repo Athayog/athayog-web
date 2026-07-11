@@ -1,0 +1,81 @@
+.main {
+	padding-top: 120px;
+	padding-bottom: 80px;
+	background: var(--parchment);
+	min-height: 100vh;
+}
+
+.hero {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.hero h1 {
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: clamp(2rem, 4vw, 3rem);
+	color: var(--ink);
+}
+
+.body {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.body section {
+	padding: 20px 0;
+}
+
+.body section + section {
+	border-top: 1px solid var(--line-soft);
+}
+
+.body h2 {
+	font-family: var(--font-body);
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: var(--ink);
+	margin-bottom: 0;
+	position: relative;
+	padding-bottom: 10px;
+}
+
+.body h2::after {
+	content: "";
+	display: block;
+	width: 80px;
+	height: 3px;
+	background: var(--brand-dark);
+	margin-top: 4px;
+}
+
+.body p,
+.body li {
+	font-size: 1rem;
+	line-height: 1.7;
+	color: var(--ink);
+}
+
+.body p + p {
+	margin-top: 14px;
+}
+
+.body ol {
+	padding-left: 20px;
+	margin-top: 14px;
+}
+
+.body ol li {
+	margin-bottom: 8px;
+}
+
+.body p strong {
+	font-weight: 700;
+}
+
+@media (max-width: 640px) {
+	.main {
+		padding-top: 100px;
+		padding-bottom: 60px;
+	}
+}
