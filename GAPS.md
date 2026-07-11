@@ -6,8 +6,6 @@ Foundational items to cover before building content pages. Add to this list free
 
 ## Pending
 
-- [ ] **`.env.example`** — Document all required env vars (`NEXT_PUBLIC_FIREBASE_*`, `FIREBASE_CLIENT_EMAIL`, `FIREBASE_PRIVATE_KEY`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`)
-- [ ] **`next.config.ts` `images` config** — Allow `user.photoURL` and other remote images with `<Image>`
 - [ ] **OG image** — Create `src/app/opengraph-image.png` (1200×630) for social sharing previews
 - [ ] **`manifest.json`** — PWA manifest / site.webmanifest for installability
 - [ ] **Apple Touch Icon** — `apple-touch-icon.png` for iOS home screen

@@ -3,6 +3,18 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
 	/* config options here */
 	reactCompiler: true,
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "images.prismic.io",
+			},
+			{
+				protocol: "https",
+				hostname: "athayog.cdn.prismic.io",
+			},
+		],
+	},
 };
 
 export default nextConfig;

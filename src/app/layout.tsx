@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthBootstrap from "@/components/AuthBootstrap";
 import Providers from "@/components/Providers";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 import "./globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -64,6 +66,7 @@ export default function RootLayout({
 				{children}
 				<Footer />
 			</Providers>
+			<PrismicPreview repositoryName={repositoryName} />
 		</body>
 		</html>
 	);
