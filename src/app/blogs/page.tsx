@@ -33,7 +33,7 @@ export default async function BlogIndex() {
 
 	return (
 		<section>
-			<div className="wrap" style={{ paddingTop: 84, paddingBottom: 84 }}>
+			<div className="wrap">
 				<div className="section-head">
 					<SliceZone slices={page.data.slices} components={components} />
 				</div>

@@ -66,7 +66,7 @@ export default async function BlogPost({
 
 	return (
 		<section>
-			<div className="wrap" style={{ paddingTop: 120, paddingBottom: 84 }}>
+			<div className="wrap">
 				<article style={{ maxWidth: 760, margin: "0 auto" }}>
 					<span className="eyebrow">Blog</span>
 
