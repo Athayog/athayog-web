@@ -6,6 +6,7 @@ Foundational items to cover before building content pages. Add to this list free
 
 ## Pending
 
+- [ ] **Auth flash on initial page load** — Login button shows briefly (~1-2s) on hard refresh / new tab before switching to AccountMenu, even with persisted userSnapshot. Likely causes: (1) async Zustand persist hydration microtask — first render shows unauthenticated state, (2) Firebase `onAuthStateChanged` taking time to verify session, (3) stale snapshot corrected after Firebase callback. Possible fixes: synchronous localStorage read in store init, cookie-based SSR auth state, or neutral skeleton placeholder during loading.
 - [ ] **OG image** — Create `src/app/opengraph-image.png` (1200×630) for social sharing previews
 - [ ] **`manifest.json`** — PWA manifest / site.webmanifest for installability
 - [ ] **Apple Touch Icon** — `apple-touch-icon.png` for iOS home screen
