@@ -161,18 +161,22 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--brand-dark);
+	background: transparent;
 	color: var(--cream);
 	padding: 14px 24px;
 	font-size: 0.9rem;
-	font-weight: 600;
+	font-weight: 500;
 	border-radius: 2px;
-	transition: background 0.2s;
+	border: 1px solid rgba(245, 243, 234, 0.3);
+	transition:
+		border-color 0.2s,
+		color 0.2s;
 	flex: 1;
 }
 
 .loginBtn:hover {
-	background: var(--brand-deep);
+	border-color: var(--cream);
+	color: var(--cream);
 }
 
 @keyframes overlayShow {
