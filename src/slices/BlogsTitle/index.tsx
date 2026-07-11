@@ -3,10 +3,7 @@ import { PrismicRichText } from "@prismicio/react";
 
 const BlogsTitle = ({ slice }: SliceComponentProps<any>) => {
 	return (
-		<section
-			data-slice-type={slice.slice_type}
-			data-slice-variation={slice.variation}
-		>
+		<div data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 			<div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto" }}>
 				<div
 					style={{
@@ -34,7 +31,7 @@ const BlogsTitle = ({ slice }: SliceComponentProps<any>) => {
 					</p>
 				)}
 			</div>
-		</section>
+		</div>
 	);
 };
 
