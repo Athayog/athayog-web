@@ -60,7 +60,7 @@ function BurgerIcon() {
 export default function MobileDrawer() {
 	const pathname = usePathname();
 	const isActive = (path?: string) => pathname === path;
-	const { isAuthenticated, loading, handleLogout } = useAuthStore();
+	const { user, isAuthenticated, loading, handleLogout } = useAuthStore();
 
 	const renderChildren = (children: NavItem[], depth = 0) => {
 		return (
@@ -201,23 +201,53 @@ export default function MobileDrawer() {
 
 					<div className={styles.drawerCtaGroup}>
 						{!loading && isAuthenticated ? (
-							<>
+							<div className={styles.drawerAccount}>
+								<div className={styles.drawerAccountInfo}>
+									{user?.photoURL ? (
+										<img
+											src={user.photoURL}
+											alt={user.displayName || "User"}
+											className={styles.drawerAccountAvatar}
+										/>
+									) : (
+										<span className={styles.drawerAccountFallback}>
+											{user?.displayName
+												? user.displayName
+														.split(" ")
+														.map((n) => n[0])
+														.join("")
+														.toUpperCase()
+														.slice(0, 2)
+												: user?.email?.[0].toUpperCase() || "U"}
+										</span>
+									)}
+									<div>
+										<p className={styles.drawerAccountName}>
+											{user?.displayName || "User"}
+										</p>
+										{user?.email && (
+											<p className={styles.drawerAccountEmail}>
+												{user.email}
+											</p>
+										)}
+									</div>
+								</div>
 								<Dialog.Close asChild>
-									<Link href="/account" className={styles.loginBtn}>
-										Account
+									<Link
+										href="/account"
+										className={styles.drawerAccountLink}
+									>
+										My Account
 									</Link>
 								</Dialog.Close>
-								<Dialog.Close asChild>
-									<button
-										type="button"
-										onClick={handleLogout}
-										className="btn btn-cream"
-										style={{ flex: 1 }}
-									>
-										Log Out
-									</button>
-								</Dialog.Close>
-							</>
+								<button
+									type="button"
+									onClick={handleLogout}
+									className={styles.drawerAccountLogout}
+								>
+									Log Out
+								</button>
+							</div>
 						) : (
 							<>
 								<Dialog.Close asChild>

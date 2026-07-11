@@ -147,6 +147,7 @@
 
 .drawerCtaGroup {
 	display: flex;
+	flex-direction: column;
 	gap: 10px;
 	padding: 20px 24px 32px;
 	border-top: 1px solid rgba(245, 243, 234, 0.12);
@@ -155,6 +156,97 @@
 .drawerCtaGroup > a {
 	flex: 1;
 	justify-content: center;
+}
+
+.drawerAccount {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.drawerAccountInfo {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid rgba(245, 243, 234, 0.12);
+	margin-bottom: 4px;
+}
+
+.drawerAccountAvatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.drawerAccountFallback {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--brand-light);
+	color: var(--cream);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-display);
+	font-size: 0.9rem;
+	font-weight: 600;
+	flex-shrink: 0;
+}
+
+.drawerAccountName {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--cream);
+	line-height: 1.3;
+}
+
+.drawerAccountEmail {
+	font-size: 0.8rem;
+	color: var(--cream);
+	opacity: 0.6;
+	margin-top: 1px;
+}
+
+.drawerAccountLink,
+.drawerAccountLogout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 14px 24px;
+	font-size: 0.9rem;
+	font-weight: 500;
+	border-radius: 2px;
+	text-decoration: none;
+	transition:
+		background 0.2s,
+		color 0.2s;
+	cursor: pointer;
+	font-family: var(--font-body);
+}
+
+.drawerAccountLink {
+	background: transparent;
+	color: var(--cream);
+	border: 1px solid rgba(245, 243, 234, 0.3);
+}
+
+.drawerAccountLink:hover {
+	border-color: var(--cream);
+	color: var(--cream);
+}
+
+.drawerAccountLogout {
+	background: none;
+	color: rgba(245, 243, 234, 0.6);
+	border: none;
+}
+
+.drawerAccountLogout:hover {
+	color: var(--cream);
 }
 
 .loginBtn {
