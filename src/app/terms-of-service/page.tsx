@@ -12,9 +12,9 @@ export default function TermsOfService() {
 			<section>
 				<h2>OVERVIEW</h2>
 				<p>
-					This mobile application is operated by Athayog Living. Throughout the
-					site, the terms &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo;
-					refer to Athayog Living. Athayog Living offers this mobile application,
+					This website is operated by Athayog Living. Throughout the site, the
+					terms &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo; refer to
+					Athayog Living. Athayog Living offers this website,
 					including all information, tools and services available from this site
 					to you, the user, conditioned upon your acceptance of all terms,
 					conditions, policies and notices stated here.
@@ -31,22 +31,21 @@ export default function TermsOfService() {
 				</p>
 				<p>
 					Please read these Terms of Service carefully before accessing or using
-					our mobile application. By accessing or using any part of the site, you
-					agree to be bound by these Terms of Service. If you do not agree to all
-					the terms and conditions of this agreement, then you may not access the
-					mobile application or use any services. If these Terms of Service are
-					considered an offer, acceptance is expressly limited to these Terms of
-					Service.
+					our website. By accessing or using any part of the site, you agree to be
+					bound by these Terms of Service. If you do not agree to all the terms and
+					conditions of this agreement, then you may not access the website or use
+					any services. If these Terms of Service are considered an offer,
+					acceptance is expressly limited to these Terms of Service.
 				</p>
 				<p>
 					Any new features or tools which are added to the current store shall
 					also be subject to the Terms of Service. You can review the most current
 					version of the Terms of Service at any time on this page. We reserve the
 					right to update, change or replace any part of these Terms of Service by
-					posting updates and/or changes to our mobile application. It is your
-					responsibility to check this page periodically for changes. Your
-					continued use of or access to the mobile application following the
-					posting of any changes constitutes acceptance of those changes.
+					posting updates and/or changes to our website. It is your responsibility
+					to check this page periodically for changes. Your continued use of or
+					access to the website following the posting of any changes constitutes
+					acceptance of those changes.
 				</p>
 			</section>
 
@@ -91,7 +90,7 @@ export default function TermsOfService() {
 				<p>
 					You agree not to reproduce, duplicate, copy, sell, resell or exploit
 					any portion of the Service, use of the Service, or access to the
-					Service or any contact on the mobile application through which the
+					Service or any contact on the website through which the
 					service is provided, without express written permission by us.
 				</p>
 				<p>
@@ -140,7 +139,7 @@ export default function TermsOfService() {
 				<h2>PRODUCTS OR SERVICES</h2>
 				<p>
 					Certain products or services may be available exclusively online through
-					the mobile application. These products or services may have limited
+					the website. These products or services may have limited
 					quantities and are subject to return or exchange only according to our
 					Return Policy.
 				</p>
@@ -212,7 +211,7 @@ export default function TermsOfService() {
 				</p>
 				<p>
 					We may also, in the future, offer new services and/or features through
-					the mobile application (including, the release of new tools and
+					the website (including, the release of new tools and
 					resources). Such new features and/or services shall also be subject to
 					these Terms of Service.
 				</p>
@@ -229,13 +228,13 @@ export default function TermsOfService() {
 					applications that are not affiliated with us. We are not responsible
 					for examining or evaluating the content or accuracy and we do not
 					warrant and will not have any liability or responsibility for any
-					third-party materials or mobile applications, or for any other
+					third-party materials or websites, or for any other
 					materials, products, or services of third-parties.
 				</p>
 				<p>
 					We are not liable for any harm or damages related to the purchase or use
 					of goods, services, resources, content, or any other transactions made
-					in connection with any third-party mobile applications. Please review
+					in connection with any third-party websites. Please review
 					carefully the third-party&apos;s policies and practices and make sure
 					you understand them before you engage in any transaction. Complaints,
 					claims, concerns, or questions regarding third-party products should be
@@ -270,7 +269,7 @@ export default function TermsOfService() {
 					comments will not contain libelous or otherwise unlawful, abusive or
 					obscene material, or contain any computer virus or other malware that
 					could in any way affect the operation of the Service or any related
-					mobile application. You may not use a false e-mail address, pretend to
+					website. You may not use a false e-mail address, pretend to
 					be someone other than yourself, or otherwise mislead us or third-parties
 					as to the origin of any comments. You are solely responsible for any
 					comments you make and their accuracy. We take no responsibility and
@@ -295,16 +294,16 @@ export default function TermsOfService() {
 					shipping charges, transit times and availability. We reserve the right
 					to correct any errors, inaccuracies or omissions, and to change or
 					update information or cancel orders if any information in the Service or
-					on any related mobile application is inaccurate at any time without
+					on any related website is inaccurate at any time without
 					prior notice (including after you have submitted your order).
 				</p>
 				<p>
 					We undertake no obligation to update, amend or clarify information in
-					the Service or on any related mobile application, including without
+					the Service or on any related website, including without
 					limitation, pricing information, except as required by law. No specified
 					update or refresh date applied in the Service or on any related mobile
 					application, should be taken to indicate that all information in the
-					Service or on any related mobile application has been modified or
+					Service or on any related website has been modified or
 					updated.
 				</p>
 			</section>
@@ -324,14 +323,14 @@ export default function TermsOfService() {
 					disability; (f) to submit false or misleading information; (g) to upload
 					or transmit viruses or any other type of malicious code that will or may
 					be used in any way that will affect the functionality or operation of
-					the Service or of any related mobile application, other mobile
+					the Service or of any related website, other mobile
 					applications, or the Internet; (h) to collect or track the personal
 					information of others; (i) to spam, phish, pharm, pretext, spider,
 					crawl, or scrape; (j) for any obscene or immoral purpose; or (k) to
 					interfere with or circumvent the security features of the Service or any
-					related mobile application, other mobile applications, or the Internet.
+					related website, other websites, or the Internet.
 					We reserve the right to terminate your use of the Service or any
-					related mobile application for violating any of the prohibited uses.
+					related website for violating any of the prohibited uses.
 				</p>
 			</section>
 
@@ -471,9 +470,9 @@ export default function TermsOfService() {
 				<p>
 					We reserve the right, at our sole discretion, to update, change or
 					replace any part of these Terms of Service by posting updates and
-					changes to our mobile application. It is your responsibility to check
-					our mobile application periodically for changes. Your continued use of
-					or access to our mobile application or the Service following the posting
+					changes to our website. It is your responsibility to check
+					our website periodically for changes. Your continued use of
+					or access to our website or the Service following the posting
 					of any changes to these Terms of Service constitutes acceptance of those
 					changes.
 				</p>

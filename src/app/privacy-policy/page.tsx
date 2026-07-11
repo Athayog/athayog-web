@@ -17,9 +17,9 @@ export default function PrivacyPolicy() {
 					as your name, address and email address.
 				</p>
 				<p>
-					When you browse our mobile application, we also automatically receive
-					your computer&apos;s internet protocol (IP) address in order to provide
-					us with information that helps us learn about your browser and operating
+					When you browse our website, we also automatically receive your
+					computer&apos;s internet protocol (IP) address in order to provide us
+					with information that helps us learn about your browser and operating
 					system.
 				</p>
 				<p>
@@ -119,9 +119,9 @@ export default function PrivacyPolicy() {
 					which that service provider or its facilities are located.
 				</p>
 				<p>
-					Once you leave our store&apos;s mobile application or are redirected to
-					a third-party website or application, you are no longer governed by
-					this Privacy Policy or our mobile application&apos;s Terms of Service.
+					Once you leave our store&apos;s website or are redirected to a
+					third-party website or application, you are no longer governed by this
+					Privacy Policy or our website&apos;s Terms of Service.
 				</p>
 				<p>
 					<strong>Links</strong>
@@ -147,7 +147,7 @@ export default function PrivacyPolicy() {
 				<h2>COOKIES</h2>
 				<p>
 					We use cookies to maintain the session of your user. It is not used to
-					personally identify you on other mobile applications.
+					personally identify you on other websites.
 				</p>
 			</section>
 
@@ -167,11 +167,11 @@ export default function PrivacyPolicy() {
 				<p>
 					We reserve the right to modify this privacy policy at any time, so
 					please review it frequently. Changes and clarifications will take
-					effect immediately upon their posting on the mobile application. If we
-					make material changes to this policy, we will notify you here that it
-					has been updated, so that you are aware of what information we collect,
-					how we use it, and under what circumstances, if any, we use and/or
-					disclose it.
+					effect immediately upon their posting on the website. If we make
+					material changes to this policy, we will notify you here that it has
+					been updated, so that you are aware of what information we collect, how
+					we use it, and under what circumstances, if any, we use and/or disclose
+					it.
 				</p>
 				<p>
 					If our store is acquired or merged with another company, your
