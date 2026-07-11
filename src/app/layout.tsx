@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Cinzel, Inter } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -39,6 +40,7 @@ export default function RootLayout({
 			<body>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
