@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Cinzel, Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthBootstrap from "@/components/AuthBootstrap";
+import Providers from "@/components/Providers";
 import "./globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -58,10 +59,12 @@ export default function RootLayout({
 		>
 		<body>
 			<AuthBootstrap />
-			<Header />
+			<Providers>
+				<Header />
 				{children}
 				<Footer />
-			</body>
+			</Providers>
+		</body>
 		</html>
 	);
 }
