@@ -44,6 +44,36 @@
 	width: 100% !important;
 }
 
+.googleBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	width: 100%;
+	padding: 14px;
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	font-family: var(--font-body);
+	color: var(--ink);
+	cursor: pointer;
+	transition:
+		border-color 0.2s,
+		box-shadow 0.2s;
+}
+
+.googleBtn:hover {
+	border-color: var(--brand);
+	box-shadow: 0 2px 8px rgba(113, 137, 88, 0.12);
+}
+
+.googleBtn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
 .divider {
 	display: flex;
 	align-items: center;

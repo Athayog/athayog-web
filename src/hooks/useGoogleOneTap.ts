@@ -1,28 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
-import {
-	signInWithCredential,
-	GoogleAuthProvider,
-	type User,
-} from "firebase/auth";
+import { useEffect, useRef, useCallback, useState } from "react";
+import { signInWithCredential, GoogleAuthProvider } from "firebase/auth";
 import { auth, db } from "@/lib/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
 const GIS_URL = "https://accounts.google.com/gsi/client";
-const CALLBACK_NAME = "handleGoogleCredential";
 
 interface GoogleCredentialResponse {
 	credential: string;
 	select_by: string;
-}
-
-interface UseGoogleOneTapOptions {
-	onSuccess: (user: User) => void;
-	onError: (error: string) => void;
-	onLoading: (loading: boolean) => void;
-	disabled?: boolean;
-	buttonRef: React.RefObject<HTMLDivElement | null>;
 }
 
 declare global {
@@ -71,9 +58,18 @@ function loadGISScript(): Promise<void> {
 		script.async = true;
 		script.defer = true;
 		script.onload = () => resolve();
-		script.onerror = () => reject(new Error("Failed to load Google Identity Services"));
+		script.onerror = () =>
+			reject(new Error("Failed to load Google Identity Services"));
 		document.head.appendChild(script);
 	});
+}
+
+interface UseGoogleOneTapOptions {
+	onSuccess: () => void;
+	onError: (error: string) => void;
+	onLoading: (loading: boolean) => void;
+	disabled?: boolean;
+	buttonRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export function useGoogleOneTap({
@@ -83,6 +79,7 @@ export function useGoogleOneTap({
 	disabled = false,
 	buttonRef,
 }: UseGoogleOneTapOptions) {
+	const [isLoaded, setIsLoaded] = useState(false);
 	const callbackRef = useRef<
 		((response: GoogleCredentialResponse) => void) | null
 	>(null);
@@ -91,7 +88,9 @@ export function useGoogleOneTap({
 		async (response: GoogleCredentialResponse) => {
 			onLoading(true);
 			try {
-				const credential = GoogleAuthProvider.credential(response.credential);
+				const credential = GoogleAuthProvider.credential(
+					response.credential,
+				);
 				const result = await signInWithCredential(auth, credential);
 				const user = result.user;
 
@@ -107,7 +106,14 @@ export function useGoogleOneTap({
 					});
 				}
 
-				onSuccess(user);
+				const idToken = await user.getIdToken();
+				await fetch("/api/auth/session", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ idToken }),
+				});
+
+				onSuccess();
 			} catch (err) {
 				onError("Failed to sign in with Google");
 				console.error("One Tap sign-in error:", err);
@@ -125,12 +131,11 @@ export function useGoogleOneTap({
 
 		const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 		if (!clientId) {
-			console.warn("NEXT_PUBLIC_GOOGLE_CLIENT_ID is not set");
+			console.warn(
+				"NEXT_PUBLIC_GOOGLE_CLIENT_ID is not set — falling back to popup sign-in",
+			);
 			return;
 		}
-
-		(window as unknown as Record<string, unknown>)[CALLBACK_NAME] =
-			onGoogleCredential;
 
 		let cancelled = false;
 
@@ -158,6 +163,10 @@ export function useGoogleOneTap({
 						width: buttonRef.current.offsetWidth || 300,
 					});
 				}
+
+				if (!cancelled) {
+					setIsLoaded(true);
+				}
 			})
 			.catch((err) => {
 				if (!cancelled) {
@@ -167,7 +176,8 @@ export function useGoogleOneTap({
 
 		return () => {
 			cancelled = true;
-			delete (window as unknown as Record<string, unknown>)[CALLBACK_NAME];
 		};
 	}, [disabled, onGoogleCredential, buttonRef]);
+
+	return { isLoaded };
 }
