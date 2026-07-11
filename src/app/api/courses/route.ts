@@ -1,0 +1,36 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getAdminFirestore } from "@/lib/firebaseAdmin";
+
+export async function GET(request: NextRequest) {
+	const userId = request.nextUrl.searchParams.get("userId");
+
+	if (!userId) {
+		return NextResponse.json(
+			{ message: "User ID is required" },
+			{ status: 400 },
+		);
+	}
+
+	try {
+		const firestore = getAdminFirestore();
+
+		const coursesSnapshot = await firestore
+			.collection("users")
+			.doc(userId)
+			.collection("courses")
+			.get();
+
+		const courses = coursesSnapshot.docs.map((doc) => ({
+			id: doc.id,
+			...doc.data(),
+		}));
+
+		return NextResponse.json(courses, { status: 200 });
+	} catch (error) {
+		console.error("Error fetching courses:", error);
+		return NextResponse.json(
+			{ message: "Error fetching courses" },
+			{ status: 500 },
+		);
+	}
+}
