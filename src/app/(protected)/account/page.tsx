@@ -7,7 +7,7 @@ function AccountPage() {
 	const { user, handleLogout } = useAuthStore();
 
 	return (
-		<main style={{ padding: "120px 24px 80px", maxWidth: 600, margin: "0 auto" }}>
+		<main style={{ padding: "40px 24px 80px", maxWidth: 600, margin: "0 auto" }}>
 			<h1 style={{ fontFamily: "var(--font-display)", fontSize: "2rem", marginBottom: 24 }}>
 				My Account
 			</h1>
