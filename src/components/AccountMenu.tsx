@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import useAuthStore from "@/store/useAuthStore";
@@ -18,6 +19,23 @@ function getInitials(name: string | null, email: string | null) {
 	return "U";
 }
 
+function AvatarImage({ src, alt }: { src: string; alt: string }) {
+	const [loaded, setLoaded] = useState(false);
+	const [error, setError] = useState(false);
+
+	if (error) return null;
+
+	return (
+		<img
+			src={src}
+			alt={alt}
+			className={`${styles.avatar} ${loaded ? styles.avatarLoaded : ""}`}
+			onLoad={() => setLoaded(true)}
+			onError={() => setError(true)}
+		/>
+	);
+}
+
 export default function AccountMenu() {
 	const { user, userSnapshot, loading, handleLogout } = useAuthStore();
 	const displayUser = user || userSnapshot;
@@ -34,15 +52,15 @@ export default function AccountMenu() {
 					className={styles.trigger}
 					aria-label="Account menu"
 				>
-					{displayUser.photoURL ? (
-						<img
-							src={displayUser.photoURL}
-							alt={displayUser.displayName || "User"}
-							className={styles.avatar}
-						/>
-					) : (
+					<div className={styles.avatarWrap}>
 						<span className={styles.fallback}>{initials}</span>
-					)}
+						{displayUser.photoURL && (
+							<AvatarImage
+								src={displayUser.photoURL}
+								alt={displayUser.displayName || "User"}
+							/>
+						)}
+					</div>
 				</button>
 			</DropdownMenu.Trigger>
 

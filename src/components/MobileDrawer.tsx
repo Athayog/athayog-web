@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as Collapsible from "@radix-ui/react-collapsible";
@@ -7,6 +9,23 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { navItems, type NavItem } from "@/constants/navItems";
 import useAuthStore from "@/store/useAuthStore";
 import styles from "./MobileDrawer.module.css";
+
+function DrawerAvatarImage({ src, alt }: { src: string; alt: string }) {
+	const [loaded, setLoaded] = useState(false);
+	const [error, setError] = useState(false);
+
+	if (error) return null;
+
+	return (
+		<img
+			src={src}
+			alt={alt}
+			className={`${styles.drawerAccountAvatar} ${loaded ? styles.drawerAvatarLoaded : ""}`}
+			onLoad={() => setLoaded(true)}
+			onError={() => setError(true)}
+		/>
+	);
+}
 
 function Arrow() {
 	return (
@@ -205,13 +224,7 @@ export default function MobileDrawer() {
 						{isLoggedIn ? (
 							<div className={styles.drawerAccount}>
 								<div className={styles.drawerAccountInfo}>
-									{displayUser?.photoURL ? (
-										<img
-											src={displayUser.photoURL}
-											alt={displayUser.displayName || "User"}
-											className={styles.drawerAccountAvatar}
-										/>
-									) : (
+									<div className={styles.drawerAvatarWrap}>
 										<span className={styles.drawerAccountFallback}>
 											{displayUser?.displayName
 												? displayUser.displayName
@@ -222,7 +235,13 @@ export default function MobileDrawer() {
 														.slice(0, 2)
 												: displayUser?.email?.[0].toUpperCase() || "U"}
 										</span>
-									)}
+										{displayUser?.photoURL && (
+											<DrawerAvatarImage
+												src={displayUser.photoURL}
+												alt={displayUser.displayName || "User"}
+											/>
+										)}
+									</div>
 									<div>
 										<p className={styles.drawerAccountName}>
 											{displayUser?.displayName || "User"}
