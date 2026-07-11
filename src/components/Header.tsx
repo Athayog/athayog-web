@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { navItems, type NavItem } from "@/constants/navItems";
+import useAuthStore from "@/store/useAuthStore";
 import MobileDrawer from "./MobileDrawer";
 import styles from "./Header.module.css";
 
@@ -96,6 +97,7 @@ function renderDropdownItems(children: NavItem[], isActive: (path?: string) => b
 export default function Header() {
 	const pathname = usePathname();
 	const isActive = (path?: string) => pathname === path;
+	const { user, isAuthenticated, loading, handleLogout } = useAuthStore();
 
 	return (
 		<header className={styles.header}>
@@ -155,12 +157,29 @@ export default function Header() {
 				</nav>
 
 				<div className={styles.ctaGroup}>
-					<Link href="/login" className={styles.loginBtn}>
-						Login
-					</Link>
-					<Link href="/trial-classes" className="btn btn-primary nav-cta">
-						Free Trial
-					</Link>
+					{!loading && isAuthenticated ? (
+						<>
+							<Link href="/account" className={styles.loginBtn}>
+								Account
+							</Link>
+							<button
+								type="button"
+								onClick={handleLogout}
+								className="btn btn-primary nav-cta"
+							>
+								Log Out
+							</button>
+						</>
+					) : (
+						<>
+							<Link href="/login" className={styles.loginBtn}>
+								Login
+							</Link>
+							<Link href="/trial-classes" className="btn btn-primary nav-cta">
+								Free Trial
+							</Link>
+						</>
+					)}
 				</div>
 
 				<MobileDrawer />

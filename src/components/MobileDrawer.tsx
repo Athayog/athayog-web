@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import * as Dialog from "@radix-ui/react-dialog";
 import { navItems, type NavItem } from "@/constants/navItems";
+import useAuthStore from "@/store/useAuthStore";
 import styles from "./MobileDrawer.module.css";
 
 function Arrow() {
@@ -59,6 +60,7 @@ function BurgerIcon() {
 export default function MobileDrawer() {
 	const pathname = usePathname();
 	const isActive = (path?: string) => pathname === path;
+	const { isAuthenticated, loading, handleLogout } = useAuthStore();
 
 	const renderChildren = (children: NavItem[], depth = 0) => {
 		return (
@@ -197,17 +199,39 @@ export default function MobileDrawer() {
 							</ul>
 						</nav>
 
-						<div className={styles.drawerCtaGroup}>
-							<Dialog.Close asChild>
-								<Link href="/trial-classes" className="btn btn-cream">
-									Get a <span>Free Trial</span>
-								</Link>
-							</Dialog.Close>
-							<Dialog.Close asChild>
-								<Link href="/login" className={styles.loginBtn}>
-									Login
-								</Link>
-							</Dialog.Close>
+					<div className={styles.drawerCtaGroup}>
+						{!loading && isAuthenticated ? (
+							<>
+								<Dialog.Close asChild>
+									<Link href="/account" className={styles.loginBtn}>
+										Account
+									</Link>
+								</Dialog.Close>
+								<Dialog.Close asChild>
+									<button
+										type="button"
+										onClick={handleLogout}
+										className="btn btn-cream"
+										style={{ flex: 1 }}
+									>
+										Log Out
+									</button>
+								</Dialog.Close>
+							</>
+						) : (
+							<>
+								<Dialog.Close asChild>
+									<Link href="/trial-classes" className="btn btn-cream">
+										Get a <span>Free Trial</span>
+									</Link>
+								</Dialog.Close>
+								<Dialog.Close asChild>
+									<Link href="/login" className={styles.loginBtn}>
+										Login
+									</Link>
+								</Dialog.Close>
+							</>
+						)}
 						</div>
 					</Dialog.Content>
 				</Dialog.Portal>
