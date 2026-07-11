@@ -23,9 +23,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "Athayog Living",
+	metadataBase: new URL("https://athayogliving.com"),
+	title: {
+		default: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
+		template: "%s | Athayog Living",
+	},
 	description:
-		"Athayog Living is a yoga and wellness platform that offers a variety of classes, workshops, and resources to help individuals achieve physical, mental, and spiritual well-being. Our mission is to promote a holistic approach to health and wellness through the practice of yoga and mindfulness.",
+		"Athayog Living is a yoga and wellness platform in Indiranagar, Bangalore offering group classes, personal training, teacher training, workshops, and weight loss programs rooted in tradition.",
+	openGraph: {
+		type: "website",
+		locale: "en_IN",
+		siteName: "Athayog Living",
+		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
+		description:
+			"Athayog Living is a yoga and wellness platform in Indiranagar, Bangalore offering group classes, personal training, teacher training, workshops, and weight loss programs rooted in tradition.",
+	},
+	twitter: {
+		card: "summary_large_image",
+	},
+	alternates: {
+		canonical: "https://athayogliving.com",
+	},
 };
 
 export default function RootLayout({

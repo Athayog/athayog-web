@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+	title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
+	openGraph: {
+		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
+	},
+};
 
 export default function Home() {
 	return (
