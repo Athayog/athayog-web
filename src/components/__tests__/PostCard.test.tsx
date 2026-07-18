@@ -16,6 +16,7 @@ const { mockPrismicText, mockPrismicNextImage } = vi.hoisted(() => ({
 			fallbackAlt?: string;
 		}) =>
 			field?.url ? (
+				// eslint-disable-next-line @next/next/no-img-element
 				<img
 					src={field.url}
 					alt={fallbackAlt || field.alt || ""}
@@ -35,6 +36,7 @@ vi.mock("@prismicio/next", () => ({
 }));
 
 vi.mock("next/image", () => ({
+	// eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
 	default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => <img {...props} />,
 }));
 
