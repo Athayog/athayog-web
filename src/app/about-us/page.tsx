@@ -22,6 +22,16 @@ const MANDALA = (
 		<circle cx="100" cy="100" r="58" />
 		<circle cx="100" cy="100" r="38" />
 		<circle cx="100" cy="100" r="18" />
+		{Array.from({ length: 12 }, (_, i) => (
+			<ellipse
+				key={i}
+				cx="100"
+				cy="52"
+				rx="11"
+				ry="30"
+				transform={`rotate(${i * 30} 100 100)`}
+			/>
+		))}
 	</svg>
 );
 
@@ -332,8 +342,8 @@ export default function AboutUsPage() {
 							</p>
 						</div>
 					</Reveal>
-					<div className={styles.lineage}>
-						<Reveal>
+					<Reveal>
+						<div className={styles.lineage}>
 							<div className={styles.lin}>
 								<h3>Bihar School of Yoga</h3>
 								<p>
@@ -341,8 +351,6 @@ export default function AboutUsPage() {
 									Swami Satyananda Saraswati.
 								</p>
 							</div>
-						</Reveal>
-						<Reveal>
 							<div className={styles.lin}>
 								<h3>SVYASA</h3>
 								<p>
@@ -350,8 +358,6 @@ export default function AboutUsPage() {
 									Anusandhana Samsthana, Bengaluru.
 								</p>
 							</div>
-						</Reveal>
-						<Reveal>
 							<div className={styles.lin}>
 								<h3>Yoga Alliance (USA)</h3>
 								<p>
@@ -359,8 +365,6 @@ export default function AboutUsPage() {
 									RYT-200, recognized worldwide.
 								</p>
 							</div>
-						</Reveal>
-						<Reveal>
 							<div className={styles.lin}>
 								<h3>Ministry of AYUSH</h3>
 								<p>
@@ -368,8 +372,8 @@ export default function AboutUsPage() {
 									Ministry of AYUSH.
 								</p>
 							</div>
-						</Reveal>
-					</div>
+						</div>
+					</Reveal>
 				</div>
 			</section>
 

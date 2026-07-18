@@ -12,6 +12,7 @@ const cormorantGaramond = Cormorant_Garamond({
 	variable: "--font-display",
 	subsets: ["latin"],
 	weight: ["300", "400", "500", "600", "700"],
+	style: ["normal", "italic"],
 });
 
 const cinzel = Cinzel({
@@ -59,15 +60,15 @@ export default function RootLayout({
 			lang="en"
 			className={`${cormorantGaramond.variable} ${cinzel.variable} ${inter.variable}`}
 		>
-		<body>
-			<AuthBootstrap />
-			<Providers>
-				<Header />
-				{children}
-				<Footer />
-			</Providers>
-			<PrismicPreview repositoryName={repositoryName} />
-		</body>
+			<body>
+				<AuthBootstrap />
+				<Providers>
+					<Header />
+					{children}
+					<Footer />
+				</Providers>
+				<PrismicPreview repositoryName={repositoryName} />
+			</body>
 		</html>
 	);
 }
