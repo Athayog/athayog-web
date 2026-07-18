@@ -10,15 +10,17 @@
 
 ## Commands
 
-| Task | Command |
-|---|---|
-| Dev server | `npm run dev` (port 3000) |
-| Build | `npm run build` |
-| Lint | `npm run lint` |
-| Format check | `npm run format:check` |
-| Format fix | `npm run format` |
+| Task         | Command                   |
+| ------------ | ------------------------- |
+| Dev server   | `npm run dev` (port 3000) |
+| Build        | `npm run build`           |
+| Lint         | `npm run lint`            |
+| Format check | `npm run format:check`    |
+| Format fix   | `npm run format`          |
 
 Run `npm run build` after changes — it catches TypeScript errors, missing exports, and SSR issues that dev mode misses.
+
+**CRITICAL: NEVER use `--legacy-peer-deps` or `--force` without explicit user permission.** Prismic has an unresolved peer dependency conflict with Next.js 16 that forces `--legacy-peer-deps` on every `npm install`. If you encounter this, warn the user before proceeding — never silently apply the flag.
 
 ## CSS Strategy: No Tailwind — Global Tokens + CSS Modules
 
@@ -48,22 +50,37 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 
 ## Key File Locations
 
-| Area | Path |
-|---|---|
-| Global CSS tokens | `src/app/globals.css` |
-| Navigation structure | `src/constants/navItems.ts` |
-| Header (desktop) | `src/components/Header.tsx` + `Header.module.css` |
-| Mobile drawer | `src/components/MobileDrawer.tsx` + `MobileDrawer.module.css` |
-| Footer | `src/components/Footer.tsx` + `Footer.module.css` |
-| Reveal animation | `src/components/Reveal.tsx` + `src/hooks/useReveal.ts` |
-| Legal pages (web) | `src/app/privacy-policy/`, `/terms-of-service/`, `/refund-policy/` |
+| Area                     | Path                                                                                      |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| Global CSS tokens        | `src/app/globals.css`                                                                     |
+| Navigation structure     | `src/constants/navItems.ts`                                                               |
+| Header (desktop)         | `src/components/Header.tsx` + `Header.module.css`                                         |
+| Mobile drawer            | `src/components/MobileDrawer.tsx` + `MobileDrawer.module.css`                             |
+| Footer                   | `src/components/Footer.tsx` + `Footer.module.css`                                         |
+| Reveal animation         | `src/components/Reveal.tsx` + `src/hooks/useReveal.ts`                                    |
+| Legal pages (web)        | `src/app/privacy-policy/`, `/terms-of-service/`, `/refund-policy/`                        |
 | Legal pages (mobile app) | `src/app/athayog-app/privacy/`, `/terms/`, `/refund/` — uses "mobile application" wording |
-| Firebase client | `src/lib/firebase.ts` |
-| Firebase admin | `src/lib/firebaseAdmin.ts` |
-| Auth store | `src/store/useAuthStore.ts` |
-| Proxy (route protection) | `src/proxy.ts` |
-| Login page | `src/app/login/page.tsx` |
-| Protected account | `src/app/(protected)/account/page.tsx` |
+| Firebase client          | `src/lib/firebase.ts`                                                                     |
+| Firebase admin           | `src/lib/firebaseAdmin.ts`                                                                |
+| Auth store               | `src/store/useAuthStore.ts`                                                               |
+| Proxy (route protection) | `src/proxy.ts`                                                                            |
+| Login page               | `src/app/login/page.tsx`                                                                  |
+| Protected account        | `src/app/(protected)/account/page.tsx`                                                    |
+| Form field component     | `src/components/forms/FormField.tsx`                                                      |
+| Form submit button       | `src/components/forms/SubmitButton.tsx`                                                   |
+| Zod schemas + adapter    | `src/lib/forms/schemas.ts`, `validate.ts`                                                 |
+| Form submission API      | `src/app/api/submit-form/route.ts`                                                        |
+
+## Form System
+
+- **TanStack Form v1** (`@tanstack/react-form-nextjs`) + **Zod** for validation.
+- `useForm` must be imported from `@tanstack/react-form-nextjs` (NOT plain `@tanstack/react-form`).
+- `FormField` is the single reusable field component — renders label, input/textarea, hint, and error.
+- `SubmitButton` wraps submit with `isSubmitting` prop for loading state.
+- `src/lib/forms/schemas.ts` exports reusable Zod fragments (`strings.name`, `strings.email`, `strings.phone`, `strings.message`, plus `optional.*` variants).
+- `src/lib/forms/validate.ts` exports `zodField()` — wraps a Zod schema into a TanStack Form validator function.
+- New forms: define a Zod schema → call `useForm({ defaultValues, validators, onSubmit })` → compose `<FormField>` + `<SubmitButton>`.
+- API: `POST /api/submit-form` accepts `{ collection, data }` — validates with Zod server-side, writes to Firestore, returns 201/400/429/500.
 
 ## Project Context
 
