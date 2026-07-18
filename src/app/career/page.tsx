@@ -130,6 +130,61 @@ export default function CareerPage() {
 						<p className="lead">Shape Your Career in Wellness with Us</p>
 					</div>
 
+					<div className={styles.content}>
+						<div className={styles.contentSection}>
+							<h3 className={styles.contentTitle}>
+								Spreading the Yogic way of life in the modern world
+							</h3>
+							<p className={styles.contentText}>
+								AthaYog Living Academy is committed to transform
+								people&apos;s lives through the traditional teachings of
+								Yoga. We educate everyone in our space, online, onsite and
+								even in the corporate world to seek their true potential
+								through the tools of the ancient wisdom.
+							</p>
+						</div>
+
+						<div className={styles.contentSection}>
+							<h3 className={styles.contentTitle}>
+								Life At Athayog Living / Working At Athayog Living
+							</h3>
+							<p className={styles.contentText}>
+								We are a dynamic team of young, energetic and diverse
+								individuals united by our shared love for Yoga. We strive
+								hard to guide people who join our academy with
+								transformative tools of Yoga.
+							</p>
+							<p className={styles.contentText}>
+								Our day starts early as we educate different groups of
+								people across Bangalore providing them with time, space
+								and guidance to embody the practice of Yoga in the modern
+								lifestyle. When we are not teaching, we practice, learn,
+								share our knowledge and stay updated to be our best selves
+								as educators for our members who show up on their mats
+								every single day.
+							</p>
+						</div>
+
+						<div className={styles.contentSection}>
+							<h3 className={styles.contentTitle}>
+								Why Choose To Work At Athayog?
+							</h3>
+							<p className={styles.contentText}>
+								As an organisation that provides wellness and education,
+								we evolve everyday being around people and learning from
+								them in return as we guide them through their personal
+								journey. When you work at AthaYog Living, you receive as
+								much as you share, you learn as much as you guide people
+								and an abundance of transformation happens within
+								yourself. That&apos;s what the power of Yoga does when you
+								spread the teachings to people who truly seek. And as you
+								help people get closer to their true selves, you discover
+								more about yourself whether you are inside the class or
+								outside guiding people.
+							</p>
+						</div>
+					</div>
+
 					{formError && <div className={styles.errorBanner}>{formError}</div>}
 
 					<form
