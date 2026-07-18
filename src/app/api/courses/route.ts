@@ -17,14 +17,15 @@ export async function GET(request: NextRequest) {
 			.collection("courses")
 			.get();
 
-		const courses = coursesSnapshot.docs.map((doc) => ({
-			id: doc.id,
-			...doc.data(),
-		}));
+		const courses = coursesSnapshot.docs.map((doc) => {
+			const data = doc.data();
+			console.log("[courses] found doc:", doc.id, data);
+			return { id: doc.id, ...data };
+		});
 
 		return NextResponse.json(courses, { status: 200 });
 	} catch (error) {
-		console.error("Error fetching courses:", error);
+		console.error("[courses] Error fetching courses:", error);
 		return NextResponse.json({ message: "Error fetching courses" }, { status: 500 });
 	}
 }
