@@ -8,7 +8,7 @@ import { FormField } from "@/components/forms/FormField";
 import { SubmitButton } from "@/components/forms/SubmitButton";
 import { zodField } from "@/lib/forms/validate";
 import { strings } from "@/lib/forms/schemas";
-import styles from "./ContactUs.module.css";
+import styles from "@/app/contact-us/ContactUs.module.css";
 
 const contactSchema = z.object({
 	name: strings.name,

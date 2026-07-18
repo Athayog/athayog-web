@@ -6,7 +6,7 @@ import { RecaptchaVerifier } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import useAuthStore from "@/store/useAuthStore";
 import { useGoogleOneTap } from "@/hooks/useGoogleOneTap";
-import styles from "./Login.module.css";
+import styles from "@/app/login/Login.module.css";
 
 function GoogleIcon() {
 	return (

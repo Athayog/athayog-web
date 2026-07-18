@@ -7,7 +7,7 @@ import { FormField } from "@/components/forms/FormField";
 import { SubmitButton } from "@/components/forms/SubmitButton";
 import { zodField } from "@/lib/forms/validate";
 import { strings, optional } from "@/lib/forms/schemas";
-import styles from "./TrialClasses.module.css";
+import styles from "@/app/trial-classes/TrialClasses.module.css";
 
 const trialSchema = z.object({
 	fullName: strings.name,

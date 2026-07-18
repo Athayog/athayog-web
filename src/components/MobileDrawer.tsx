@@ -9,7 +9,7 @@ import * as Collapsible from "@radix-ui/react-collapsible";
 import * as Dialog from "@radix-ui/react-dialog";
 import { navItems, type NavItem } from "@/constants/navItems";
 import useAuthStore from "@/store/useAuthStore";
-import styles from "./MobileDrawer.module.css";
+import styles from "@/components/MobileDrawer.module.css";
 
 function DrawerAvatarImage({ src, alt }: { src: string; alt: string }) {
 	const [loaded, setLoaded] = useState(false);

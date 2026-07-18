@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import styles from "./AboutUs.module.css";
+import styles from "@/app/about-us/AboutUs.module.css";
 
 export default function HeroImage() {
 	const [loaded, setLoaded] = useState(false);

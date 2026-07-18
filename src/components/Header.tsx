@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { navItems, type NavItem } from "@/constants/navItems";
 import useAuthStore from "@/store/useAuthStore";
-import AccountMenu from "./AccountMenu";
-import MobileDrawer from "./MobileDrawer";
-import styles from "./Header.module.css";
+import styles from "@/components/Header.module.css";
+import AccountMenu from "@/components/AccountMenu";
+import MobileDrawer from "@/components/MobileDrawer";
 
 function ChevronDown() {
 	return (

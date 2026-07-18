@@ -8,7 +8,7 @@ import { SubmitButton } from "@/components/forms/SubmitButton";
 import { zodField } from "@/lib/forms/validate";
 import { strings, optional } from "@/lib/forms/schemas";
 import { uploadFormFile } from "@/lib/forms/upload";
-import styles from "./Career.module.css";
+import styles from "@/app/career/Career.module.css";
 
 const careerSchema = z.object({
 	fullName: strings.name,

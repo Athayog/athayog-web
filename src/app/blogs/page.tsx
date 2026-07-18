@@ -4,7 +4,7 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { PostCard } from "@/components/PostCard";
-import styles from "./Blogs.module.css";
+import styles from "@/app/blogs/Blogs.module.css";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const client = createClient();

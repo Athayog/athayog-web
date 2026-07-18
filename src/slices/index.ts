@@ -1,5 +1,5 @@
-import RichText from "./RichText";
-import BlogsTitle from "./BlogsTitle";
+import RichText from "@/slices/RichText";
+import BlogsTitle from "@/slices/BlogsTitle";
 
 export const components = {
 	rich_text: RichText,

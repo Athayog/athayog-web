@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import useAuthStore from "@/store/useAuthStore";
-import styles from "./AccountMenu.module.css";
+import styles from "@/components/AccountMenu.module.css";
 
 function getInitials(name: string | null, email: string | null) {
 	if (name) {

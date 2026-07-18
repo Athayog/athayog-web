@@ -6,7 +6,7 @@ import AuthBootstrap from "@/components/AuthBootstrap";
 import Providers from "@/components/Providers";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import "./globals.css";
+import "@/app/globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
 	variable: "--font-display",

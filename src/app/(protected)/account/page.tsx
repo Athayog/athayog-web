@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import useAuthStore from "@/store/useAuthStore";
 import withAuth from "@/lib/withAuth";
-import styles from "./Account.module.css";
+import styles from "@/app/(protected)/account/Account.module.css";
 
 interface Course {
 	id: string;

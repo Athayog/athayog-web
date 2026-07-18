@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./LegalPage.module.css";
+import styles from "@/components/LegalPage.module.css";
 
 interface LegalPageProps {
 	title: string;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
-import styles from "./PostCard.module.css";
+import styles from "@/components/PostCard.module.css";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function PostCard({ post }: { post: any }) {

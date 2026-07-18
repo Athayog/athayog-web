@@ -1,8 +1,8 @@
 import { Flower, Users, Sparkles, Leaf, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import HeroImage from "./HeroImage";
-import styles from "./AboutUs.module.css";
+import HeroImage from "@/app/about-us/HeroImage";
+import styles from "@/app/about-us/AboutUs.module.css";
 
 const PLAY_SVG = (
 	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
