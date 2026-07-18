@@ -261,6 +261,7 @@
 	padding: 28px 26px;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
 
 .tier.feature {
@@ -373,6 +374,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 24px;
+	margin-bottom: 40px;
 }
 
 .stat {
@@ -482,7 +484,7 @@
 	align-items: center;
 }
 
-.magnet .eyebrow {
+.magnet :global(.eyebrow) {
 	color: #eaf0de;
 }
 
