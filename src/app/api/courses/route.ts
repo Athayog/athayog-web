@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminFirestore } from "@/lib/firebaseAdmin";
 
+// LEGACY: Queries users/{userId}/courses subcollection.
+// Created by old registration flow. No auth — bare userId query param.
+// For new Razorpay payment records, see /api/payments.
+
 export async function GET(request: NextRequest) {
 	const userId = request.nextUrl.searchParams.get("userId");
 

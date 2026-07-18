@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifySessionCookie } from "@/lib/firebaseAdmin";
 import { getPaymentsByUser } from "@/lib/razorpay";
 
+// NEW: Queries top-level payments/ collection filtered by authenticated userId.
+// Requires valid __session cookie (server-side auth check).
+// Do NOT confuse with users/{userId}/courses — legacy purchases via /api/courses.
+
 export async function GET(request: NextRequest) {
 	const session = request.cookies.get("__session")?.value;
 	if (!session) {

@@ -60,6 +60,9 @@ export async function getActivePlans(): Promise<Plan[]> {
 	})) as Plan[];
 }
 
+// NEW: Writes a payment record to the top-level payments/ collection.
+// Each doc stores userId, plan details, GST breakdown, and Razorpay IDs.
+// Do NOT confuse with users/{userId}/courses (legacy purchases).
 export async function createPaymentDoc(data: {
 	userId: string;
 	plan: Plan;
@@ -85,6 +88,9 @@ export async function createPaymentDoc(data: {
 	return ref.id;
 }
 
+// NEW: Reads payment records from the top-level payments/ collection,
+// filtered by userId. Used by GET /api/payments (session-authenticated).
+// For legacy course purchases, use the courses API (/api/courses).
 export async function getPaymentsByUser(userId: string): Promise<PaymentDoc[]> {
 	const db = getAdminFirestore();
 	const snapshot = await db

@@ -6,6 +6,9 @@ import useAuthStore from "@/store/useAuthStore";
 import withAuth from "@/lib/withAuth";
 import styles from "@/app/(protected)/account/Account.module.css";
 
+// LEGACY: Course purchases from users/{userId}/courses subcollection.
+// Created by old registration flow. Do NOT confuse with the new
+// Razorpay payment records in the top-level "payments" collection.
 interface Course {
 	id: string;
 	name: string;
@@ -71,9 +74,11 @@ function AvatarImage({
 
 function AccountPage() {
 	const { user, loading, handleLogout } = useAuthStore();
+	// LEGACY: purchases from users/{userId}/courses subcollection
 	const [courses, setCourses] = useState<Course[]>([]);
 	const [coursesLoading, setCoursesLoading] = useState(true);
 	const [coursesError, setCoursesError] = useState(false);
+	// NEW: Razorpay transactions from top-level payments/ collection
 	const [payments, setPayments] = useState<any[]>([]); // eslint-disable-line @typescript-eslint/no-explicit-any
 	const [paymentsLoading, setPaymentsLoading] = useState(true);
 
@@ -186,7 +191,7 @@ function AccountPage() {
 					</div>
 				)}
 
-				{/* Last Purchases */}
+				{/* LEGACY: purchases from users/{userId}/courses subcollection */}
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Last Purchases</h2>
 					<div className={styles.tableWrap}>
@@ -254,7 +259,8 @@ function AccountPage() {
 					</div>
 				</div>
 
-				{/* Payment History */}
+				{/* NEW: Razorpay transactions from top-level payments/ collection (filtered by userId).
+				    Do NOT confuse with users/{userId}/courses (legacy purchases above). */}
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Payment History</h2>
 					<div className={styles.tableWrap}>
