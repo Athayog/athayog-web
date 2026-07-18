@@ -8,7 +8,8 @@ vi.mock("next/image", () => ({
 			fill?: boolean;
 		},
 	) => {
-		const { priority, ...rest } = props;
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		const { priority, fill: _fill, ...rest } = props;
 		/* eslint-disable @next/next/no-img-element, jsx-a11y/alt-text */
 		if (priority) {
 			return <img data-testid="hero-priority" {...rest} fetchPriority="high" />;
