@@ -907,28 +907,32 @@ export default function GroupClassesPage() {
 								</p>
 							</div>
 							<div className={styles.lmForm}>
-								<input
-									type="text"
-									placeholder="Your name"
-									aria-label="Your name"
-								/>
-								<input
-									type="tel"
-									placeholder="WhatsApp / phone number"
-									aria-label="Phone number"
-								/>
-								<input
-									type="text"
-									placeholder="Preferred time (e.g. 6 AM / evening)"
-									aria-label="Preferred time"
-								/>
-								<a
-									href="https://athayogliving.com/trial-classes"
-									className="btn btn-cream"
-									style={{ justifyContent: "center" }}
-								>
-									Book My Free Trial
-								</a>
+								<div className={styles.lmFormRow}>
+									<input
+										type="text"
+										placeholder="Your name"
+										aria-label="Your name"
+									/>
+									<input
+										type="tel"
+										placeholder="WhatsApp / phone number"
+										aria-label="Phone number"
+									/>
+								</div>
+								<div className={styles.lmFormRow}>
+									<input
+										type="text"
+										placeholder="Preferred time (e.g. 6 AM / evening)"
+										aria-label="Preferred time"
+									/>
+									<a
+										href="https://athayogliving.com/trial-classes"
+										className="btn btn-cream"
+										style={{ justifyContent: "center" }}
+									>
+										Book My Free Trial
+									</a>
+								</div>
 								<span className={styles.lmMini}>
 									We&apos;ll call or WhatsApp you to confirm. No
 									obligation.

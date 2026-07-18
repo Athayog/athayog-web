@@ -456,6 +456,7 @@
 	border: 1px solid var(--line);
 	border-radius: 3px;
 	padding: 28px 26px;
+	height: 100%;
 }
 
 .tstQ {
@@ -501,6 +502,12 @@
 .lmForm {
 	display: flex;
 	flex-direction: column;
+	gap: 12px;
+}
+
+.lmFormRow {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	gap: 12px;
 }
 
