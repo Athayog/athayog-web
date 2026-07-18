@@ -108,7 +108,7 @@ export default function Header() {
 					<Image
 						src="/Logo.png"
 						alt="Athayog Living"
-						width={140}
+						width={36}
 						height={36}
 						priority
 					/>
