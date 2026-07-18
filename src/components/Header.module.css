@@ -5,6 +5,7 @@
 	background: rgba(245, 243, 234, 0.92);
 	backdrop-filter: blur(8px);
 	border-bottom: 1px solid var(--line-soft);
+	will-change: transform;
 }
 
 .nav {
