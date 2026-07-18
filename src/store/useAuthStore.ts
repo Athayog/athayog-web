@@ -158,7 +158,9 @@ const useAuthStore = create<AuthState>()(
 				try {
 					const { confirmationResult } = get();
 					if (!confirmationResult) {
-						throw new Error("No OTP confirmation result. Please request OTP first.");
+						throw new Error(
+							"No OTP confirmation result. Please request OTP first.",
+						);
 					}
 
 					const userCredential = await confirmationResult.confirm(otp);

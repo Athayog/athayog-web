@@ -10,7 +10,8 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"test": "vitest run",
-		"test:watch": "vitest"
+		"test:watch": "vitest",
+		"check": "prettier --check . && eslint . && vitest run"
 	},
 	"dependencies": {
 		"@bprogress/next": "^3.2.12",

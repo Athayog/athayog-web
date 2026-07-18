@@ -18,9 +18,9 @@ export default function MobilePrivacyPolicy() {
 				</p>
 				<p>
 					When you browse our mobile application, we also automatically receive
-					your computer&apos;s internet protocol (IP) address in order to provide
-					us with information that helps us learn about your browser and operating
-					system.
+					your computer&apos;s internet protocol (IP) address in order to
+					provide us with information that helps us learn about your browser and
+					operating system.
 				</p>
 				<p>
 					Email marketing (if applicable): With your permission, we may send you
@@ -34,10 +34,10 @@ export default function MobilePrivacyPolicy() {
 					<strong>How do you get my consent?</strong>
 				</p>
 				<p>
-					When you provide us with personal information to complete a transaction,
-					verify your credit card, place an order, arrange for a delivery or
-					return a purchase, we imply that you consent to our collecting it and
-					using it for that specific reason only.
+					When you provide us with personal information to complete a
+					transaction, verify your credit card, place an order, arrange for a
+					delivery or return a purchase, we imply that you consent to our
+					collecting it and using it for that specific reason only.
 				</p>
 				<p>
 					If we ask for your personal information for a secondary reason, like
@@ -72,10 +72,10 @@ export default function MobilePrivacyPolicy() {
 				<p>
 					We use Razorpay for processing payments. We/Razorpay do not store your
 					card data on their servers. The data is encrypted through the Payment
-					Card Industry Data Security Standard (PCI-DSS) when processing payment.
-					Your purchase transaction data is only used as long as is necessary to
-					complete your purchase transaction. After that is complete, your
-					purchase transaction information is not saved.
+					Card Industry Data Security Standard (PCI-DSS) when processing
+					payment. Your purchase transaction data is only used as long as is
+					necessary to complete your purchase transaction. After that is
+					complete, your purchase transaction information is not saved.
 				</p>
 				<p>
 					Our payment gateway adheres to the standards set by PCI-DSS as managed
@@ -95,9 +95,9 @@ export default function MobilePrivacyPolicy() {
 			<section>
 				<h2>THIRD-PARTY SERVICES</h2>
 				<p>
-					In general, the third-party providers used by us will only collect, use
-					and disclose your information to the extent necessary to allow them to
-					perform the services they provide to us.
+					In general, the third-party providers used by us will only collect,
+					use and disclose your information to the extent necessary to allow
+					them to perform the services they provide to us.
 				</p>
 				<p>
 					However, certain third-party service providers, such as payment
@@ -119,8 +119,8 @@ export default function MobilePrivacyPolicy() {
 					which that service provider or its facilities are located.
 				</p>
 				<p>
-					Once you leave our store&apos;s mobile application or are redirected to
-					a third-party website or application, you are no longer governed by
+					Once you leave our store&apos;s mobile application or are redirected
+					to a third-party website or application, you are no longer governed by
 					this Privacy Policy or our mobile application&apos;s Terms of Service.
 				</p>
 				<p>
@@ -157,8 +157,8 @@ export default function MobilePrivacyPolicy() {
 					By using this site, you represent that you are at least the age of
 					majority in your state or province of residence, or that you are the
 					age of majority in your state or province of residence and you have
-					given us your consent to allow any of your minor dependents to use this
-					site.
+					given us your consent to allow any of your minor dependents to use
+					this site.
 				</p>
 			</section>
 
@@ -169,9 +169,9 @@ export default function MobilePrivacyPolicy() {
 					please review it frequently. Changes and clarifications will take
 					effect immediately upon their posting on the mobile application. If we
 					make material changes to this policy, we will notify you here that it
-					has been updated, so that you are aware of what information we collect,
-					how we use it, and under what circumstances, if any, we use and/or
-					disclose it.
+					has been updated, so that you are aware of what information we
+					collect, how we use it, and under what circumstances, if any, we use
+					and/or disclose it.
 				</p>
 				<p>
 					If our store is acquired or merged with another company, your

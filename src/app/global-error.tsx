@@ -131,12 +131,8 @@ export default function GlobalError({
 						</div>
 						<span className="eyebrow">Error</span>
 						<h2>Something Went Wrong</h2>
-						<p
-							className="lead"
-							style={{ marginTop: 12 }}
-						>
-							We encountered an unexpected error.
-							Please try again.
+						<p className="lead" style={{ marginTop: 12 }}>
+							We encountered an unexpected error. Please try again.
 						</p>
 						<div
 							style={{
@@ -154,10 +150,7 @@ export default function GlobalError({
 							>
 								Try Again
 							</button>
-							<Link
-								href="/"
-								className="btn btn-ghost"
-							>
+							<Link href="/" className="btn btn-ghost">
 								Go Home
 							</Link>
 						</div>

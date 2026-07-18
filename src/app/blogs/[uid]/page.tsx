@@ -17,52 +17,37 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const client = createClient();
 	const { uid } = await params;
-	const page = await client
-		.getByUID("blog_post", uid)
-		.catch(() => notFound());
+	const page = await client.getByUID("blog_post", uid).catch(() => notFound());
 
 	return {
 		title: page.data.meta_title || prismic.asText(page.data.title),
 		description: page.data.meta_description,
 		openGraph: {
 			title: page.data.meta_title || undefined,
-			images: page.data.meta_image?.url
-				? [{ url: page.data.meta_image.url }]
-				: [],
+			images: page.data.meta_image?.url ? [{ url: page.data.meta_image.url }] : [],
 		},
 	};
 }
 
-export default async function BlogPost({
-	params,
-}: {
-	params: Params;
-}) {
+export default async function BlogPost({ params }: { params: Params }) {
 	const { uid } = await params;
 	const client = createClient();
 
-	const page = await client
-		.getByUID("blog_post", uid)
-		.catch(() => notFound());
+	const page = await client.getByUID("blog_post", uid).catch(() => notFound());
 
 	const posts = await client.getAllByType("blog_post", {
-		orderings: [
-			{ field: "my.blog_post.publication_date", direction: "asc" },
-		],
+		orderings: [{ field: "my.blog_post.publication_date", direction: "asc" }],
 	});
 
 	const getNextPost = () => {
 		if (posts.length <= 1) return null;
-		const currentIndex = posts.findIndex(
-			(post) => post.uid === uid,
-		);
+		const currentIndex = posts.findIndex((post) => post.uid === uid);
 		const nextIndex = (currentIndex + 1) % posts.length;
 		return posts[nextIndex];
 	};
 
 	const nextPost = getNextPost();
-	const { slices, title, publication_date, description, featured_image } =
-		page.data;
+	const { slices, title, publication_date, description, featured_image } = page.data;
 
 	return (
 		<section>
@@ -102,7 +87,11 @@ export default async function BlogPost({
 						>
 							<PrismicNextImage
 								field={featured_image}
-								style={{ width: "100%", height: "auto", display: "block" }}
+								style={{
+									width: "100%",
+									height: "auto",
+									display: "block",
+								}}
 								fallbackAlt=""
 							/>
 						</div>
@@ -137,7 +126,11 @@ export default async function BlogPost({
 						<Link
 							href={`/blogs/${nextPost.uid}`}
 							className="btn btn-primary"
-							style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+							style={{
+								display: "inline-flex",
+								alignItems: "center",
+								gap: 8,
+							}}
 						>
 							Next Blog
 							<span aria-hidden="true" style={{ fontSize: "1.2rem" }}>

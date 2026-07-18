@@ -8,10 +8,7 @@ export async function POST(request: NextRequest) {
 		const { idToken } = await request.json();
 
 		if (!idToken) {
-			return NextResponse.json(
-				{ error: "Missing idToken" },
-				{ status: 400 },
-			);
+			return NextResponse.json({ error: "Missing idToken" }, { status: 400 });
 		}
 
 		const sessionCookie = await createSessionCookie(idToken, SESSION_EXPIRY);
@@ -27,9 +24,6 @@ export async function POST(request: NextRequest) {
 
 		return response;
 	} catch {
-		return NextResponse.json(
-			{ error: "Failed to create session" },
-			{ status: 401 },
-		);
+		return NextResponse.json({ error: "Failed to create session" }, { status: 401 });
 	}
 }

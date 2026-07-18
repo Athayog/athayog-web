@@ -5,10 +5,7 @@ export async function GET(request: NextRequest) {
 	const userId = request.nextUrl.searchParams.get("userId");
 
 	if (!userId) {
-		return NextResponse.json(
-			{ message: "User ID is required" },
-			{ status: 400 },
-		);
+		return NextResponse.json({ message: "User ID is required" }, { status: 400 });
 	}
 
 	try {
@@ -28,9 +25,6 @@ export async function GET(request: NextRequest) {
 		return NextResponse.json(courses, { status: 200 });
 	} catch (error) {
 		console.error("Error fetching courses:", error);
-		return NextResponse.json(
-			{ message: "Error fetching courses" },
-			{ status: 500 },
-		);
+		return NextResponse.json({ message: "Error fetching courses" }, { status: 500 });
 	}
 }

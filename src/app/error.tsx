@@ -56,10 +56,7 @@ export default function Error({
 				</div>
 				<span className="eyebrow">Error</span>
 				<h2>Something Went Wrong</h2>
-				<p
-					className="lead"
-					style={{ marginTop: 12, opacity: 0.85 }}
-				>
+				<p className="lead" style={{ marginTop: 12, opacity: 0.85 }}>
 					We encountered an unexpected error. Please try again.
 				</p>
 				<div
@@ -71,11 +68,7 @@ export default function Error({
 						flexWrap: "wrap",
 					}}
 				>
-					<button
-						type="button"
-						onClick={reset}
-						className="btn btn-primary"
-					>
+					<button type="button" onClick={reset} className="btn btn-primary">
 						Try Again
 					</button>
 					<Link href="/" className="btn btn-ghost">

@@ -15,9 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		description: page.data.meta_description,
 		openGraph: {
 			title: page.data.meta_title || undefined,
-			images: page.data.meta_image?.url
-				? [{ url: page.data.meta_image.url }]
-				: [],
+			images: page.data.meta_image?.url ? [{ url: page.data.meta_image.url }] : [],
 		},
 	};
 }
