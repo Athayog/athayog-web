@@ -505,7 +505,6 @@
 	gap: 12px;
 }
 
-.lmForm input,
 .lmInput {
 	padding: 13px 16px;
 	border: 1px solid rgba(245, 243, 234, 0.4);
@@ -514,9 +513,9 @@
 	background: rgba(255, 255, 255, 0.12);
 	color: var(--cream);
 	font-family: var(--font-body);
+	width: 100%;
 }
 
-.lmForm input::placeholder,
 .lmInput::placeholder {
 	color: #e7ecdd;
 }
@@ -529,11 +528,13 @@
 	background: rgba(176, 115, 74, 0.12);
 	color: var(--cream);
 	font-family: var(--font-body);
+	width: 100%;
 }
 
 .lmForm button,
 .lmBtn {
 	justify-content: center;
+	width: 100%;
 }
 
 .lmMini {
