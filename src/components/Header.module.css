@@ -22,6 +22,11 @@
 	max-width: 140px;
 }
 
+.brand img {
+	width: 140px;
+	height: 36px;
+}
+
 .navLinks {
 	display: flex;
 	gap: 28px;
