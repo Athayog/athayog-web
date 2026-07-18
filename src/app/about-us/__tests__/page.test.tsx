@@ -8,7 +8,7 @@ vi.mock("next/image", () => ({
 			fill?: boolean;
 		},
 	) => {
-		const { priority, fill: _fill, ...rest } = props;
+		const { priority, ...rest } = props;
 		if (priority) {
 			return <img data-testid="hero-priority" {...rest} fetchPriority="high" />;
 		}

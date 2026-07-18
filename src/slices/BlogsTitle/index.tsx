@@ -1,6 +1,7 @@
 import type { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const BlogsTitle = ({ slice }: SliceComponentProps<any>) => {
 	return (
 		<div data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>

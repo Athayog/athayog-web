@@ -80,17 +80,15 @@ export function useGoogleOneTap({
 	buttonRef,
 }: UseGoogleOneTapOptions) {
 	const [isLoaded, setIsLoaded] = useState(false);
-	const callbackRef = useRef<
-		((response: GoogleCredentialResponse) => void) | null
-	>(null);
+	const callbackRef = useRef<((response: GoogleCredentialResponse) => void) | null>(
+		null,
+	);
 
 	const onGoogleCredential = useCallback(
 		async (response: GoogleCredentialResponse) => {
 			onLoading(true);
 			try {
-				const credential = GoogleAuthProvider.credential(
-					response.credential,
-				);
+				const credential = GoogleAuthProvider.credential(response.credential);
 				const result = await signInWithCredential(auth, credential);
 				const user = result.user;
 
@@ -124,7 +122,9 @@ export function useGoogleOneTap({
 		[onSuccess, onError, onLoading],
 	);
 
-	callbackRef.current = onGoogleCredential;
+	useEffect(() => {
+		callbackRef.current = onGoogleCredential;
+	});
 
 	useEffect(() => {
 		if (disabled) return;

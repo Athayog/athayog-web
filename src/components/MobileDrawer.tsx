@@ -79,7 +79,7 @@ function BurgerIcon() {
 export default function MobileDrawer() {
 	const pathname = usePathname();
 	const isActive = (path?: string) => pathname === path;
-	const { user, userSnapshot, isAuthenticated, loading, handleLogout } = useAuthStore();
+	const { user, userSnapshot, isAuthenticated, handleLogout } = useAuthStore();
 	const displayUser = user || userSnapshot;
 	const isLoggedIn = isAuthenticated || userSnapshot !== null;
 
