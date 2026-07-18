@@ -1,5 +1,6 @@
 import { Flower, Users, Sparkles, Leaf, ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import HeroImage from "./HeroImage";
 import styles from "./AboutUs.module.css";
 
 const PLAY_SVG = (
@@ -83,13 +84,7 @@ export default function AboutUsPage() {
 							</div>
 						</Reveal>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						<img
-							src="https://images.prismic.io/athayog/ZwkoDIF3NbkBXRga_2af795c9168f022b9c7d0a917fd08e4f.jpg?auto=format,compress&w=1000"
-							alt="Yoga practice at Athayog Living, Indiranagar"
-							loading="eager"
-						/>
-					</div>
+					<HeroImage />
 				</div>
 			</section>
 
