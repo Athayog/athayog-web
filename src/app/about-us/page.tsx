@@ -85,32 +85,26 @@ export default function AboutUsPage() {
 
 			{/* 2. Statbar */}
 			<section className={styles.statbar}>
-				<div className={`wrap ${styles.statGrid}`}>
-					<Reveal>
+				<Reveal>
+					<div className={`wrap ${styles.statGrid}`}>
 						<div className={styles.stat}>
 							<div className={styles.statNumber}>60+</div>
 							<div className={styles.statLabel}>Graduates</div>
 						</div>
-					</Reveal>
-					<Reveal>
 						<div className={styles.stat}>
 							<div className={styles.statNumber}>850+</div>
 							<div className={styles.statLabel}>Athayogis</div>
 						</div>
-					</Reveal>
-					<Reveal>
 						<div className={styles.stat}>
 							<div className={styles.statNumber}>30+</div>
 							<div className={styles.statLabel}>Transformations</div>
 						</div>
-					</Reveal>
-					<Reveal>
 						<div className={styles.stat}>
 							<div className={styles.statNumber}>20+</div>
 							<div className={styles.statLabel}>Events</div>
 						</div>
-					</Reveal>
-				</div>
+					</div>
+				</Reveal>
 			</section>
 
 			{/* 3. Answer snippet */}
@@ -123,18 +117,15 @@ export default function AboutUsPage() {
 			>
 				<div className="wrap">
 					<Reveal>
-						<div className={styles.answer}>
-							<p>
-								Athayog Living is a certified yoga studio in Indiranagar,
-								Bengaluru, founded by Sharath Basavaraju — who was trained
-								through the teachings of the Bihar School of Yoga and
-								holds a formal yogic education from SVYASA. The studio
-								offers group classes, personal training, a weight-loss
-								program and RYT-200 teacher training, all rooted in
-								authentic tradition and recognized by Yoga Alliance (USA),
-								SVYASA and AYUSH.
-							</p>
-						</div>
+						<p className="answer">
+							Athayog Living is a certified yoga studio in Indiranagar,
+							Bengaluru, founded by Sharath Basavaraju — who was trained
+							through the teachings of the Bihar School of Yoga and holds a
+							formal yogic education from SVYASA. The studio offers group
+							classes, personal training, a weight-loss program and RYT-200
+							teacher training, all rooted in authentic tradition and
+							recognized by Yoga Alliance (USA), SVYASA and AYUSH.
+						</p>
 					</Reveal>
 				</div>
 			</section>
@@ -500,13 +491,15 @@ export default function AboutUsPage() {
 							>
 								YouTube
 							</a>{" "}
-							· read our {/* TODO: update with real Google review URL */}
+							· read our{" "}
 							<a
-								href="#"
+								href="https://share.google/tFCEaxzVsbCdRpYwY"
 								style={{
 									borderBottom: "1px solid var(--brand-deep)",
 									color: "var(--brand-deep)",
 								}}
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								Google reviews
 							</a>
