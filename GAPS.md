@@ -21,13 +21,11 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **CI/CD** — GitHub Actions workflow: lint → typecheck → test → build → deploy
 - [ ] **README overhaul** — Add env setup, project structure, scripts reference, deploy guide
 - [ ] **Logging utility** — Replace raw `console.error` with structured logger
-- [x] **API validation** — Zod schemas for API route input validation (POST /api/submit-form)
-- [x] **Rate limiting** — Protect API routes from abuse (in-memory rate limiter on /api/submit-form)
 - [ ] **Content pages** — `/what-we-offer`, `/personal-yoga-training-indiranagar`, `/weight-loss-program-indiranagar`, `/yoga-teacher-training`, `/workshops` (from `src/constants/navItems.ts`)
 - [ ] **Privacy-first cookie consent banner** — GDPR/India IT Act compliance
-- [x] **Razorpay payment integration** — Full server-side flow: order creation, HMAC verify, webhook handler, payment history in My Account. See `src/components/payments/PaymentModal.tsx` and `src/app/api/payments/*/route.ts`.
 - [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`). Without this, payments made when the browser tab closes before the verify callback fires will be lost.
 - [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`. Both required for payment flow and payment history to work.
+- [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow for better conversion.
 
 ---
 
@@ -46,24 +44,31 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Firebase auth (client SDK + Admin SDK + Zustand store)
 - [x] Session cookies + route protection (`proxy.ts`)
 - [x] Login page (Google + Phone OTP)
-- [x] Account dashboard (avatar, details, purchases)
+- [x] Account dashboard (avatar, details, purchases, payment history)
 - [x] Legal pages (web + mobile app)
 - [x] SEO (`robots.ts`, `sitemap.ts`, metadata, `icon.png`)
 - [x] Navigation progress bar (`@bprogress/next`)
-- [x] Loading state (`loading.tsx`)
-- [x] Error pages (404, error, global-error, forbidden)
+- [x] Loading + error pages (`loading.tsx`, 404, error, global-error, forbidden)
 - [x] `.prettierrc`, `.vscode/settings.json`, `eslint.config.mjs`
 - [x] Global form system (TanStack Form + Zod, FormField, SubmitButton, shared schemas)
 - [x] Trial classes page (`/trial-classes` with form)
-- [x] Form submission API (`POST /api/submit-form` with Zod validation + Firestore)
+- [x] Form submission API (`POST /api/submit-form` with Zod validation + Firestore + rate limiting)
 - [x] Email forwarding (Resend on form submission, lazy init, non-blocking)
 - [x] File upload support (Firebase Storage, `as="file"` in FormField)
-- [x] Vitest test framework (39 tests across 4 suites, pre-build gate)
+- [x] Vitest (41 tests, pre-build gate: `eslint . && vitest run && next build`)
+- [x] Husky + lint-staged (pre-commit: format + lint on staged files)
+- [x] ESLint `no-restricted-imports` — enforce `@/` path aliases
+- [x] `--legacy-peer-deps` warning in AGENTS.md
 - [x] `.env.example` — documents all env vars
-- [x] `AGENTS.md` — `--legacy-peer-deps` rule, form system docs
-- [x] Husky + lint-staged (pre-commit format + lint on staged files)
-- [x] Image health tests + AGENTS.md rule for alt/priority
-- [x] `/about-us` (14 sections, mandala SVG, mockup-integrated)
-- [x] `/contact-us` (TanStack Form, Lucide icons)
-- [x] `/career` (14-field form, file upload)
-- [x] `/group-classes-indiranagar` (schedule table, pricing, testimonials)
+- [x] `/about-us` — 14 sections, mandala SVG, Reveal animations
+- [x] `/contact-us` — TanStack Form, Lucide icons
+- [x] `/career` — 14-field form, file upload
+- [x] `/group-classes-indiranagar` — schedule table, pricing tiers, PaymentModal integration
+- [x] Razorpay payment flow — `PaymentModal`, `create-order`, HMAC verify, webhook handler
+- [x] Payment history on `/account` — session-authenticated `GET /api/payments`
+- [x] Legacy courses API — reads `users/{userId}/courses`, maps legacy field names
+- [x] Account page skeleton — green breathing animation (`--skeleton` CSS variable, 14s breathe keyframes)
+- [x] `loading.tsx` for account route + `withAuth` skeleton replacement
+- [x] Logo fix — explicit `width: 140px; height: 36px` on brand image
+- [x] `data-scroll-behavior="smooth"` on `<html>` for Next.js route transition compat
+- [x] Dropdown spacing fix — reduced container top padding from 16px to 6px
