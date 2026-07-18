@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import useAuthStore from "@/store/useAuthStore";
@@ -26,9 +27,11 @@ function AvatarImage({ src, alt }: { src: string; alt: string }) {
 	if (error) return null;
 
 	return (
-		<img
+		<Image
 			src={src}
 			alt={alt}
+			fill
+			sizes="36px"
 			className={`${styles.avatar} ${loaded ? styles.avatarLoaded : ""}`}
 			onLoad={() => setLoaded(true)}
 			onError={() => setError(true)}

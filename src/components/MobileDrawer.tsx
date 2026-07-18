@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,9 +18,11 @@ function DrawerAvatarImage({ src, alt }: { src: string; alt: string }) {
 	if (error) return null;
 
 	return (
-		<img
+		<Image
 			src={src}
 			alt={alt}
+			fill
+			sizes="40px"
 			className={`${styles.drawerAccountAvatar} ${loaded ? styles.drawerAvatarLoaded : ""}`}
 			onLoad={() => setLoaded(true)}
 			onError={() => setError(true)}

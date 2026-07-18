@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import useAuthStore from "@/store/useAuthStore";
 import withAuth from "@/lib/withAuth";
 import styles from "./Account.module.css";
@@ -55,9 +56,11 @@ function AvatarImage({
 	return (
 		<div className={styles.avatarWrap}>
 			<span className={styles.avatarFallback}>{initials}</span>
-			<img
+			<Image
 				src={src}
 				alt={alt}
+				fill
+				sizes="100px"
 				className={`${styles.avatar} ${loaded ? styles.avatarLoaded : ""}`}
 				onLoad={() => setLoaded(true)}
 				onError={() => setError(true)}
