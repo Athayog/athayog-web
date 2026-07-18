@@ -11,7 +11,12 @@
 		"format:check": "prettier --check .",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"check": "prettier --check . && eslint . && vitest run"
+		"check": "prettier --check . && eslint . && vitest run",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*": "prettier --write --ignore-unknown",
+		"*.{ts,tsx}": "eslint --fix"
 	},
 	"dependencies": {
 		"@bprogress/next": "^3.2.12",
@@ -44,7 +49,9 @@
 		"babel-plugin-react-compiler": "1.0.0",
 		"eslint": "^9",
 		"eslint-config-next": "16.2.10",
+		"husky": "^9.1.7",
 		"jsdom": "^29.1.1",
+		"lint-staged": "^17.0.8",
 		"msw": "^2.15.0",
 		"prettier": "^3.9.5",
 		"server-only": "^0.0.1",
