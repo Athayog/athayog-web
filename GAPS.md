@@ -19,13 +19,13 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Error tracking** — Sentry or equivalent (6 `console.error` call sites today)
 - [ ] **Analytics** — Vercel Analytics, PostHog, or Google Analytics for page views & conversions
 - [ ] **CI/CD** — GitHub Actions workflow: lint → typecheck → test → build → deploy
-- [ ] **Pre-commit hooks** — Husky + lint-staged to enforce format/lint on commit
 - [ ] **README overhaul** — Add env setup, project structure, scripts reference, deploy guide
 - [ ] **Logging utility** — Replace raw `console.error` with structured logger
 - [x] **API validation** — Zod schemas for API route input validation (POST /api/submit-form)
 - [x] **Rate limiting** — Protect API routes from abuse (in-memory rate limiter on /api/submit-form)
-- [ ] **Content pages** — `/about-us`, `/group-classes-indiranagar`, `/contact-us`, `/trial-classes`, etc. (from `src/constants/navItems.ts`)
+- [ ] **Content pages** — `/what-we-offer`, `/personal-yoga-training-indiranagar`, `/weight-loss-program-indiranagar`, `/yoga-teacher-training`, `/workshops` (from `src/constants/navItems.ts`)
 - [ ] **Privacy-first cookie consent banner** — GDPR/India IT Act compliance
+- [ ] **Razorpay payment integration** — Replace all "Register Now" links with real payment flow. Secure server-side order creation, webhook verification, and enrollment tracking. Affects: group pricing tiers (₹599–₹32,399), career form, trial class. Needs deep-flow design for security — link via server API, never expose keys client-side.
 
 ---
 
@@ -59,3 +59,9 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Vitest test framework (39 tests across 4 suites, pre-build gate)
 - [x] `.env.example` — documents all env vars
 - [x] `AGENTS.md` — `--legacy-peer-deps` rule, form system docs
+- [x] Husky + lint-staged (pre-commit format + lint on staged files)
+- [x] Image health tests + AGENTS.md rule for alt/priority
+- [x] `/about-us` (14 sections, mandala SVG, mockup-integrated)
+- [x] `/contact-us` (TanStack Form, Lucide icons)
+- [x] `/career` (14-field form, file upload)
+- [x] `/group-classes-indiranagar` (schedule table, pricing, testimonials)
