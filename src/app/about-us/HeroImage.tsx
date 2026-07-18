@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./AboutUs.module.css";
 
 export default function HeroImage() {
@@ -11,10 +12,12 @@ export default function HeroImage() {
 			className={`${styles.heroMedia} ${!loaded ? styles.shimmerBg : ""}`}
 			aria-hidden="true"
 		>
-			<img
+			<Image
 				src="https://images.prismic.io/athayog/ZwkoDIF3NbkBXRga_2af795c9168f022b9c7d0a917fd08e4f.jpg?auto=format,compress&w=1000"
 				alt="Yoga practice at Athayog Living, Indiranagar"
-				loading="eager"
+				width={1000}
+				height={1250}
+				priority
 				onLoad={() => setLoaded(true)}
 				style={{
 					opacity: loaded ? 1 : 0,

@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
 				protocol: "https",
 				hostname: "athayog.cdn.prismic.io",
 			},
+			{
+				protocol: "https",
+				hostname: "img.youtube.com",
+			},
 		],
 	},
 };

@@ -1,4 +1,5 @@
 import { Flower, Users, Sparkles, Leaf, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import HeroImage from "./HeroImage";
 import styles from "./AboutUs.module.css";
@@ -44,45 +45,35 @@ export default function AboutUsPage() {
 				{MANDALA}
 				<div className={`wrap ${styles.heroGrid}`}>
 					<div>
-						<Reveal>
-							<span className="eyebrow">Who We Are · Athayog Living</span>
-						</Reveal>
-						<Reveal>
-							<h1>
-								Your Journey to <em>Balance &amp; Wellness</em>
-							</h1>
-						</Reveal>
-						<Reveal>
-							<p className={styles.heroSub}>
-								Athayog Living is dedicated to preserving the ancient
-								legacy of Yog — integrating its true purpose, philosophy
-								and practice into modern daily life, and making timeless
-								wisdom accessible to everyone.
-							</p>
-						</Reveal>
-						<Reveal>
-							<div className={styles.heroCta}>
-								<a href="/trial-classes" className="btn btn-primary">
-									Begin Your Journey
-								</a>
-								<a href="#founder" className="btn btn-ghost">
-									Meet the Founder
-								</a>
-							</div>
-						</Reveal>
-						<Reveal>
-							<div className={styles.trustRow}>
-								<span>
-									<span className={styles.tick}>✓</span> Yoga Alliance ·
-									SVYASA · AYUSH
-								</span>
-								<span>
-									<span className={styles.tick}>✓</span> Rooted in
-									authentic lineage
-								</span>
-								<span>Indiranagar &amp; Jayanagar</span>
-							</div>
-						</Reveal>
+						<span className="eyebrow">Who We Are · Athayog Living</span>
+						<h1>
+							Your Journey to <em>Balance &amp; Wellness</em>
+						</h1>
+						<p className={styles.heroSub}>
+							Athayog Living is dedicated to preserving the ancient legacy
+							of Yog — integrating its true purpose, philosophy and practice
+							into modern daily life, and making timeless wisdom accessible
+							to everyone.
+						</p>
+						<div className={styles.heroCta}>
+							<a href="/trial-classes" className="btn btn-primary">
+								Begin Your Journey
+							</a>
+							<a href="#founder" className="btn btn-ghost">
+								Meet the Founder
+							</a>
+						</div>
+						<div className={styles.trustRow}>
+							<span>
+								<span className={styles.tick}>✓</span> Yoga Alliance ·
+								SVYASA · AYUSH
+							</span>
+							<span>
+								<span className={styles.tick}>✓</span> Rooted in authentic
+								lineage
+							</span>
+							<span>Indiranagar &amp; Jayanagar</span>
+						</div>
 					</div>
 					<HeroImage />
 				</div>
@@ -162,11 +153,13 @@ export default function AboutUsPage() {
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className="split-media">
-							<img
+						<div className="split-media" style={{ position: "relative" }}>
+							<Image
 								src="https://images.prismic.io/athayog/ZzI2Lq8jQArT0tLq_18c80ed967a14416f2b609443d4f2638-min.jpeg?auto=format,compress&w=1000"
 								alt="Athayog Living studio — a sanctum for the spirit"
-								loading="lazy"
+								fill
+								sizes="(max-width: 960px) 100vw, 50vw"
+								style={{ objectFit: "cover" }}
 							/>
 						</div>
 					</Reveal>
@@ -231,11 +224,16 @@ export default function AboutUsPage() {
 			<section id="founder">
 				<div className={`wrap ${styles.founder}`}>
 					<Reveal>
-						<div className={styles.founderPortrait}>
-							<img
+						<div
+							className={styles.founderPortrait}
+							style={{ position: "relative" }}
+						>
+							<Image
 								src="https://images.prismic.io/athayog/ZwkonYF3NbkBXRkx_fb60f7a9773bc2ef0e1749f502bbaabb.png?auto=format,compress&w=900"
 								alt="Sharath Basavaraju, Founder and Principal Teacher of Athayog Living"
-								loading="lazy"
+								fill
+								sizes="(max-width: 960px) 100vw, 380px"
+								style={{ objectFit: "cover" }}
 							/>
 						</div>
 					</Reveal>
@@ -376,11 +374,13 @@ export default function AboutUsPage() {
 			<section id="team">
 				<div className="wrap split">
 					<Reveal>
-						<div className="split-media">
-							<img
+						<div className="split-media" style={{ position: "relative" }}>
+							<Image
 								src="https://images.prismic.io/athayog/ZwkoDIF3NbkBXRga_2af795c9168f022b9c7d0a917fd08e4f.jpg?auto=format,compress&w=1000"
 								alt="The Athayog Living teaching team"
-								loading="lazy"
+								fill
+								sizes="(max-width: 960px) 100vw, 50vw"
+								style={{ objectFit: "cover" }}
 							/>
 						</div>
 					</Reveal>
@@ -429,10 +429,12 @@ export default function AboutUsPage() {
 								rel="noopener noreferrer"
 								aria-label="Watch testimonial"
 							>
-								<img
+								<Image
 									src="https://img.youtube.com/vi/Pmvr_kFDcTA/hqdefault.jpg"
 									alt="Athayog member testimonial video"
-									loading="lazy"
+									fill
+									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
+									style={{ objectFit: "cover" }}
 								/>
 								<span className={styles.play}>{PLAY_SVG}</span>
 							</a>
@@ -445,10 +447,12 @@ export default function AboutUsPage() {
 								rel="noopener noreferrer"
 								aria-label="Watch testimonial"
 							>
-								<img
+								<Image
 									src="https://img.youtube.com/vi/LDcffOBJ9ZU/hqdefault.jpg"
 									alt="Athayog member testimonial video"
-									loading="lazy"
+									fill
+									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
+									style={{ objectFit: "cover" }}
 								/>
 								<span className={styles.play}>{PLAY_SVG}</span>
 							</a>
@@ -461,10 +465,12 @@ export default function AboutUsPage() {
 								rel="noopener noreferrer"
 								aria-label="Watch testimonial"
 							>
-								<img
+								<Image
 									src="https://img.youtube.com/vi/CrCdzkiJ46E/hqdefault.jpg"
 									alt="Athayog member testimonial video"
-									loading="lazy"
+									fill
+									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
+									style={{ objectFit: "cover" }}
 								/>
 								<span className={styles.play}>{PLAY_SVG}</span>
 							</a>
