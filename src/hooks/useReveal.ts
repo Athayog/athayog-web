@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.12) {
 	const ref = useRef<T>(null);
-	const [inView, setInView] = useState(typeof IntersectionObserver === "undefined");
+	const [inView, setInView] = useState(false);
 
 	useEffect(() => {
 		const el = ref.current;
@@ -23,8 +23,14 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.
 			{ threshold },
 		);
 
-		observer.observe(el);
-		return () => observer.disconnect();
+		const raf = requestAnimationFrame(() => {
+			observer.observe(el);
+		});
+
+		return () => {
+			cancelAnimationFrame(raf);
+			observer.disconnect();
+		};
 	}, [threshold]);
 
 	return { ref, inView };
