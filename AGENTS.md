@@ -22,6 +22,8 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 
 **CRITICAL: NEVER use `--legacy-peer-deps` or `--force` without explicit user permission.** Prismic has an unresolved peer dependency conflict with Next.js 16 that forces `--legacy-peer-deps` on every `npm install`. If you encounter this, warn the user before proceeding — never silently apply the flag.
 
+**Always consult `GAPS.md` before starting work** — it tracks pending, in-progress, and completed infrastructure tasks. If idle between tasks, check GAPS.md and ask the user if they want to pick up an In Progress item or continue with the current workstream.
+
 ## CSS Strategy: No Tailwind — Global Tokens + CSS Modules
 
 - **Global styles** in `src/app/globals.css`: design tokens (CSS custom properties), reset, typography (`h2`, `.eyebrow`, `.lead`), buttons (`.btn-primary`, `.btn-ghost`, `.btn-light`, `.btn-cream`), layout grids (`.grid-2/3/4`, `.split`, `.wrap`), section variants (`.band`, `.final`), responsive breakpoints (960px, 640px).
@@ -82,6 +84,17 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 - New forms: define a Zod schema → call `useForm({ defaultValues, validators, onSubmit })` → compose `<FormField>` + `<SubmitButton>`.
 - API: `POST /api/submit-form` accepts `{ collection, data }` — validates with Zod server-side, writes to Firestore, returns 201/400/429/500.
 
+## Testing
+
+- **Vitest v4** with jsdom for unit/integration tests. **Testing Library v16** for component rendering.
+- `npm test` — runs all tests once. `npm run test:watch` — watch mode.
+- `npm run build` runs tests as a pre-build gate (`vitest run && next build`).
+- **Test files** live in `__tests__/` directories alongside the code they test: `src/lib/forms/__tests__/`, `src/components/forms/__tests__/`, `src/app/api/submit-form/__tests__/`.
+- **No testing framework for components outside `forms/` yet** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`, pages, and auth store tests are pending (see `GAPS.md`).
+- **No E2E testing yet** — Playwright is planned for critical flows (login, form submission, blog browsing, protected routes).
+- `vitest.config.ts` uses `@vitejs/plugin-react`, `jsdom` environment, and `@` path aliases matching Next.js.
+- When adding component tests, use the pattern from `FormField.test.tsx`: create a wrapper that sets up a fresh form/react context per test.
+
 ## Project Context
 
 - **Legacy project**: `/home/harsimransinghbarki/Projects/Work/Athayog` — Next.js + Prismic + MUI. Reference for content, routes, and features. Do NOT copy MUI or Prismic patterns.
@@ -89,5 +102,4 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 - **Logo**: `public/Logo.png` used in Header.
 - **Radix UI** for navigation (`@radix-ui/react-dropdown-menu`, `@radix-ui/react-dialog`, `@radix-ui/react-collapsible`).
 - **No external CSS framework** — pure CSS custom properties + modules.
-- **No testing framework** set up yet.
 - **JSON-LD structured data**: skip for now, add later.
