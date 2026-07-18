@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useAuthStore from "@/store/useAuthStore";
+import AccountSkeleton from "@/app/(protected)/account/AccountSkeleton";
 
 export default function withAuth<P extends object>(
 	WrappedComponent: React.ComponentType<P>,
@@ -18,11 +19,7 @@ export default function withAuth<P extends object>(
 		}, [isAuthenticated, loading, router]);
 
 		if (loading) {
-			return (
-				<div style={{ padding: "200px 20px", textAlign: "center" }}>
-					Loading...
-				</div>
-			);
+			return <AccountSkeleton />;
 		}
 
 		if (!isAuthenticated) return null;
