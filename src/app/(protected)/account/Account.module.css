@@ -25,7 +25,7 @@
 	height: 100px;
 	border-radius: 50%;
 	flex-shrink: 0;
-	background: #dde5d0;
+	background: var(--skeleton);
 	animation: breathe 14s ease-in-out infinite;
 }
 
@@ -92,7 +92,7 @@
 .headerTextSkeleton {
 	width: 200px;
 	height: 20px;
-	background: #dde5d0;
+	background: var(--skeleton);
 	border-radius: 4px;
 	animation: breathe 14s ease-in-out infinite;
 }
@@ -206,7 +206,7 @@
 .skeletonCell {
 	height: 14px;
 	border-radius: 4px;
-	background: #dde5d0;
+	background: var(--skeleton);
 	animation: breathe 14s ease-in-out infinite;
 }
 
