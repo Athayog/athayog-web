@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifySessionCookie } from "@/lib/firebaseAdmin";
-import { getPlan, createPaymentDoc } from "@/lib/razorpay";
+import { getPlan, getActivePlans, createPaymentDoc } from "@/lib/razorpay";
 
 // Dynamic import for Razorpay (avoids build-time init)
 async function getRazorpay() {
@@ -29,7 +29,21 @@ export async function POST(request: NextRequest) {
 			return NextResponse.json({ error: "planId is required" }, { status: 400 });
 		}
 
-		// 3. Fetch plan from Firestore (authoritative — never trust client amount)
+		// 3. Guard: check if ANY plans exist
+		const existingPlans = await getActivePlans();
+		if (existingPlans.length === 0) {
+			console.error(
+				"[create-order] No active plans found in Firestore. Run 'npm run plans:seed'.",
+			);
+			return NextResponse.json(
+				{
+					error: "Payment system is not configured. Please contact support.",
+				},
+				{ status: 500 },
+			);
+		}
+
+		// 4. Fetch plan from Firestore (authoritative — never trust client amount)
 		const plan = await getPlan(planId);
 		if (!plan || !plan.active) {
 			return NextResponse.json(

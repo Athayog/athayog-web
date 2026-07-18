@@ -43,7 +43,6 @@ type PaymentModalProps = {
 };
 
 export default function PaymentModal({
-	 
 	planId,
 	planName,
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -148,7 +147,7 @@ export default function PaymentModal({
 				{loading ? "Processing…" : children}
 			</button>
 			{error && (
-				<p style={{ fontSize: "0.8rem", color: "var(--clay)", marginTop: 6 }}>
+				<p style={{ fontSize: "0.8rem", color: "#e7ecdd", marginTop: 6 }}>
 					{error}
 				</p>
 			)}
