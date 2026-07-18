@@ -17,9 +17,11 @@ type FormFieldProps = {
 	label: string;
 	hint?: string;
 	type?: "text" | "email" | "tel" | "number" | "url";
-	as?: "input" | "textarea" | "select";
+	as?: "input" | "textarea" | "select" | "file";
 	placeholder?: string;
 	options?: { value: string; label: string }[];
+	accept?: string;
+	maxSizeMb?: number;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	validators?: any;
 };
@@ -33,6 +35,8 @@ export function FormField({
 	as = "input",
 	placeholder,
 	options,
+	accept,
+	maxSizeMb,
 	validators,
 }: FormFieldProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -78,6 +82,22 @@ export function FormField({
 										</option>
 									))}
 								</select>
+							) : as === "file" ? (
+								<input
+									id={name}
+									className={`input ${hasError ? "error" : ""}`}
+									type="file"
+									accept={accept}
+									onChange={(e) => {
+										const file = e.target.files?.[0] || null;
+										const maxBytes = (maxSizeMb || 5) * 1024 * 1024;
+										if (file && file.size > maxBytes) {
+											return;
+										}
+										field.handleChange(file);
+									}}
+									onBlur={field.handleBlur}
+								/>
 							) : (
 								<input
 									id={name}

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { getAdminFirestore } from "@/lib/firebaseAdmin";
+import { sendFormEmail } from "@/lib/forms/email";
 
 const rateMap = new Map<string, number>();
 
@@ -21,6 +22,12 @@ function isRateLimited(key: string, windowMs = 15000, max = 5) {
 const bodySchema = z.object({
 	collection: z.string().min(1),
 	data: z.record(z.string(), z.unknown()),
+	email: z
+		.object({
+			to: z.string().email(),
+			subject: z.string().min(1),
+		})
+		.optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -42,6 +49,15 @@ export async function POST(request: NextRequest) {
 			...parsed.data,
 			createdAt: new Date(),
 		});
+
+		if (parsed.email) {
+			sendFormEmail({
+				to: parsed.email.to,
+				subject: parsed.email.subject,
+				data: parsed.data,
+				collection: parsed.collection,
+			});
+		}
 
 		return NextResponse.json({ success: true }, { status: 201 });
 	} catch (err) {

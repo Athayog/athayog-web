@@ -42,6 +42,10 @@ export default function TrialClassesPage() {
 					body: JSON.stringify({
 						collection: "trialClasses",
 						data: value,
+						email: {
+							to: "info@athayogliving.com",
+							subject: `New Trial Class — ${value.fullName}`,
+						},
 					}),
 				});
 				if (!res.ok) {
