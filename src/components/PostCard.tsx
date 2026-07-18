@@ -13,6 +13,8 @@ export function PostCard({ post }: { post: any }) {
 					field={data.featured_image}
 					className={styles.image}
 					fallbackAlt=""
+					loading="lazy"
+					sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
 				/>
 			)}
 			<div className={styles.body}>
@@ -24,9 +26,7 @@ export function PostCard({ post }: { post: any }) {
 						month: "long",
 						day: "numeric",
 						year: "numeric",
-					}).format(
-						new Date(data.publication_date || ""),
-					)}
+					}).format(new Date(data.publication_date || ""))}
 				</p>
 			</div>
 		</Link>
