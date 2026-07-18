@@ -25,7 +25,6 @@ export async function POST(request: NextRequest) {
 		const event = JSON.parse(rawBody);
 
 		if (event.event !== "payment.captured") {
-			// Acknowledge non-payment events to stop retries
 			return NextResponse.json({ received: true }, { status: 200 });
 		}
 
