@@ -21,11 +21,6 @@
 	align-items: center;
 }
 
-.brand img {
-	height: 36px;
-	width: auto;
-}
-
 .navLinks {
 	display: flex;
 	gap: 28px;
