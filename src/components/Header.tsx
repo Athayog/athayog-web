@@ -159,17 +159,15 @@ export default function Header() {
 				</nav>
 
 				<div className={styles.ctaGroup}>
+					<Link href="/trial-classes" className="btn btn-primary nav-cta">
+						Free Trial
+					</Link>
 					{isLoggedIn ? (
 						<AccountMenu />
 					) : (
-						<>
-							<Link href="/login" className={styles.loginBtn}>
-								Login
-							</Link>
-							<Link href="/trial-classes" className="btn btn-primary nav-cta">
-								Free Trial
-							</Link>
-						</>
+						<Link href="/login" className={styles.loginBtn}>
+							Login
+						</Link>
 					)}
 				</div>
 

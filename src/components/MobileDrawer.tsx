@@ -220,69 +220,85 @@ export default function MobileDrawer() {
 							</ul>
 						</nav>
 
-					<div className={styles.drawerCtaGroup}>
-						{isLoggedIn ? (
-							<div className={styles.drawerAccount}>
-								<div className={styles.drawerAccountInfo}>
-									<div className={styles.drawerAvatarWrap}>
-										<span className={styles.drawerAccountFallback}>
-											{displayUser?.displayName
-												? displayUser.displayName
-														.split(" ")
-														.map((n) => n[0])
-														.join("")
-														.toUpperCase()
-														.slice(0, 2)
-												: displayUser?.email?.[0].toUpperCase() || "U"}
-										</span>
-										{displayUser?.photoURL && (
-											<DrawerAvatarImage
-												src={displayUser.photoURL}
-												alt={displayUser.displayName || "User"}
-											/>
-										)}
-									</div>
-									<div>
-										<p className={styles.drawerAccountName}>
-											{displayUser?.displayName || "User"}
-										</p>
-										{displayUser?.email && (
-											<p className={styles.drawerAccountEmail}>
-												{displayUser.email}
+						<div className={styles.drawerCtaGroup}>
+							{isLoggedIn ? (
+								<div className={styles.drawerAccount}>
+									<div className={styles.drawerAccountInfo}>
+										<div className={styles.drawerAvatarWrap}>
+											<span
+												className={styles.drawerAccountFallback}
+											>
+												{displayUser?.displayName
+													? displayUser.displayName
+															.split(" ")
+															.map((n) => n[0])
+															.join("")
+															.toUpperCase()
+															.slice(0, 2)
+													: displayUser?.email?.[0].toUpperCase() ||
+														"U"}
+											</span>
+											{displayUser?.photoURL && (
+												<DrawerAvatarImage
+													src={displayUser.photoURL}
+													alt={
+														displayUser.displayName || "User"
+													}
+												/>
+											)}
+										</div>
+										<div>
+											<p className={styles.drawerAccountName}>
+												{displayUser?.displayName || "User"}
 											</p>
-										)}
+											{displayUser?.email && (
+												<p className={styles.drawerAccountEmail}>
+													{displayUser.email}
+												</p>
+											)}
+										</div>
 									</div>
-								</div>
-								<Dialog.Close asChild>
-									<Link
-										href="/account"
-										className={styles.drawerAccountLink}
+									<Dialog.Close asChild>
+										<Link
+											href="/trial-classes"
+											className="btn btn-cream"
+										>
+											Free Trial
+										</Link>
+									</Dialog.Close>
+									<Dialog.Close asChild>
+										<Link
+											href="/account"
+											className={styles.drawerAccountLink}
+										>
+											My Account
+										</Link>
+									</Dialog.Close>
+									<button
+										type="button"
+										onClick={handleLogout}
+										className={styles.drawerAccountLogout}
 									>
-										My Account
-									</Link>
-								</Dialog.Close>
-								<button
-									type="button"
-									onClick={handleLogout}
-									className={styles.drawerAccountLogout}
-								>
-									Log Out
-								</button>
-							</div>
-						) : (
-							<>
-								<Dialog.Close asChild>
-									<Link href="/trial-classes" className="btn btn-cream">
-										Get a <span>Free Trial</span>
-									</Link>
-								</Dialog.Close>
-								<Dialog.Close asChild>
-									<Link href="/login" className={styles.loginBtn}>
-										Login
-									</Link>
-								</Dialog.Close>
-							</>
-						)}
+										Log Out
+									</button>
+								</div>
+							) : (
+								<>
+									<Dialog.Close asChild>
+										<Link
+											href="/trial-classes"
+											className="btn btn-cream"
+										>
+											Get a <span>Free Trial</span>
+										</Link>
+									</Dialog.Close>
+									<Dialog.Close asChild>
+										<Link href="/login" className={styles.loginBtn}>
+											Login
+										</Link>
+									</Dialog.Close>
+								</>
+							)}
 						</div>
 					</Dialog.Content>
 				</Dialog.Portal>
