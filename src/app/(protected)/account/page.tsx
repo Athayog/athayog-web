@@ -6,17 +6,18 @@ import useAuthStore from "@/store/useAuthStore";
 import withAuth from "@/lib/withAuth";
 import styles from "@/app/(protected)/account/Account.module.css";
 
-// LEGACY: Course purchases from users/{userId}/payments subcollection.
-// Created by old registration flow. Do NOT confuse with the new
-// Razorpay payment records in the top-level "payments" collection.
+// LEGACY: Purchases from users/{userId}/courses subcollection.
+// Legacy fields: courseName, duration, price, orderId, courseId.
+// The API maps these to: name, days, price, type, paymentStatus, createdAt.
+// Do NOT confuse with the new Razorpay records in top-level "payments" collection.
 interface Course {
 	id: string;
 	name: string;
-	type: string;
-	days: string;
-	price: string;
-	paymentStatus: string;
-	createdAt: { _seconds: number };
+	type?: string;
+	days?: string;
+	price?: string;
+	paymentStatus?: string;
+	createdAt?: { _seconds: number } | null;
 }
 
 function formatDate(seconds: number) {
@@ -74,7 +75,7 @@ function AvatarImage({
 
 function AccountPage() {
 	const { user, loading, handleLogout } = useAuthStore();
-	// LEGACY: historical purchases from users/{userId}/payments subcollection
+	// LEGACY: historical purchases from users/{userId}/courses subcollection
 	const [courses, setCourses] = useState<Course[]>([]);
 	const [coursesLoading, setCoursesLoading] = useState(true);
 	const [coursesError, setCoursesError] = useState(false);
@@ -191,7 +192,7 @@ function AccountPage() {
 					</div>
 				)}
 
-				{/* LEGACY: historical purchases from users/{userId}/payments subcollection */}
+				{/* LEGACY: historical purchases from users/{userId}/courses subcollection */}
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Last Purchases</h2>
 					<div className={styles.tableWrap}>

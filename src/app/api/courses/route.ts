@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminFirestore } from "@/lib/firebaseAdmin";
 
-// LEGACY: Queries users/{userId}/payments subcollection for historical purchases.
-// This is the ACTUAL location of legacy course/payment data. The name "courses"
-// is historical — the data lives under "payments" per-user subcollection.
+// LEGACY: Queries users/{userId}/courses subcollection for historical purchases.
+// Legacy documents have fields: courseName, duration, price, orderId, courseId.
+// These are mapped to the Course interface below for the account page.
 // For new Razorpay payment records, see /api/payments.
 
 export async function GET(request: NextRequest) {
@@ -19,13 +19,21 @@ export async function GET(request: NextRequest) {
 		const coursesSnapshot = await firestore
 			.collection("users")
 			.doc(userId)
-			.collection("payments")
+			.collection("courses")
 			.get();
 
 		const courses = coursesSnapshot.docs.map((doc) => {
-			const data = doc.data();
-			console.log("[courses] found doc:", doc.id, data);
-			return { id: doc.id, ...data };
+			const r = doc.data();
+			console.log("[courses] found doc:", doc.id, r);
+			return {
+				id: doc.id,
+				name: r.courseName || r.name || "—",
+				type: r.type || "Course",
+				days: String(r.duration ?? r.days ?? "—"),
+				price: r.price?.toString() ?? r.priceAmount?.toString() ?? "—",
+				paymentStatus: r.paymentStatus || "verified",
+				createdAt: r.createdAt || null,
+			};
 		});
 
 		return NextResponse.json(courses, { status: 200 });
