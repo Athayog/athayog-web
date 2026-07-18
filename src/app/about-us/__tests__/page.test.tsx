@@ -3,9 +3,12 @@ import { render, screen } from "@testing-library/react";
 
 vi.mock("next/image", () => ({
 	default: (
-		props: React.ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean },
+		props: React.ImgHTMLAttributes<HTMLImageElement> & {
+			priority?: boolean;
+			fill?: boolean;
+		},
 	) => {
-		const { priority, ...rest } = props;
+		const { priority, fill: _fill, ...rest } = props;
 		if (priority) {
 			return <img data-testid="hero-priority" {...rest} fetchPriority="high" />;
 		}
