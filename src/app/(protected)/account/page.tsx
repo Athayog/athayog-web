@@ -38,6 +38,34 @@ function getInitials(name: string | null, email: string | null) {
 	return "U";
 }
 
+function AvatarImage({
+	src,
+	alt,
+	initials,
+}: {
+	src: string;
+	alt: string;
+	initials: string;
+}) {
+	const [loaded, setLoaded] = useState(false);
+	const [error, setError] = useState(false);
+
+	if (error) return <div className={styles.avatarFallback}>{initials}</div>;
+
+	return (
+		<div className={styles.avatarWrap}>
+			<span className={styles.avatarFallback}>{initials}</span>
+			<img
+				src={src}
+				alt={alt}
+				className={`${styles.avatar} ${loaded ? styles.avatarLoaded : ""}`}
+				onLoad={() => setLoaded(true)}
+				onError={() => setError(true)}
+			/>
+		</div>
+	);
+}
+
 function AccountPage() {
 	const { user, loading, handleLogout } = useAuthStore();
 	const [courses, setCourses] = useState<Course[]>([]);
@@ -84,10 +112,10 @@ function AccountPage() {
 					) : user ? (
 						<>
 							{user.photoURL ? (
-								<img
+								<AvatarImage
 									src={user.photoURL}
 									alt={user.displayName || "User"}
-									className={styles.avatar}
+									initials={getInitials(user.displayName, user.email)}
 								/>
 							) : (
 								<div className={styles.avatarFallback}>
@@ -173,19 +201,13 @@ function AccountPage() {
 									))
 								) : coursesError ? (
 									<tr>
-										<td
-											colSpan={6}
-											className={styles.emptyRow}
-										>
+										<td colSpan={6} className={styles.emptyRow}>
 											Failed to load purchases
 										</td>
 									</tr>
 								) : courses.length === 0 ? (
 									<tr>
-										<td
-											colSpan={6}
-											className={styles.emptyRow}
-										>
+										<td colSpan={6} className={styles.emptyRow}>
 											No purchases yet
 										</td>
 									</tr>
@@ -196,18 +218,13 @@ function AccountPage() {
 											<td>{course.type || "—"}</td>
 											<td>{course.days || "—"}</td>
 											<td>
-												{course.price
-													? `₹${course.price}`
-													: "—"}
+												{course.price ? `₹${course.price}` : "—"}
 											</td>
-											<td>
-												{course.paymentStatus || "—"}
-											</td>
+											<td>{course.paymentStatus || "—"}</td>
 											<td>
 												{course.createdAt?._seconds
 													? formatDate(
-															course.createdAt
-																._seconds,
+															course.createdAt._seconds,
 														)
 													: "—"}
 											</td>
