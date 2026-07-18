@@ -239,7 +239,7 @@
 	color: var(--cream);
 }
 
-.pricing .eyebrow {
+.pricing :global(.eyebrow) {
 	color: var(--brand-light);
 }
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
+import PaymentModal from "@/components/payments/PaymentModal";
 import styles from "@/app/group-classes-indiranagar/GroupClasses.module.css";
 
 const PLAY_SVG = (
@@ -493,13 +494,14 @@ export default function GroupClassesPage() {
 									Try a single class or practise when you&apos;re in
 									town — no commitment.
 								</p>
-								{/* TODO: register/enquire page not built yet */}
-								<a
-									href="https://athayogliving.com/register/enquire-group-class-form"
-									className="btn btn-light"
+								<PaymentModal
+									planId="group-drop-in"
+									planName="Drop-in"
+									subtotal={599}
+									total={629}
 								>
 									Register
-								</a>
+								</PaymentModal>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -513,12 +515,14 @@ export default function GroupClassesPage() {
 									Build a consistent practice with unlimited access to
 									group classes for a month.
 								</p>
-								<a
-									href="https://athayogliving.com/register/enquire-group-class-form"
-									className="btn btn-light"
+								<PaymentModal
+									planId="group-1-month"
+									planName="1 Month"
+									subtotal={4999}
+									total={5249}
 								>
 									Register
-								</a>
+								</PaymentModal>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -532,12 +536,14 @@ export default function GroupClassesPage() {
 									Commit to a season of practice and settle into a real
 									routine.
 								</p>
-								<a
-									href="https://athayogliving.com/register/enquire-group-class-form"
-									className="btn btn-light"
+								<PaymentModal
+									planId="group-3-month"
+									planName="3 Months"
+									subtotal={9999}
+									total={10499}
 								>
 									Register
-								</a>
+								</PaymentModal>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -552,12 +558,14 @@ export default function GroupClassesPage() {
 									Half a year of transformation, at a meaningfully lower
 									monthly rate.
 								</p>
-								<a
-									href="https://athayogliving.com/register/enquire-group-class-form"
-									className="btn btn-light"
+								<PaymentModal
+									planId="group-6-month"
+									planName="6 Months"
+									subtotal={15999}
+									total={16799}
 								>
 									Register
-								</a>
+								</PaymentModal>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -572,12 +580,15 @@ export default function GroupClassesPage() {
 									Our best per-month value — a full year of practice and
 									community.
 								</p>
-								<a
-									href="https://athayogliving.com/register/enquire-group-class-form"
+								<PaymentModal
+									planId="group-12-month"
+									planName="12 Months"
+									subtotal={25999}
+									total={27299}
 									className="btn btn-cream"
 								>
 									Register
-								</a>
+								</PaymentModal>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -589,12 +600,14 @@ export default function GroupClassesPage() {
 									Practise together for a year and keep each other
 									accountable.
 								</p>
-								<a
-									href="https://athayogliving.com/register/enquire-group-class-form"
-									className="btn btn-light"
+								<PaymentModal
+									planId="group-couple-year"
+									planName="Couple · 1 Year"
+									subtotal={32399}
+									total={34019}
 								>
 									Register
-								</a>
+								</PaymentModal>
 							</div>
 						</Reveal>
 					</div>
@@ -1224,12 +1237,15 @@ export default function GroupClassesPage() {
 							<a href="/trial-classes" className="btn btn-cream">
 								Book a Free Trial
 							</a>
-							<a
-								href="https://athayogliving.com/register/enquire-group-class-form"
+							<PaymentModal
+								planId="group-drop-in"
+								planName="Drop-in"
+								subtotal={599}
+								total={629}
 								className="btn btn-light"
 							>
 								Register Now
-							</a>
+							</PaymentModal>
 							<a
 								href="https://wa.me/918690333111"
 								className="btn btn-light"

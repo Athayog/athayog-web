@@ -74,6 +74,8 @@ function AccountPage() {
 	const [courses, setCourses] = useState<Course[]>([]);
 	const [coursesLoading, setCoursesLoading] = useState(true);
 	const [coursesError, setCoursesError] = useState(false);
+	const [payments, setPayments] = useState<any[]>([]); // eslint-disable-line @typescript-eslint/no-explicit-any
+	const [paymentsLoading, setPaymentsLoading] = useState(true);
 
 	useEffect(() => {
 		if (!user) return;
@@ -90,6 +92,19 @@ function AccountPage() {
 			.catch(() => {
 				setCoursesError(true);
 				setCoursesLoading(false);
+			});
+
+		fetch(`/api/payments`)
+			.then((res) => {
+				if (!res.ok) throw new Error("Failed to fetch");
+				return res.json();
+			})
+			.then((data) => {
+				setPayments(data.payments || []);
+				setPaymentsLoading(false);
+			})
+			.catch(() => {
+				setPaymentsLoading(false);
 			});
 	}, [user]);
 
@@ -229,6 +244,87 @@ function AccountPage() {
 													? formatDate(
 															course.createdAt._seconds,
 														)
+													: "—"}
+											</td>
+										</tr>
+									))
+								)}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				{/* Payment History */}
+				<div className={styles.section}>
+					<h2 className={styles.sectionTitle}>Payment History</h2>
+					<div className={styles.tableWrap}>
+						<table className={styles.table}>
+							<thead>
+								<tr>
+									<th>Plan</th>
+									<th>Amount</th>
+									<th>Status</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								{paymentsLoading ? (
+									Array.from({ length: 2 }).map((_, i) => (
+										<tr key={i} className={styles.skeletonRow}>
+											<td colSpan={4}>
+												<div
+													className={styles.skeletonCell}
+													style={{ width: "60%" }}
+												/>
+											</td>
+										</tr>
+									))
+								) : payments.length === 0 ? (
+									<tr>
+										<td colSpan={4} className={styles.emptyRow}>
+											No payments yet
+										</td>
+									</tr>
+								) : (
+									payments.map((p, i) => (
+										<tr key={p.razorpayOrderId || i}>
+											<td>{p.planName || "—"}</td>
+											<td>
+												₹
+												{(
+													p.amount ||
+													p.amountPaise / 100 ||
+													0
+												).toLocaleString("en-IN")}
+											</td>
+											<td>
+												<span
+													style={{
+														color:
+															p.status === "completed"
+																? "var(--brand-deep)"
+																: p.status === "pending"
+																	? "var(--clay)"
+																	: "inherit",
+														fontWeight: 600,
+													}}
+												>
+													{p.status === "completed"
+														? "Completed"
+														: p.status === "pending"
+															? "Pending"
+															: p.status || "—"}
+												</span>
+											</td>
+											<td>
+												{p.createdAt
+													? new Date(
+															p.createdAt,
+														).toLocaleDateString("en-IN", {
+															year: "numeric",
+															month: "short",
+															day: "numeric",
+														})
 													: "—"}
 											</td>
 										</tr>
