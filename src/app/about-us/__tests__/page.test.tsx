@@ -9,10 +9,12 @@ vi.mock("next/image", () => ({
 		},
 	) => {
 		const { priority, ...rest } = props;
+		/* eslint-disable @next/next/no-img-element, jsx-a11y/alt-text */
 		if (priority) {
 			return <img data-testid="hero-priority" {...rest} fetchPriority="high" />;
 		}
 		return <img {...rest} />;
+		/* eslint-enable @next/next/no-img-element, jsx-a11y/alt-text */
 	},
 }));
 
