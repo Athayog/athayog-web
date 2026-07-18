@@ -83,21 +83,52 @@ export function FormField({
 									))}
 								</select>
 							) : as === "file" ? (
-								<input
-									id={name}
-									className={`input ${hasError ? "error" : ""}`}
-									type="file"
-									accept={accept}
-									onChange={(e) => {
-										const file = e.target.files?.[0] || null;
-										const maxBytes = (maxSizeMb || 5) * 1024 * 1024;
-										if (file && file.size > maxBytes) {
-											return;
-										}
-										field.handleChange(file);
-									}}
-									onBlur={field.handleBlur}
-								/>
+								<>
+									<label
+										htmlFor={name}
+										className="btn btn-ghost"
+										style={{
+											cursor: "pointer",
+											alignSelf: "flex-start",
+										}}
+									>
+										{field.state.value?.name
+											? "Change File"
+											: "Choose File"}
+									</label>
+									{field.state.value?.name && (
+										<span
+											style={{
+												fontSize: "0.85rem",
+												color: "var(--ink)",
+												opacity: 0.7,
+												overflow: "hidden",
+												textOverflow: "ellipsis",
+												whiteSpace: "nowrap",
+												maxWidth: "100%",
+											}}
+										>
+											{field.state.value.name}
+										</span>
+									)}
+									<input
+										id={name}
+										className={`input ${hasError ? "error" : ""}`}
+										type="file"
+										accept={accept}
+										onChange={(e) => {
+											const file = e.target.files?.[0] || null;
+											const maxBytes =
+												(maxSizeMb || 5) * 1024 * 1024;
+											if (file && file.size > maxBytes) {
+												return;
+											}
+											field.handleChange(file);
+										}}
+										onBlur={field.handleBlur}
+										style={{ display: "none" }}
+									/>
+								</>
 							) : (
 								<input
 									id={name}
