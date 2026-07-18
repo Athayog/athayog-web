@@ -25,7 +25,9 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] **Rate limiting** — Protect API routes from abuse (in-memory rate limiter on /api/submit-form)
 - [ ] **Content pages** — `/what-we-offer`, `/personal-yoga-training-indiranagar`, `/weight-loss-program-indiranagar`, `/yoga-teacher-training`, `/workshops` (from `src/constants/navItems.ts`)
 - [ ] **Privacy-first cookie consent banner** — GDPR/India IT Act compliance
-- [ ] **Razorpay payment integration** — Replace all "Register Now" links with real payment flow. Secure server-side order creation, webhook verification, and enrollment tracking. Affects: group pricing tiers (₹599–₹32,399), career form, trial class. Needs deep-flow design for security — link via server API, never expose keys client-side.
+- [x] **Razorpay payment integration** — Full server-side flow: order creation, HMAC verify, webhook handler, payment history in My Account. See `src/components/payments/PaymentModal.tsx` and `src/app/api/payments/*/route.ts`.
+- [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`). Without this, payments made when the browser tab closes before the verify callback fires will be lost.
+- [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`. Both required for payment flow and payment history to work.
 
 ---
 
