@@ -17,8 +17,9 @@ type FormFieldProps = {
 	label: string;
 	hint?: string;
 	type?: "text" | "email" | "tel" | "number" | "url";
-	as?: "input" | "textarea";
+	as?: "input" | "textarea" | "select";
 	placeholder?: string;
+	options?: { value: string; label: string }[];
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	validators?: any;
 };
@@ -31,6 +32,7 @@ export function FormField({
 	type = "text",
 	as = "input",
 	placeholder,
+	options,
 	validators,
 }: FormFieldProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -59,6 +61,23 @@ export function FormField({
 									placeholder={placeholder}
 									rows={4}
 								/>
+							) : as === "select" ? (
+								<select
+									id={name}
+									className={`input ${hasError ? "error" : ""}`}
+									value={field.state.value}
+									onChange={(e) => field.handleChange(e.target.value)}
+									onBlur={field.handleBlur}
+								>
+									<option value="" disabled>
+										{placeholder || "Select…"}
+									</option>
+									{options?.map((opt) => (
+										<option key={opt.value} value={opt.value}>
+											{opt.label}
+										</option>
+									))}
+								</select>
 							) : (
 								<input
 									id={name}
