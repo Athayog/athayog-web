@@ -94,6 +94,7 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 - **No E2E testing yet** — Playwright is planned for critical flows (login, form submission, blog browsing, protected routes).
 - `vitest.config.ts` uses `@vitejs/plugin-react`, `jsdom` environment, and `@` path aliases matching Next.js.
 - When adding component tests, use the pattern from `FormField.test.tsx`: create a wrapper that sets up a fresh form/react context per test.
+- **When adding images to any page**, write a test that asserts every `<Image>` has a non-empty `alt` attribute, and the LCP image uses `priority`. Use the pattern from `src/app/about-us/__tests__/page.test.tsx`.
 
 ## Project Context
 
