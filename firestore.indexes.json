@@ -1,0 +1,12 @@
+{
+	"indexes": [
+		{
+			"collectionGroup": "plans",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{ "fieldPath": "active", "order": "ASCENDING" },
+				{ "fieldPath": "sortOrder", "order": "ASCENDING" }
+			]
+		}
+	]
+}
