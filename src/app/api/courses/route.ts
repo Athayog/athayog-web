@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminFirestore } from "@/lib/firebaseAdmin";
 
-// LEGACY: Queries users/{userId}/courses subcollection.
-// Created by old registration flow. No auth — bare userId query param.
+// LEGACY: Queries users/{userId}/payments subcollection for historical purchases.
+// This is the ACTUAL location of legacy course/payment data. The name "courses"
+// is historical — the data lives under "payments" per-user subcollection.
 // For new Razorpay payment records, see /api/payments.
 
 export async function GET(request: NextRequest) {
@@ -18,7 +19,7 @@ export async function GET(request: NextRequest) {
 		const coursesSnapshot = await firestore
 			.collection("users")
 			.doc(userId)
-			.collection("courses")
+			.collection("payments")
 			.get();
 
 		const courses = coursesSnapshot.docs.map((doc) => {
