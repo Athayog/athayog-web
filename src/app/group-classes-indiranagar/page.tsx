@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
 import styles from "@/app/group-classes-indiranagar/GroupClasses.module.css";
 
 const PLAY_SVG = (
@@ -906,38 +907,7 @@ export default function GroupClassesPage() {
 									format that&apos;s right for you.
 								</p>
 							</div>
-							<div className={styles.lmForm}>
-								<div className={styles.lmFormRow}>
-									<input
-										type="text"
-										placeholder="Your name"
-										aria-label="Your name"
-									/>
-									<input
-										type="tel"
-										placeholder="WhatsApp / phone number"
-										aria-label="Phone number"
-									/>
-								</div>
-								<div className={styles.lmFormRow}>
-									<input
-										type="text"
-										placeholder="Preferred time (e.g. 6 AM / evening)"
-										aria-label="Preferred time"
-									/>
-									<a
-										href="https://athayogliving.com/trial-classes"
-										className="btn btn-cream"
-										style={{ justifyContent: "center" }}
-									>
-										Book My Free Trial
-									</a>
-								</div>
-								<span className={styles.lmMini}>
-									We&apos;ll call or WhatsApp you to confirm. No
-									obligation.
-								</span>
-							</div>
+							<MagnetForm />
 						</div>
 					</Reveal>
 				</div>

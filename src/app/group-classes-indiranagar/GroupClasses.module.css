@@ -505,13 +505,8 @@
 	gap: 12px;
 }
 
-.lmFormRow {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 12px;
-}
-
-.lmForm input {
+.lmForm input,
+.lmInput {
 	padding: 13px 16px;
 	border: 1px solid rgba(245, 243, 234, 0.4);
 	border-radius: 2px;
@@ -521,11 +516,23 @@
 	font-family: var(--font-body);
 }
 
-.lmForm input::placeholder {
+.lmForm input::placeholder,
+.lmInput::placeholder {
 	color: #e7ecdd;
 }
 
-.lmForm a {
+.lmInputError {
+	padding: 13px 16px;
+	border: 1px solid var(--clay);
+	border-radius: 2px;
+	font-size: 0.95rem;
+	background: rgba(176, 115, 74, 0.12);
+	color: var(--cream);
+	font-family: var(--font-body);
+}
+
+.lmForm button,
+.lmBtn {
 	justify-content: center;
 }
 
