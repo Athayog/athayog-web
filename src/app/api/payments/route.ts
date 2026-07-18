@@ -15,7 +15,8 @@ export async function GET(request: NextRequest) {
 	try {
 		const payments = await getPaymentsByUser(decoded.uid);
 		return NextResponse.json({ payments }, { status: 200 });
-	} catch {
+	} catch (err) {
+		console.error("GET /api/payments error:", err);
 		return NextResponse.json({ error: "Failed to fetch payments" }, { status: 500 });
 	}
 }
