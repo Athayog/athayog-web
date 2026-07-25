@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import PricingModebar from "@/app/personal-yoga-training-indiranagar/PricingModebar";
 import styles from "@/app/personal-yoga-training-indiranagar/PT.module.css";
 
 const PLAY_SVG = (
@@ -62,11 +63,11 @@ export default function PersonalTrainingPage() {
 						</p>
 						<span className={styles.priceChip}>
 							Certified trainers · studio / home / online · packages from{" "}
-							<strong>₹14,999</strong> · free trial class
+							<strong>₹14,999</strong> · trial class
 						</span>
 						<div className={styles.heroCta}>
 							<a href="#book" className="btn btn-primary">
-								Book Your Free Trial
+								Book Your Trial Class
 							</a>
 							<a
 								href="https://wa.me/918690333111"
@@ -237,7 +238,7 @@ export default function PersonalTrainingPage() {
 							{[
 								{
 									n: "1",
-									h: "Free assessment",
+									h: "Assessment",
 									p: "We understand your goals, health history and current level in a no-obligation trial.",
 								},
 								{
@@ -267,7 +268,7 @@ export default function PersonalTrainingPage() {
 					<Reveal>
 						<div style={{ marginTop: 34 }}>
 							<a href="#book" className="btn btn-ghost">
-								Start with a Free Trial
+								Start with a Trial Class
 							</a>
 						</div>
 					</Reveal>
@@ -592,93 +593,20 @@ export default function PersonalTrainingPage() {
 							<h2>Personal training packages</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
 								Transparent 12 or 24-session packages — at the studio,
-								online, or at your home. Start with a free trial class on
+								online, or at your home. Start with a trial class on
 								request.
 							</p>
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className={styles.modebar}>
-							<span className={`${styles.modeBtn} ${styles.active}`}>
-								At Studio
-							</span>
-							<span className={styles.modeBtn}>Online</span>
-							<span className={styles.modeBtn}>At Home</span>
-						</div>
-					</Reveal>
-					<Reveal>
-						<div className={styles.priceGrid}>
-							<div className={styles.tier}>
-								<h3>12 Sessions</h3>
-								<div className={styles.amt}>
-									₹18,999
-									<small>+ 5% GST · 12 days</small>
-								</div>
-								<p>
-									Twelve one-on-one sessions with your personalized plan
-									— ideal to build a strong, consistent practice.
-								</p>
-								<div className={styles.incl}>
-									1-on-1 · personalized plan · progress tracking · at
-									studio
-								</div>
-								{/* TODO: replace with real registration form */}
-								<a
-									href="https://athayogliving.com/register/enquire-personal-session-form"
-									className="btn btn-light"
-								>
-									Enquire
-								</a>
-							</div>
-							<div className={`${styles.tier} ${styles.feature}`}>
-								<span className={styles.badge}>Best value</span>
-								<h3>24 Sessions</h3>
-								<div className={styles.amt}>
-									₹31,999
-									<small>+ 5% GST · 24 days</small>
-								</div>
-								<p>
-									Twenty-four sessions for deeper, lasting results — the
-									most popular choice for real transformation.
-								</p>
-								<div className={styles.incl}>
-									Everything in 12 · extended progression · at studio
-								</div>
-								<a
-									href="https://athayogliving.com/register/enquire-personal-session-form"
-									className="btn btn-cream"
-								>
-									Enquire
-								</a>
-							</div>
-							<div className={styles.tier}>
-								<h3>Couple · 12 Sessions</h3>
-								<div className={styles.amt}>
-									₹31,999
-									<small>+ 5% GST · 12 days · for two</small>
-								</div>
-								<p>
-									Train together — twelve one-on-one sessions for two,
-									sharing the journey and the motivation.
-								</p>
-								<div className={styles.incl}>
-									Two people · 12 sessions · at studio
-								</div>
-								<a
-									href="https://athayogliving.com/register/enquire-personal-session-form"
-									className="btn btn-light"
-								>
-									Enquire
-								</a>
-							</div>
-						</div>
+						<PricingModebar />
 					</Reveal>
 					<Reveal>
 						<p className={styles.reassure}>
-							1 free trial class provided on request · prices exclude 5%
-							GST. Pay via UPI, cards, net banking, PayPal, or EMI (HDFC,
-							ICICI, Bank of Baroda, Federal Bank &amp; more).{" "}
-							<a href="/trial-classes">Book your free trial →</a>
+							1 trial class provided on request · prices exclude 5% GST. Pay
+							via UPI, cards, net banking, PayPal, or EMI (HDFC, ICICI, Bank
+							of Baroda, Federal Bank &amp; more).{" "}
+							<a href="/trial-classes">Book your trial class →</a>
 						</p>
 					</Reveal>
 				</div>
@@ -690,13 +618,13 @@ export default function PersonalTrainingPage() {
 					<Reveal>
 						<div className={styles.magnet}>
 							<div>
-								<span className="eyebrow">Free trial</span>
+								<span className="eyebrow">Trial class</span>
 								<h2 style={{ fontSize: "2.2rem" }}>
-									Book your free personal yoga trial in Indiranagar
+									Book your personal yoga trial in Indiranagar
 								</h2>
 								<p>
 									Tell us your goal and preferred time. We&apos;ll match
-									you with the right trainer and confirm your free trial
+									you with the right trainer and confirm your trial
 									session — at the studio, your home, or online.
 								</p>
 							</div>
@@ -726,7 +654,7 @@ export default function PersonalTrainingPage() {
 										justifyContent: "center",
 									}}
 								>
-									Book My Free Trial
+									Book My Trial Class
 								</a>
 								<span className={styles.lmMini}>
 									We&apos;ll call or WhatsApp you to confirm. No
@@ -790,9 +718,9 @@ export default function PersonalTrainingPage() {
 				<Reveal>
 					<div className="wrap">
 						<h2>Your goal deserves a plan of its own.</h2>
-						<p>Start with a free trial session — no obligation.</p>
+						<p>Start with a trial session — no obligation.</p>
 						<a href="#book" className="btn btn-cream">
-							Book Your Free Trial
+							Book Your Trial Class
 						</a>
 					</div>
 				</Reveal>
@@ -825,12 +753,12 @@ export default function PersonalTrainingPage() {
 							</details>
 							<details>
 								<summary>
-									Is there a free trial?
+									Is there a trial class?
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes. We start with a free, no-obligation assessment
-									session so you can set your goals and experience the
+									Yes. We start with a no-obligation assessment session
+									so you can set your goals and experience the
 									difference before you commit.
 								</div>
 							</details>
@@ -918,8 +846,8 @@ export default function PersonalTrainingPage() {
 									₹18,999, 24 sessions ₹31,999, couple (12) ₹31,999.
 									Online: 12 sessions ₹14,999, 24 sessions ₹25,499,
 									couple ₹25,499. At home: 12 sessions ₹27,999, 24
-									sessions ₹44,599, couple ₹44,599. A free trial class
-									is provided on request.
+									sessions ₹44,599, couple ₹44,599. A trial class is
+									provided on request.
 								</div>
 							</details>
 							<details>
@@ -960,14 +888,14 @@ export default function PersonalTrainingPage() {
 					<Reveal>
 						<p>
 							Certified, one-on-one yoga training in Indiranagar — at the
-							studio, your home, or online. Book a free trial and feel the
+							studio, your home, or online. Book a trial and feel the
 							difference.
 						</p>
 					</Reveal>
 					<Reveal>
 						<div className="final-cta">
 							<a href="#book" className="btn btn-cream">
-								Book Your Free Trial
+								Book Your Trial Class
 							</a>
 							<a
 								href="https://wa.me/918690333111"
@@ -988,7 +916,7 @@ export default function PersonalTrainingPage() {
 
 			{/* 16. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
-				<span className={styles.stickyMeta}>Free trial · personal yoga</span>
+				<span className={styles.stickyMeta}>Trial class · personal yoga</span>
 				<a href="#book" className="btn btn-cream">
 					Book Now
 				</a>
