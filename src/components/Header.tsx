@@ -160,7 +160,7 @@ export default function Header() {
 
 				<div className={styles.ctaGroup}>
 					<Link href="/trial-classes" className="btn btn-primary nav-cta">
-						Free Trial
+						Trial Class
 					</Link>
 					{isLoggedIn ? (
 						<AccountMenu />
