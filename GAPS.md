@@ -12,7 +12,6 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Unit tests for components** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`
 - [ ] **Unit tests for pages** — Account page, Login page, Blog pages
 - [ ] **Performance / Lighthouse audit** — Core Web Vitals baseline and budget
-- [ ] **OG image** — Create `src/app/opengraph-image.png` (1200×630) for social sharing previews
 - [ ] **`manifest.json`** — PWA manifest / site.webmanifest for installability
 - [ ] **Apple Touch Icon** — `apple-touch-icon.png` for iOS home screen
 - [ ] **`themeColor`** — Set browser chrome color in metadata
@@ -74,3 +73,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Logo fix — explicit `width: 140px; height: 36px` on brand image
 - [x] `data-scroll-behavior="smooth"` on `<html>` for Next.js route transition compat
 - [x] Dropdown spacing fix — reduced container top padding from 16px to 6px
+- [x] OG image — `opengraph-image.tsx` via next/og (Edge, 1200×630 brand design)
+- [x] Metadata on all pages — 9 pages added (title, description, canonical, OG inherits from root)
+- [x] Sitemap fixes — removed 3 404s, added trial-classes + weight-loss
+- [x] OpenGraph images + Twitter images in root layout metadata
