@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/personal-yoga-training-indiranagar/PT.module.css";
 
 type Mode = "studio" | "online" | "home";
@@ -68,12 +69,12 @@ export default function PricingModebar() {
 					<div className={styles.incl}>
 						1-on-1 · personalized plan · progress tracking · {p.loc}
 					</div>
-					<a
-						href="https://athayogliving.com/register/enquire-personal-session-form"
-						className="btn btn-light"
+					<EnquireModal
+						service="Personal Training"
+						pageSource="personal-yoga-training-indiranagar"
 					>
-						Enquire
-					</a>
+						<span className="btn btn-light">Enquire</span>
+					</EnquireModal>
 				</div>
 				<div className={`${styles.tier} ${styles.feature}`}>
 					<span className={styles.badge}>Best value</span>
@@ -89,12 +90,12 @@ export default function PricingModebar() {
 					<div className={styles.incl}>
 						Everything in 12 · extended progression · {p.loc}
 					</div>
-					<a
-						href="https://athayogliving.com/register/enquire-personal-session-form"
-						className="btn btn-cream"
+					<EnquireModal
+						service="Personal Training"
+						pageSource="personal-yoga-training-indiranagar"
 					>
-						Enquire
-					</a>
+						<span className="btn btn-cream">Enquire</span>
+					</EnquireModal>
 				</div>
 				<div className={styles.tier}>
 					<h3>Couple · 12 Sessions</h3>
@@ -107,12 +108,12 @@ export default function PricingModebar() {
 						journey and the motivation.
 					</p>
 					<div className={styles.incl}>Two people · 12 sessions · {p.loc}</div>
-					<a
-						href="https://athayogliving.com/register/enquire-personal-session-form"
-						className="btn btn-light"
+					<EnquireModal
+						service="Personal Training"
+						pageSource="personal-yoga-training-indiranagar"
 					>
-						Enquire
-					</a>
+						<span className="btn btn-light">Enquire</span>
+					</EnquireModal>
 				</div>
 			</div>
 		</>
