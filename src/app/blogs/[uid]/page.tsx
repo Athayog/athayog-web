@@ -26,6 +26,7 @@ export async function generateMetadata({
 			title: page.data.meta_title || undefined,
 			images: page.data.meta_image?.url ? [{ url: page.data.meta_image.url }] : [],
 		},
+		alternates: { canonical: `https://athayogliving.com/blogs/${uid}` },
 	};
 }
 

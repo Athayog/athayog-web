@@ -10,6 +10,7 @@
 	--brand-dark: #3a472c;
 	--brand-darker: #2c3621;
 	--brand-light: #aec28e;
+	--brand-mist: #dce2ce;
 	--clay: #b0734a;
 	--cream: #f5f3ea;
 	--parchment: #fcfaf3;
@@ -192,7 +193,7 @@ section {
 .final p {
 	font-family: var(--font-display);
 	font-size: 1.3rem;
-	color: #dce2ce;
+	color: var(--brand-mist);
 	max-width: 680px;
 	margin: 0 auto 30px;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Flower, Users, Sparkles, Leaf } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import MapEmbed from "@/components/MapEmbed";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
 	},
+	alternates: { canonical: "https://athayogliving.com" },
 };
 
 const PLAY_SVG = (
@@ -106,9 +108,9 @@ export default function Home() {
 							<strong>trial class</strong>
 						</span>
 						<div className={styles.heroCta}>
-							<a href="/trial-classes" className="btn btn-primary">
+							<Link href="/trial-classes" className="btn btn-primary">
 								Start Your Yoga Journey
-							</a>
+							</Link>
 							<a href="#offer" className="btn btn-ghost">
 								Explore Classes
 							</a>
@@ -202,8 +204,8 @@ export default function Home() {
 							</p>
 						</div>
 					</Reveal>
-					<div className="grid-3">
-						<Reveal>
+					<Reveal>
+						<div className="grid-3">
 							<div className="card">
 								<span className="eyebrow">Community</span>
 								<h3>Group Classes</h3>
@@ -214,15 +216,14 @@ export default function Home() {
 								<div className={styles.priceChip}>
 									From ₹599 · ₹4,999/month
 								</div>
-								<a
+								<Link
 									href="/group-classes-indiranagar"
 									className="btn btn-ghost"
 								>
 									Explore Group Classes
-								</a>
+								</Link>
 							</div>
-						</Reveal>
-						<Reveal>
+
 							<div className="card">
 								<span className="eyebrow">1-on-1</span>
 								<h3>Personal Training</h3>
@@ -234,15 +235,14 @@ export default function Home() {
 								<div className={styles.priceChip}>
 									From ₹14,999 · 12/24 sessions
 								</div>
-								<a
+								<Link
 									href="/personal-yoga-training-indiranagar"
 									className="btn btn-ghost"
 								>
 									Explore Personal Training
-								</a>
+								</Link>
 							</div>
-						</Reveal>
-						<Reveal>
+
 							<div className="card">
 								<span className="eyebrow">Career</span>
 								<h3>Yoga Teacher Training</h3>
@@ -253,15 +253,14 @@ export default function Home() {
 								<div className={styles.priceChip}>
 									From ₹24,999 · Yoga Alliance (USA)
 								</div>
-								<a
+								<Link
 									href="/yoga-teacher-training-bangalore"
 									className="btn btn-ghost"
 								>
 									Explore TTC
-								</a>
+								</Link>
 							</div>
-						</Reveal>
-						<Reveal>
+
 							<div className="card">
 								<span className="eyebrow">Deep-dive</span>
 								<h3>Workshops</h3>
@@ -269,12 +268,11 @@ export default function Home() {
 									Focused sessions on special themes — pranayama,
 									alignment, meditation and seasonal intensives.
 								</p>
-								<a href="/workshops" className="btn btn-ghost">
+								<Link href="/workshops" className="btn btn-ghost">
 									Explore Workshops
-								</a>
+								</Link>
 							</div>
-						</Reveal>
-						<Reveal>
+
 							<div
 								className="card"
 								style={{
@@ -292,16 +290,16 @@ export default function Home() {
 								<h3 style={{ color: "var(--cream)" }}>
 									Start with a Trial Class
 								</h3>
-								<p style={{ color: "#DCE2CE" }}>
+								<p style={{ color: "var(--brand-mist)" }}>
 									Experience a class, meet our teachers, and we&apos;ll
 									help you choose the right path — no obligation.
 								</p>
-								<a href="/trial-classes" className="btn btn-cream">
+								<Link href="/trial-classes" className="btn btn-cream">
 									Book a Trial Class
-								</a>
+								</Link>
 							</div>
-						</Reveal>
-					</div>
+						</div>
+					</Reveal>
 				</div>
 			</section>
 
@@ -317,61 +315,59 @@ export default function Home() {
 								each a distinct path.
 							</p>
 						</div>
-					</Reveal>
-					<Reveal>
+
 						<div className={styles.chips}>
-							<a
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#formats"
 							>
 								Universal Harmony
-							</a>
-							<a
+							</Link>
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#formats"
 							>
 								Rhythm of Being
-							</a>
-							<a
+							</Link>
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#formats"
 							>
 								Transcending Transition
-							</a>
-							<a
+							</Link>
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#formats"
 							>
 								Uttama Sadhana
-							</a>
-							<a
+							</Link>
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#formats"
 							>
 								Inner World
-							</a>
-							<a
+							</Link>
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#formats"
 							>
 								Sound Meditation
-							</a>
-							<a
+							</Link>
+							<Link
 								className={styles.chip}
 								href="/group-classes-indiranagar#schedule"
 							>
 								+ Props, Pranayama &amp; Aerial
-							</a>
+							</Link>
 						</div>
-					</Reveal>
-					<Reveal>
+
 						<div style={{ marginTop: 26 }}>
-							<a
+							<Link
 								href="/group-classes-indiranagar#schedule"
 								className="btn btn-ghost"
 							>
 								See the Full Class Schedule
-							</a>
+							</Link>
 						</div>
 					</Reveal>
 				</div>
@@ -384,15 +380,15 @@ export default function Home() {
 						<div className="section-head">
 							<span className="eyebrow">Why Athayog</span>
 							<h2>Authentic yoga, taught with care</h2>
-							<p className="lead" style={{ color: "#DCE2CE" }}>
+							<p className="lead" style={{ color: "var(--brand-mist)" }}>
 								Our instructors are professional, attentive and caring —
 								passionate about yoga, with a deep understanding of the
 								practice and a focus on the individual.
 							</p>
 						</div>
 					</Reveal>
-					<div className={styles.whyGrid}>
-						<Reveal>
+					<Reveal>
+						<div className={styles.whyGrid}>
 							<div className={styles.why}>
 								<Flower size={22} className={styles.whyIcon} />
 								<h3>Certified teachers</h3>
@@ -401,8 +397,6 @@ export default function Home() {
 									AYUSH.
 								</p>
 							</div>
-						</Reveal>
-						<Reveal>
 							<div className={styles.why}>
 								<Users size={22} className={styles.whyIcon} />
 								<h3>Caring &amp; attentive</h3>
@@ -411,8 +405,6 @@ export default function Home() {
 									class.
 								</p>
 							</div>
-						</Reveal>
-						<Reveal>
 							<div className={styles.why}>
 								<Sparkles size={22} className={styles.whyIcon} />
 								<h3>Authentic tradition</h3>
@@ -420,16 +412,12 @@ export default function Home() {
 									Ancient yogic wisdom brought into modern daily life.
 								</p>
 							</div>
-						</Reveal>
-						<Reveal>
 							<div className={styles.why}>
 								<Leaf size={22} className={styles.whyIcon} />
 								<h3>A growing community</h3>
 								<p>850+ Athayogis across two Bengaluru studios.</p>
 							</div>
-						</Reveal>
-					</div>
-					<Reveal>
+						</div>
 						<div className={styles.certRow}>
 							<b>Recognized by:</b> Yoga Alliance (RYS · USA) · SVYASA ·
 							Ministry of AYUSH, Government of India
@@ -485,9 +473,9 @@ export default function Home() {
 								wisdom into everyday reality.
 							</p>
 							<blockquote>&quot;A sanctum for the spirit.&quot;</blockquote>
-							<a href="/about-us" className="btn btn-ghost">
+							<Link href="/about-us" className="btn btn-ghost">
 								Learn More About Us
-							</a>
+							</Link>
 						</div>
 					</Reveal>
 				</div>
@@ -680,9 +668,9 @@ export default function Home() {
 					<div className="wrap">
 						<h2>Begin where you are.</h2>
 						<p>Book a trial class and feel the Athayog difference.</p>
-						<a href="/trial-classes" className="btn btn-cream">
+						<Link href="/trial-classes" className="btn btn-cream">
 							Book a Trial Class
-						</a>
+						</Link>
 					</div>
 				</Reveal>
 			</section>
@@ -850,31 +838,25 @@ export default function Home() {
 				<div className="wrap">
 					<Reveal>
 						<span className="eyebrow">Join us</span>
-					</Reveal>
-					<Reveal>
 						<h2>Your yoga journey starts in Indiranagar.</h2>
-					</Reveal>
-					<Reveal>
 						<p>
 							Certified group classes, personal training and teacher
-							training — all in one trusted studio. Book a trial trial and
+							training — all in one trusted studio. Book a trial class and
 							begin today.
 						</p>
-					</Reveal>
-					<Reveal>
 						<div className="final-cta">
-							<a href="/trial-classes" className="btn btn-cream">
+							<Link href="/trial-classes" className="btn btn-cream">
 								Start Your Yoga Journey
-							</a>
+							</Link>
 							<a
 								href="https://wa.me/918690333111"
 								className="btn btn-light"
 							>
 								WhatsApp Us
 							</a>
-							<a href="/contact-us" className="btn btn-light">
+							<Link href="/contact-us" className="btn btn-light">
 								Contact Us
-							</a>
+							</Link>
 						</div>
 					</Reveal>
 					<p className="micro">
@@ -887,9 +869,9 @@ export default function Home() {
 			{/* 15. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
 				<span className={styles.stickyMeta}>Trial class · from ₹599</span>
-				<a href="/trial-classes" className="btn btn-cream">
+				<Link href="/trial-classes" className="btn btn-cream">
 					Book Now
-				</a>
+				</Link>
 			</div>
 			<script
 				type="application/ld+json"

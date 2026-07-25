@@ -1,6 +1,7 @@
 import { Flower, Users, Sparkles, Leaf, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import MapEmbed from "@/components/MapEmbed";
 import HeroImage from "@/app/about-us/HeroImage";
@@ -65,9 +66,9 @@ export default function AboutUsPage() {
 							to everyone.
 						</p>
 						<div className={styles.heroCta}>
-							<a href="/trial-classes" className="btn btn-primary">
+							<Link href="/trial-classes" className="btn btn-primary">
 								Begin Your Journey
-							</a>
+							</Link>
 							<a href="#founder" className="btn btn-ghost">
 								Meet the Founder
 							</a>
@@ -725,12 +726,12 @@ export default function AboutUsPage() {
 					</Reveal>
 					<Reveal>
 						<div className="final-cta">
-							<a href="/trial-classes" className="btn btn-cream">
+							<Link href="/trial-classes" className="btn btn-cream">
 								Book a Trial Class
-							</a>
-							<a href="/contact-us" className="btn btn-light">
+							</Link>
+							<Link href="/contact-us" className="btn btn-light">
 								Contact Us
-							</a>
+							</Link>
 							<a
 								href="https://wa.me/918690333111"
 								className="btn btn-light"
@@ -748,9 +749,9 @@ export default function AboutUsPage() {
 			{/* 14. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
 				<span className={styles.stickyMeta}>Who we are · Athayog Living</span>
-				<a href="/trial-classes" className="btn btn-cream">
+				<Link href="/trial-classes" className="btn btn-cream">
 					Trial Class
-				</a>
+				</Link>
 			</div>
 		</main>
 	);

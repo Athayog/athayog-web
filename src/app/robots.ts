@@ -9,11 +9,10 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: [
 					"/login",
 					"/account",
+					"/payment-success",
+					"/thank-you",
 					"/athayog-app/*",
 					"/ld/*",
-					"/privacy-policy",
-					"/refund-policy",
-					"/terms-of-service",
 				],
 			},
 		],

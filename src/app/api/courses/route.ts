@@ -24,7 +24,6 @@ export async function GET(request: NextRequest) {
 
 		const courses = coursesSnapshot.docs.map((doc) => {
 			const r = doc.data();
-			console.log("[courses] found doc:", doc.id, r);
 			return {
 				id: doc.id,
 				name: r.courseName || r.name || "—",
