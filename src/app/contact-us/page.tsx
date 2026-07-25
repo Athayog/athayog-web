@@ -77,7 +77,7 @@ export default function ContactUsPage() {
 					<div className={styles.left}>
 						<div>
 							<span className="eyebrow">Get In Touch</span>
-							<h2>Let&apos;s talk with us</h2>
+							<h1>Let&apos;s talk with us</h1>
 							<p className="lead">
 								Join AthaYog&apos;s exclusive contact sessions tailored,
 								one-on-one guidance to deepen your practice and achieve

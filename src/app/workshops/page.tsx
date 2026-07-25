@@ -40,7 +40,7 @@ const MANDALA = (
 
 export default function WorkshopsPage() {
 	return (
-		<>
+		<main>
 			<section className={styles.hero}>
 				{MANDALA}
 				<div className={`wrap ${styles.heroGrid}`}>
@@ -210,6 +210,6 @@ export default function WorkshopsPage() {
 					</p>
 				</div>
 			</section>
-		</>
+		</main>
 	);
 }

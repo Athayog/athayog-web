@@ -86,7 +86,7 @@ export default function TrialClassesPage() {
 				<div className={styles.form}>
 					<div className="section-head">
 						<span className="eyebrow">Get Started</span>
-						<h2>Book Your Trial Class</h2>
+						<h1>Book Your Trial Class</h1>
 					</div>
 
 					{formError && <div className={styles.errorBanner}>{formError}</div>}

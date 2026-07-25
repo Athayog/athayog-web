@@ -51,7 +51,7 @@ const GOAL_ICONS = ["◍", "◍", "◍", "◍", "◍", "◍", "◍", "◍"];
 
 export default function PersonalTrainingPage() {
 	return (
-		<>
+		<main>
 			{/* 1. Hero */}
 			<section className={styles.hero}>
 				{MANDALA}
@@ -948,6 +948,6 @@ export default function PersonalTrainingPage() {
 					Book Now
 				</a>
 			</div>
-		</>
+		</main>
 	);
 }

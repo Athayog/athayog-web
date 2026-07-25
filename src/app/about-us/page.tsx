@@ -47,7 +47,7 @@ const MANDALA = (
 
 export default function AboutUsPage() {
 	return (
-		<>
+		<main>
 			{/* 1. Hero */}
 			<section className={styles.hero}>
 				{MANDALA}
@@ -749,6 +749,6 @@ export default function AboutUsPage() {
 					Trial Class
 				</a>
 			</div>
-		</>
+		</main>
 	);
 }

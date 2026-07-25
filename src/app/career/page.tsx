@@ -126,7 +126,7 @@ export default function CareerPage() {
 				<div className={styles.container}>
 					<div className={styles.head}>
 						<span className="eyebrow">Join Our Team</span>
-						<h2>Athayog Career</h2>
+						<h1>Athayog Career</h1>
 						<p className="lead">Shape Your Career in Wellness with Us</p>
 					</div>
 

@@ -49,7 +49,7 @@ const MANDALA = (
 
 export default function WeightLossPage() {
 	return (
-		<>
+		<main>
 			{/* 1. Hero */}
 			<section className={styles.hero}>
 				{MANDALA}
@@ -1009,6 +1009,6 @@ export default function WeightLossPage() {
 					Register
 				</a>
 			</div>
-		</>
+		</main>
 	);
 }

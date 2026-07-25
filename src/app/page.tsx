@@ -48,8 +48,40 @@ const MANDALA = (
 );
 
 export default function Home() {
+	const schema = {
+		"@context": "https://schema.org",
+		"@type": ["LocalBusiness", "EducationalOrganization"],
+		"@id": "https://athayogliving.com/#organization",
+		name: "Athayog Living",
+		url: "https://athayogliving.com/",
+		logo: "https://athayogliving.com/Logo.png",
+		image: "https://athayogliving.com/hero-home.jpg",
+		telephone: "+918690333111",
+		priceRange: "₹599–₹32,399",
+		email: "info@athayogliving.com",
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "No. 3293, 1st Floor, 12th Main, HAL 2nd Stage, Indiranagar",
+			addressLocality: "Bengaluru",
+			addressRegion: "Karnataka",
+			postalCode: "560038",
+			addressCountry: "IN",
+		},
+		geo: {
+			"@type": "GeoCoordinates",
+			latitude: 12.9784,
+			longitude: 77.6408,
+		},
+		sameAs: [
+			"https://www.facebook.com/athayogliving/",
+			"https://www.instagram.com/athayogliving/",
+			"https://in.linkedin.com/company/athayog-living",
+			"https://www.youtube.com/@athayogliving",
+		],
+	};
+
 	return (
-		<>
+		<main>
 			{/* 1. Hero */}
 			<section className={styles.hero}>
 				{MANDALA}
@@ -859,6 +891,10 @@ export default function Home() {
 					Book Now
 				</a>
 			</div>
-		</>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+			/>
+		</main>
 	);
 }

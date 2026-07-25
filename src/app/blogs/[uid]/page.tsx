@@ -110,6 +110,32 @@ export default async function BlogPost({ params }: { params: Params }) {
 					)}
 				</article>
 
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "BlogPosting",
+							headline: prismic.asText(title),
+							description: page.data.meta_description || "",
+							image: featured_image?.url || "",
+							datePublished: publication_date || undefined,
+							author: {
+								"@type": "Person",
+								name: "Sharath Basavaraju",
+							},
+							publisher: {
+								"@type": "Organization",
+								name: "Athayog Living",
+								logo: {
+									"@type": "ImageObject",
+									url: "https://athayogliving.com/Logo.png",
+								},
+							},
+						}),
+					}}
+				/>
+
 				<div style={{ maxWidth: 760, margin: "0 auto" }}>
 					<SliceZone slices={slices} components={components} />
 				</div>

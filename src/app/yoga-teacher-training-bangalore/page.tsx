@@ -48,7 +48,7 @@ const MANDALA = (
 
 export default function TTCBangalorePage() {
 	return (
-		<>
+		<main>
 			<section className={styles.hero}>
 				{MANDALA}
 				<div className={`wrap ${styles.heroGrid}`}>
@@ -679,6 +679,6 @@ export default function TTCBangalorePage() {
 					Enrol
 				</a>
 			</div>
-		</>
+		</main>
 	);
 }

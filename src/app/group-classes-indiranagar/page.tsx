@@ -48,7 +48,7 @@ const MANDALA = (
 
 export default function GroupClassesPage() {
 	return (
-		<>
+		<main>
 			{/* 1. Hero */}
 			<section className={styles.hero}>
 				{MANDALA}
@@ -1280,6 +1280,6 @@ export default function GroupClassesPage() {
 					Book Now
 				</a>
 			</div>
-		</>
+		</main>
 	);
 }
