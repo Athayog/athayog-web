@@ -2,6 +2,7 @@ import { Flower, Users, Sparkles, Leaf, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import MapEmbed from "@/components/MapEmbed";
 import HeroImage from "@/app/about-us/HeroImage";
 import styles from "@/app/about-us/AboutUs.module.css";
 
@@ -597,10 +598,9 @@ export default function AboutUsPage() {
 					<Reveal>
 						<div className={styles.locCard}>
 							<div className={styles.locMap}>
-								<iframe
-									loading="lazy"
-									title="Athayog Living Indiranagar map"
+								<MapEmbed
 									src="https://www.google.com/maps?q=Athayog%20Living%20Indiranagar%20Bengaluru&output=embed"
+									title="Athayog Living Indiranagar map"
 								/>
 							</div>
 							<div className={styles.locBody}>

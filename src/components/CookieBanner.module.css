@@ -1,0 +1,182 @@
+.banner {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: var(--parchment);
+	border-top: 1px solid var(--line);
+	box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+	padding: 24px 20px;
+}
+
+.inner {
+	max-width: 960px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	gap: 24px;
+	align-items: start;
+}
+
+.text {
+	grid-column: 1;
+}
+
+.heading {
+	font-family: var(--font-label);
+	font-size: 0.9rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--brand-deep);
+	margin: 0 0 8px;
+}
+
+.body {
+	font-size: 0.88rem;
+	line-height: 1.6;
+	color: var(--ink);
+	margin: 0;
+	max-width: 480px;
+}
+
+.toggles {
+	grid-column: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.toggleRow {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	cursor: default;
+}
+
+.toggleLabel {
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--ink);
+	min-width: 80px;
+}
+
+.toggleBadge {
+	font-size: 0.75rem;
+	color: var(--brand);
+	font-style: italic;
+}
+
+.toggle {
+	position: relative;
+	width: 40px;
+	height: 22px;
+	border-radius: 11px;
+	border: 1px solid var(--line);
+	background: var(--cream);
+	cursor: pointer;
+	transition:
+		background 0.2s,
+		border-color 0.2s;
+	padding: 0;
+}
+
+.toggleOn {
+	background: var(--brand);
+	border-color: var(--brand);
+}
+
+.toggleKnob {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: var(--ink);
+	transition: transform 0.2s;
+}
+
+.toggleOn .toggleKnob {
+	transform: translateX(18px);
+	background: var(--cream);
+}
+
+.actions {
+	grid-column: 3;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.btn {
+	font-family: var(--font-body);
+	font-size: 0.82rem;
+	font-weight: 500;
+	padding: 8px 18px;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: 0.2s;
+	white-space: nowrap;
+}
+
+.btnReject {
+	background: transparent;
+	color: var(--ink);
+	border: 1px solid var(--line);
+}
+
+.btnReject:hover {
+	border-color: var(--ink);
+}
+
+.btnAccept {
+	background: var(--brand-deep);
+	color: var(--cream);
+	border: 1px solid var(--brand-deep);
+}
+
+.btnAccept:hover {
+	background: var(--brand-dark);
+	border-color: var(--brand-dark);
+}
+
+.btnSave {
+	background: transparent;
+	color: var(--brand-deep);
+	border: 1px solid var(--brand-deep);
+}
+
+.btnSave:hover {
+	background: var(--brand-deep);
+	color: var(--cream);
+}
+
+@media (max-width: 960px) {
+	.inner {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.toggles {
+		grid-column: 1;
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	.actions {
+		grid-column: 1;
+		justify-content: flex-end;
+	}
+}
+
+@media (max-width: 480px) {
+	.actions {
+		flex-wrap: wrap;
+	}
+
+	.btn {
+		flex: 1;
+		text-align: center;
+	}
+}

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import MapEmbed from "@/components/MapEmbed";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/workshops/Workshops.module.css";
 
@@ -147,10 +148,9 @@ export default function WorkshopsPage() {
 					<Reveal>
 						<div className={styles.locCard}>
 							<div className={styles.locMap}>
-								<iframe
-									loading="lazy"
-									title="Athayog Living Indiranagar map"
+								<MapEmbed
 									src="https://www.google.com/maps?q=Athayog%20Living%20Indiranagar%20Bengaluru&output=embed"
+									title="Athayog Living Indiranagar map"
 								/>
 							</div>
 							<div className={styles.locBody}>

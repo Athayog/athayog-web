@@ -40,10 +40,10 @@ function AvatarImage({ src, alt }: { src: string; alt: string }) {
 }
 
 export default function AccountMenu() {
-	const { user, userSnapshot, loading, handleLogout } = useAuthStore();
+	const { user, userSnapshot, handleLogout } = useAuthStore();
 	const displayUser = user || userSnapshot;
 
-	if (loading || !displayUser) return null;
+	if (!displayUser) return null;
 
 	const initials = getInitials(displayUser.displayName, displayUser.email);
 

@@ -6,27 +6,22 @@ Foundational items to cover before building content pages. Add to this list free
 
 ## Pending
 
-- [ ] **Auth flash on initial page load** — Login button shows briefly (~1-2s) on hard refresh / new tab before switching to AccountMenu, even with persisted userSnapshot. Likely causes: (1) async Zustand persist hydration microtask — first render shows unauthenticated state, (2) Firebase `onAuthStateChanged` taking time to verify session, (3) stale snapshot corrected after Firebase callback. Possible fixes: synchronous localStorage read in store init, cookie-based SSR auth state, or neutral skeleton placeholder during loading.
-- [ ] **Playwright E2E tests** — Login flow, form submission, blog pages, protected routes
+- [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`).
+- [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`.
+- [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
+- [ ] **Missing nav pages** — `/what-we-offer` hub page, `/picnics` (Excursion/Picnics) are in `navItems.ts` but have no page.
+- [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
 - [ ] **Unit tests for auth** — `useAuthStore`, `AuthBootstrap`, auth helpers (`src/lib/auth.ts`)
 - [ ] **Unit tests for components** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`
 - [ ] **Unit tests for pages** — Account page, Login page, Blog pages
+- [ ] **Playwright E2E tests** — Login flow, form submission, blog pages, protected routes
 - [ ] **Performance / Lighthouse audit** — Core Web Vitals baseline and budget
-- [ ] **`manifest.json`** — PWA manifest / site.webmanifest for installability
-- [ ] **Apple Touch Icon** — `apple-touch-icon.png` for iOS home screen
-- [ ] **`themeColor`** — Set browser chrome color in metadata
 - [ ] **Error tracking** — Sentry or equivalent (6 `console.error` call sites today)
 - [ ] **Analytics** — Vercel Analytics, PostHog, or Google Analytics for page views & conversions
 - [ ] **CI/CD** — GitHub Actions workflow: lint → typecheck → test → build → deploy
-- [ ] **README overhaul** — Add env setup, project structure, scripts reference, deploy guide
 - [ ] **Logging utility** — Replace raw `console.error` with structured logger
-- [ ] **Content pages** — `/what-we-offer`, `/personal-yoga-training-indiranagar`, `/weight-loss-program-indiranagar`, `/yoga-teacher-training`, `/workshops` (from `src/constants/navItems.ts`)
-- [ ] **Privacy-first cookie consent banner** — GDPR/India IT Act compliance
-- [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`). Without this, payments made when the browser tab closes before the verify callback fires will be lost.
-- [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temporary). The real Residential program needs a redesign — ask marketing team what the residential offering should look like and whether `/yoga-teacher-training-residential` URL stays or changes.
-- [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`. Both required for payment flow and payment history to work.
-- [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow for better conversion.
-- [ ] **Account Deletion Form** - Copy account delete form
+- [ ] **Account Deletion Form** — Copy account delete form
+- [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow.
 
 ---
 
@@ -77,3 +72,11 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Metadata on all pages — 9 pages added (title, description, canonical, OG inherits from root)
 - [x] Sitemap fixes — removed 3 404s, added trial-classes + weight-loss
 - [x] OpenGraph images + Twitter images in root layout metadata
+- [x] `manifest.json` — PWA manifest
+- [x] `themeColor` — Browser chrome color in metadata
+- [x] `viewport` — Responsive viewport config
+- [x] Apple Touch Icon (`apple-touch-icon.png` — placeholder from Logo.png)
+- [x] README overhaul — Tech stack, setup, scripts, project structure, deployment
+- [x] LICENSE — Proprietary all-rights-reserved
+- [x] Auth flash fix — AccountMenu renders from persisted cache immediately, no loading gate
+- [x] Privacy-first cookie consent banner — GDPR/India IT Act compliance (Essential + Functional categories, MapEmbed wrapper for 7 pages)

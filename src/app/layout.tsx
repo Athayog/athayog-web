@@ -6,6 +6,7 @@ import AuthBootstrap from "@/components/AuthBootstrap";
 import Providers from "@/components/Providers";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import CookieBanner from "@/components/CookieBanner";
 import "@/app/globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -90,6 +91,7 @@ export default function RootLayout({
 					<Footer />
 				</Providers>
 				<PrismicPreview repositoryName={repositoryName} />
+				<CookieBanner />
 			</body>
 		</html>
 	);

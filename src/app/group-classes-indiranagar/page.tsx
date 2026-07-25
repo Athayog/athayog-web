@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import MapEmbed from "@/components/MapEmbed";
 import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
 import PaymentModal from "@/components/payments/PaymentModal";
 import styles from "@/app/group-classes-indiranagar/GroupClasses.module.css";
@@ -963,10 +964,9 @@ export default function GroupClassesPage() {
 					<Reveal>
 						<div className={styles.locCard}>
 							<div className={styles.locMap}>
-								<iframe
-									loading="lazy"
-									title="Athayog Living Indiranagar map"
+								<MapEmbed
 									src="https://www.google.com/maps?q=Athayog%20Living%20Indiranagar%20Bengaluru&output=embed"
+									title="Athayog Living Indiranagar map"
 								/>
 							</div>
 							<div className={styles.locBody}>

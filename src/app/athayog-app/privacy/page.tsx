@@ -146,8 +146,19 @@ export default function MobilePrivacyPolicy() {
 			<section>
 				<h2>COOKIES</h2>
 				<p>
-					We use cookies to maintain the session of your user. It is not used to
-					personally identify you on other mobile applications.
+					We use cookies to maintain your session and provide core
+					functionality. You can manage your cookie preferences through the
+					cookie consent banner on our site.
+				</p>
+				<p>
+					<strong>Essential cookies</strong> (always active): Used for
+					authentication (Firebase session), payment processing (Razorpay), and
+					bot protection (reCAPTCHA). These cannot be disabled.
+				</p>
+				<p>
+					<strong>Functional cookies</strong> (opt-in): Used to load Google Maps
+					embeds on our location pages. These are only activated with your
+					consent. Future analytics tools will also fall under this category.
 				</p>
 			</section>
 
