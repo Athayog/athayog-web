@@ -1160,18 +1160,6 @@ export default function GroupClassesPage() {
 							</a>
 						</Reveal>
 						<Reveal>
-							<a
-								className={styles.ex}
-								href="/weight-loss-program-indiranagar"
-							>
-								<div className={styles.exArrow}>
-									<ArrowRight size={18} />
-								</div>
-								<h3>Weight Loss Program</h3>
-								<p>A focused yoga program to shed weight.</p>
-							</a>
-						</Reveal>
-						<Reveal>
 							<a className={styles.ex} href="/yoga-teacher-training">
 								<div className={styles.exArrow}>
 									<ArrowRight size={18} />

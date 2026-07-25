@@ -8,7 +8,7 @@ import styles from "@/app/Home.module.css";
 export const metadata: Metadata = {
 	title: "Yoga Classes in Indiranagar, Bangalore | Athayog Living — Yoga Studio",
 	description:
-		"Certified yoga classes in Indiranagar, Bengaluru at Athayog Living. Group classes, personal training, a 3-month weight-loss program and RYT-200 teacher training — Yoga Alliance, SVYASA & AYUSH recognized. Book a trial class today.",
+		"Certified yoga classes in Indiranagar, Bengaluru at Athayog Living. Group classes, personal training and RYT-200 teacher training — Yoga Alliance, SVYASA & AYUSH recognized. Book a trial class today.",
 	openGraph: {
 		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
 	},
@@ -64,9 +64,9 @@ export default function Home() {
 						</h1>
 						<p className={styles.heroSub}>
 							Awaken your mind, body and spirit with Athayog Living. Group
-							classes, personal training, a weight-loss program and RYT-200
-							teacher training — guided by certified teachers, recognized by
-							Yoga Alliance, SVYASA and AYUSH.
+							classes, personal training and RYT-200 teacher training —
+							guided by certified teachers, recognized by Yoga Alliance,
+							SVYASA and AYUSH.
 						</p>
 						<span className={styles.priceChip}>
 							Group classes from ₹599 · personal from ₹14,999 ·{" "}
@@ -135,11 +135,11 @@ export default function Home() {
 						<p className="answer">
 							Athayog Living is a certified yoga studio in Indiranagar,
 							Bengaluru, offering group classes, one-on-one personal
-							training, a 3-month weight-loss program and RYT-200 yoga
-							teacher training. Our academy and teachers are recognized by
-							Yoga Alliance (USA), SVYASA and AYUSH — so you practise with
-							authentic guidance and globally recognized credentials, in the
-							heart of Indiranagar (with a second branch in Jayanagar).
+							training and RYT-200 yoga teacher training. Our academy and
+							teachers are recognized by Yoga Alliance (USA), SVYASA and
+							AYUSH — so you practise with authentic guidance and globally
+							recognized credentials, in the heart of Indiranagar (with a
+							second branch in Jayanagar).
 						</p>
 					</Reveal>
 				</div>
@@ -196,23 +196,6 @@ export default function Home() {
 									className="btn btn-ghost"
 								>
 									Explore Personal Training
-								</a>
-							</div>
-						</Reveal>
-						<Reveal>
-							<div className="card">
-								<span className="eyebrow">Transformation</span>
-								<h3>Weight Loss Program</h3>
-								<p>
-									A holistic 3-month program with structured practice
-									plus BMI tracking, nutrition &amp; counselling
-									support.
-								</p>
-								<a
-									href="/weight-loss-program-indiranagar"
-									className="btn btn-ghost"
-								>
-									Explore the Program
 								</a>
 							</div>
 						</Reveal>
@@ -748,9 +731,8 @@ export default function Home() {
 								<div className={styles.faqAnswer}>
 									Yes — an active, consistent practice supports healthy,
 									sustainable weight management, especially alongside
-									mindful eating. Our dedicated 3-month weight-loss
-									program adds structure, nutrition guidance and
-									progress tracking.
+									mindful eating. program adds structure, nutrition
+									guidance and progress tracking.
 								</div>
 							</details>
 							<details>
@@ -815,9 +797,9 @@ export default function Home() {
 					</Reveal>
 					<Reveal>
 						<p>
-							Certified group classes, personal training, weight-loss and
-							teacher training — all in one trusted studio. Book a trial
-							trial and begin today.
+							Certified group classes, personal training and teacher
+							training — all in one trusted studio. Book a trial trial and
+							begin today.
 						</p>
 					</Reveal>
 					<Reveal>

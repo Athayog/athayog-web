@@ -118,9 +118,9 @@ export default function AboutUsPage() {
 							Bengaluru, founded by Sharath Basavaraju — who was trained
 							through the teachings of the Bihar School of Yoga and holds a
 							formal yogic education from SVYASA. The studio offers group
-							classes, personal training, a weight-loss program and RYT-200
-							teacher training, all rooted in authentic tradition and
-							recognized by Yoga Alliance (USA), SVYASA and AYUSH.
+							classes, personal training and RYT-200 teacher training, all
+							rooted in authentic tradition and recognized by Yoga Alliance
+							(USA), SVYASA and AYUSH.
 						</p>
 					</Reveal>
 				</div>
@@ -547,18 +547,6 @@ export default function AboutUsPage() {
 							</a>
 						</Reveal>
 						<Reveal>
-							<a
-								className={styles.ex}
-								href="/weight-loss-program-indiranagar"
-							>
-								<div className={styles.exArrow}>
-									<ArrowRight size={18} />
-								</div>
-								<h3>Weight Loss Program</h3>
-								<p>Holistic 3-month transformation.</p>
-							</a>
-						</Reveal>
-						<Reveal>
 							<a className={styles.ex} href="/yoga-teacher-training">
 								<div className={styles.exArrow}>
 									<ArrowRight size={18} />
@@ -676,9 +664,8 @@ export default function AboutUsPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									Group classes, one-on-one personal training, a 3-month
-									weight-loss program, RYT-200 yoga teacher training,
-									and workshops — across our Indiranagar and Jayanagar
-									studios.
+									program, RYT-200 yoga teacher training, and workshops
+									— across our Indiranagar and Jayanagar studios.
 								</div>
 							</details>
 							<details>

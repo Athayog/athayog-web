@@ -24,6 +24,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Content pages** — `/what-we-offer`, `/personal-yoga-training-indiranagar`, `/weight-loss-program-indiranagar`, `/yoga-teacher-training`, `/workshops` (from `src/constants/navItems.ts`)
 - [ ] **Privacy-first cookie consent banner** — GDPR/India IT Act compliance
 - [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`). Without this, payments made when the browser tab closes before the verify callback fires will be lost.
+- [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temporary). The real Residential program needs a redesign — ask marketing team what the residential offering should look like and whether `/yoga-teacher-training-residential` URL stays or changes.
 - [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`. Both required for payment flow and payment history to work.
 - [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow for better conversion.
 

@@ -30,28 +30,18 @@ export const navItems: NavItem[] = [
 				path: "/yoga-academy",
 				children: [
 					{
-						label: "Residential",
-						path: "/residential-yoga-teacher-training",
+						label: "Teacher Training Course (RYT 200) – Weekend",
+						path: "/yoga-teacher-training-bangalore",
 						type: "nav",
 					},
 					{
-						label: "Non Residential",
-						path: "/yoga-teacher-training-ryt-200-non-residential",
-						type: "nav",
-					},
-					{
-						label: "TTC Online",
-						path: "/yoga-ttc-online-certification",
+						label: "Teacher Training Course (RYT 200) – Online",
+						path: "/yoga-teacher-training-residential",
 						type: "nav",
 					},
 				],
 			},
 			{ label: "Excursion / Picnics", path: "/picnics", type: "nav" },
-			{
-				label: "Weight Loss Program",
-				path: "/weight-loss-program-indiranagar",
-				type: "nav",
-			},
 		],
 	},
 	{
