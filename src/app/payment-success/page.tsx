@@ -1,5 +1,11 @@
 import { Suspense } from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Payment Successful | Athayog Living",
+	robots: { index: false, follow: false },
+};
 
 const PLAN_NAMES: Record<string, string> = {
 	"group-drop-in": "Drop-in",

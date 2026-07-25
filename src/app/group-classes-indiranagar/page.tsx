@@ -1,9 +1,17 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
 import PaymentModal from "@/components/payments/PaymentModal";
 import styles from "@/app/group-classes-indiranagar/GroupClasses.module.css";
+
+export const metadata: Metadata = {
+	title: "Group Yoga Classes in Indiranagar, Bangalore | Athayog Living",
+	description:
+		"Join expert-led group yoga classes in Indiranagar, Bangalore. Small-batch classes, six signature formats, morning and evening batches, flexible timings. Book a trial class from ₹599 drop-in.",
+	alternates: { canonical: "https://athayogliving.com/group-classes-indiranagar" },
+};
 
 const PLAY_SVG = (
 	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">

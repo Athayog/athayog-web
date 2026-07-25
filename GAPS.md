@@ -27,6 +27,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temporary). The real Residential program needs a redesign — ask marketing team what the residential offering should look like and whether `/yoga-teacher-training-residential` URL stays or changes.
 - [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`. Both required for payment flow and payment history to work.
 - [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow for better conversion.
+- [ ] **Account Deletion Form** - Copy account delete form
 
 ---
 

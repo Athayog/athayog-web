@@ -1,8 +1,18 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/weight-loss-program-indiranagar/WL.module.css";
+
+export const metadata: Metadata = {
+	title: "Yoga Weight Loss Program in Indiranagar, Bangalore | Athayog Living",
+	description:
+		"Join Athayog Living's expert-led 3-month yoga weight loss program in Indiranagar. Sustainable results with daily asana, 108 Surya Namaskar, kriya cleansing, BMI tracking, weekly reassessments and nutrition counselling.",
+	alternates: {
+		canonical: "https://athayogliving.com/weight-loss-program-indiranagar",
+	},
+};
 
 const PLAY_SVG = (
 	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">

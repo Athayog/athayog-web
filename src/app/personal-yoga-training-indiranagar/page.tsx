@@ -1,8 +1,18 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import PricingModebar from "@/app/personal-yoga-training-indiranagar/PricingModebar";
 import styles from "@/app/personal-yoga-training-indiranagar/PT.module.css";
+
+export const metadata: Metadata = {
+	title: "Personal Yoga Training in Indiranagar | One-on-One Sessions | Athayog Living",
+	description:
+		"Book one-on-one personal yoga sessions in Indiranagar, Bangalore. Certified trainers, customized plans for weight loss, flexibility, back pain, stress and more. Studio, home or online. Start from ₹14,999.",
+	alternates: {
+		canonical: "https://athayogliving.com/personal-yoga-training-indiranagar",
+	},
+};
 
 const PLAY_SVG = (
 	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">

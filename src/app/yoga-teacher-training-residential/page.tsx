@@ -1,8 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-residential/RTTC.module.css";
+
+export const metadata: Metadata = {
+	title: "Online RYT-200 Yoga Teacher Training | Athayog Living",
+	description:
+		"Earn your RYT-200 yoga teacher certification online with Athayog Living. Live interactive sessions, Yoga Alliance (USA) accredited, learn from anywhere. Self-paced and live-online formats from ₹14,999.",
+	alternates: {
+		canonical: "https://athayogliving.com/yoga-teacher-training-residential",
+	},
+};
 
 const MANDALA = (
 	<svg

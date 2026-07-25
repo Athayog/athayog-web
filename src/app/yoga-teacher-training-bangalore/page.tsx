@@ -1,8 +1,18 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-bangalore/TTC.module.css";
+
+export const metadata: Metadata = {
+	title: "RYT-200 Yoga Teacher Training Weekend | Bangalore | Athayog Living",
+	description:
+		"Become a certified yoga teacher with Athayog Living's RYT-200 weekend program in Bangalore. Yoga Alliance (USA) accredited, 12-week format, expert faculty. Early bird from ₹24,999.",
+	alternates: {
+		canonical: "https://athayogliving.com/yoga-teacher-training-bangalore",
+	},
+};
 
 const PLAY_SVG = (
 	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">

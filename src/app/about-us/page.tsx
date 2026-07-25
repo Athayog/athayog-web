@@ -1,8 +1,16 @@
 import { Flower, Users, Sparkles, Leaf, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import HeroImage from "@/app/about-us/HeroImage";
 import styles from "@/app/about-us/AboutUs.module.css";
+
+export const metadata: Metadata = {
+	title: "About Athayog Living | Yoga Studio in Indiranagar, Bangalore",
+	description:
+		"Discover Athayog Living — a certified yoga studio in Indiranagar, Bengaluru rooted in traditional yoga lineage. Learn about our founder Sharath Basavaraju, our values, and our mission to make yoga accessible to all.",
+	alternates: { canonical: "https://athayogliving.com/about-us" },
+};
 
 const PLAY_SVG = (
 	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">

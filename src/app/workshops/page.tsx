@@ -1,7 +1,15 @@
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/workshops/Workshops.module.css";
+
+export const metadata: Metadata = {
+	title: "Yoga Workshops in Indiranagar | Deepen Your Practice | Athayog Living",
+	description:
+		"Join expert-led yoga workshops at Athayog Living in Indiranagar, Bengaluru. Deep-dive sessions on pranayama, alignment, meditation, inversions and more. Accessible to all levels. Enquire for upcoming dates.",
+	alternates: { canonical: "https://athayogliving.com/workshops" },
+};
 
 const MANDALA = (
 	<svg

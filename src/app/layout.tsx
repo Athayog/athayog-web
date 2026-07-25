@@ -41,9 +41,21 @@ export const metadata: Metadata = {
 		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
 		description:
 			"Athayog Living is a yoga and wellness platform in Indiranagar, Bangalore offering group classes, personal training, teacher training, workshops, and weight loss programs rooted in tradition.",
+		images: [
+			{
+				url: "/opengraph-image",
+				width: 1200,
+				height: 630,
+				alt: "Athayog Living — Yoga & Wellness in Indiranagar, Bengaluru",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
+		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
+		description:
+			"Athayog Living is a yoga and wellness platform in Indiranagar, Bangalore offering group classes, personal training, teacher training, workshops, and weight loss programs rooted in tradition.",
+		images: ["/opengraph-image"],
 	},
 	alternates: {
 		canonical: "https://athayogliving.com",
