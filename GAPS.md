@@ -10,14 +10,11 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`.
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
 - [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
-- [ ] **Unit tests for auth** — `useAuthStore`, `AuthBootstrap`, auth helpers (`src/lib/auth.ts`)
-- [ ] **Unit tests for components** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`
 - [ ] **Unit tests for pages** — Account page, Login page, Blog pages
 - [ ] **Playwright E2E tests** — Login flow, form submission, blog pages, protected routes
 - [ ] **Performance / Lighthouse audit** — Core Web Vitals baseline and budget
 - [ ] **Error tracking** — Sentry or equivalent (6 `console.error` call sites today)
 - [ ] **Analytics** — Vercel Analytics, PostHog, or Google Analytics for page views & conversions
-- [ ] **CI/CD** — GitHub Actions workflow: lint → typecheck → test → build → deploy
 - [ ] **Logging utility** — Replace raw `console.error` with structured logger
 - [ ] **Thank you page** — For Facebook conversion tag on form submission success
 - [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow.
@@ -80,4 +77,6 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Auth flash fix — AccountMenu renders from persisted cache immediately, no loading gate
 - [x] Privacy-first cookie consent banner — GDPR/India IT Act compliance (Essential + Functional categories, MapEmbed wrapper for 7 pages)
 - [x] `/picnics` — Excursions & Picnics page with feature cards, 10-field registration form, CTA
+- [x] Vitest test suites (28 test files, 116 tests covering Auth store, session cookies, route proxy protection, navigation UI, cookie consent privacy, and payment API/modal flows)
 - [x] Broken link fixes — `/yoga-teacher-training` → `/yoga-teacher-training-bangalore` (4 pages), `/yoga-academy` → `/yoga-teacher-training-bangalore` (Footer)
+- [x] GitHub Actions CI/CD workflow (`.github/workflows/ci.yml` — automated formatting, linting, typechecking, Vitest tests, and Next.js production build verification)
