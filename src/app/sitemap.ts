@@ -14,6 +14,7 @@ const indexedPages = [
 	"/trial-classes",
 	"/weight-loss-program-indiranagar",
 	"/career",
+	"/picnics",
 	"/blogs",
 	"/contact-us",
 ];

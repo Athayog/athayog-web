@@ -928,7 +928,10 @@ export default function WeightLossPage() {
 								<h3>Group Classes</h3>
 								<p>Small-batch classes from ₹599 drop-in.</p>
 							</a>
-							<a className={styles.ex} href="/yoga-teacher-training">
+							<a
+								className={styles.ex}
+								href="/yoga-teacher-training-bangalore"
+							>
 								<div className={styles.exArrow}>
 									<ArrowRight size={18} />
 								</div>

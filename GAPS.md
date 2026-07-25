@@ -9,7 +9,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`).
 - [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`.
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
-- [ ] **Missing nav pages** — `/what-we-offer` hub page, `/picnics` (Excursion/Picnics) are in `navItems.ts` but have no page.
+- [ ] **Missing nav pages** — `/what-we-offer` hub page is in `navItems.ts` but has no page.
 - [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
 - [ ] **Unit tests for auth** — `useAuthStore`, `AuthBootstrap`, auth helpers (`src/lib/auth.ts`)
 - [ ] **Unit tests for components** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`
@@ -80,3 +80,5 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] LICENSE — Proprietary all-rights-reserved
 - [x] Auth flash fix — AccountMenu renders from persisted cache immediately, no loading gate
 - [x] Privacy-first cookie consent banner — GDPR/India IT Act compliance (Essential + Functional categories, MapEmbed wrapper for 7 pages)
+- [x] `/picnics` — Excursions & Picnics page with feature cards, 10-field registration form, CTA
+- [x] Broken link fixes — `/yoga-teacher-training` → `/yoga-teacher-training-bangalore` (4 pages), `/yoga-academy` → `/yoga-teacher-training-bangalore` (Footer)

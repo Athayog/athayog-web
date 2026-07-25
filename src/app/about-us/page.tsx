@@ -556,7 +556,10 @@ export default function AboutUsPage() {
 							</a>
 						</Reveal>
 						<Reveal>
-							<a className={styles.ex} href="/yoga-teacher-training">
+							<a
+								className={styles.ex}
+								href="/yoga-teacher-training-bangalore"
+							>
 								<div className={styles.exArrow}>
 									<ArrowRight size={18} />
 								</div>

@@ -254,7 +254,7 @@ export default function Home() {
 									From ₹24,999 · Yoga Alliance (USA)
 								</div>
 								<a
-									href="/yoga-teacher-training"
+									href="/yoga-teacher-training-bangalore"
 									className="btn btn-ghost"
 								>
 									Explore TTC

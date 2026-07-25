@@ -30,7 +30,9 @@ export default function Footer() {
 							<Link href="/personal-yoga-training-indiranagar">
 								Personal Training
 							</Link>
-							<Link href="/yoga-academy">Yoga Teacher Training</Link>
+							<Link href="/yoga-teacher-training-bangalore">
+								Yoga Teacher Training
+							</Link>
 							<Link href="/workshops">Workshops</Link>
 							<Link href="/picnics">Excursion / Picnics</Link>
 						</nav>
