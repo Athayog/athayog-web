@@ -30,8 +30,9 @@ const eslintConfig = defineConfig([
 		},
 	},
 	{
-		files: ["**/__tests__/**"],
+		files: ["**/__tests__/**", "scripts/**"],
 		rules: {
+			"no-console": "off",
 			"no-restricted-imports": "off",
 		},
 	},
