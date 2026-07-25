@@ -63,8 +63,8 @@ export default function MagnetForm() {
 					Trial Class Requested
 				</h3>
 				<p style={{ color: "#f0f3e9", fontSize: "0.95rem" }}>
-					We&apos;ll contact you within 24 hours to confirm your free trial
-					class at our Indiranagar studio.
+					We&apos;ll contact you within 24 hours to confirm your trial class at
+					our Indiranagar studio.
 				</p>
 			</div>
 		);
@@ -203,7 +203,7 @@ export default function MagnetForm() {
 				disabled={form.state.isSubmitting}
 				style={{ justifyContent: "center" }}
 			>
-				{form.state.isSubmitting ? "Submitting…" : "Book My Free Trial"}
+				{form.state.isSubmitting ? "Submitting…" : "Book My Trial Class"}
 			</button>
 			<span className={styles.lmMini}>
 				We&apos;ll call or WhatsApp you to confirm. No obligation.

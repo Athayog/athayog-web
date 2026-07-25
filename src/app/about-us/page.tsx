@@ -398,8 +398,8 @@ export default function AboutUsPage() {
 								illuminates the way ahead.
 							</p>
 							<p>
-								When you register with us, we offer a free consultation
-								and lifestyle guidance to help you attain higher living —
+								When you register with us, we offer a consultation and
+								lifestyle guidance to help you attain higher living —
 								empowering you to progress and, in time, to practise on
 								your own.
 							</p>
@@ -581,7 +581,7 @@ export default function AboutUsPage() {
 								<div className={styles.exArrow}>
 									<ArrowRight size={18} />
 								</div>
-								<h3>Free Trial Class</h3>
+								<h3>Trial Class</h3>
 								<p>Experience Athayog before you begin.</p>
 							</a>
 						</Reveal>
@@ -722,13 +722,13 @@ export default function AboutUsPage() {
 						<p>
 							Whether you&apos;re here for a first class or a teaching
 							career, your journey with Athayog begins with a single step.
-							Book a free trial and experience it for yourself.
+							Book a trial and experience it for yourself.
 						</p>
 					</Reveal>
 					<Reveal>
 						<div className="final-cta">
 							<a href="/trial-classes" className="btn btn-cream">
-								Book a Free Trial
+								Book a Trial Class
 							</a>
 							<a href="/contact-us" className="btn btn-light">
 								Contact Us
@@ -751,7 +751,7 @@ export default function AboutUsPage() {
 			<div className={styles.stickyCta}>
 				<span className={styles.stickyMeta}>Who we are · Athayog Living</span>
 				<a href="/trial-classes" className="btn btn-cream">
-					Free Trial
+					Trial Class
 				</a>
 			</div>
 		</>

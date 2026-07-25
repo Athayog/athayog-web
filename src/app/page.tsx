@@ -8,7 +8,7 @@ import styles from "@/app/Home.module.css";
 export const metadata: Metadata = {
 	title: "Yoga Classes in Indiranagar, Bangalore | Athayog Living — Yoga Studio",
 	description:
-		"Certified yoga classes in Indiranagar, Bengaluru at Athayog Living. Group classes, personal training, a 3-month weight-loss program and RYT-200 teacher training — Yoga Alliance, SVYASA & AYUSH recognized. Book a free trial today.",
+		"Certified yoga classes in Indiranagar, Bengaluru at Athayog Living. Group classes, personal training, a 3-month weight-loss program and RYT-200 teacher training — Yoga Alliance, SVYASA & AYUSH recognized. Book a trial class today.",
 	openGraph: {
 		title: "Athayog Living — Yoga & Wellness in Indiranagar, Bangalore",
 	},
@@ -70,7 +70,7 @@ export default function Home() {
 						</p>
 						<span className={styles.priceChip}>
 							Group classes from ₹599 · personal from ₹14,999 ·{" "}
-							<strong>free trial class</strong>
+							<strong>trial class</strong>
 						</span>
 						<div className={styles.heroCta}>
 							<a href="/trial-classes" className="btn btn-primary">
@@ -264,14 +264,14 @@ export default function Home() {
 									Not sure?
 								</span>
 								<h3 style={{ color: "var(--cream)" }}>
-									Start with a Free Trial
+									Start with a Trial Class
 								</h3>
 								<p style={{ color: "#DCE2CE" }}>
 									Experience a class, meet our teachers, and we&apos;ll
 									help you choose the right path — no obligation.
 								</p>
 								<a href="/trial-classes" className="btn btn-cream">
-									Book a Free Trial
+									Book a Trial Class
 								</a>
 							</div>
 						</Reveal>
@@ -445,10 +445,10 @@ export default function Home() {
 									fontSize: "1.05rem",
 								}}
 							>
-								When you register, we offer free consultations and
-								lifestyle guidance to help you embrace a complete yogic
-								lifestyle — empowering you to practise on your own and
-								embed ancient wisdom into everyday reality.
+								When you register, we offer consultations and lifestyle
+								guidance to help you embrace a complete yogic lifestyle —
+								empowering you to practise on your own and embed ancient
+								wisdom into everyday reality.
 							</p>
 							<blockquote>&quot;A sanctum for the spirit.&quot;</blockquote>
 							<a href="/about-us" className="btn btn-ghost">
@@ -637,9 +637,9 @@ export default function Home() {
 				<Reveal>
 					<div className="wrap">
 						<h2>Begin where you are.</h2>
-						<p>Book a free trial class and feel the Athayog difference.</p>
+						<p>Book a trial class and feel the Athayog difference.</p>
 						<a href="/trial-classes" className="btn btn-cream">
-							Book a Free Trial
+							Book a Trial Class
 						</a>
 					</div>
 				</Reveal>
@@ -664,8 +664,8 @@ export default function Home() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									If you&apos;re new, start with a beginner-friendly
-									group class (like Universal Harmony) or a free trial,
-									and our teachers will guide you to the right format.
+									group class (like Universal Harmony) or a trial, and
+									our teachers will guide you to the right format.
 									Prefer focused attention? Personal training builds a
 									plan around your goal from day one.
 								</div>
@@ -816,7 +816,7 @@ export default function Home() {
 					<Reveal>
 						<p>
 							Certified group classes, personal training, weight-loss and
-							teacher training — all in one trusted studio. Book a free
+							teacher training — all in one trusted studio. Book a trial
 							trial and begin today.
 						</p>
 					</Reveal>
@@ -845,7 +845,7 @@ export default function Home() {
 
 			{/* 15. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
-				<span className={styles.stickyMeta}>Free trial · from ₹599</span>
+				<span className={styles.stickyMeta}>Trial class · from ₹599</span>
 				<a href="/trial-classes" className="btn btn-cream">
 					Book Now
 				</a>

@@ -57,15 +57,15 @@ export default function GroupClassesPage() {
 							Join expert-led, small-batch group yoga classes in the heart
 							of Indiranagar. Six signature formats, morning and evening
 							batches, and flexible timings — open to every level. Come as
-							you are, from ₹599 a drop-in or a free trial class.
+							you are, from ₹599 a drop-in or a trial class.
 						</p>
 						<span className={styles.priceChip}>
 							Drop-in ₹599 · monthly from ₹4,999 · morning &amp; evening
-							batches · <strong>free trial class</strong>
+							batches · <strong>trial class</strong>
 						</span>
 						<div className={styles.heroCta}>
 							<a href="#trial" className="btn btn-primary">
-								Book a Free Trial
+								Book a Trial Class
 							</a>
 							<a href="#schedule" className="btn btn-ghost">
 								View Class Schedule
@@ -616,7 +616,7 @@ export default function GroupClassesPage() {
 						banking, PayPal or EMI (HDFC, ICICI, Bank of Baroda, Federal Bank
 						&amp; more). New here?{" "}
 						<a href="https://athayogliving.com/trial-classes">
-							Start with a free trial class →
+							Start with a trial class →
 						</a>
 					</p>
 				</div>
@@ -904,20 +904,20 @@ export default function GroupClassesPage() {
 				</div>
 			</section>
 
-			{/* 9. Free trial magnet */}
+			{/* 9. Trial class magnet */}
 			<section id="trial">
 				<div className="wrap">
 					<Reveal>
 						<div className={styles.magnet}>
 							<div>
-								<span className="eyebrow">Free trial class</span>
+								<span className="eyebrow">Trial class</span>
 								<h2 style={{ fontSize: "2.2rem" }}>
-									Try a group class in Indiranagar — free
+									Try a group class in Indiranagar
 								</h2>
 								<p>
 									Tell us your preferred time and level. We&apos;ll
-									confirm your free trial class and help you pick the
-									format that&apos;s right for you.
+									confirm your trial class and help you pick the format
+									that&apos;s right for you.
 								</p>
 							</div>
 							<MagnetForm />
@@ -974,9 +974,9 @@ export default function GroupClassesPage() {
 				<Reveal>
 					<div className="wrap">
 						<h2>Your mat is waiting.</h2>
-						<p>Book a free trial class or drop in from ₹599.</p>
+						<p>Book a trial class or drop in from ₹599.</p>
 						<a href="#trial" className="btn btn-cream">
-							Book a Free Trial
+							Book a Trial Class
 						</a>
 					</div>
 				</Reveal>
@@ -996,11 +996,11 @@ export default function GroupClassesPage() {
 							<h3 className={styles.faqCat}>Getting started</h3>
 							<details open>
 								<summary>
-									Is there a free trial class?
+									Is there a trial class?
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes. You can book a free trial class to experience a
+									Yes. You can book a trial class to experience a
 									session and find the right format before you
 									subscribe.
 								</div>
@@ -1228,14 +1228,14 @@ export default function GroupClassesPage() {
 					<Reveal>
 						<p>
 							Expert-led group yoga classes in Indiranagar — small batches,
-							six formats, morning and evening. Start with a free trial or
-							drop in from ₹599.
+							six formats, morning and evening. Start with a trial or drop
+							in from ₹599.
 						</p>
 					</Reveal>
 					<Reveal>
 						<div className="final-cta">
 							<a href="/trial-classes" className="btn btn-cream">
-								Book a Free Trial
+								Book a Trial Class
 							</a>
 							<PaymentModal
 								planId="group-drop-in"
@@ -1262,7 +1262,7 @@ export default function GroupClassesPage() {
 
 			{/* 15. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
-				<span className={styles.stickyMeta}>Drop-in ₹599 · free trial</span>
+				<span className={styles.stickyMeta}>Drop-in ₹599 · trial</span>
 				<a href="#trial" className="btn btn-cream">
 					Book Now
 				</a>

@@ -266,7 +266,7 @@ export default function MobileDrawer() {
 											href="/trial-classes"
 											className="btn btn-cream"
 										>
-											Free Trial
+											Trial Class
 										</Link>
 									</Dialog.Close>
 									<Dialog.Close asChild>
@@ -292,7 +292,7 @@ export default function MobileDrawer() {
 											href="/trial-classes"
 											className="btn btn-cream"
 										>
-											Get a <span>Free Trial</span>
+											Get a <span>Trial Class</span>
 										</Link>
 									</Dialog.Close>
 									<Dialog.Close asChild>

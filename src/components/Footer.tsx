@@ -46,7 +46,7 @@ export default function Footer() {
 							<Link href="/about-us">Who We Are</Link>
 							<Link href="/blogs">Blog</Link>
 							<Link href="/contact-us">Contact Us</Link>
-							<Link href="/trial-classes">Free Trial</Link>
+							<Link href="/trial-classes">Trial Class</Link>
 						</nav>
 					</div>
 

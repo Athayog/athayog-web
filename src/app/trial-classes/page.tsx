@@ -86,7 +86,7 @@ export default function TrialClassesPage() {
 				<div className={styles.form}>
 					<div className="section-head">
 						<span className="eyebrow">Get Started</span>
-						<h2>Book Your Free Trial Class</h2>
+						<h2>Book Your Trial Class</h2>
 					</div>
 
 					{formError && <div className={styles.errorBanner}>{formError}</div>}
@@ -190,7 +190,7 @@ export default function TrialClassesPage() {
 
 						<div className={styles.submitRow}>
 							<SubmitButton isSubmitting={form.state.isSubmitting}>
-								Book Free Trial
+								Book Trial Class
 							</SubmitButton>
 						</div>
 					</form>
