@@ -21,6 +21,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **CI/CD** — GitHub Actions workflow: lint → typecheck → test → build → deploy
 - [ ] **Logging utility** — Replace raw `console.error` with structured logger
 - [ ] **Account Deletion Form** — Copy account delete form
+- [ ] **Thank you page** — For Facebook conversion tag on form submission success
 - [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow.
 
 ---

@@ -1,0 +1,183 @@
+.section {
+	padding: 64px 20px;
+	max-width: var(--maxw);
+	margin: 0 auto;
+}
+
+.grid {
+	display: grid;
+	gap: 16px;
+}
+
+.autoGrid {
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+	background: var(--parchment);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	overflow: hidden;
+	min-height: 140px;
+	display: flex;
+	flex-direction: column;
+}
+
+.featured {
+	background: var(--cream);
+}
+
+.cardTitle {
+	padding: 28px 24px;
+	justify-content: center;
+}
+
+.titleText {
+	font-family: var(--font-display);
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--ink);
+	line-height: 1.2;
+}
+
+.cardIcon {
+	padding: 28px 24px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.iconWrap {
+	color: var(--brand);
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.cardImage {
+	position: relative;
+	min-height: 200px;
+}
+
+.cardText {
+	font-family: var(--font-body);
+	font-size: 0.92rem;
+	color: var(--brand-deep);
+	line-height: 1.55;
+}
+
+.cardIconText {
+	flex-direction: row;
+	align-items: center;
+	gap: 14px;
+	padding: 20px 24px;
+}
+
+.inlineIcon {
+	color: var(--brand);
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+.cardImageText {
+	display: flex;
+	flex-direction: column;
+}
+
+.imageTextImg {
+	position: relative;
+	width: 100%;
+	height: 180px;
+}
+
+.cardImageText .cardText {
+	padding: 16px 20px;
+}
+
+.cardTextImageSide {
+	flex-direction: row;
+	align-items: center;
+}
+
+.imgLeft {
+	flex-direction: row;
+}
+
+.imgRight {
+	flex-direction: row-reverse;
+}
+
+.cardTextImageSide .cardText {
+	flex: 1;
+	padding: 20px 24px;
+}
+
+.sideImage {
+	position: relative;
+	width: 160px;
+	height: 100%;
+	min-height: 140px;
+	flex-shrink: 0;
+}
+
+/* Manual grid size overrides */
+.sm1 {
+	grid-column: span 1;
+}
+.sm2 {
+	grid-column: span 2;
+}
+.sm3 {
+	grid-column: span 3;
+}
+.md1 {
+	grid-column: span 1;
+}
+.md2 {
+	grid-column: span 2;
+}
+.md3 {
+	grid-column: span 3;
+}
+.lg1 {
+	grid-column: span 1;
+}
+.lg2 {
+	grid-column: span 2;
+}
+.lg3 {
+	grid-column: span 3;
+}
+
+@media (max-width: 960px) {
+	.md2,
+	.md3 {
+		grid-column: span 1;
+	}
+}
+
+@media (max-width: 640px) {
+	.sm2,
+	.sm3,
+	.md2,
+	.md3,
+	.lg2,
+	.lg3 {
+		grid-column: span 1;
+	}
+
+	.cardTextImageSide {
+		flex-direction: column;
+	}
+
+	.imgLeft,
+	.imgRight {
+		flex-direction: column;
+	}
+
+	.sideImage {
+		width: 100%;
+		min-height: 160px;
+	}
+}

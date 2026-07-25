@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import useAuthStore from "@/store/useAuthStore";
 import withAuth from "@/lib/withAuth";
 import styles from "@/app/(protected)/account/Account.module.css";
@@ -359,6 +360,17 @@ function AccountPage() {
 
 				{/* Actions */}
 				<div className={styles.actions}>
+					<Link
+						href="/account/delete-request"
+						className="btn btn-ghost"
+						style={{
+							fontSize: "0.85rem",
+							color: "#b33a3a",
+							borderColor: "#b33a3a",
+						}}
+					>
+						Request Account Deletion
+					</Link>
 					<button
 						type="button"
 						onClick={handleLogout}

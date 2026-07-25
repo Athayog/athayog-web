@@ -10,6 +10,7 @@ export default function robots(): MetadataRoute.Robots {
 					"/login",
 					"/account",
 					"/athayog-app/*",
+					"/ld/*",
 					"/privacy-policy",
 					"/refund-policy",
 					"/terms-of-service",

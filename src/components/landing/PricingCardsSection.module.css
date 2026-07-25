@@ -1,0 +1,136 @@
+.section {
+	padding: 64px 20px;
+}
+
+.wrapper {
+	max-width: var(--maxw);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title {
+	margin-bottom: 40px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 24px;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.card {
+	position: relative;
+	background: var(--parchment);
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	padding: 36px 28px 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.featured {
+	background: var(--brand-deep);
+	border-color: var(--brand-deep);
+	color: var(--cream);
+}
+
+.badge {
+	position: absolute;
+	top: -12px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: var(--brand);
+	color: var(--cream);
+	font-family: var(--font-label);
+	font-size: 0.68rem;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	padding: 5px 16px;
+	border-radius: 2px;
+	white-space: nowrap;
+}
+
+.cardTitle {
+	font-family: var(--font-label);
+	font-size: 0.82rem;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	margin-bottom: 12px;
+	font-weight: 500;
+}
+
+.price {
+	font-family: var(--font-display);
+	font-size: clamp(2rem, 4vw, 2.8rem);
+	font-weight: 600;
+	line-height: 1.1;
+	margin-bottom: 8px;
+}
+
+.note {
+	font-size: 0.88rem;
+	opacity: 0.7;
+	margin-bottom: 20px;
+	line-height: 1.45;
+}
+
+.cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 13px 28px;
+	border-radius: 2px;
+	font-family: var(--font-body);
+	font-weight: 500;
+	font-size: 0.92rem;
+	transition: 0.25s;
+	cursor: pointer;
+	margin-top: auto;
+	text-decoration: none;
+	width: 100%;
+}
+
+.ctaDefault {
+	background: transparent;
+	color: var(--brand-deep);
+	border: 1px solid var(--brand-deep);
+}
+
+.ctaDefault:hover {
+	background: var(--brand-deep);
+	color: var(--cream);
+}
+
+.ctaFeatured {
+	background: var(--cream);
+	color: var(--brand-deep);
+	border: 1px solid var(--cream);
+}
+
+.ctaFeatured:hover {
+	background: transparent;
+	color: var(--cream);
+}
+
+.trustNote {
+	margin-top: 32px;
+	font-size: 0.88rem;
+	color: var(--brand-deep);
+	opacity: 0.7;
+	font-style: italic;
+}
+
+@media (max-width: 640px) {
+	.grid {
+		grid-template-columns: 1fr;
+		max-width: 360px;
+	}
+
+	.card {
+		padding: 32px 22px 28px;
+	}
+}

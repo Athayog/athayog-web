@@ -1,0 +1,132 @@
+.section {
+	padding: 64px 20px;
+}
+
+.inner {
+	max-width: var(--maxw);
+	margin: 0 auto;
+}
+
+.heading {
+	font-family: var(--font-display);
+	font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+	font-weight: 600;
+	line-height: 1.12;
+	color: var(--ink);
+	margin-bottom: 10px;
+}
+
+.subtitle {
+	font-family: var(--font-body);
+	font-size: 1rem;
+	color: var(--brand-deep);
+	line-height: 1.65;
+	margin-bottom: 32px;
+	max-width: 640px;
+}
+
+/* Grid layout */
+.gridLayout {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.gridCard {
+	position: relative;
+	border-radius: 6px;
+	overflow: hidden;
+	aspect-ratio: 3 / 4;
+}
+
+.gridOverlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 24px 20px;
+}
+
+/* List layout */
+.listLayout {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.listCard {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background: var(--parchment);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	overflow: hidden;
+	min-height: 200px;
+}
+
+.listImage {
+	position: relative;
+}
+
+.listContent {
+	padding: 28px 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.cardTitle {
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 6px;
+}
+
+.gridOverlay .cardTitle {
+	color: #fff;
+}
+
+.listContent .cardTitle {
+	color: var(--ink);
+}
+
+.cardDescription {
+	font-family: var(--font-body);
+	font-size: 0.92rem;
+	line-height: 1.55;
+}
+
+.gridOverlay .cardDescription {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.listContent .cardDescription {
+	color: var(--brand-deep);
+}
+
+@media (max-width: 960px) {
+	.gridLayout {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	.gridLayout {
+		grid-template-columns: 1fr;
+	}
+
+	.gridCard {
+		aspect-ratio: 4 / 3;
+	}
+
+	.listCard {
+		grid-template-columns: 1fr;
+	}
+
+	.listImage {
+		height: 200px;
+	}
+}

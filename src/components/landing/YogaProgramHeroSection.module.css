@@ -1,0 +1,138 @@
+.hero {
+	position: relative;
+	padding: 64px 20px;
+	overflow: hidden;
+	min-height: 100svh;
+	display: flex;
+	align-items: center;
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.inner {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 48px;
+	align-items: center;
+	max-width: var(--maxw);
+	margin: 0 auto;
+	width: 100%;
+}
+
+.infoCard {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 6px;
+	padding: 40px 36px;
+}
+
+.title {
+	font-family: var(--font-display);
+	font-size: clamp(2rem, 4vw, 2.8rem);
+	font-weight: 600;
+	line-height: 1.12;
+	color: #fff;
+	margin-bottom: 14px;
+}
+
+.description {
+	font-family: var(--font-body);
+	font-size: 1rem;
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.65;
+	margin-bottom: 24px;
+}
+
+.featureList {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 32px;
+}
+
+.featureItem {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: #fff;
+	font-size: 0.95rem;
+}
+
+.checkIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: var(--brand);
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.btnPrimary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-weight: 600;
+	font-size: 0.95rem;
+	padding: 14px 30px;
+	border-radius: 2px;
+	text-decoration: none;
+	transition: background 0.25s;
+}
+
+.btnPrimary:hover {
+	background: var(--sand);
+}
+
+.formCard {
+	background: var(--cream);
+	border-radius: 6px;
+	padding: 36px 32px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.formTitle {
+	font-family: var(--font-display);
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--ink);
+	margin-bottom: 20px;
+}
+
+.statusMessage {
+	padding: 48px 24px;
+	text-align: center;
+	font-family: var(--font-display);
+	font-size: 1.2rem;
+	color: var(--brand-deep);
+}
+
+.errorText {
+	color: var(--clay);
+	font-size: 0.85rem;
+	margin-bottom: 12px;
+}
+
+@media (max-width: 960px) {
+	.inner {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+}

@@ -1,0 +1,162 @@
+.section {
+	padding: 64px 20px;
+}
+
+.wrapper {
+	max-width: var(--maxw);
+	margin: 0 auto;
+}
+
+.header {
+	text-align: center;
+	max-width: 680px;
+	margin: 0 auto 38px;
+}
+
+.title {
+	margin-bottom: 12px;
+}
+
+.subtitle {
+	font-family: var(--font-display);
+	font-size: 1.12rem;
+	color: var(--brand-deep);
+	line-height: 1.55;
+}
+
+.list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.item {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.number {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-body);
+	font-weight: 600;
+	line-height: 1;
+}
+
+.text {
+	font-size: 1rem;
+	line-height: 1.55;
+	padding-top: 2px;
+}
+
+/* default */
+.default .number {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: var(--brand);
+	color: var(--cream);
+	font-size: 0.88rem;
+}
+
+.default .item {
+	background: var(--parchment);
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	padding: 18px 20px;
+}
+
+/* timeline */
+.timeline .number {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: var(--brand);
+	color: var(--cream);
+	font-size: 0.88rem;
+	position: relative;
+	z-index: 1;
+}
+
+.timelineLine {
+	border-left: 2px solid var(--line);
+	margin-left: 17px;
+	padding-left: 35px;
+}
+
+.timeline .item {
+	padding: 4px 0;
+}
+
+/* minimal */
+.minimal .number {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: var(--sand);
+	color: var(--brand-deep);
+	font-size: 0.8rem;
+}
+
+.minimal .text {
+	font-size: 0.95rem;
+}
+
+/* bold */
+.bold .number {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: var(--brand-deep);
+	color: var(--cream);
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.bold .text {
+	font-weight: 600;
+	font-size: 1.05rem;
+}
+
+.bold .item {
+	background: var(--parchment);
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	padding: 22px 24px;
+}
+
+@media (max-width: 640px) {
+	.list {
+		gap: 10px;
+	}
+
+	.default .item,
+	.bold .item {
+		padding: 14px 16px;
+	}
+
+	.timelineLine {
+		border-left: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.timeline .number,
+	.bold .number {
+		width: 32px;
+		height: 32px;
+		font-size: 0.82rem;
+	}
+
+	.bold .number {
+		width: 32px;
+		height: 32px;
+		font-size: 0.85rem;
+	}
+}
