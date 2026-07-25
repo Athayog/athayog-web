@@ -128,12 +128,6 @@ export default function EnquireModal({
 					</div>
 				) : (
 					<>
-						<h2 className={styles.title}>Send an Enquiry</h2>
-						<p className={styles.subtitle}>
-							Tell us what you&apos;re looking for and we&apos;ll get in
-							touch.
-						</p>
-
 						{formError && (
 							<div className={styles.errorBanner}>{formError}</div>
 						)}
