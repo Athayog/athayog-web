@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
 const mockAdd = vi.fn().mockResolvedValue({ id: "test-doc-id" });

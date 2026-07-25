@@ -1,7 +1,8 @@
+// @vitest-environment node
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
 import { POST } from "../verify/route";
-import crypto from "crypto";
+import crypto from "node:crypto";
 
 vi.mock("@/lib/firebaseAdmin", () => ({
 	getAdminFirestore: vi.fn(() => ({
