@@ -29,12 +29,14 @@ const SERVICE_OPTIONS = [
 type EnquireModalProps = {
 	children: React.ReactNode;
 	service?: string;
+	plan?: string;
 	pageSource?: string;
 };
 
 export default function EnquireModal({
 	children,
 	service = "Group class",
+	plan,
 	pageSource = "",
 }: EnquireModalProps) {
 	const [open, setOpen] = useState(false);
@@ -62,6 +64,7 @@ export default function EnquireModal({
 						data: {
 							...value,
 							pageSource,
+							plan,
 						},
 						email: {
 							to: "info@athayogliving.com",

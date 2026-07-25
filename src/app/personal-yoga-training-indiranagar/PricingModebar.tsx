@@ -30,6 +30,8 @@ const PRICES: Record<Mode, { p12: string; p24: string; pc: string; loc: string }
 export default function PricingModebar() {
 	const [mode, setMode] = useState<Mode>("studio");
 	const p = PRICES[mode];
+	const modeLabel =
+		mode === "studio" ? "Studio" : mode === "online" ? "Online" : "At Home";
 
 	return (
 		<>
@@ -71,6 +73,7 @@ export default function PricingModebar() {
 					</div>
 					<EnquireModal
 						service="Personal Training"
+						plan={`12 Sessions · ${p.p12} (${modeLabel})`}
 						pageSource="personal-yoga-training-indiranagar"
 					>
 						<span className="btn btn-light">Enquire</span>
@@ -92,6 +95,7 @@ export default function PricingModebar() {
 					</div>
 					<EnquireModal
 						service="Personal Training"
+						plan={`24 Sessions · ${p.p24} (${modeLabel})`}
 						pageSource="personal-yoga-training-indiranagar"
 					>
 						<span className="btn btn-cream">Enquire</span>
@@ -110,6 +114,7 @@ export default function PricingModebar() {
 					<div className={styles.incl}>Two people · 12 sessions · {p.loc}</div>
 					<EnquireModal
 						service="Personal Training"
+						plan={`Couple · 12 Sessions ${p.pc} (${modeLabel})`}
 						pageSource="personal-yoga-training-indiranagar"
 					>
 						<span className="btn btn-light">Enquire</span>
