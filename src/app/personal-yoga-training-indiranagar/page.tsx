@@ -948,6 +948,32 @@ export default function PersonalTrainingPage() {
 					Book Now
 				</a>
 			</div>
+
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						name: "Personal Yoga Training in Indiranagar",
+						description:
+							"One-on-one personal yoga sessions at Athayog Living — studio, online, or at-home in Bengaluru.",
+						brand: {
+							"@type": "Organization",
+							name: "Athayog Living",
+						},
+						url: "https://athayogliving.com/personal-yoga-training-indiranagar",
+						offers: {
+							"@type": "AggregateOffer",
+							lowPrice: "14999",
+							highPrice: "44599",
+							priceCurrency: "INR",
+							offerCount: 9,
+							availability: "https://schema.org/InStock",
+						},
+					}),
+				}}
+			/>
 		</main>
 	);
 }

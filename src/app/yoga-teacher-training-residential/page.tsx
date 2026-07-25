@@ -548,6 +548,47 @@ export default function RTTCPage() {
 					Enrol
 				</a>
 			</div>
+
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						name: "Yoga TTC Online — RYT-200 Self-Paced",
+						description:
+							"Online 200-hour yoga teacher training certification. Self-paced study with Yoga Alliance, SVYASA, AYUSH recognition.",
+						brand: {
+							"@type": "Organization",
+							name: "Athayog Living",
+						},
+						url: "https://athayogliving.com/yoga-teacher-training-residential",
+						offers: [
+							{
+								"@type": "Offer",
+								name: "Self-Paced",
+								price: "14999",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "Early Bird",
+								price: "19999",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "Regular",
+								price: "24999",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+						],
+					}),
+				}}
+			/>
 		</main>
 	);
 }

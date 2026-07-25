@@ -53,7 +53,7 @@ export default async function PaymentSuccessPage({
 	const { plan } = await searchParams;
 
 	return (
-		<section style={{ background: "var(--cream)" }}>
+		<main style={{ background: "var(--cream)", padding: "80px 0 120px" }}>
 			<div className="wrap">
 				<Suspense
 					fallback={
@@ -63,6 +63,6 @@ export default async function PaymentSuccessPage({
 					<SuccessContent planParam={plan} />
 				</Suspense>
 			</div>
-		</section>
+		</main>
 	);
 }

@@ -679,6 +679,47 @@ export default function TTCBangalorePage() {
 					Enrol
 				</a>
 			</div>
+
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						name: "Yoga Teacher Training RYT-200 — Weekend Batch",
+						description:
+							"200-hour yoga teacher training certification in Bengaluru. Weekend batches with Yoga Alliance, SVYASA, AYUSH recognition.",
+						brand: {
+							"@type": "Organization",
+							name: "Athayog Living",
+						},
+						url: "https://athayogliving.com/yoga-teacher-training-bangalore",
+						offers: [
+							{
+								"@type": "Offer",
+								name: "Early Bird",
+								price: "24999",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "Regular",
+								price: "29999",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "Online",
+								price: "19999",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+						],
+					}),
+				}}
+			/>
 		</main>
 	);
 }

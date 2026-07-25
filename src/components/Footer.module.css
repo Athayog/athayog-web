@@ -18,6 +18,18 @@
 	color: #c9d0bb;
 }
 
+.logoLink {
+	display: inline-block;
+	margin-bottom: 8px;
+	filter: brightness(0) invert(0.85);
+	opacity: 0.9;
+	transition: opacity 0.2s;
+}
+
+.logoLink:hover {
+	opacity: 1;
+}
+
 .brand {
 	font-family: var(--font-label);
 	font-size: 1.3rem;
@@ -78,8 +90,26 @@
 	color: #9da68c;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: 10px;
+}
+
+.social {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.socialLink {
+	color: #9da68c;
+	transition: color 0.2s;
+	display: flex;
+	align-items: center;
+}
+
+.socialLink:hover {
+	color: var(--cream);
 }
 
 @media (max-width: 960px) {

@@ -1283,6 +1283,58 @@ export default function GroupClassesPage() {
 					Book Now
 				</a>
 			</div>
+
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						name: "Yoga Group Classes in Indiranagar",
+						description:
+							"Certified yoga group classes at Athayog Living in Indiranagar, Bengaluru. Drop-in, monthly, and annual plans available.",
+						brand: { "@type": "Organization", name: "Athayog Living" },
+						url: "https://athayogliving.com/group-classes-indiranagar",
+						offers: [
+							{
+								"@type": "Offer",
+								name: "Drop-in",
+								price: "629",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "1 Month",
+								price: "5249",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "3 Months",
+								price: "10499",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "6 Months",
+								price: "16799",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+							{
+								"@type": "Offer",
+								name: "12 Months",
+								price: "27299",
+								priceCurrency: "INR",
+								availability: "https://schema.org/InStock",
+							},
+						],
+					}),
+				}}
+			/>
 		</main>
 	);
 }

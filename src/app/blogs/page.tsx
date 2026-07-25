@@ -31,39 +31,41 @@ export default async function BlogIndex() {
 	});
 
 	return (
-		<section>
-			<div className="wrap">
-				<div className={styles.sectionHead}>
-					<SliceZone slices={page.data.slices} components={components} />
-				</div>
-				{posts.length > 0 ? (
-					<div
-						style={{
-							display: "grid",
-							gridTemplateColumns:
-								posts.length < 3
-									? "repeat(auto-fill, minmax(320px, 1fr))"
-									: "repeat(auto-fit, minmax(320px, 1fr))",
-							gap: 26,
-						}}
-					>
-						{posts.map((post) => (
-							<PostCard post={post} key={post.id} />
-						))}
+		<main>
+			<section>
+				<div className="wrap">
+					<div className={styles.sectionHead}>
+						<SliceZone slices={page.data.slices} components={components} />
 					</div>
-				) : (
-					<p
-						style={{
-							textAlign: "center",
-							fontSize: "1.1rem",
-							color: "var(--brand-deep)",
-							marginTop: 60,
-						}}
-					>
-						No blog posts yet. Check back soon.
-					</p>
-				)}
-			</div>
-		</section>
+					{posts.length > 0 ? (
+						<div
+							style={{
+								display: "grid",
+								gridTemplateColumns:
+									posts.length < 3
+										? "repeat(auto-fill, minmax(320px, 1fr))"
+										: "repeat(auto-fit, minmax(320px, 1fr))",
+								gap: 26,
+							}}
+						>
+							{posts.map((post) => (
+								<PostCard post={post} key={post.id} />
+							))}
+						</div>
+					) : (
+						<p
+							style={{
+								textAlign: "center",
+								fontSize: "1.1rem",
+								color: "var(--brand-deep)",
+								marginTop: 60,
+							}}
+						>
+							No blog posts yet. Check back soon.
+						</p>
+					)}
+				</div>
+			</section>
+		</main>
 	);
 }

@@ -65,7 +65,7 @@ export default function TrialClassesPage() {
 
 	if (submitted) {
 		return (
-			<section className={styles.page}>
+			<main className={styles.page}>
 				<div className="wrap">
 					<div className={styles.success}>
 						<span className="eyebrow">Thank You</span>
@@ -76,12 +76,12 @@ export default function TrialClassesPage() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</main>
 		);
 	}
 
 	return (
-		<section className={styles.page}>
+		<main className={styles.page}>
 			<div className="wrap">
 				<div className={styles.form}>
 					<div className="section-head">
@@ -196,6 +196,6 @@ export default function TrialClassesPage() {
 					</form>
 				</div>
 			</div>
-		</section>
+		</main>
 	);
 }

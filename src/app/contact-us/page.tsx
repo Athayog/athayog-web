@@ -55,7 +55,7 @@ export default function ContactUsPage() {
 
 	if (submitted) {
 		return (
-			<section className={styles.page}>
+			<main className={styles.page}>
 				<div className="wrap">
 					<div className={styles.success}>
 						<span className="eyebrow">Thank You</span>
@@ -66,12 +66,12 @@ export default function ContactUsPage() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</main>
 		);
 	}
 
 	return (
-		<section className={styles.page}>
+		<main className={styles.page}>
 			<div className="wrap">
 				<div className={styles.grid}>
 					<div className={styles.left}>
@@ -171,6 +171,6 @@ export default function ContactUsPage() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</main>
 	);
 }

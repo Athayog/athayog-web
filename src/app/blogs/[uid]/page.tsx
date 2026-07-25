@@ -50,123 +50,125 @@ export default async function BlogPost({ params }: { params: Params }) {
 	const { slices, title, publication_date, description, featured_image } = page.data;
 
 	return (
-		<section>
-			<div className="wrap">
-				<article style={{ maxWidth: 760, margin: "0 auto" }}>
-					<span className="eyebrow">Blog</span>
+		<main>
+			<section>
+				<div className="wrap">
+					<article style={{ maxWidth: 760, margin: "0 auto" }}>
+						<span className="eyebrow">Blog</span>
 
-					<div style={{ marginTop: 8, marginBottom: 12 }}>
-						<RichTextBlog field={title} />
-					</div>
+						<div style={{ marginTop: 8, marginBottom: 12 }}>
+							<RichTextBlog field={title} />
+						</div>
 
-					{publication_date && (
-						<p
-							style={{
-								fontFamily: "var(--font-body)",
-								fontSize: "0.9rem",
-								color: "var(--clay)",
-								fontWeight: 500,
-								margin: "0 0 28px",
-							}}
-						>
-							{new Intl.DateTimeFormat("en-US", {
-								month: "long",
-								day: "numeric",
-								year: "numeric",
-							}).format(new Date(publication_date))}
-						</p>
-					)}
-
-					{featured_image && (
-						<div
-							style={{
-								borderRadius: 4,
-								overflow: "hidden",
-								marginBottom: 32,
-							}}
-						>
-							<PrismicNextImage
-								field={featured_image}
+						{publication_date && (
+							<p
 								style={{
-									width: "100%",
-									height: "auto",
-									display: "block",
+									fontFamily: "var(--font-body)",
+									fontSize: "0.9rem",
+									color: "var(--clay)",
+									fontWeight: 500,
+									margin: "0 0 28px",
 								}}
-								fallbackAlt=""
-							/>
-						</div>
-					)}
+							>
+								{new Intl.DateTimeFormat("en-US", {
+									month: "long",
+									day: "numeric",
+									year: "numeric",
+								}).format(new Date(publication_date))}
+							</p>
+						)}
 
-					{description && (
+						{featured_image && (
+							<div
+								style={{
+									borderRadius: 4,
+									overflow: "hidden",
+									marginBottom: 32,
+								}}
+							>
+								<PrismicNextImage
+									field={featured_image}
+									style={{
+										width: "100%",
+										height: "auto",
+										display: "block",
+									}}
+									fallbackAlt=""
+								/>
+							</div>
+						)}
+
+						{description && (
+							<div
+								style={{
+									fontSize: "1.05rem",
+									lineHeight: 1.8,
+									marginBottom: 40,
+								}}
+							>
+								<RichTextBlog field={description} />
+							</div>
+						)}
+					</article>
+
+					<script
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify({
+								"@context": "https://schema.org",
+								"@type": "BlogPosting",
+								headline: prismic.asText(title),
+								description: page.data.meta_description || "",
+								image: featured_image?.url || "",
+								datePublished: publication_date || undefined,
+								author: {
+									"@type": "Person",
+									name: "Sharath Basavaraju",
+								},
+								publisher: {
+									"@type": "Organization",
+									name: "Athayog Living",
+									logo: {
+										"@type": "ImageObject",
+										url: "https://athayogliving.com/Logo.png",
+									},
+								},
+							}),
+						}}
+					/>
+
+					<div style={{ maxWidth: 760, margin: "0 auto" }}>
+						<SliceZone slices={slices} components={components} />
+					</div>
+
+					{nextPost && (
 						<div
 							style={{
-								fontSize: "1.05rem",
-								lineHeight: 1.8,
-								marginBottom: 40,
+								maxWidth: 760,
+								margin: "48px auto 0",
+								display: "flex",
+								justifyContent: "flex-end",
 							}}
 						>
-							<RichTextBlog field={description} />
+							<Link
+								href={`/blogs/${nextPost.uid}`}
+								className="btn btn-primary"
+								style={{
+									display: "inline-flex",
+									alignItems: "center",
+									gap: 8,
+								}}
+							>
+								Next Blog
+								<span aria-hidden="true" style={{ fontSize: "1.2rem" }}>
+									→
+								</span>
+							</Link>
 						</div>
 					)}
-				</article>
-
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
-							"@context": "https://schema.org",
-							"@type": "BlogPosting",
-							headline: prismic.asText(title),
-							description: page.data.meta_description || "",
-							image: featured_image?.url || "",
-							datePublished: publication_date || undefined,
-							author: {
-								"@type": "Person",
-								name: "Sharath Basavaraju",
-							},
-							publisher: {
-								"@type": "Organization",
-								name: "Athayog Living",
-								logo: {
-									"@type": "ImageObject",
-									url: "https://athayogliving.com/Logo.png",
-								},
-							},
-						}),
-					}}
-				/>
-
-				<div style={{ maxWidth: 760, margin: "0 auto" }}>
-					<SliceZone slices={slices} components={components} />
 				</div>
-
-				{nextPost && (
-					<div
-						style={{
-							maxWidth: 760,
-							margin: "48px auto 0",
-							display: "flex",
-							justifyContent: "flex-end",
-						}}
-					>
-						<Link
-							href={`/blogs/${nextPost.uid}`}
-							className="btn btn-primary"
-							style={{
-								display: "inline-flex",
-								alignItems: "center",
-								gap: 8,
-							}}
-						>
-							Next Blog
-							<span aria-hidden="true" style={{ fontSize: "1.2rem" }}>
-								→
-							</span>
-						</Link>
-					</div>
-				)}
-			</div>
-		</section>
+			</section>
+		</main>
 	);
 }
 

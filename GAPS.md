@@ -9,7 +9,6 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`).
 - [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`.
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
-- [ ] **Missing nav pages** — `/what-we-offer` hub page is in `navItems.ts` but has no page.
 - [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
 - [ ] **Unit tests for auth** — `useAuthStore`, `AuthBootstrap`, auth helpers (`src/lib/auth.ts`)
 - [ ] **Unit tests for components** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`
@@ -20,7 +19,6 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Analytics** — Vercel Analytics, PostHog, or Google Analytics for page views & conversions
 - [ ] **CI/CD** — GitHub Actions workflow: lint → typecheck → test → build → deploy
 - [ ] **Logging utility** — Replace raw `console.error` with structured logger
-- [ ] **Account Deletion Form** — Copy account delete form
 - [ ] **Thank you page** — For Facebook conversion tag on form submission success
 - [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow.
 

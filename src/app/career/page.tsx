@@ -105,7 +105,7 @@ export default function CareerPage() {
 
 	if (submitted) {
 		return (
-			<section className={styles.page}>
+			<main className={styles.page}>
 				<div className="wrap">
 					<div className={styles.success}>
 						<span className="eyebrow">Thank You</span>
@@ -116,12 +116,12 @@ export default function CareerPage() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</main>
 		);
 	}
 
 	return (
-		<section className={styles.page}>
+		<main className={styles.page}>
 			<div className="wrap">
 				<div className={styles.container}>
 					<div className={styles.head}>
@@ -406,6 +406,6 @@ export default function CareerPage() {
 					</form>
 				</div>
 			</div>
-		</section>
+		</main>
 	);
 }
