@@ -67,12 +67,12 @@
 	font-size: 1.5rem;
 	font-weight: 600;
 	margin-bottom: 6px;
-	color: #2b2e24 !important;
+	color: var(--ink);
 }
 
 .subtitle {
 	font-size: 0.9rem;
-	color: var(--brand-deep);
+	color: var(--ink);
 	margin-bottom: 24px;
 }
 
