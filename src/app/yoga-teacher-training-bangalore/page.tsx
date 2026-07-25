@@ -84,8 +84,18 @@ export default function TTCBangalorePage() {
 							<span>SVYASA · AYUSH recognized</span>
 						</div>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						[ Hero image · TTC in session ]
+					<div
+						className={styles.heroMedia}
+						style={{ position: "relative", overflow: "hidden" }}
+					>
+						<Image
+							src="/hero-teaching.jpg"
+							alt="Yoga teacher training weekend batch in session at Athayog Living, Indiranagar"
+							fill
+							sizes="(max-width: 960px) 0vw, 40vw"
+							priority
+							style={{ objectFit: "cover" }}
+						/>
 					</div>
 				</div>
 			</section>

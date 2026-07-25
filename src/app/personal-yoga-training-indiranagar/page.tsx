@@ -87,8 +87,18 @@ export default function PersonalTrainingPage() {
 							<span>850+ Athayogis · 30+ transformations</span>
 						</div>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						[ Hero image — a trainer guiding a one-on-one session ]
+					<div
+						className={styles.heroMedia}
+						style={{ position: "relative", overflow: "hidden" }}
+					>
+						<Image
+							src="/hero-personal-training.png"
+							alt="Certified yoga trainer providing one-on-one personal training at Athayog Living, Indiranagar"
+							fill
+							sizes="(max-width: 960px) 0vw, 40vw"
+							priority
+							style={{ objectFit: "cover" }}
+						/>
 					</div>
 				</div>
 			</section>

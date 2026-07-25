@@ -77,8 +77,18 @@ export default function RTTCPage() {
 							<span>Attend from anywhere</span>
 						</div>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						[ Hero image · online TTC ]
+					<div
+						className={styles.heroMedia}
+						style={{ position: "relative", overflow: "hidden" }}
+					>
+						<Image
+							src="/hero-certification.jpg"
+							alt="RYT-200 yoga teacher training graduates receiving certification at Athayog Living"
+							fill
+							sizes="(max-width: 960px) 0vw, 40vw"
+							priority
+							style={{ objectFit: "cover" }}
+						/>
 					</div>
 				</div>
 			</section>

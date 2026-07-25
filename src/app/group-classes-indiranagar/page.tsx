@@ -82,8 +82,18 @@ export default function GroupClassesPage() {
 							<span>850+ Athayogis · Indiranagar</span>
 						</div>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						Hero image — a group class in session at the Indiranagar studio
+					<div
+						className={styles.heroMedia}
+						style={{ position: "relative", overflow: "hidden" }}
+					>
+						<Image
+							src="/hero-group-classes.png"
+							alt="Small-batch group yoga class in session at Athayog Living studio, Indiranagar"
+							fill
+							sizes="(max-width: 960px) 0vw, 40vw"
+							priority
+							style={{ objectFit: "cover" }}
+						/>
 					</div>
 				</div>
 			</section>

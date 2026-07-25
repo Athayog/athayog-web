@@ -85,8 +85,18 @@ export default function WeightLossPage() {
 							<span>Nutrition &amp; counselling included</span>
 						</div>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						[ Hero image — dynamic asana / Surya Namaskar practice ]
+					<div
+						className={styles.heroMedia}
+						style={{ position: "relative", overflow: "hidden" }}
+					>
+						<Image
+							src="/hero-warrior-pose.png"
+							alt="Dynamic warrior pose practice — strength-building yoga at Athayog Living, Indiranagar"
+							fill
+							sizes="(max-width: 960px) 0vw, 40vw"
+							priority
+							style={{ objectFit: "cover" }}
+						/>
 					</div>
 				</div>
 			</section>

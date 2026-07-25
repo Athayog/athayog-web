@@ -92,8 +92,18 @@ export default function Home() {
 							<span>Indiranagar &amp; Jayanagar</span>
 						</div>
 					</div>
-					<div className={styles.heroMedia} aria-hidden="true">
-						[ Hero image · practice at the Indiranagar studio ]
+					<div
+						className={styles.heroMedia}
+						style={{ position: "relative", overflow: "hidden" }}
+					>
+						<Image
+							src="/hero-home.jpg"
+							alt="Group yoga class in session at Athayog Living studio, Indiranagar, Bengaluru"
+							fill
+							sizes="(max-width: 960px) 0vw, 40vw"
+							priority
+							style={{ objectFit: "cover" }}
+						/>
 					</div>
 				</div>
 			</section>
@@ -568,8 +578,17 @@ export default function Home() {
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className={styles.eventMedia} aria-hidden="true">
-							[ Yoga Arambha 2025 event ]
+						<div
+							className={styles.eventMedia}
+							style={{ position: "relative", overflow: "hidden" }}
+						>
+							<Image
+								src="/hero-event-yoga-day.jpg"
+								alt="Yoga Arambha 2025 — community yoga practice led by Sharath Basavaraju at Kittur Rani Chennamma Stadium"
+								fill
+								sizes="(max-width: 960px) 100vw, 50vw"
+								style={{ objectFit: "cover" }}
+							/>
 						</div>
 					</Reveal>
 				</div>
