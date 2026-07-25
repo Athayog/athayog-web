@@ -23,7 +23,7 @@
 	"dependencies": {
 		"@bprogress/next": "^3.2.12",
 		"@prismicio/client": "^7.21.8",
-		"@prismicio/next": "^1.7.2",
+		"@prismicio/next": "^2.3.0",
 		"@prismicio/react": "^2.9.2",
 		"@radix-ui/react-collapsible": "^1.1.16",
 		"@radix-ui/react-dialog": "^1.1.19",

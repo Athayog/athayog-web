@@ -10,7 +10,7 @@ const routes: prismic.ClientConfig["routes"] = [
 	{ type: "blog_post", path: "/blogs/:uid" },
 ];
 
-export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
+export const createClient = (config: prismic.ClientConfig = {}) => {
 	const client = prismic.createClient(repositoryName, {
 		routes,
 		fetchOptions:
