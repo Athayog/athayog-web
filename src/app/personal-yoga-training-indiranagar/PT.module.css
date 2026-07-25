@@ -239,6 +239,8 @@
 	font-family: var(--font-display);
 	font-style: italic;
 	border: 1px solid var(--line);
+	position: relative;
+	overflow: hidden;
 }
 
 .fac h3 {

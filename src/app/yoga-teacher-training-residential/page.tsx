@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-residential/RTTC.module.css";
@@ -214,7 +215,14 @@ export default function RTTCPage() {
 					<Reveal>
 						<div className={styles.facGrid}>
 							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
+								<div className={styles.facAvatar}>
+									<Image
+										src="/sharath-basavaraju.png"
+										alt="Sharath Basavaraju"
+										fill
+										style={{ objectFit: "cover" }}
+									/>
+								</div>
 								<h3>Sharath Basavaraju</h3>
 								<div
 									className={`${styles.facRole} ${styles.verify}`}

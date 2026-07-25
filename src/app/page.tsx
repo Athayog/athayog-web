@@ -399,8 +399,16 @@ export default function Home() {
 			<section id="story">
 				<div className={`wrap ${styles.story}`}>
 					<Reveal>
-						<div className={styles.storyMedia} aria-hidden="true">
-							[ Founder Sharath Basavaraju / studio life ]
+						<div
+							className={styles.storyMedia}
+							style={{ position: "relative", overflow: "hidden" }}
+						>
+							<Image
+								src="/sharath-basavaraju.png"
+								alt="Sharath Basavaraju, Founder of Athayog Living"
+								fill
+								style={{ objectFit: "cover" }}
+							/>
 						</div>
 					</Reveal>
 					<Reveal>

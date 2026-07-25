@@ -638,7 +638,14 @@ export default function GroupClassesPage() {
 					<div className={styles.facGrid}>
 						<Reveal>
 							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
+								<div className={styles.facAvatar}>
+									<Image
+										src="/sharath-basavaraju.png"
+										alt="Sharath Basavaraju"
+										fill
+										style={{ objectFit: "cover" }}
+									/>
+								</div>
 								<h3>Sharath Basavaraju</h3>
 								<div
 									className={`${styles.facRole} ${styles.verify}`}
