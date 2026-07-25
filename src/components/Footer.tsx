@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "@/components/Footer.module.css";
 
 const socialLinks = [
@@ -47,15 +46,7 @@ export default function Footer() {
 			<div className={`wrap ${styles.inner}`}>
 				<div className={styles.grid}>
 					<div className={styles.brandCol}>
-						<Link href="/" className={styles.logoLink}>
-							<Image
-								src="/Logo.png"
-								alt="AthaYog Living"
-								width={140}
-								height={36}
-								priority
-							/>
-						</Link>
+						<div className={styles.brand}>ATHAYOG LIVING</div>
 						<div className={styles.tag}>A Sanctum For The Spirit</div>
 						<p className={styles.desc}>
 							Authentic, certified yoga in Indiranagar &amp; Jayanagar,
