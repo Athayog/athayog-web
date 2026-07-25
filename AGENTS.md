@@ -84,17 +84,118 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 - New forms: define a Zod schema → call `useForm({ defaultValues, validators, onSubmit })` → compose `<FormField>` + `<SubmitButton>`.
 - API: `POST /api/submit-form` accepts `{ collection, data }` — validates with Zod server-side, writes to Firestore, returns 201/400/429/500.
 
+## SEO
+
+Every page must have proper metadata for search engines and social sharing. Follow these patterns when creating or modifying pages.
+
+### Server component pages (most pages)
+
+```ts
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Page Title | Athayog Living",
+	description:
+		"Compelling 150-160 character description with keywords for search engines.",
+	alternates: { canonical: "https://athayogliving.com/path" },
+};
+```
+
+All OG images, Twitter cards, and siteName inherit from root layout — no need to repeat them per page. Only set `title`, `description`, and `alternates.canonical`.
+
+### "use client" pages (cannot export metadata)
+
+Create a sibling `layout.tsx` in the same directory:
+
+```ts
+// src/app/example/layout.tsx
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Page Title | Athayog Living",
+    description: "...",
+    alternates: { canonical: "https://athayogliving.com/example" },
+};
+export default function Layout({ children }: { children: React.ReactNode }) {
+    return <>{children}</>;
+}
+```
+
+### Blog posts (dynamic Prismic content)
+
+```tsx
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const client = createClient();
+	const page = await client.getByUID("blog_post", uid).catch(() => notFound());
+	return {
+		title: page.data.meta_title || prismic.asText(page.data.title),
+		description: page.data.meta_description,
+		openGraph: {
+			title: page.data.meta_title || undefined,
+			images: page.data.meta_image?.url ? [{ url: page.data.meta_image.url }] : [],
+		},
+	};
+}
+```
+
+### `<main>` landmark
+
+Every page **must** wrap its content in a `<main>` tag (not a `<>` fragment). This is critical for accessibility and SEO.
+
+### `<h1>` — one per page
+
+Every page must have exactly one `<h1>`. Pages that start with `<h2>` as their top heading need the `<h2>` changed to `<h1>`. Pages with no heading at all should add a visually-hidden `<h1>` for screen readers.
+
+### JSON-LD structured data
+
+| Page                   | Schema type                                 | Where                                        |
+| ---------------------- | ------------------------------------------- | -------------------------------------------- |
+| Home                   | `LocalBusiness` + `EducationalOrganization` | Inline in page.tsx, before `</main>`         |
+| Blog posts             | `BlogPosting`                               | Inline in [uid]/page.tsx, after `</article>` |
+| Service pages (future) | `Service` or `Product`                      | Inline before `</main>`                      |
+
+### Static SEO files
+
+| File                          | Purpose                                 | Rules                                                                    |
+| ----------------------------- | --------------------------------------- | ------------------------------------------------------------------------ |
+| `src/app/opengraph-image.tsx` | OG image via `next/og` (Edge, 1200×630) | No editing needed                                                        |
+| `src/app/robots.ts`           | Crawler rules                           | Disallow: `/login`, `/account`, `/payment-success`, `/athayog-app/*`     |
+| `src/app/sitemap.ts`          | URL listing                             | Add new pages to `indexedPages` array; remove pages that no longer exist |
+| `public/manifest.json`        | PWA manifest                            | Update `name`/`short_name` when branding changes                         |
+
+### Page-specific metadata checklist
+
+When creating a new page, verify:
+
+- [ ] `export const metadata` with `title`, `description`, `alternates.canonical`
+- [ ] Content wrapped in `<main>` landmark
+- [ ] Exactly one `<h1>` per page
+- [ ] Added to `sitemap.ts` `indexedPages` array
+- [ ] JSON-LD structured data if applicable (service pages, blog posts)
+- [ ] Image alt text on all `<Image>` components
+- [ ] Running `npm run build` to verify zero errors
+
+### SEO checklist for new pages
+
+When creating a new page, verify:
+
+- [ ] `export const metadata` with title, description, alternates.canonical
+- [ ] Content wrapped in `<main>` landmark (not `<>`)
+- [ ] Exactly one `<h1>` per page
+- [ ] Added to `sitemap.ts` `indexedPages` array
+- [ ] JSON-LD structured data if applicable (service pages, blog posts)
+- [ ] Image alt text on all `<Image>` components
+
+---
+
 ## Testing
 
 - **Vitest v4** with jsdom for unit/integration tests. **Testing Library v16** for component rendering.
 - `npm test` — runs all tests once. `npm run test:watch` — watch mode.
 - `npm run build` runs tests as a pre-build gate (`vitest run && next build`).
 - **Test files** live in `__tests__/` directories alongside the code they test: `src/lib/forms/__tests__/`, `src/components/forms/__tests__/`, `src/app/api/submit-form/__tests__/`.
-- **No testing framework for components outside `forms/` yet** — `Header`, `MobileDrawer`, `AccountMenu`, `PostCard`, `Reveal`, pages, and auth store tests are pending (see `GAPS.md`).
-- **No E2E testing yet** — Playwright is planned for critical flows (login, form submission, blog browsing, protected routes).
+- **No E2E yet** — Playwright planned for critical flows (login, form submission, blog browsing).
 - `vitest.config.ts` uses `@vitejs/plugin-react`, `jsdom` environment, and `@` path aliases matching Next.js.
-- When adding component tests, use the pattern from `FormField.test.tsx`: create a wrapper that sets up a fresh form/react context per test.
-- **When adding images to any page**, write a test that asserts every `<Image>` has a non-empty `alt` attribute, and the LCP image uses `priority`. Use the pattern from `src/app/about-us/__tests__/page.test.tsx`.
+- **When adding images**, write a test for non-empty `alt` + LCP image `priority` (pattern: `src/app/about-us/__tests__/page.test.tsx`).
 
 ## Project Context
 

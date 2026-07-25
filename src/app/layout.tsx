@@ -34,6 +34,11 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Athayog Living is a yoga and wellness platform in Indiranagar, Bangalore offering group classes, personal training, teacher training, workshops, and weight loss programs rooted in tradition.",
+	icons: {
+		icon: "/icon.png",
+		apple: "/icon.png",
+	},
+	manifest: "/manifest.json",
 	openGraph: {
 		type: "website",
 		locale: "en_IN",
@@ -60,6 +65,10 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "https://athayogliving.com",
 	},
+};
+
+export const viewport = {
+	themeColor: "#566B3F",
 };
 
 export default function RootLayout({

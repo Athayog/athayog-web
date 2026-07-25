@@ -1,0 +1,16 @@
+{
+	"name": "Athayog Living — Yoga & Wellness in Indiranagar",
+	"short_name": "Athayog",
+	"description": "Certified yoga studio in Indiranagar, Bengaluru offering group classes, personal training, RYT-200 teacher training, and workshops. Book a trial class today.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#F5F3EA",
+	"theme_color": "#566B3F",
+	"icons": [
+		{
+			"src": "/icon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
