@@ -74,6 +74,7 @@ export default function Footer() {
 							</Link>
 							<Link href="/workshops">Workshops</Link>
 							<Link href="/picnics">Excursion / Picnics</Link>
+							<Link href="/aerial-yoga-indiranagar">Aerial Yoga</Link>
 						</nav>
 					</div>
 

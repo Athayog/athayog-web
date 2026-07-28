@@ -5,6 +5,7 @@ const ROOT_URL = "https://athayogliving.com";
 
 const indexedPages = [
 	"",
+	"/aerial-yoga-indiranagar",
 	"/about-us",
 	"/group-classes-indiranagar",
 	"/personal-yoga-training-indiranagar",

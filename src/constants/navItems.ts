@@ -42,6 +42,11 @@ export const navItems: NavItem[] = [
 				],
 			},
 			{ label: "Excursion / Picnics", path: "/picnics", type: "nav" },
+			{
+				label: "Aerial Yoga",
+				path: "/aerial-yoga-indiranagar",
+				type: "nav",
+			},
 		],
 	},
 	{
