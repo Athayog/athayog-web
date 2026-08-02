@@ -11,7 +11,6 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
 - [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
 - [ ] **Analytics** — Pick one: Vercel Analytics or GA, for page views & lead conversions.
-- [ ] **Thank you page FB tag** — Add Facebook conversion tag on form submission success.
 
 ---
 
@@ -77,3 +76,4 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Aerial yoga landing page (`/aerial-yoga-indiranagar`) — MagnetForm with TanStack + Zod, pricing cards, schedule, FAQs, CTA
 - [x] Career/contact-us/trial-classes padding fix — added `padding: 84px 0` to `.page` on three form pages
 - [x] firebase-admin v12 downgrade — fixes `ERR_REQUIRE_ESM` on Vercel (jose@6 → jose@4, CJS-compatible)
+- [x] Thank-you page FB conversion event — `fbq('track', 'Lead')` fires via ThankYouPixel component
