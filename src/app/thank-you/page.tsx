@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@/app/thank-you/ThankYou.module.css";
+import ThankYouPixel from "@/app/thank-you/ThankYouPixel";
 
 export const metadata: Metadata = {
 	title: "Thank You | Athayog Living",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
 	return (
 		<main className={styles.page}>
+			<ThankYouPixel />
 			<section className={styles.card}>
 				<div className={styles.icon}>
 					<svg
