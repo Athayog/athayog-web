@@ -7,17 +7,11 @@ Foundational items to cover before building content pages. Add to this list free
 ## Pending
 
 - [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`).
-- [ ] **Firestore indexes deployment** — Create composite indexes for `plans` (active↑, sortOrder↑) and `payments` (userId↑, createdAt↓) via Firebase Console or `npx firebase deploy --only firestore:indexes`.
+- [ ] **Firestore indexes deployment** — Deploy composite indexes from `firestore.indexes.json`: `firebase deploy --only firestore:indexes`.
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
 - [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
-- [ ] **Unit tests for pages** — Account page, Login page, Blog pages
-- [ ] **Playwright E2E tests** — Login flow, form submission, blog pages, protected routes
-- [ ] **Performance / Lighthouse audit** — Core Web Vitals baseline and budget
-- [ ] **Error tracking** — Sentry or equivalent (6 `console.error` call sites today)
-- [ ] **Analytics** — Vercel Analytics, PostHog, or Google Analytics for page views & conversions
-- [ ] **Logging utility** — Replace raw `console.error` with structured logger
-- [ ] **Thank you page** — For Facebook conversion tag on form submission success
-- [ ] **Stripe-style dynamic hosted pages** — Evaluate if Razorpay Payment Pages (hosted checkout) is needed alongside current popup flow.
+- [ ] **Analytics** — Pick one: Vercel Analytics or GA, for page views & lead conversions.
+- [ ] **Thank you page FB tag** — Add Facebook conversion tag on form submission success.
 
 ---
 
@@ -80,3 +74,6 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] Vitest test suites (28 test files, 116 tests covering Auth store, session cookies, route proxy protection, navigation UI, cookie consent privacy, and payment API/modal flows)
 - [x] Broken link fixes — `/yoga-teacher-training` → `/yoga-teacher-training-bangalore` (4 pages), `/yoga-academy` → `/yoga-teacher-training-bangalore` (Footer)
 - [x] GitHub Actions CI/CD workflow (`.github/workflows/ci.yml` — automated formatting, linting, typechecking, Vitest tests, and Next.js production build verification)
+- [x] Aerial yoga landing page (`/aerial-yoga-indiranagar`) — MagnetForm with TanStack + Zod, pricing cards, schedule, FAQs, CTA
+- [x] Career/contact-us/trial-classes padding fix — added `padding: 84px 0` to `.page` on three form pages
+- [x] firebase-admin v12 downgrade — fixes `ERR_REQUIRE_ESM` on Vercel (jose@6 → jose@4, CJS-compatible)
