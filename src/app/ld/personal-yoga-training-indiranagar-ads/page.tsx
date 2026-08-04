@@ -88,6 +88,16 @@ export default function PYTAdsPage() {
 					<circle cx="100" cy="100" r="58" />
 					<circle cx="100" cy="100" r="38" />
 					<circle cx="100" cy="100" r="18" />
+					{Array.from({ length: 12 }, (_, i) => (
+						<ellipse
+							key={i}
+							cx="100"
+							cy="52"
+							rx="11"
+							ry="30"
+							transform={`rotate(${i * 30} 100 100)`}
+						/>
+					))}
 				</svg>
 				<div className={`wrap ${styles.heroGrid}`}>
 					<div>
