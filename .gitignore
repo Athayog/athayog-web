@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+reasonix.toml
 
 # debug
 npm-debug.log*

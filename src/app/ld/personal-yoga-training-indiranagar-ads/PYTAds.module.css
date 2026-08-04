@@ -436,8 +436,8 @@
 	color: var(--cream);
 }
 
-.proofCenter .lead {
-	color: #dce2ce;
+.proofCenter :global(.lead) {
+	color: #eaf0de;
 }
 
 .vidGrid {
