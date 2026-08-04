@@ -186,9 +186,9 @@ export default function PYTAdsForm() {
 
 			<button
 				type="submit"
-				className={`btn ${styles.goldBtn}`}
+				className="btn btn-primary"
 				disabled={form.state.isSubmitting}
-				style={{ width: "100%" }}
+				style={{ width: "100%", justifyContent: "center" }}
 			>
 				{form.state.isSubmitting ? "Submitting..." : "Get My Free Trial"}
 			</button>

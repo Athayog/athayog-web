@@ -144,7 +144,7 @@ export default function PYTAdsPage() {
 							href="https://wa.me/918690333111?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
 							target="_blank"
 							rel="noopener noreferrer"
-							style={{ width: "100%" }}
+							style={{ width: "100%", justifyContent: "center" }}
 						>
 							WhatsApp 86903 33111
 						</a>
@@ -222,7 +222,7 @@ export default function PYTAdsPage() {
 			<section>
 				<div className="wrap">
 					<Reveal>
-						<div className={styles.center}>
+						<div className={styles.sectionHeader}>
 							<span className="eyebrow">Personalised for you</span>
 							<h2>Personal yoga in Indiranagar for your specific goal</h2>
 							<p className="lead">
@@ -242,7 +242,7 @@ export default function PYTAdsPage() {
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className={styles.center} style={{ margin: "34px auto 0" }}>
+						<div style={{ textAlign: "center", marginTop: 34 }}>
 							<a href="#book" className="btn btn-primary">
 								Book My Free Trial
 							</a>
@@ -255,7 +255,7 @@ export default function PYTAdsPage() {
 			<section style={{ background: "var(--parchment)" }}>
 				<div className="wrap">
 					<Reveal>
-						<div className={styles.center}>
+						<div className={styles.sectionHeader}>
 							<span className="eyebrow">Simple to start</span>
 							<h2>How personal yoga training in Indiranagar works</h2>
 						</div>
@@ -295,7 +295,7 @@ export default function PYTAdsPage() {
 			<section>
 				<div className="wrap">
 					<Reveal>
-						<div className={styles.center}>
+						<div className={styles.sectionHeader}>
 							<span className="eyebrow">Transparent pricing</span>
 							<h2>Personal yoga training cost in Indiranagar</h2>
 							<p className="lead">
@@ -338,8 +338,8 @@ export default function PYTAdsPage() {
 						</p>
 					</Reveal>
 					<Reveal>
-						<div className={styles.center} style={{ margin: "26px auto 0" }}>
-							<a href="#book" className={`btn ${styles.goldBtn}`}>
+						<div style={{ textAlign: "center", marginTop: 26 }}>
+							<a href="#book" className="btn btn-primary">
 								Claim My Free Trial
 							</a>
 						</div>
@@ -351,7 +351,7 @@ export default function PYTAdsPage() {
 			<section className={styles.proof}>
 				<div className="wrap">
 					<Reveal>
-						<div className={`center ${styles.proofCenter}`}>
+						<div className={`${styles.sectionHeader} ${styles.proofCenter}`}>
 							<span
 								className="eyebrow"
 								style={{ color: "var(--brand-light)" }}
@@ -441,7 +441,7 @@ export default function PYTAdsPage() {
 			<section style={{ background: "var(--parchment)" }}>
 				<div className="wrap">
 					<Reveal>
-						<div className={styles.center}>
+						<div className={styles.sectionHeader}>
 							<span className="eyebrow">Quick answers</span>
 							<h2>
 								Personal yoga training in Indiranagar, questions answered
@@ -481,25 +481,18 @@ export default function PYTAdsPage() {
 							your home, or online. It starts with one free session.
 						</p>
 						<div className={styles.finalBtns}>
-							<a href="#book" className={`btn ${styles.goldBtn}`}>
+							<a href="#book" className={`btn btn-cream`}>
 								Book My Free Trial
 							</a>
 							<a
-								className={`btn ${styles.waBtn}`}
+								className="btn btn-light"
 								href="https://wa.me/918690333111?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								WhatsApp Us
 							</a>
-							<a
-								href="tel:+918690333111"
-								className="btn btn-ghost"
-								style={{
-									borderColor: "var(--brand-light)",
-									color: "var(--brand-light)",
-								}}
-							>
+							<a href="tel:+918690333111" className="btn btn-light">
 								Call 86903 33111
 							</a>
 						</div>
@@ -509,27 +502,11 @@ export default function PYTAdsPage() {
 
 			{/* 12. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
-				<a className={styles.stickyCall} href="tel:+918690333111">
-					<svg
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="1.9"
-					>
-						<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
-					</svg>
-					Call now
-				</a>
-				<a
-					className={styles.stickyWa}
-					href="https://wa.me/918690333111?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<svg viewBox="0 0 24 24" fill="currentColor">
-						<path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2 .8.5 1.2.6 1.4.5.2-.1.5-.6.7-.8.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z" />
-					</svg>
-					WhatsApp
+				<span className={styles.stickyMeta}>
+					Free trial · personal yoga training
+				</span>
+				<a href="#book" className="btn btn-cream">
+					Book Now
 				</a>
 			</div>
 		</main>
