@@ -265,6 +265,13 @@
 	font-style: italic;
 }
 
+.offerHintLine {
+	text-align: center;
+	font-size: 0.78rem;
+	color: #e0b68f;
+	padding-top: 6px;
+}
+
 /* Trust bar */
 .trustbar {
 	background: var(--parchment);

@@ -207,8 +207,9 @@ export default function PYTAdsPage() {
 						</strong>{" "}
 						each week
 					</span>
-					<span className={styles.offerSep}>|</span>
-					<span className={styles.offerHint}>[ optional launch offer ]</span>
+				</div>
+				<div className={`wrap ${styles.offerHintLine}`}>
+					[ optional launch offer ]
 				</div>
 			</div>
 
