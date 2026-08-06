@@ -592,6 +592,12 @@ export default function AerialYogaPage() {
 						</div>
 					</Reveal>
 					<Reveal>
+						<p style={{ marginTop: 20, color: "var(--brand-deep)" }}>
+							Featured members: Ramya Shree, Srishti Mehrotra, Naisargi
+							Ruparelia, Athulya G, Varna.
+						</p>
+					</Reveal>
+					<Reveal>
 						<p
 							style={{
 								marginTop: 24,

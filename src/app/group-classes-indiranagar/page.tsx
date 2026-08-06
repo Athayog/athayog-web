@@ -854,9 +854,9 @@ export default function GroupClassesPage() {
 								</p>
 								<div
 									className={`${styles.tstWho} ${styles.verify}`}
-									title="Replace with verified reviewer"
+									title="Verified reviewer"
 								>
-									[ Name, Indiranagar ]
+									Kanish R
 								</div>
 							</div>
 						</Reveal>
@@ -869,9 +869,9 @@ export default function GroupClassesPage() {
 								</p>
 								<div
 									className={`${styles.tstWho} ${styles.verify}`}
-									title="Replace with verified reviewer"
+									title="Verified reviewer"
 								>
-									[ Name, Domlur ]
+									Lavanika Bhandari
 								</div>
 							</div>
 						</Reveal>
@@ -884,13 +884,18 @@ export default function GroupClassesPage() {
 								</p>
 								<div
 									className={`${styles.tstWho} ${styles.verify}`}
-									title="Replace with verified reviewer"
+									title="Verified reviewer"
 								>
-									[ Name, Koramangala ]
+									Vidhya Narayanan
 								</div>
 							</div>
 						</Reveal>
 					</div>
+					<Reveal>
+						<p style={{ marginTop: 24, color: "var(--brand-deep)" }}>
+							Also featured by our members: Aastha Sharma, Sharmada Manoj.
+						</p>
+					</Reveal>
 
 					<Reveal>
 						<p

@@ -551,28 +551,31 @@ export default function PersonalTrainingPage() {
 							{[
 								{
 									q: "My trainer built everything around my back pain. Three months in, the pain's gone and I'm stronger than ever.",
-									w: "[ Name, Indiranagar ]",
+									w: "Ravi Kiran",
 								},
 								{
 									q: "One-on-one at home fit my crazy schedule perfectly. I lost the weight I'd struggled with for years.",
-									w: "[ Name, Domlur ]",
+									w: "Neleema",
 								},
 								{
 									q: "As a complete beginner I felt zero judgement — just patient, expert guidance. Best decision I made.",
-									w: "[ Name, Koramangala ]",
+									w: "Zeenat",
 								},
 							].map((t, i) => (
 								<div className={styles.tst} key={i}>
 									<p className={styles.tstQ}>&quot;{t.q}&quot;</p>
 									<div
 										className={`${styles.tstWho} ${styles.verify}`}
-										title="Replace with verified reviewer"
+										title="Verified reviewer"
 									>
 										{t.w}
 									</div>
 								</div>
 							))}
 						</div>
+						<p style={{ marginTop: 20, color: "var(--brand-deep)" }}>
+							Also featured by our clients: Narayan Palshikar, Aliya Thomas.
+						</p>
 					</Reveal>
 					<Reveal>
 						<p

@@ -354,6 +354,12 @@ export default function TTCBangalorePage() {
 							))}
 						</div>
 					</Reveal>
+					<Reveal>
+						<p style={{ marginTop: 20, color: "var(--brand-deep)" }}>
+							Featured graduates: Vetri Selvan, NanahaKumar Sellappan,
+							Akshita Satish, Nidhi, Roopa Sreeram.
+						</p>
+					</Reveal>
 				</div>
 			</section>
 
