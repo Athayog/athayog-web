@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
 	title: "Terms of Service | Athayog Living",
 	description: "Athayog Living Terms of Service",
+	alternates: { canonical: "https://athayogliving.com/terms-of-service" },
 };
 
 export default function TermsOfService() {

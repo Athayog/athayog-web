@@ -61,23 +61,29 @@ export default async function BlogPost({ params }: { params: Params }) {
 							<RichTextBlog field={title} />
 						</div>
 
-						{publication_date && (
-							<p
-								style={{
-									fontFamily: "var(--font-body)",
-									fontSize: "0.9rem",
-									color: "var(--clay)",
-									fontWeight: 500,
-									margin: "0 0 28px",
-								}}
-							>
-								{new Intl.DateTimeFormat("en-US", {
-									month: "long",
-									day: "numeric",
-									year: "numeric",
-								}).format(new Date(publication_date))}
-							</p>
-						)}
+						{(() => {
+							const parsedDate = publication_date
+								? new Date(publication_date)
+								: null;
+							if (!parsedDate || isNaN(parsedDate.getTime())) return null;
+							return (
+								<p
+									style={{
+										fontFamily: "var(--font-body)",
+										fontSize: "0.9rem",
+										color: "var(--clay)",
+										fontWeight: 500,
+										margin: "0 0 28px",
+									}}
+								>
+									{new Intl.DateTimeFormat("en-US", {
+										month: "long",
+										day: "numeric",
+										year: "numeric",
+									}).format(parsedDate)}
+								</p>
+							);
+						})()}
 
 						{featured_image && (
 							<div

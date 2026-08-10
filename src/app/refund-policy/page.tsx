@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
 	title: "Refund Policy | Athayog Living",
 	description: "Athayog Living Refund Policy",
+	alternates: { canonical: "https://athayogliving.com/refund-policy" },
 };
 
 export default function RefundPolicy() {

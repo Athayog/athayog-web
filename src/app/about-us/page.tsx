@@ -477,7 +477,6 @@ export default function AboutUsPage() {
 						</div>
 					</Reveal>
 					<div className={styles.exGrid}>
-						{/* TODO: wire up each route after page is built */}
 						<Reveal>
 							<a className={styles.ex} href="/group-classes-indiranagar">
 								<div className={styles.exArrow}>
@@ -508,7 +507,7 @@ export default function AboutUsPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Yoga Teacher Training</h3>
-								<p>RYT-200 certification from ₹24,999.</p>
+								<p>RYT-200 weekend course ₹35,999 + GST.</p>
 							</a>
 						</Reveal>
 						<Reveal>

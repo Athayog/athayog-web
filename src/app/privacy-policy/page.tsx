@@ -4,6 +4,7 @@ import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = {
 	title: "Privacy Policy | Athayog Living",
 	description: "Athayog Living Privacy Policy",
+	alternates: { canonical: "https://athayogliving.com/privacy-policy" },
 };
 
 export default function PrivacyPolicy() {

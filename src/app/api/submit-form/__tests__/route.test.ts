@@ -36,9 +36,9 @@ describe("POST /api/submit-form", () => {
 		vi.clearAllMocks();
 	});
 
-	it("returns 201 for valid submission", async () => {
+	it("returns 201 for an approved form collection", async () => {
 		const req = createRequest({
-			collection: "testForm",
+			collection: "trialClasses",
 			data: { name: "John", email: "j@j.com" },
 		});
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -46,23 +46,23 @@ describe("POST /api/submit-form", () => {
 		expect(res.status).toBe(201);
 		const json = await res.json();
 		expect(json.success).toBe(true);
-		expect(mockCollection).toHaveBeenCalledWith("testForm");
+		expect(mockCollection).toHaveBeenCalledWith("trialClasses");
 		expect(mockAdd).toHaveBeenCalled();
 	});
 
-	it("sends email when email config present", async () => {
+	it("uses the server-configured recipient and subject", async () => {
 		const { sendFormEmail } = await import("@/lib/forms/email");
 		const req = createRequest({
 			collection: "trialClasses",
 			data: { name: "John" },
-			email: { to: "info@test.com", subject: "New Lead" },
+			email: { to: "attacker@example.com", subject: "Attacker subject" },
 		});
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const res = await POST(req as any);
 		expect(res.status).toBe(201);
 		expect(sendFormEmail).toHaveBeenCalledWith({
-			to: "info@test.com",
-			subject: "New Lead",
+			to: "info@athayogliving.com",
+			subject: "New Trial Class",
 			data: { name: "John" },
 			collection: "trialClasses",
 		});
@@ -84,11 +84,10 @@ describe("POST /api/submit-form", () => {
 		expect(res.status).toBe(400);
 	});
 
-	it("returns 400 for invalid email in config", async () => {
+	it("returns 400 for an unapproved form collection", async () => {
 		const req = createRequest({
-			collection: "test",
+			collection: "unapprovedCollection",
 			data: { name: "John" },
-			email: { to: "not-an-email", subject: "Test" },
 		});
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const res = await POST(req as any);
@@ -97,7 +96,7 @@ describe("POST /api/submit-form", () => {
 
 	it("includes createdAt timestamp in saved data", async () => {
 		const req = createRequest({
-			collection: "test",
+			collection: "trialClasses",
 			data: { name: "John" },
 		});
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -113,9 +112,9 @@ describe("POST /api/submit-form", () => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const r = (b: unknown) => POST(createRequest(b, "10.0.0.99") as any);
 		for (let i = 0; i < 6; i++) {
-			await r({ collection: "test", data: { i } });
+			await r({ collection: "trialClasses", data: { i } });
 		}
-		const res = await r({ collection: "test", data: {} });
+		const res = await r({ collection: "trialClasses", data: {} });
 		expect(res.status).toBe(429);
 	});
 });

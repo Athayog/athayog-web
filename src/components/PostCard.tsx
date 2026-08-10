@@ -22,13 +22,20 @@ export function PostCard({ post }: { post: any }) {
 				<h3 className={styles.title}>
 					<PrismicText field={data.title} />
 				</h3>
-				<p className={styles.date}>
-					{new Intl.DateTimeFormat("en-US", {
-						month: "long",
-						day: "numeric",
-						year: "numeric",
-					}).format(new Date(data.publication_date || ""))}
-				</p>
+				{(() => {
+					const rawDate = data.publication_date || post.first_publication_date;
+					const parsedDate = rawDate ? new Date(rawDate) : null;
+					if (!parsedDate || isNaN(parsedDate.getTime())) return null;
+					return (
+						<p className={styles.date}>
+							{new Intl.DateTimeFormat("en-US", {
+								month: "long",
+								day: "numeric",
+								year: "numeric",
+							}).format(parsedDate)}
+						</p>
+					);
+				})()}
 			</div>
 		</Link>
 	);
