@@ -2,6 +2,8 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
+import { testimonialVideos } from "@/constants/testimonialVideos";
 import MapEmbed from "@/components/MapEmbed";
 import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
 import PaymentModal from "@/components/payments/PaymentModal";
@@ -13,12 +15,6 @@ export const metadata: Metadata = {
 		"Join expert-led group yoga classes in Indiranagar, Bangalore. Small-batch classes, six signature formats, morning and evening batches, flexible timings. Book a trial class from ₹599 drop-in.",
 	alternates: { canonical: "https://athayogliving.com/group-classes-indiranagar" },
 };
-
-const PLAY_SVG = (
-	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
-		<path d="M8 5v14l11-7z" />
-	</svg>
-);
 
 const MANDALA = (
 	<svg
@@ -763,80 +759,9 @@ export default function GroupClassesPage() {
 						</Reveal>
 					</div>
 
-					<div className={styles.vidGrid}>
-						<Reveal>
-							<a
-								className={styles.vid}
-								href="https://www.youtube.com/watch?v=Pmvr_kFDcTA"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Watch member testimonial"
-							>
-								<Image
-									src="https://img.youtube.com/vi/Pmvr_kFDcTA/hqdefault.jpg"
-									alt="Athayog member testimonial video"
-									fill
-									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 25vw"
-									style={{ objectFit: "cover" }}
-								/>
-								<span className={styles.play}>{PLAY_SVG}</span>
-							</a>
-						</Reveal>
-						<Reveal>
-							<a
-								className={styles.vid}
-								href="https://www.youtube.com/watch?v=LDcffOBJ9ZU"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Watch member testimonial"
-							>
-								<Image
-									src="https://img.youtube.com/vi/LDcffOBJ9ZU/hqdefault.jpg"
-									alt="Athayog member testimonial video"
-									fill
-									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 25vw"
-									style={{ objectFit: "cover" }}
-								/>
-								<span className={styles.play}>{PLAY_SVG}</span>
-							</a>
-						</Reveal>
-						<Reveal>
-							<a
-								className={styles.vid}
-								href="https://www.youtube.com/watch?v=aFxeW-gUKqw"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Watch member testimonial"
-							>
-								<Image
-									src="https://img.youtube.com/vi/aFxeW-gUKqw/hqdefault.jpg"
-									alt="Athayog member testimonial video"
-									fill
-									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 25vw"
-									style={{ objectFit: "cover" }}
-								/>
-								<span className={styles.play}>{PLAY_SVG}</span>
-							</a>
-						</Reveal>
-						<Reveal>
-							<a
-								className={styles.vid}
-								href="https://www.youtube.com/watch?v=ugKjocoymvM"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Watch member testimonial"
-							>
-								<Image
-									src="https://img.youtube.com/vi/ugKjocoymvM/hqdefault.jpg"
-									alt="Athayog member testimonial video"
-									fill
-									sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 25vw"
-									style={{ objectFit: "cover" }}
-								/>
-								<span className={styles.play}>{PLAY_SVG}</span>
-							</a>
-						</Reveal>
-					</div>
+					<Reveal>
+						<TestimonialVideoCarousel videos={testimonialVideos} />
+					</Reveal>
 
 					<p className={styles.tplNote}>
 						Text testimonials below are templates — replace with real,

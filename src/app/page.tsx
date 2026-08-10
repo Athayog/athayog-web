@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Flower, Users, Sparkles, Leaf } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
+import { testimonialVideos } from "@/constants/testimonialVideos";
 import MapEmbed from "@/components/MapEmbed";
 import NewsletterForm from "@/app/NewsletterForm";
 import styles from "@/app/Home.module.css";
@@ -16,12 +18,6 @@ export const metadata: Metadata = {
 	},
 	alternates: { canonical: "https://athayogliving.com" },
 };
-
-const PLAY_SVG = (
-	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
-		<path d="M8 5v14l11-7z" />
-	</svg>
-);
 
 const MANDALA = (
 	<svg
@@ -493,41 +489,9 @@ export default function Home() {
 							</p>
 						</div>
 					</Reveal>
-					<div className={styles.vidGrid}>
-						{[1, 2, 3, 4, 5, 6].map((n) => {
-							const ids = [
-								"Pmvr_kFDcTA",
-								"LDcffOBJ9ZU",
-								"aFxeW-gUKqw",
-								"ugKjocoymvM",
-								"CrCdzkiJ46E",
-								"K_IWigtdBmI",
-							];
-							const id = ids[n - 1];
-							return (
-								<Reveal key={id}>
-									<a
-										className={styles.vid}
-										href={`https://www.youtube.com/watch?v=${id}`}
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="Watch testimonial"
-									>
-										<Image
-											src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-											alt="Athayog member testimonial video"
-											fill
-											sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
-											style={{
-												objectFit: "cover",
-											}}
-										/>
-										<span className={styles.play}>{PLAY_SVG}</span>
-									</a>
-								</Reveal>
-							);
-						})}
-					</div>
+					<Reveal>
+						<TestimonialVideoCarousel videos={testimonialVideos} />
+					</Reveal>
 					<Reveal>
 						<p
 							style={{

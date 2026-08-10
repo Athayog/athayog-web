@@ -2,6 +2,8 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
+import { testimonialVideos } from "@/constants/testimonialVideos";
 import MapEmbed from "@/components/MapEmbed";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-bangalore/TTC.module.css";
@@ -15,11 +17,6 @@ export const metadata: Metadata = {
 	},
 };
 
-const PLAY_SVG = (
-	<svg className={styles.playIcon} viewBox="0 0 24 24" fill="currentColor">
-		<path d="M8 5v14l11-7z" />
-	</svg>
-);
 const MANDALA = (
 	<svg
 		className={`${styles.mandalaBg} ${styles.mandalaSpin}`}
@@ -332,27 +329,7 @@ export default function TTCBangalorePage() {
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className={styles.vidGrid}>
-							{["Pmvr_kFDcTA", "LDcffOBJ9ZU", "aFxeW-gUKqw"].map((id) => (
-								<a
-									className={styles.vid}
-									key={id}
-									href={`https://www.youtube.com/watch?v=${id}`}
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="Watch testimonial"
-								>
-									<Image
-										src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-										alt="Athayog testimonial video"
-										fill
-										sizes="33vw"
-										style={{ objectFit: "cover" }}
-									/>
-									<span className={styles.play}>{PLAY_SVG}</span>
-								</a>
-							))}
-						</div>
+						<TestimonialVideoCarousel videos={testimonialVideos} />
 					</Reveal>
 					<Reveal>
 						<p style={{ marginTop: 20, color: "var(--brand-deep)" }}>

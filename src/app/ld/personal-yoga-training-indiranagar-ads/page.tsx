@@ -1,19 +1,9 @@
 import Reveal from "@/components/Reveal";
+import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
+import { testimonialVideos } from "@/constants/testimonialVideos";
 import PYTAdsForm from "@/app/ld/personal-yoga-training-indiranagar-ads/PYTAdsForm";
 import PageJsonLd from "@/app/ld/personal-yoga-training-indiranagar-ads/PageJsonLd";
 import styles from "@/app/ld/personal-yoga-training-indiranagar-ads/PYTAds.module.css";
-
-const YA_VIDEOS = [
-	{
-		id: "Pmvr_kFDcTA",
-		label: "Athayog personal yoga training member testimonial, Indiranagar",
-	},
-	{
-		id: "aFxeW-gUKqw",
-		label: "Athayog personal yoga member testimonial, Indiranagar Bengaluru",
-	},
-	{ id: "CrCdzkiJ46E", label: "Athayog member story, Indiranagar yoga studio" },
-];
 
 const GOALS = [
 	"Weight loss",
@@ -378,34 +368,7 @@ export default function PYTAdsPage() {
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className={styles.vidGrid}>
-							{YA_VIDEOS.map((v) => (
-								<a
-									key={v.id}
-									className={styles.vid}
-									href={`https://www.youtube.com/watch?v=${v.id}`}
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label={`Watch testimonial`}
-								>
-									{/* eslint-disable-next-line @next/next/no-img-element */}
-									<img
-										src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`}
-										alt={v.label}
-										loading="lazy"
-									/>
-									<span className={styles.playOverlay}>
-										<svg
-											className={styles.playIcon}
-											viewBox="0 0 24 24"
-											fill="currentColor"
-										>
-											<path d="M8 5v14l11-7z" />
-										</svg>
-									</span>
-								</a>
-							))}
-						</div>
+						<TestimonialVideoCarousel videos={testimonialVideos} />
 					</Reveal>
 					<Reveal>
 						<div className={styles.tstRow}>
