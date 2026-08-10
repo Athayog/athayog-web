@@ -11,7 +11,7 @@ import styles from "@/app/yoga-teacher-training-bangalore/TTC.module.css";
 export const metadata: Metadata = {
 	title: "RYT-200 Yoga Teacher Training Weekend | Bangalore | Athayog Living",
 	description:
-		"Become a certified yoga teacher with Athayog Living's RYT-200 weekend program in Bangalore. Yoga Alliance (USA) accredited, 12-week format, expert faculty. Early bird from ₹24,999.",
+		"Become a certified yoga teacher with Athayog Living's RYT-200 weekend program in Bangalore. Yoga Alliance (USA) accredited, 12-week format, expert faculty. Course fee ₹35,999 plus GST.",
 	alternates: {
 		canonical: "https://athayogliving.com/yoga-teacher-training-bangalore",
 	},
@@ -67,7 +67,7 @@ export default function TTCBangalorePage() {
 						</p>
 						<span className={styles.priceChip}>
 							Yoga Alliance (USA) · RYT-200 · weekend batches ·{" "}
-							<strong>from ₹24,999</strong>
+							<strong>from ₹35,999 + GST</strong>
 						</span>
 						<div className={styles.heroCta}>
 							<a href="#enrol" className="btn btn-primary">
@@ -353,63 +353,22 @@ export default function TTCBangalorePage() {
 						</div>
 					</Reveal>
 					<Reveal>
-						<div className={styles.priceGrid}>
+						<div className={`${styles.priceGrid} ${styles.singlePriceGrid}`}>
 							<div className={styles.tier}>
-								<h3>Early Bird</h3>
+								<h3>Weekend RYT-200</h3>
 								<div className={styles.amt}>
-									₹24,999<small>+ 5% GST · register early</small>
+									₹35,999<small>+ 5% GST</small>
 								</div>
 								<p>
-									Secure your spot at the best rate — limited seats
-									available for each batch.
+									Complete RYT-200 training with expert guidance
+									throughout the 12-week weekend programme.
 								</p>
 								<div className={styles.incl}>
 									12 weeks · weekend · RYT-200 · manual included
 								</div>
 								<EnquireModal
 									service="Yoga Teacher Training"
-									plan="Weekend RYT-200 · Early Bird ₹24,999"
-									pageSource="yoga-teacher-training-bangalore"
-								>
-									<span className="btn btn-light">Enquire</span>
-								</EnquireModal>
-							</div>
-							<div className={`${styles.tier} ${styles.feature}`}>
-								<span className={styles.badge}>Standard</span>
-								<h3>Regular</h3>
-								<div className={styles.amt}>
-									₹29,999<small>+ 5% GST</small>
-								</div>
-								<p>
-									Full access to the complete RYT-200 curriculum with
-									expert guidance throughout.
-								</p>
-								<div className={styles.incl}>
-									Everything in Early Bird · extended materials
-								</div>
-								<EnquireModal
-									service="Yoga Teacher Training"
-									plan="Weekend RYT-200 · Regular ₹29,999"
-									pageSource="yoga-teacher-training-bangalore"
-								>
-									<span className="btn btn-cream">Enquire</span>
-								</EnquireModal>
-							</div>
-							<div className={styles.tier}>
-								<h3>Online</h3>
-								<div className={styles.amt}>
-									₹19,999<small>+ 5% GST · live online</small>
-								</div>
-								<p>
-									Same curriculum, delivered live — attend from anywhere
-									with real-time guidance.
-								</p>
-								<div className={styles.incl}>
-									RYT-200 · live online · manual · recorded sessions
-								</div>
-								<EnquireModal
-									service="Yoga Teacher Training"
-									plan="Weekend RYT-200 · Online ₹19,999"
+									plan="Weekend RYT-200 · ₹35,999 + GST"
 									pageSource="yoga-teacher-training-bangalore"
 								>
 									<span className="btn btn-light">Enquire</span>
@@ -419,7 +378,7 @@ export default function TTCBangalorePage() {
 					</Reveal>
 					<Reveal>
 						<p className={styles.reassure}>
-							Prices exclude 5% GST · EMI, UPI, cards, net banking accepted.{" "}
+							Price excludes 5% GST · EMI, UPI, cards, net banking accepted.{" "}
 							<a href="https://athayogliving.com/trial-classes">
 								Book a trial class →
 							</a>
@@ -542,9 +501,8 @@ export default function TTCBangalorePage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Early Bird registration is ₹24,999; Regular is
-									₹29,999; Online is ₹19,999. All prices exclude 5% GST.
-									EMI, UPI, cards and net banking are accepted.
+									The Weekend RYT-200 course fee is ₹35,999, excluding
+									5% GST. EMI, UPI, cards and net banking are accepted.
 								</div>
 							</details>
 							<details>
@@ -677,29 +635,13 @@ export default function TTCBangalorePage() {
 							name: "Athayog Living",
 						},
 						url: "https://athayogliving.com/yoga-teacher-training-bangalore",
-						offers: [
-							{
-								"@type": "Offer",
-								name: "Early Bird",
-								price: "24999",
-								priceCurrency: "INR",
-								availability: "https://schema.org/InStock",
-							},
-							{
-								"@type": "Offer",
-								name: "Regular",
-								price: "29999",
-								priceCurrency: "INR",
-								availability: "https://schema.org/InStock",
-							},
-							{
-								"@type": "Offer",
-								name: "Online",
-								price: "19999",
-								priceCurrency: "INR",
-								availability: "https://schema.org/InStock",
-							},
-						],
+						offers: {
+							"@type": "Offer",
+							name: "Weekend RYT-200 Teacher Training",
+							price: "35999",
+							priceCurrency: "INR",
+							availability: "https://schema.org/InStock",
+						},
 					}),
 				}}
 			/>
