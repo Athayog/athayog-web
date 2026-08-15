@@ -70,7 +70,7 @@ export default function PicnicsPage() {
 						data: value,
 						email: {
 							to: "info@athayogliving.com",
-							subject: `Picnic Sign Up — ${value.fullName}`,
+							subject: `Picnic Sign Up: ${value.fullName}`,
 						},
 					}),
 				});

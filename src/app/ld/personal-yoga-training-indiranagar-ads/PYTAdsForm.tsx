@@ -38,7 +38,7 @@ export default function PYTAdsForm() {
 					data: value,
 					email: {
 						to: "info@athayogliving.com",
-						subject: `New Personal Yoga Training Lead — ${value.name}`,
+						subject: `New Personal Yoga Training Lead: ${value.name}`,
 					},
 				}),
 			});

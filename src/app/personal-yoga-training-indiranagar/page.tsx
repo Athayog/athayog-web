@@ -58,12 +58,12 @@ export default function PersonalTrainingPage() {
 							Personal Yoga Training · Indiranagar, Bangalore
 						</span>
 						<h1>
-							The Best Personal Yoga Training in Indiranagar —{" "}
+							The Best Personal Yoga Training in Indiranagar:{" "}
 							<em>Built Entirely Around You</em>
 						</h1>
 						<p className={styles.heroSub}>
 							One-on-one yoga with a certified trainer, designed for your
-							body, your goal and your schedule — whether that&apos;s weight
+							body, your goal and your schedule, whether that&apos;s weight
 							loss, flexibility, back-pain relief, stress, or simply
 							starting right. Train at our Indiranagar studio, at home, or
 							online.
@@ -125,7 +125,7 @@ export default function PersonalTrainingPage() {
 							Personal yoga training is one-on-one instruction tailored to
 							your body, health goals and schedule. Instead of following a
 							group class, you work privately with a certified trainer who
-							builds a plan around your needs — correcting your form,
+							builds a plan around your needs, correcting your form,
 							adjusting the pace, and progressing you faster than any
 							generic class can.
 						</p>
@@ -155,7 +155,7 @@ export default function PersonalTrainingPage() {
 								},
 								{
 									h: "Flexibility &amp; mobility",
-									p: "Open tight hips, hamstrings and shoulders — safely and steadily.",
+									p: "Open tight hips, hamstrings and shoulders, safely and steadily.",
 								},
 								{
 									h: "Back &amp; neck pain relief",
@@ -201,7 +201,7 @@ export default function PersonalTrainingPage() {
 							<span className="eyebrow">Why trust us</span>
 							<h2>Certified trainers. Real transformations.</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								You&apos;re not getting a random instructor — you&apos;re
+								You&apos;re not getting a random instructor; you&apos;re
 								training with certified teachers from one of
 								Indiranagar&apos;s most trusted yoga schools.
 							</p>
@@ -220,7 +220,7 @@ export default function PersonalTrainingPage() {
 								},
 								{
 									h: "Personalized",
-									p: "A plan built for your body and goal — not a one-size class.",
+									p: "A plan built for your body and goal, not a one-size class.",
 								},
 								{
 									h: "Local &amp; flexible",
@@ -245,7 +245,7 @@ export default function PersonalTrainingPage() {
 							<span className="eyebrow">How it works</span>
 							<h2>From first session to real results</h2>
 							<p className="lead">
-								A simple, structured path — personalized from the very
+								A simple, structured path, personalized from the very
 								first conversation.
 							</p>
 						</div>
@@ -266,7 +266,7 @@ export default function PersonalTrainingPage() {
 								{
 									n: "3",
 									h: "1-on-1 sessions",
-									p: "Train privately — at the studio, your home, or online — with full attention on you.",
+									p: "Train privately, at the studio, your home, or online, with full attention on you.",
 								},
 								{
 									n: "4",
@@ -300,7 +300,7 @@ export default function PersonalTrainingPage() {
 							<span className="eyebrow">Where you train</span>
 							<h2>At the studio, at home, or online</h2>
 							<p className="lead">
-								Choose whatever fits your life — the personalization stays
+								Choose whatever fits your life; the personalization stays
 								the same.
 							</p>
 						</div>
@@ -314,11 +314,11 @@ export default function PersonalTrainingPage() {
 								},
 								{
 									h: "At your home",
-									p: "Private, on-site sessions at your place across Indiranagar and nearby areas — available as 12 or 24-session packages.",
+									p: "Private, on-site sessions at your place across Indiranagar and nearby areas, available as 12 or 24-session packages.",
 								},
 								{
 									h: "Live online",
-									p: "One-on-one over video — same trainer, same personalized plan, from anywhere.",
+									p: "One-on-one over video, same trainer, same personalized plan, from anywhere.",
 								},
 							].map((c, i) => (
 								<div
@@ -345,7 +345,7 @@ export default function PersonalTrainingPage() {
 							<span className="eyebrow">The difference</span>
 							<h2>Why personal training beats a group class</h2>
 							<p className="lead">
-								Group classes are great — but when you have a specific
+								Group classes are great, but when you have a specific
 								goal, a body that needs care, or limited time, nothing
 								matches one-on-one.
 							</p>
@@ -385,7 +385,7 @@ export default function PersonalTrainingPage() {
 									<tr>
 										<td>Schedule</td>
 										<td>Fixed timings</td>
-										<td>Flexible — you pick the slot</td>
+										<td>Flexible: you pick the slot</td>
 									</tr>
 									<tr>
 										<td>Results</td>
@@ -513,7 +513,7 @@ export default function PersonalTrainingPage() {
 						<TestimonialVideoCarousel videos={testimonialVideos} />
 					</Reveal>
 					<p className={styles.tplNote}>
-						Text testimonials below are templates — replace with real,
+						Text testimonials below are templates: replace with real,
 						consented client reviews (ideally from Google, with names, areas
 						&amp; results).
 					</p>
@@ -529,7 +529,7 @@ export default function PersonalTrainingPage() {
 									w: "Neleema",
 								},
 								{
-									q: "As a complete beginner I felt zero judgement — just patient, expert guidance. Best decision I made.",
+									q: "As a complete beginner I felt zero judgement, just patient, expert guidance. Best decision I made.",
 									w: "Zeenat",
 								},
 							].map((t, i) => (
@@ -594,7 +594,7 @@ export default function PersonalTrainingPage() {
 							<span className="eyebrow">Pricing</span>
 							<h2>Personal training packages</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								Transparent 12 or 24-session packages — at the studio,
+								Transparent 12 or 24-session packages, at the studio,
 								online, or at your home. Start with a trial class on
 								request.
 							</p>
@@ -627,7 +627,7 @@ export default function PersonalTrainingPage() {
 								<p>
 									Tell us your goal and preferred time. We&apos;ll match
 									you with the right trainer and confirm your trial
-									session — at the studio, your home, or online.
+									session, at the studio, your home, or online.
 								</p>
 							</div>
 							<div className={styles.lmForm}>
@@ -697,7 +697,7 @@ export default function PersonalTrainingPage() {
 								</p>
 								<p style={{ fontSize: "0.9rem" }}>
 									Serving Indiranagar, Domlur, CV Raman Nagar,
-									Koramangala &amp; nearby — at-home sessions on
+									Koramangala &amp; nearby, with at-home sessions on
 									request.
 								</p>
 								<a
@@ -719,7 +719,7 @@ export default function PersonalTrainingPage() {
 				<Reveal>
 					<div className="wrap">
 						<h2>Your goal deserves a plan of its own.</h2>
-						<p>Start with a trial session — no obligation.</p>
+						<p>Start with a trial session, no obligation.</p>
 						<a href="#book" className="btn btn-cream">
 							Book Your Trial Class
 						</a>
@@ -733,7 +733,7 @@ export default function PersonalTrainingPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>Personal yoga training in Indiranagar — FAQs</h2>
+							<h2>Personal yoga training in Indiranagar: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -747,7 +747,7 @@ export default function PersonalTrainingPage() {
 								<div className={styles.faqAnswer}>
 									Personal yoga training is private, one-on-one
 									instruction where a certified trainer builds a plan
-									around your specific goals, body and schedule — with
+									around your specific goals, body and schedule, with
 									full attention, form correction and faster progress
 									than a group class.
 								</div>
@@ -793,8 +793,8 @@ export default function PersonalTrainingPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — therapeutic, alignment-focused yoga is one of
-									the most requested reasons clients start. Sessions are
+									Yes, therapeutic, alignment-focused yoga is one of the
+									most requested reasons clients start. Sessions are
 									adapted carefully to your condition.
 								</div>
 							</details>
@@ -829,7 +829,7 @@ export default function PersonalTrainingPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — we offer at-home (on-site) personal sessions
+									Yes, we offer at-home (on-site) personal sessions
 									across Indiranagar and nearby areas, as 12 or
 									24-session packages (₹27,999 and ₹44,599 respectively,
 									excluding GST), alongside studio and online options.
@@ -869,7 +869,7 @@ export default function PersonalTrainingPage() {
 								<div className={styles.faqAnswer}>
 									Our studio is in Indiranagar, HAL 2nd Stage (12th
 									Main), serving Domlur, CV Raman Nagar, Koramangala and
-									nearby — with at-home and online options too.
+									nearby, with at-home and online options too.
 								</div>
 							</details>
 						</div>
@@ -888,7 +888,7 @@ export default function PersonalTrainingPage() {
 					</Reveal>
 					<Reveal>
 						<p>
-							Certified, one-on-one yoga training in Indiranagar — at the
+							Certified, one-on-one yoga training in Indiranagar, at the
 							studio, your home, or online. Book a trial and feel the
 							difference.
 						</p>
@@ -931,7 +931,7 @@ export default function PersonalTrainingPage() {
 						"@type": "Product",
 						name: "Personal Yoga Training in Indiranagar",
 						description:
-							"One-on-one personal yoga sessions at Athayog Living — studio, online, or at-home in Bengaluru.",
+							"One-on-one personal yoga sessions at Athayog Living, in the studio, online, or at home in Bengaluru.",
 						brand: {
 							"@type": "Organization",
 							name: "Athayog Living",

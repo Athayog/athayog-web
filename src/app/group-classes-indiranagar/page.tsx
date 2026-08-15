@@ -55,13 +55,13 @@ export default function GroupClassesPage() {
 							Group Yoga Classes · Indiranagar, Bangalore
 						</span>
 						<h1>
-							Group Yoga Classes in Indiranagar —{" "}
+							Group Yoga Classes in Indiranagar:{" "}
 							<em>Practise Together, Grow Together</em>
 						</h1>
 						<p className={styles.heroSub}>
 							Join expert-led, small-batch group yoga classes in the heart
 							of Indiranagar. Six signature formats, morning and evening
-							batches, and flexible timings — open to every level. Come as
+							batches, and flexible timings, open to every level. Come as
 							you are, from ₹599 a drop-in or a trial class.
 						</p>
 						<span className={styles.priceChip}>
@@ -118,8 +118,8 @@ export default function GroupClassesPage() {
 							Group yoga classes are instructor-led sessions practised
 							together in a shared studio. At Athayog Living in Indiranagar,
 							small-batch classes run morning and evening across six
-							signature formats — from gentle alignment to dynamic flow and
-							meditation — open to all levels above age 14, with drop-in and
+							signature formats, from gentle alignment to dynamic flow and
+							meditation, open to all levels above age 14, with drop-in and
 							monthly subscription options.
 						</p>
 					</Reveal>
@@ -135,7 +135,7 @@ export default function GroupClassesPage() {
 							<h2>The energy of a community, the care of a small batch</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
 								Group classes give you consistency, connection and expert
-								guidance — with the accountability that keeps you coming
+								guidance, with the accountability that keeps you coming
 								back.
 							</p>
 						</div>
@@ -154,7 +154,7 @@ export default function GroupClassesPage() {
 							<div className={`card ${styles.bandCard}`}>
 								<h3>Lasting lifestyle change</h3>
 								<p>
-									Yoga is more than asana — the routine builds real,
+									Yoga is more than asana; the routine builds real,
 									positive habits.
 								</p>
 							</div>
@@ -189,7 +189,7 @@ export default function GroupClassesPage() {
 							<span className="eyebrow">Class formats</span>
 							<h2>Six signature ways to practise</h2>
 							<p className="lead">
-								Each format is a distinct path — choose by how you want to
+								Each format is a distinct path. Choose by how you want to
 								feel, or move through them all as your practice deepens.
 							</p>
 						</div>
@@ -221,7 +221,7 @@ export default function GroupClassesPage() {
 								<h3>Rhythm of Being</h3>
 								<p>
 									Classical asana with precise alignment and steady
-									breath — steadiness (sthira) and ease (sukha).
+									breath: steadiness (sthira) and ease (sukha).
 								</p>
 								<div className={styles.ideal}>
 									<b>Ideal for:</b> those who value precision and
@@ -236,7 +236,7 @@ export default function GroupClassesPage() {
 								</div>
 								<h3>Transcending Transition</h3>
 								<p>
-									Breath-led, sequential flow — a moving meditation that
+									Breath-led, sequential flow, a moving meditation that
 									builds strength and adaptability.
 								</p>
 								<div className={styles.ideal}>
@@ -252,7 +252,7 @@ export default function GroupClassesPage() {
 								</div>
 								<h3>Uttama Sadhana</h3>
 								<p>
-									Advanced asana — arm balances, inversions and refined
+									Advanced asana, arm balances, inversions and refined
 									alignment for committed practitioners.
 								</p>
 								<div className={styles.ideal}>
@@ -318,7 +318,7 @@ export default function GroupClassesPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Weekly schedule</span>
-							<h2>Group class timetable — Indiranagar</h2>
+							<h2>Group class timetable: Indiranagar</h2>
 							<p className="lead">
 								Morning and evening batches, seven days a week. Pick a
 								time that fits your life.{" "}
@@ -326,7 +326,7 @@ export default function GroupClassesPage() {
 									className={styles.verify}
 									title="Update monthly from your latest schedule PDF"
 								>
-									(Schedule shown for reference — download the latest
+									(Schedule shown for reference; download the latest
 									below.)
 								</span>
 							</p>
@@ -494,7 +494,7 @@ export default function GroupClassesPage() {
 							<span className="eyebrow">Pricing</span>
 							<h2>Membership that fits how you practise</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								Drop in once, or subscribe and save — the longer you
+								Drop in once, or subscribe and save: the longer you
 								commit, the lower your monthly cost.
 							</p>
 						</div>
@@ -507,7 +507,7 @@ export default function GroupClassesPage() {
 								<div className={styles.permo}>walk-in · single class</div>
 								<p>
 									Try a single class or practise when you&apos;re in
-									town — no commitment.
+									town, no commitment.
 								</p>
 								<PaymentModal
 									planId="group-drop-in"
@@ -592,7 +592,7 @@ export default function GroupClassesPage() {
 									365 days · ≈ ₹2,166 / month
 								</div>
 								<p>
-									Our best per-month value — a full year of practice and
+									Our best per-month value, a full year of practice and
 									community.
 								</p>
 								<PaymentModal
@@ -689,7 +689,7 @@ export default function GroupClassesPage() {
 									[ Credential ]
 								</div>
 								<p className={styles.verify} title="Add specialization">
-									[ Teaches — flow / alignment / meditation. ]
+									[ Teaches: flow / alignment / meditation. ]
 								</p>
 							</div>
 						</Reveal>
@@ -764,7 +764,7 @@ export default function GroupClassesPage() {
 					</Reveal>
 
 					<p className={styles.tplNote}>
-						Text testimonials below are templates — replace with real,
+						Text testimonials below are templates. Replace with real,
 						consented member reviews (ideally from Google, with names &amp;
 						areas).
 					</p>
@@ -943,7 +943,7 @@ export default function GroupClassesPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>Group yoga classes in Indiranagar — FAQs</h2>
+							<h2>Group yoga classes in Indiranagar: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -967,7 +967,7 @@ export default function GroupClassesPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									Yes. A walk-in drop-in class is ₹599 (excluding 5%
-									GST) — ideal if you&apos;re visiting or want to try
+									GST), ideal if you&apos;re visiting or want to try
 									before committing to a subscription.
 								</div>
 							</details>
@@ -977,9 +977,9 @@ export default function GroupClassesPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Absolutely. Several formats — like Universal Harmony
-									and Yoga with Props — are beginner-friendly and open
-									to all, with instructors who guide you at your level.
+									Absolutely. Several formats, like Universal Harmony
+									and Yoga with Props, are beginner-friendly and open to
+									all, with instructors who guide you at your level.
 								</div>
 							</details>
 							<details>
@@ -1012,9 +1012,9 @@ export default function GroupClassesPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Six signature formats — Universal Harmony, Rhythm of
+									Six signature formats, Universal Harmony, Rhythm of
 									Being, Transcending Transition, Uttama Sadhana, Inner
-									World and Sound Meditation — plus Yoga with Props,
+									World and Sound Meditation, plus Yoga with Props,
 									Pranayama and Aerial Yoga.
 								</div>
 							</details>
@@ -1061,7 +1061,7 @@ export default function GroupClassesPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									The 12-month membership at ₹25,999 works out to about
-									₹2,166 per month — the lowest monthly rate — making it
+									₹2,166 per month, the lowest monthly rate, making it
 									the best value for regular practitioners.
 								</div>
 							</details>
@@ -1071,7 +1071,7 @@ export default function GroupClassesPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — pay via UPI, cards, net banking, PayPal, or EMI
+									Yes, pay via UPI, cards, net banking, PayPal, or EMI
 									through HDFC, ICICI, Bank of Baroda, Federal Bank and
 									more.
 								</div>
@@ -1083,7 +1083,7 @@ export default function GroupClassesPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									Our studio is in Indiranagar, HAL 2nd Stage (12th
-									Main), Bengaluru 560038 — convenient for Domlur, CV
+									Main), Bengaluru 560038, convenient for Domlur, CV
 									Raman Nagar, Koramangala and nearby areas.
 								</div>
 							</details>
@@ -1111,7 +1111,7 @@ export default function GroupClassesPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Personal Training</h3>
-								<p>One-on-one, goal-based yoga — from ₹14,999.</p>
+								<p>One-on-one, goal-based yoga, from ₹14,999.</p>
 							</a>
 						</Reveal>
 						<Reveal>
@@ -1173,7 +1173,7 @@ export default function GroupClassesPage() {
 					</Reveal>
 					<Reveal>
 						<p>
-							Expert-led group yoga classes in Indiranagar — small batches,
+							Expert-led group yoga classes in Indiranagar: small batches,
 							six formats, morning and evening. Start with a trial or drop
 							in from ₹599.
 						</p>

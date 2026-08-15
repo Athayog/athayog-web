@@ -30,7 +30,7 @@ export default function MagnetForm() {
 						data: value,
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Aerial Yoga Booking — ${value.name}`,
+							subject: `New Aerial Yoga Booking: ${value.name}`,
 						},
 					}),
 				});
@@ -206,8 +206,8 @@ export default function MagnetForm() {
 				{form.state.isSubmitting ? "Submitting…" : "Reserve My Slot"}
 			</button>
 			<span className={styles.lmMini}>
-				Or call / WhatsApp <strong>86903 33111</strong> — we&apos;ll confirm right
-				away.
+				Or call / WhatsApp <strong>86903 33111</strong>, and we&apos;ll confirm
+				right away.
 			</span>
 		</form>
 	);

@@ -47,13 +47,13 @@ export default function WorkshopsPage() {
 				<div className={`wrap ${styles.heroGrid}`}>
 					<span className="eyebrow">Deep-dive sessions · Indiranagar</span>
 					<h1>
-						Workshops at Athayog — <em>Deepen Your Practice</em>
+						Workshops at Athayog: <em>Deepen Your Practice</em>
 					</h1>
 					<p className={styles.heroSub}>
 						At Athayog, we believe that learning never stops. Our workshops
 						are specially designed to offer a deep dive into various aspects
-						of yoga, wellness and holistic living — whether you&apos;re
-						looking to refine your techniques, explore new yoga styles or gain
+						of yoga, wellness and holistic living, whether you&apos;re looking
+						to refine your techniques, explore new yoga styles or gain
 						insights into health and mindfulness.
 					</p>
 					<span className={styles.priceChip}>
@@ -109,7 +109,7 @@ export default function WorkshopsPage() {
 								},
 								{
 									h: "Variety of Topics",
-									p: "From advanced asanas and pranayama techniques to meditation and yoga philosophy — a broad spectrum of subjects.",
+									p: "From advanced asanas and pranayama techniques to meditation and yoga philosophy, a broad spectrum of subjects.",
 								},
 								{
 									h: "Community Atmosphere",
@@ -117,7 +117,7 @@ export default function WorkshopsPage() {
 								},
 								{
 									h: "Holistic Approach",
-									p: "Focus on mind, body, and spirit — workshops designed to be accessible to all levels.",
+									p: "Focus on mind, body, and spirit: workshops designed to be accessible to all levels.",
 								},
 							].map((w, i) => (
 								<div className="card" key={i}>

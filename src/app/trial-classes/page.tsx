@@ -44,7 +44,7 @@ export default function TrialClassesPage() {
 						data: value,
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Trial Class — ${value.fullName}`,
+							subject: `New Trial Class: ${value.fullName}`,
 						},
 					}),
 				});
@@ -183,7 +183,7 @@ export default function TrialClassesPage() {
 									label="Message"
 									as="textarea"
 									placeholder="Any specific goals or questions? (optional)"
-									hint="Optional — tell us about your yoga experience or goals"
+									hint="Optional. Tell us about your yoga experience or goals"
 								/>
 							</div>
 						</div>

@@ -114,7 +114,7 @@ export default function GroupClassesIndiranagarPage() {
 								text: "Limited participants per batch for quality attention",
 							},
 						],
-						note: "Batch availability changes — booking is recommended.",
+						note: "Batch availability changes, so booking is recommended.",
 					},
 				]}
 				ctaText="Check Today's Available Batches"
@@ -199,14 +199,14 @@ export default function GroupClassesIndiranagarPage() {
 					},
 					{
 						id: "3",
-						text: "Convenient location and calm environment — easy to continue.",
+						text: "Convenient location and calm environment, easy to continue.",
 					},
 				]}
 				finalText="Real local experiences. No exaggerated promises."
 			/>
 			<FAQCTASection
 				sectionTitle="Frequently Asked Questions"
-				subtext="Start Your Yoga Practice Near Indiranagar — Without Overthinking It"
+				subtext="Start Your Yoga Practice Near Indiranagar. Without Overthinking It"
 				primaryCtaText="Book a Trial Class"
 				secondaryCtaText="Call / WhatsApp Us for batch timings and directions"
 				faqs={[

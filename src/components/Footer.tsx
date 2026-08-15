@@ -50,8 +50,8 @@ export default function Footer() {
 						<div className={styles.tag}>A Sanctum For The Spirit</div>
 						<p className={styles.desc}>
 							Authentic, certified yoga in Indiranagar &amp; Jayanagar,
-							Bengaluru — group, personal, weight-loss &amp; teacher
-							training.
+							group, personal, weight-loss and teacher training in
+							Bengaluru.
 						</p>
 						<p className={styles.address}>
 							No. 3293, 1st Floor, 12th Main, HAL 2nd Stage, Indiranagar,

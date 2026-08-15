@@ -30,7 +30,7 @@ export default function MagnetForm() {
 						data: value,
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Group Trial — ${value.name}`,
+							subject: `New Group Trial: ${value.name}`,
 						},
 					}),
 				});

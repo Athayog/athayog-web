@@ -56,12 +56,12 @@ export default function WeightLossPage() {
 							3-Month Yoga Weight Loss Program · Indiranagar
 						</span>
 						<h1>
-							Yoga for Weight Loss in Indiranagar —{" "}
+							Yoga for Weight Loss in Indiranagar:{" "}
 							<em>Sustainable, Guided, Whole-Body</em>
 						</h1>
 						<p className={styles.heroSub}>
 							A structured 3-month program that helps you lose weight the
-							healthy way — through daily asana practice, breath and
+							healthy way, through daily asana practice, breath and
 							movement, backed by real personalized support: BMI tracking,
 							weekly reassessments, nutrition consultation and counselling.
 						</p>
@@ -98,7 +98,7 @@ export default function WeightLossPage() {
 					>
 						<Image
 							src="/hero-warrior-pose.png"
-							alt="Dynamic warrior pose practice — strength-building yoga at Athayog Living, Indiranagar"
+							alt="Dynamic warrior pose practice, strength-building yoga at Athayog Living, Indiranagar"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"
 							priority
@@ -120,13 +120,13 @@ export default function WeightLossPage() {
 				<div className="wrap">
 					<Reveal>
 						<p className="answer">
-							Yes — a structured yoga program supports healthy, sustainable
+							Yes, a structured yoga program supports healthy, sustainable
 							weight loss by combining active asana practice, breathwork and
 							lifestyle guidance that build strength, mobility and steadier
 							habits. Athayog&apos;s 3-month program in Indiranagar pairs
-							daily practice with personalized support — BMI tracking,
-							weekly reassessments, nutrition consultation and counselling —
-							so the results you reach are results you can keep.
+							daily practice with personalized support: BMI tracking, weekly
+							reassessments, nutrition consultation and counselling, so the
+							results you reach are results you can keep.
 						</p>
 					</Reveal>
 				</div>
@@ -138,10 +138,10 @@ export default function WeightLossPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Why yoga for weight loss</span>
-							<h2>More than a workout — a whole-body reset</h2>
+							<h2>More than a workout: a whole-body reset</h2>
 							<p className="lead">
 								Crash diets fade. Yoga works because it changes how your
-								body and mind move through daily life — not just how you
+								body and mind move through daily life, not just how you
 								exercise for an hour.
 							</p>
 						</div>
@@ -155,7 +155,7 @@ export default function WeightLossPage() {
 								},
 								{
 									h: "Strength & mobility",
-									p: "Build lean strength and open tight joints — so movement feels good and stays sustainable.",
+									p: "Build lean strength and open tight joints, so movement feels good and stays sustainable.",
 								},
 								{
 									h: "Calmer mind, steadier habits",
@@ -163,7 +163,7 @@ export default function WeightLossPage() {
 								},
 								{
 									h: "Guided & measured",
-									p: "Expert coaching with regular check-ins keeps you progressing safely — never guessing.",
+									p: "Expert coaching with regular check-ins keeps you progressing safely, never guessing.",
 								},
 							].map((c, i) => (
 								<div className="card" key={i}>
@@ -203,19 +203,19 @@ export default function WeightLossPage() {
 							<Reveal>
 								<p>
 									The program runs over three months with a clear weekly
-									rhythm — intense asana through the week to build
+									rhythm: intense asana through the week to build
 									strength and burn energy, an endurance-building Surya
-									Namaskar session, and traditional cleansing practice —
+									Namaskar session, and traditional cleansing practice,
 									always balanced with rest and recovery.
 								</p>
 								<p>
 									Because it&apos;s progressive and supervised, you
 									build capacity gradually rather than pushing into
-									burnout — the reason results last well beyond the
-									three months.
+									burnout, the reason results last well beyond the three
+									months.
 								</p>
 								<div className={styles.safe}>
-									A healthy, guided approach — not a crash program. Your
+									A healthy, guided approach, not a crash program. Your
 									plan is paced to your body, with regular reassessment.
 									If you have a medical condition or are new to intense
 									exercise, we&apos;ll adapt accordingly.
@@ -229,21 +229,21 @@ export default function WeightLossPage() {
 									<li>
 										<span className={styles.dayLabel}>Mon–Thu</span>
 										<span>
-											Intense asana practice — build strength,
+											Intense asana practice: build strength,
 											flexibility and active calorie burn.
 										</span>
 									</li>
 									<li>
 										<span className={styles.dayLabel}>Friday</span>
 										<span>
-											108 Surya Namaskar — a full-body endurance
+											108 Surya Namaskar, a full-body endurance
 											workout that becomes a milestone in itself.
 										</span>
 									</li>
 									<li>
 										<span className={styles.dayLabel}>Sunday</span>
 										<span>
-											Kriya practice — traditional yogic cleansing
+											Kriya practice, traditional yogic cleansing
 											techniques.
 										</span>
 									</li>
@@ -268,7 +268,7 @@ export default function WeightLossPage() {
 						<div className="section-head">
 							<span className="eyebrow">Personalized support</span>
 							<h2>
-								You&apos;re measured, guided and supported — every week
+								You&apos;re measured, guided and supported, every week
 							</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
 								This is what separates a real program from a generic
@@ -290,7 +290,7 @@ export default function WeightLossPage() {
 								},
 								{
 									h: "Nutrition Consultation",
-									p: "Personalized, sustainable guidance on eating well — built around your body and goals.",
+									p: "Personalized, sustainable guidance on eating well, built around your body and goals.",
 								},
 								{
 									h: "Counselling Sessions",
@@ -492,9 +492,9 @@ export default function WeightLossPage() {
 						<TestimonialVideoCarousel videos={testimonialVideos} />
 					</Reveal>
 					<p className={styles.tplNote}>
-						Text testimonials are omitted here in favour of real video stories
-						— add consented member results (with permission) as the program
-						builds its gallery.
+						Text testimonials are omitted here in favour of real video
+						stories. Add consented member results (with permission) as the
+						program builds its gallery.
 					</p>
 					<Reveal>
 						<p
@@ -542,7 +542,7 @@ export default function WeightLossPage() {
 							<span className="eyebrow">Enrol</span>
 							<h2>The 3-Month Weight Loss Program</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								Everything you need for a healthy, guided transformation —
+								Everything you need for a healthy, guided transformation,
 								in one program.
 							</p>
 						</div>
@@ -569,7 +569,7 @@ export default function WeightLossPage() {
 							<div className={styles.pcardBuy}>
 								<div
 									className={`${styles.buyAmt} ${styles.verify}`}
-									title="The program page does not publish a price — add your 3-month program fee here"
+									title="The program page publishes no price, so add your 3-month program fee here"
 								>
 									₹[fee]
 								</div>
@@ -632,7 +632,7 @@ export default function WeightLossPage() {
 								</h2>
 								<p>
 									Tell us a little about your goal and we&apos;ll help
-									you begin — with a trial class or a call to walk you
+									you begin, with a trial class or a call to walk you
 									through the program.
 								</p>
 							</div>
@@ -740,7 +740,7 @@ export default function WeightLossPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>Yoga weight loss program in Indiranagar — FAQs</h2>
+							<h2>Yoga weight loss program in Indiranagar: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -754,8 +754,8 @@ export default function WeightLossPage() {
 								<div className={styles.faqAnswer}>
 									Yes. An active, well-structured yoga practice builds
 									strength and stamina, supports a healthier metabolism,
-									and — combined with breathwork, better sleep and
-									mindful eating — helps you lose weight in a way that
+									and, combined with breathwork, better sleep and
+									mindful eating, helps you lose weight in a way that
 									lasts. This program adds nutrition and progress
 									tracking to make results sustainable.
 								</div>
@@ -767,7 +767,7 @@ export default function WeightLossPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									It&apos;s a 3-month program with a structured weekly
-									rhythm — intense asana on weekdays, 108 Surya Namaskar
+									rhythm: intense asana on weekdays, 108 Surya Namaskar
 									on Friday, and kriya cleansing on Sunday, balanced
 									with recovery.
 								</div>
@@ -780,7 +780,7 @@ export default function WeightLossPage() {
 								<div className={styles.faqAnswer}>
 									Structured practice plus full personalized support: a
 									BMI check, weekly reassessments, a nutrition
-									consultation and counselling sessions — all guided by
+									consultation and counselling sessions, all guided by
 									experienced instructors.
 								</div>
 							</details>
@@ -803,7 +803,7 @@ export default function WeightLossPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									No — and that&apos;s the point. It&apos;s a healthy,
+									No, and that&apos;s the point. It&apos;s a healthy,
 									guided approach paced to your body, with weekly
 									reassessment, so the change is gradual and sustainable
 									rather than a quick fix that rebounds.
@@ -816,7 +816,7 @@ export default function WeightLossPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									It&apos;s a traditional practice of 108 rounds of Sun
-									Salutation — a complete, endurance-building full-body
+									Salutation, a complete, endurance-building full-body
 									workout that becomes a rewarding weekly milestone as
 									your fitness grows.
 								</div>
@@ -842,7 +842,7 @@ export default function WeightLossPage() {
 								<div className={styles.faqAnswer}>
 									<span
 										className={styles.verify}
-										title="Add the real 3-month program fee — not published on the source page"
+										title="Add the real 3-month program fee, not published on the source page"
 									>
 										[ Add the 3-month program fee here. ]
 									</span>{" "}
@@ -856,8 +856,8 @@ export default function WeightLossPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — book a trial class to experience the practice
-									and speak with our team before you commit.
+									Yes, book a trial class to experience the practice and
+									speak with our team before you commit.
 								</div>
 							</details>
 							<details>
@@ -867,7 +867,7 @@ export default function WeightLossPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									At our studio in Indiranagar, HAL 2nd Stage (12th
-									Main), Bengaluru 560038 — convenient for Domlur, CV
+									Main), Bengaluru 560038, convenient for Domlur, CV
 									Raman Nagar, Koramangala and nearby.
 								</div>
 							</details>
@@ -895,7 +895,7 @@ export default function WeightLossPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Personal Training</h3>
-								<p>One-on-one, goal-based yoga — from ₹14,999.</p>
+								<p>One-on-one, goal-based yoga, from ₹14,999.</p>
 							</a>
 							<a className={styles.ex} href="/group-classes-indiranagar">
 								<div className={styles.exArrow}>
@@ -947,7 +947,7 @@ export default function WeightLossPage() {
 						<span className="eyebrow">Begin</span>
 					</Reveal>
 					<Reveal>
-						<h2>Transform your body and mind — sustainably.</h2>
+						<h2>Transform your body and mind, sustainably.</h2>
 					</Reveal>
 					<Reveal>
 						<p>

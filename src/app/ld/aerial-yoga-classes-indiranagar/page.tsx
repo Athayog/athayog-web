@@ -13,7 +13,7 @@ export default function AerialYogaIndiranagarPage() {
 		<main>
 			<AerialHeroSection
 				h1="Aerial Yoga Classes in Indiranagar | Strength, Flexibility & Stress Relief"
-				subheadline="Defy gravity. Build core strength. Release stress — in guided, small-batch Aerial Yoga sessions."
+				subheadline="Defy gravity. Build core strength. Release stress in guided, small-batch Aerial Yoga sessions."
 				trustPoints={[
 					"Small batch: Only 10 participants",
 					"Suitable for 15–50 yrs | Working professionals welcome",

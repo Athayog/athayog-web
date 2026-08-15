@@ -79,7 +79,7 @@ export default function PersonalYogaTrainingIndiranagarPage() {
 			/>
 			<ImageFeatureSection
 				title="What Are Personal Yoga Sessions?"
-				description="Personal yoga sessions are one-on-one classes where every aspect of the practice—from posture selection to pace, intensity, and progression—is customized to your needs."
+				description="Personal yoga sessions are one-on-one classes where every aspect of the practice, from posture selection to pace, intensity and progression, is customized to your needs."
 				image="/images/mental-health/2.png"
 				imageAlt="One-on-one yoga session with instructor guiding a student"
 				features={[

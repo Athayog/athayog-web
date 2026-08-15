@@ -90,12 +90,12 @@ export default function Home() {
 							Certified Yoga Studio · Indiranagar, Bangalore
 						</span>
 						<h1>
-							Yoga Classes in Indiranagar —{" "}
+							Yoga Classes in Indiranagar:{" "}
 							<em>Transforming Lives Through Yoga</em>
 						</h1>
 						<p className={styles.heroSub}>
 							Awaken your mind, body and spirit with Athayog Living. Group
-							classes, personal training and RYT-200 teacher training —
+							classes, personal training and RYT-200 teacher training,
 							guided by certified teachers, recognized by Yoga Alliance,
 							SVYASA and AYUSH.
 						</p>
@@ -178,7 +178,7 @@ export default function Home() {
 							Bengaluru, offering group classes, one-on-one personal
 							training and RYT-200 yoga teacher training. Our academy and
 							teachers are recognized by Yoga Alliance (USA), SVYASA and
-							AYUSH — so you practise with authentic guidance and globally
+							AYUSH, so you practise with authentic guidance and globally
 							recognized credentials, in the heart of Indiranagar (with a
 							second branch in Jayanagar).
 						</p>
@@ -195,7 +195,7 @@ export default function Home() {
 							<h2>A path for every practitioner</h2>
 							<p className="lead">
 								Whether you want community, personal attention, a
-								transformation, or a teaching career — there&apos;s a way
+								transformation, or a teaching career, there&apos;s a way
 								in.
 							</p>
 						</div>
@@ -224,8 +224,8 @@ export default function Home() {
 								<span className="eyebrow">1-on-1</span>
 								<h3>Personal Training</h3>
 								<p>
-									Private, goal-based yoga — weight loss, flexibility,
-									back pain, stress &amp; more — at studio, home or
+									Private, goal-based yoga for weight loss, flexibility,
+									back pain, stress &amp; more, at studio, home or
 									online.
 								</p>
 								<div className={styles.priceChip}>
@@ -243,8 +243,8 @@ export default function Home() {
 								<span className="eyebrow">Career</span>
 								<h3>Yoga Teacher Training</h3>
 								<p>
-									Become a certified RYT-200 teacher — online, weekend,
-									residential or international formats.
+									Become a certified RYT-200 teacher through online,
+									weekend, residential or international formats.
 								</p>
 								<div className={styles.priceChip}>
 									From ₹24,999 · Yoga Alliance (USA)
@@ -261,7 +261,7 @@ export default function Home() {
 								<span className="eyebrow">Deep-dive</span>
 								<h3>Workshops</h3>
 								<p>
-									Focused sessions on special themes — pranayama,
+									Focused sessions on special themes such as pranayama,
 									alignment, meditation and seasonal intensives.
 								</p>
 								<Link href="/workshops" className="btn btn-ghost">
@@ -288,7 +288,7 @@ export default function Home() {
 								</h3>
 								<p style={{ color: "var(--brand-mist)" }}>
 									Experience a class, meet our teachers, and we&apos;ll
-									help you choose the right path — no obligation.
+									help you choose the right path with no obligation.
 								</p>
 								<Link href="/trial-classes" className="btn btn-cream">
 									Book a Trial Class
@@ -307,8 +307,8 @@ export default function Home() {
 							<span className="eyebrow">Our practice</span>
 							<h2>Six signature class formats</h2>
 							<p className="lead">
-								From gentle alignment to dynamic flow and meditation —
-								each a distinct path.
+								From gentle alignment to dynamic flow and meditation, each
+								a distinct path.
 							</p>
 						</div>
 
@@ -377,7 +377,7 @@ export default function Home() {
 							<span className="eyebrow">Why Athayog</span>
 							<h2>Authentic yoga, taught with care</h2>
 							<p className="lead" style={{ color: "var(--brand-mist)" }}>
-								Our instructors are professional, attentive and caring —
+								Our instructors are professional, attentive and caring,
 								passionate about yoga, with a deep understanding of the
 								practice and a focus on the individual.
 							</p>
@@ -464,7 +464,7 @@ export default function Home() {
 								}}
 							>
 								When you register, we offer consultations and lifestyle
-								guidance to help you embrace a complete yogic lifestyle —
+								guidance to help you embrace a complete yogic lifestyle,
 								empowering you to practise on your own and embed ancient
 								wisdom into everyday reality.
 							</p>
@@ -545,7 +545,7 @@ export default function Home() {
 								}}
 							>
 								On the International Day of Yoga, Athayog Living presented
-								Yoga Arambha 2025 at Kittur Rani Chennamma Stadium — a
+								Yoga Arambha 2025 at Kittur Rani Chennamma Stadium, a
 								morning of mindful movement, community spirit and a
 								celebration of wellness and unity.
 							</p>
@@ -569,7 +569,7 @@ export default function Home() {
 						>
 							<Image
 								src="/hero-event-yoga-day.jpg"
-								alt="Yoga Arambha 2025 — community yoga practice led by Sharath Basavaraju at Kittur Rani Chennamma Stadium"
+								alt="Yoga Arambha 2025: community yoga practice led by Sharath Basavaraju at Kittur Rani Chennamma Stadium"
 								fill
 								sizes="(max-width: 960px) 100vw, 50vw"
 								style={{ objectFit: "cover" }}
@@ -645,7 +645,7 @@ export default function Home() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>Yoga classes in Indiranagar — FAQs</h2>
+							<h2>Yoga classes in Indiranagar: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -678,7 +678,7 @@ export default function Home() {
 							</details>
 							<details>
 								<summary>
-									I&apos;m not flexible — can I still practise yoga?
+									I&apos;m not flexible, but can I still practise yoga?
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
@@ -723,11 +723,11 @@ export default function Home() {
 							</details>
 							<details>
 								<summary>
-									When should I eat — before or after practice?
+									When should I eat, before or after practice?
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Practise on a relatively empty stomach — ideally 2–3
+									Practise on a relatively empty stomach, ideally 2–3
 									hours after a meal. A light snack well before class is
 									fine if needed; eat a proper meal afterwards.
 								</div>
@@ -740,7 +740,7 @@ export default function Home() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — an active, consistent practice supports healthy,
+									Yes, an active, consistent practice supports healthy,
 									sustainable weight management, especially alongside
 									mindful eating. program adds structure, nutrition
 									guidance and progress tracking.
@@ -765,7 +765,7 @@ export default function Home() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — we offer specialized prenatal and postnatal
+									Yes, we offer specialized prenatal and postnatal
 									guidance, best delivered through personal training so
 									the practice is tailored safely to your stage.
 								</div>
@@ -787,7 +787,7 @@ export default function Home() {
 								</h2>
 								<p>
 									Join our list for practice tips, wellbeing insights
-									and members-only offers — and begin your mindful
+									and members-only offers, and begin your mindful
 									journey with us.
 								</p>
 							</div>
@@ -805,7 +805,7 @@ export default function Home() {
 						<h2>Your yoga journey starts in Indiranagar.</h2>
 						<p>
 							Certified group classes, personal training and teacher
-							training — all in one trusted studio. Book a trial class and
+							training, all in one trusted studio. Book a trial class and
 							begin today.
 						</p>
 						<div className="final-cta">

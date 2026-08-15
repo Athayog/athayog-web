@@ -68,7 +68,7 @@ export default function EnquireModal({
 						},
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Enquiry — ${value.fullName}`,
+							subject: `New Enquiry: ${value.fullName}`,
 						},
 					}),
 				});

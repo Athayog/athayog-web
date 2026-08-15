@@ -204,7 +204,7 @@ export default function NonResidentialYogaPage() {
 					},
 					{
 						id: "2",
-						text: "It's not a casual class — the discipline changed my routine.",
+						text: "It's not a casual class; the discipline changed my routine.",
 					},
 					{
 						id: "3",

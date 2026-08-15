@@ -52,12 +52,12 @@ export default function RTTCPage() {
 							RYT-200 Yoga Teacher Training · Online
 						</span>
 						<h1>
-							Online Yoga Teacher Training —{" "}
+							Online Yoga Teacher Training:{" "}
 							<em>RYT-200, Live & Interactive</em>
 						</h1>
 						<p className={styles.heroSub}>
 							Become a certified yoga teacher from anywhere in the world.
-							Athayog Living&apos;s RYT-200 online program — Yoga Alliance
+							Athayog Living&apos;s RYT-200 online program, Yoga Alliance
 							(USA) accredited, live sessions with expert instructors, and
 							the same curriculum as our in-studio course.
 						</p>
@@ -115,11 +115,11 @@ export default function RTTCPage() {
 					<Reveal>
 						<p className="answer">
 							Athayog Living&apos;s online RYT-200 program delivers the full
-							teacher training experience — live and interactive — so you
-							can earn a globally recognized certification without
-							travelling to Bengaluru. Same curriculum, same accreditation,
-							same expert faculty: asana, pranayama, philosophy, anatomy,
-							methodology and practicum, delivered in real time.
+							teacher training experience, live and interactive, so you can
+							earn a globally recognized certification without travelling to
+							Bengaluru. Same curriculum, same accreditation, same expert
+							faculty: asana, pranayama, philosophy, anatomy, methodology
+							and practicum, delivered in real time.
 						</p>
 					</Reveal>
 				</div>
@@ -133,7 +133,7 @@ export default function RTTCPage() {
 							<h2>Teacher training, wherever you are</h2>
 							<p className="lead">
 								Live online sessions with the same curriculum,
-								accreditation and instructors as our in-studio RYT-200 —
+								accreditation and instructors as our in-studio RYT-200,
 								built for learners who need flexibility without
 								compromising on quality.
 							</p>
@@ -144,11 +144,11 @@ export default function RTTCPage() {
 							{[
 								{
 									h: "RYT-200 Accredited",
-									p: "Yoga Alliance (USA) recognized — teach anywhere in the world.",
+									p: "Yoga Alliance (USA) recognized, teach anywhere in the world.",
 								},
 								{
 									h: "Live & Interactive",
-									p: "Real-time instruction, not pre-recorded — ask questions, get feedback.",
+									p: "Real-time instruction, not pre-recorded. Ask questions, get feedback.",
 								},
 								{
 									h: "Self-Paced Elements",
@@ -183,7 +183,7 @@ export default function RTTCPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Curriculum</span>
-							<h2>What you will learn — online</h2>
+							<h2>What you will learn: online</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -203,7 +203,7 @@ export default function RTTCPage() {
 								},
 								{
 									h: "Functional Anatomy",
-									p: "Understand the body — online demonstrations with detailed visuals.",
+									p: "Understand the body, online demonstrations with detailed visuals.",
 								},
 								{
 									h: "Teaching Methodology",
@@ -211,7 +211,7 @@ export default function RTTCPage() {
 								},
 								{
 									h: "Practicum",
-									p: "Real teaching practice via video — with live feedback from faculty.",
+									p: "Real teaching practice via video, with live feedback from faculty.",
 								},
 							].map((c, i) => (
 								<div className="card" key={i}>
@@ -296,7 +296,7 @@ export default function RTTCPage() {
 							<span className="eyebrow">Pricing</span>
 							<h2>Online RYT-200 · Yoga Alliance (USA)</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								Live online, self-paced review — enrol now for the next
+								Live online, self-paced review. Enrol now for the next
 								batch.
 							</p>
 						</div>
@@ -309,8 +309,8 @@ export default function RTTCPage() {
 									₹19,999<small>+ 5% GST · register early</small>
 								</div>
 								<p>
-									Best rate — limited slots per batch. Live instruction
-									+ recorded review.
+									Best rate, limited slots per batch. Live instruction +
+									recorded review.
 								</p>
 								<div className={styles.incl}>
 									RYT-200 · live online · manual · recordings
@@ -330,7 +330,7 @@ export default function RTTCPage() {
 									₹24,999<small>+ 5% GST</small>
 								</div>
 								<p>
-									Full online RYT-200 experience — live sessions with
+									Full online RYT-200 experience, live sessions with
 									extended resources.
 								</p>
 								<div className={styles.incl}>
@@ -350,7 +350,7 @@ export default function RTTCPage() {
 									₹14,999<small>+ 5% GST</small>
 								</div>
 								<p>
-									Pre-recorded curriculum with periodic live Q&A — learn
+									Pre-recorded curriculum with periodic live Q&A. Learn
 									at your own speed.
 								</p>
 								<div className={styles.incl}>
@@ -380,8 +380,8 @@ export default function RTTCPage() {
 					<Reveal>
 						<h2>Ready to earn your RYT-200 online?</h2>
 						<p>
-							Enrol in the next online batch — live, interactive and
-							globally recognized.
+							Enrol in the next online batch, live, interactive and globally
+							recognized.
 						</p>
 						<a href="#enrol" className="btn btn-cream">
 							Enrol Now
@@ -395,7 +395,7 @@ export default function RTTCPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>Online RYT-200 — FAQs</h2>
+							<h2>Online RYT-200: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -406,10 +406,9 @@ export default function RTTCPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — Athayog Living is a Registered Yoga School
-									(RYS). The online RYT-200 carries the same
-									accreditation as our in-studio program, recognized
-									worldwide.
+									Yes, Athayog Living is a Registered Yoga School (RYS).
+									The online RYT-200 carries the same accreditation as
+									our in-studio program, recognized worldwide.
 								</div>
 							</details>
 							<details>
@@ -418,7 +417,7 @@ export default function RTTCPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Core sessions are live and interactive — you attend in
+									Core sessions are live and interactive. You attend in
 									real time, ask questions and get feedback. Sessions
 									are also recorded so you can review at your own pace.
 								</div>
@@ -440,7 +439,7 @@ export default function RTTCPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									A stable internet connection, a device with a camera,
-									and a yoga mat — that&apos;s all you need to get
+									and a yoga mat. That&apos;s all you need to get
 									started.
 								</div>
 							</details>
@@ -462,7 +461,7 @@ export default function RTTCPage() {
 							{[
 								{
 									h: "Weekend TTC",
-									p: "In-studio RYT-200 — weekend format, Indiranagar.",
+									p: "In-studio RYT-200: weekend format, Indiranagar.",
 									u: "/yoga-teacher-training-bangalore",
 								},
 								{
@@ -472,7 +471,7 @@ export default function RTTCPage() {
 								},
 								{
 									h: "Personal Training",
-									p: "One-on-one, goal-based — from ₹14,999.",
+									p: "One-on-one, goal-based, from ₹14,999.",
 									u: "/personal-yoga-training-indiranagar",
 								},
 								{
@@ -514,7 +513,7 @@ export default function RTTCPage() {
 					</Reveal>
 					<Reveal>
 						<p>
-							RYT-200 Yoga Teacher Training — live online, globally
+							RYT-200 Yoga Teacher Training, live online, globally
 							recognized. Enrol now for the next batch.
 						</p>
 					</Reveal>
@@ -555,7 +554,7 @@ export default function RTTCPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "Product",
-						name: "Yoga TTC Online — RYT-200 Self-Paced",
+						name: "Yoga TTC Online: RYT-200 Self-Paced",
 						description:
 							"Online 200-hour yoga teacher training certification. Self-paced study with Yoga Alliance, SVYASA, AYUSH recognition.",
 						brand: {

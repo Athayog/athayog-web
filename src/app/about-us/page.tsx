@@ -57,7 +57,7 @@ export default function AboutUsPage() {
 						</h1>
 						<p className={styles.heroSub}>
 							Athayog Living is dedicated to preserving the ancient legacy
-							of Yog — integrating its true purpose, philosophy and practice
+							of Yog, integrating its true purpose, philosophy and practice
 							into modern daily life, and making timeless wisdom accessible
 							to everyone.
 						</p>
@@ -121,7 +121,7 @@ export default function AboutUsPage() {
 					<Reveal>
 						<p className="answer">
 							Athayog Living is a certified yoga studio in Indiranagar,
-							Bengaluru, founded by Sharath Basavaraju — who was trained
+							Bengaluru, founded by Sharath Basavaraju, who was trained
 							through the teachings of the Bihar School of Yoga and holds a
 							formal yogic education from SVYASA. The studio offers group
 							classes, personal training and RYT-200 teacher training, all
@@ -142,7 +142,7 @@ export default function AboutUsPage() {
 								Ancient wisdom, woven into modern life
 							</h2>
 							<p>
-								At Athayog, our studio is a sacred space — an oasis of
+								At Athayog, our studio is a sacred space, an oasis of
 								knowledge and truth where individuals experience profound
 								transformation on their journey toward higher living.
 								Embracing a holistic yogic lifestyle takes the right flow
@@ -162,7 +162,7 @@ export default function AboutUsPage() {
 						<div className="split-media" style={{ position: "relative" }}>
 							<Image
 								src="https://images.prismic.io/athayog/ZzI2Lq8jQArT0tLq_18c80ed967a14416f2b609443d4f2638-min.jpeg?auto=format,compress&w=1000"
-								alt="Athayog Living studio — a sanctum for the spirit"
+								alt="Athayog Living studio, a sanctum for the spirit"
 								fill
 								sizes="(max-width: 960px) 100vw, 50vw"
 								style={{ objectFit: "cover" }}
@@ -187,7 +187,7 @@ export default function AboutUsPage() {
 								<Flower size={24} color="var(--brand-deep)" />
 								<h3>Authenticity</h3>
 								<p>
-									Yog taught in its true spirit — rooted in tradition,
+									Yog taught in its true spirit, rooted in tradition,
 									philosophy and lineage.
 								</p>
 							</div>
@@ -217,7 +217,7 @@ export default function AboutUsPage() {
 								<Leaf size={24} color="var(--brand-deep)" />
 								<h3>Self-reliance</h3>
 								<p>
-									We empower you to practise on your own — a complete
+									We empower you to practise on your own, a complete
 									yogic lifestyle, embodied.
 								</p>
 							</div>
@@ -257,7 +257,7 @@ export default function AboutUsPage() {
 								Even as an idea still taking shape, Athayog&apos;s purpose
 								was clear: the faith in Yog had to be restored. As a young
 								teenager, Sharath was intrigued by his grandfather&apos;s
-								sadhana — finding inspiration in his discipline and
+								sadhana, finding inspiration in his discipline and
 								perseverance, traits he would come to embody himself.
 							</p>
 							<p
@@ -336,7 +336,7 @@ export default function AboutUsPage() {
 							<h2>Grounded in tradition, recognized worldwide</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
 								Our teaching draws from two of India&apos;s most respected
-								yogic institutions — and carries credentials recognized
+								yogic institutions, and carries credentials recognized
 								across the globe.
 							</p>
 						</div>
@@ -360,7 +360,7 @@ export default function AboutUsPage() {
 							<div className={styles.lin}>
 								<h3>Yoga Alliance (USA)</h3>
 								<p>
-									RYS-accredited — graduates are eligible to register as
+									RYS-accredited: graduates are eligible to register as
 									RYT-200, recognized worldwide.
 								</p>
 							</div>
@@ -398,14 +398,14 @@ export default function AboutUsPage() {
 							</h2>
 							<p>
 								Our team is a diverse group of young, energetic and
-								dynamic individuals — our journeys interwoven on the quest
+								dynamic individuals, our journeys interwoven on the quest
 								for true yogic knowledge. A mutual faith in the
 								institution of Yog guides us onto the path of truth and
 								illuminates the way ahead.
 							</p>
 							<p>
 								When you register with us, we offer a consultation and
-								lifestyle guidance to help you attain higher living —
+								lifestyle guidance to help you attain higher living,
 								empowering you to progress and, in time, to practise on
 								your own.
 							</p>
@@ -495,7 +495,7 @@ export default function AboutUsPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Personal Training</h3>
-								<p>One-on-one, goal-based — from ₹14,999.</p>
+								<p>One-on-one, goal-based, from ₹14,999.</p>
 							</a>
 						</Reveal>
 						<Reveal>
@@ -604,8 +604,8 @@ export default function AboutUsPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Our teaching is rooted in genuine lineage — the Bihar
-									School of Yoga and SVYASA — and stays true to the
+									Our teaching is rooted in genuine lineage, the Bihar
+									School of Yoga and SVYASA, and stays true to the
 									philosophy and practice of traditional Yog, rather
 									than a purely fitness-led approach. We&apos;re also
 									recognized by Yoga Alliance (USA) and AYUSH.
@@ -619,7 +619,7 @@ export default function AboutUsPage() {
 								<div className={styles.faqAnswer}>
 									Group classes, one-on-one personal training, a 3-month
 									program, RYT-200 yoga teacher training, and workshops
-									— across our Indiranagar and Jayanagar studios.
+									across our Indiranagar and Jayanagar studios.
 								</div>
 							</details>
 							<details>

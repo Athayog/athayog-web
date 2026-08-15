@@ -63,12 +63,12 @@ export default function AerialYogaPage() {
 							Aerial Yoga · Indiranagar, Bangalore
 						</span>
 						<h1>
-							Aerial Yoga in Indiranagar — <em>It&apos;s Here</em>
+							Aerial Yoga in Indiranagar: <em>It&apos;s Here</em>
 						</h1>
 						<p className={styles.heroTag}>Defy Gravity. Discover Balance.</p>
 						<p className={styles.heroSub}>
 							Experience yoga in a whole new way with our silk
-							hammock-supported practice — designed to improve strength,
+							hammock-supported practice, designed to improve strength,
 							flexibility, balance and confidence, while gently
 							decompressing the spine.
 						</p>
@@ -102,7 +102,7 @@ export default function AerialYogaPage() {
 					<div className={styles.heroMedia}>
 						<Image
 							src="/landing-page-hero-4.jpg"
-							alt="Aerial yoga at Athayog Living, Indiranagar — silk hammock practice"
+							alt="Aerial yoga at Athayog Living, Indiranagar: silk hammock practice"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"
 							priority
@@ -152,7 +152,7 @@ export default function AerialYogaPage() {
 							Aerial yoga is a practice done with the support of a soft silk
 							hammock suspended from the ceiling. The hammock takes part of
 							your body weight, which lets you move into postures with
-							better alignment and less strain — building strength,
+							better alignment and less strain, building strength,
 							flexibility and balance while gently decompressing the spine.
 							At Athayog Living in Indiranagar, aerial classes run Friday at
 							7:30 PM and Sunday at 10:30 AM for ₹599 a session, and are
@@ -170,7 +170,7 @@ export default function AerialYogaPage() {
 							<span className="eyebrow">The practice</span>
 							<h2>Yoga, held in the air</h2>
 							<p className="lead">
-								The hammock isn&apos;t a gimmick — it&apos;s a tool. By
+								The hammock isn&apos;t a gimmick; it&apos;s a tool. By
 								supporting part of your weight, it changes what your body
 								can safely access.
 							</p>
@@ -193,8 +193,8 @@ export default function AerialYogaPage() {
 								<div className={styles.exArrow}>◍</div>
 								<h3>Gentle spinal decompression</h3>
 								<p>
-									Suspension allows the spine to lengthen and release —
-									a welcome antidote to long hours at a desk.
+									Suspension allows the spine to lengthen and release, a
+									welcome antidote to long hours at a desk.
 								</p>
 							</div>
 						</Reveal>
@@ -204,7 +204,7 @@ export default function AerialYogaPage() {
 								<h3>Playful and confidence-building</h3>
 								<p>
 									Inversions and shapes that feel out of reach on the
-									mat become approachable — and genuinely joyful.
+									mat become approachable, and genuinely joyful.
 								</p>
 							</div>
 						</Reveal>
@@ -226,22 +226,22 @@ export default function AerialYogaPage() {
 							<li>
 								<span className={styles.ck}>✓</span>
 								<span>
-									<strong>Improves flexibility and mobility</strong> —
+									<strong>Improves flexibility and mobility</strong>:
 									move deeper, with support.
 								</span>
 							</li>
 							<li>
 								<span className={styles.ck}>✓</span>
 								<span>
-									<strong>Builds core strength and stability</strong> —
+									<strong>Builds core strength and stability</strong>:
 									the hammock demands constant engagement.
 								</span>
 							</li>
 							<li>
 								<span className={styles.ck}>✓</span>
 								<span>
-									<strong>Enhances balance and posture</strong> —
-									retrain how you carry yourself.
+									<strong>Enhances balance and posture</strong>: retrain
+									how you carry yourself.
 								</span>
 							</li>
 							<li>
@@ -249,14 +249,14 @@ export default function AerialYogaPage() {
 								<span>
 									<strong>
 										Relieves stress and promotes deep relaxation
-									</strong>{" "}
-									— float, breathe, release.
+									</strong>
+									: float, breathe, release.
 								</span>
 							</li>
 							<li>
 								<span className={styles.ck}>✓</span>
 								<span>
-									<strong>Gently decompresses the spine</strong> — space
+									<strong>Gently decompresses the spine</strong>: space
 									and length where you need it most.
 								</span>
 							</li>
@@ -266,8 +266,8 @@ export default function AerialYogaPage() {
 									<strong>
 										Suitable for beginners and experienced
 										practitioners
-									</strong>{" "}
-									— every level is guided.
+									</strong>
+									: every level is guided.
 								</span>
 							</li>
 						</ul>
@@ -283,7 +283,7 @@ export default function AerialYogaPage() {
 							<span className="eyebrow">Your first class</span>
 							<h2>What to expect when you arrive</h2>
 							<p className="lead">
-								No experience needed — just curiosity and comfortable
+								No experience needed. Just curiosity and comfortable
 								clothes.
 							</p>
 						</div>
@@ -310,7 +310,7 @@ export default function AerialYogaPage() {
 								<div className={styles.stepNum}>3</div>
 								<h3>Practise, supported</h3>
 								<p>
-									Guided sequences — warm-up, supported postures, gentle
+									Guided sequences: warm-up, supported postures, gentle
 									inversions, and deep relaxation in the silk.
 								</p>
 							</div>
@@ -331,7 +331,7 @@ export default function AerialYogaPage() {
 							<p>
 								Aerial yoga is welcoming to beginners, but it isn&apos;t
 								right for everyone on every day. Please speak to us before
-								booking if any of the following apply — we&apos;ll advise
+								booking if any of the following apply. We&apos;ll advise
 								honestly, and suggest a mat-based class if it&apos;s the
 								better choice for you:
 							</p>
@@ -346,7 +346,7 @@ export default function AerialYogaPage() {
 									vertigo
 								</li>
 								<li>
-									Recent injury — especially to the spine, shoulders or
+									Recent injury, especially to the spine, shoulders or
 									wrists
 								</li>
 							</ul>
@@ -369,7 +369,7 @@ export default function AerialYogaPage() {
 							<span className="eyebrow">The difference</span>
 							<h2>Aerial yoga vs a traditional mat class</h2>
 							<p className="lead">
-								Both are yoga. The hammock simply opens a different door —
+								Both are yoga. The hammock simply opens a different door,
 								and works beautifully alongside your regular practice.
 							</p>
 						</div>
@@ -433,8 +433,8 @@ export default function AerialYogaPage() {
 								}}
 							>
 								regular group classes
-							</a>{" "}
-							— the two complement each other beautifully.
+							</a>
+							, the two complement each other beautifully.
 						</p>
 					</Reveal>
 				</div>
@@ -448,7 +448,7 @@ export default function AerialYogaPage() {
 							<span className="eyebrow">Pricing</span>
 							<h2>One class, one simple price</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								Aerial yoga is a paid, per-session class — book the slots
+								Aerial yoga is a paid, per-session class. Book the slots
 								you want, no membership required.
 							</p>
 						</div>
@@ -501,7 +501,7 @@ export default function AerialYogaPage() {
 				</div>
 			</section>
 
-			{/* 9. Book — magnet form */}
+			{/* 9. Book: magnet form */}
 			<section id="book">
 				<div className="wrap">
 					<Reveal>
@@ -512,8 +512,8 @@ export default function AerialYogaPage() {
 									Book your aerial yoga class today
 								</h2>
 								<p>
-									Tell us which slot you&apos;d like — Friday 7:30 PM or
-									Sunday 10:30 AM — and we&apos;ll confirm your hammock.
+									Tell us which slot you&apos;d like, Friday 7:30 PM or
+									Sunday 10:30 AM, and we&apos;ll confirm your hammock.
 									New to aerial? Say so, and we&apos;ll look after you.
 								</p>
 							</div>
@@ -531,7 +531,7 @@ export default function AerialYogaPage() {
 							<span className="eyebrow">In their words</span>
 							<h2>Loved by our Indiranagar community</h2>
 							<p className="lead">
-								Real stories from Athayogis — 850+ and growing.
+								Real stories from Athayogis, 850+ and growing.
 							</p>
 						</div>
 					</Reveal>
@@ -649,7 +649,7 @@ export default function AerialYogaPage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>Aerial yoga in Indiranagar — FAQs</h2>
+							<h2>Aerial yoga in Indiranagar: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -664,7 +664,7 @@ export default function AerialYogaPage() {
 									Aerial yoga is a practice done with a soft silk
 									hammock suspended from the ceiling. The hammock
 									supports part of your body weight, letting you move
-									into postures with better alignment and less strain —
+									into postures with better alignment and less strain,
 									building strength, flexibility and balance while
 									gently decompressing the spine.
 								</div>
@@ -676,7 +676,7 @@ export default function AerialYogaPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									No. Our aerial classes are suitable for beginners and
-									experienced practitioners alike — the instructor sets
+									experienced practitioners alike. The instructor sets
 									your hammock and guides you through every step.
 								</div>
 							</details>
@@ -701,7 +701,7 @@ export default function AerialYogaPage() {
 									Wear a fitted top that covers your underarms (the
 									fabric can rub) and full-length leggings. Remove
 									jewellery, watches and anything sharp that could snag
-									the silk. Practise on a relatively empty stomach — 2–3
+									the silk. Practise on a relatively empty stomach, 2–3
 									hours after a meal.
 								</div>
 							</details>
@@ -725,8 +725,8 @@ export default function AerialYogaPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									Aerial yoga is ₹599 per session. It&apos;s a paid,
-									per-session class — separate from the standard
-									group-class membership — so you can simply book the
+									per-session class, separate from the standard
+									group-class membership, so you can simply book the
 									slots you want.
 								</div>
 							</details>
@@ -736,7 +736,7 @@ export default function AerialYogaPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Yes — slots are limited by the number of hammocks, so
+									Yes, slots are limited by the number of hammocks, so
 									we recommend reserving ahead. Call or WhatsApp us on
 									86903 33111 to confirm your place.
 								</div>
@@ -788,7 +788,7 @@ export default function AerialYogaPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									Gentle inversions are part of the practice and are one
-									of its real joys — but they&apos;re always optional,
+									of its real joys, but they&apos;re always optional,
 									supported, and introduced progressively. You&apos;re
 									never pushed into anything.
 								</div>
@@ -814,7 +814,7 @@ export default function AerialYogaPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Group Classes</h3>
-								<p>Six signature formats — from ₹599 drop-in.</p>
+								<p>Six signature formats, from ₹599 drop-in.</p>
 							</a>
 							<a
 								className={styles.ex}
@@ -824,7 +824,7 @@ export default function AerialYogaPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Personal Training</h3>
-								<p>One-on-one, goal-based — from ₹14,999.</p>
+								<p>One-on-one, goal-based, from ₹14,999.</p>
 							</a>
 							<a
 								className={styles.ex}
@@ -872,7 +872,7 @@ export default function AerialYogaPage() {
 						<span className="eyebrow">Book now</span>
 						<h2>Aerial yoga is here. Come and try it.</h2>
 						<p>
-							Silk-hammock yoga at Athayog Living, Indiranagar — ₹599 a
+							Silk-hammock yoga at Athayog Living, Indiranagar: ₹599 a
 							session, Friday evenings and Sunday mornings. Slots are
 							limited.
 						</p>

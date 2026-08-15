@@ -34,7 +34,7 @@ export default function ContactUsPage() {
 						data: value,
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Contact Message — ${value.name}`,
+							subject: `New Contact Message: ${value.name}`,
 						},
 					}),
 				});

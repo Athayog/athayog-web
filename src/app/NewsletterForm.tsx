@@ -30,7 +30,7 @@ export default function NewsletterForm() {
 						data: value,
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Newsletter Signup — ${value.name}`,
+							subject: `New Newsletter Signup: ${value.name}`,
 						},
 					}),
 				});
@@ -147,7 +147,7 @@ export default function NewsletterForm() {
 			>
 				Begin Your Mindful Journey
 			</SubmitButton>
-			<span className={styles.lmMini}>No spam — just wellness, in your inbox.</span>
+			<span className={styles.lmMini}>No spam, just wellness in your inbox.</span>
 		</form>
 	);
 }

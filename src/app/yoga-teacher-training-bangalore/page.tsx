@@ -55,13 +55,13 @@ export default function TTCBangalorePage() {
 							RYT-200 Yoga Teacher Training · Indiranagar, Bangalore
 						</span>
 						<h1>
-							Yoga Teacher Training Course in Bangalore —{" "}
+							Yoga Teacher Training Course in Bangalore:{" "}
 							<em>RYT-200, Weekend Format</em>
 						</h1>
 						<p className={styles.heroSub}>
 							Become a certified yoga teacher with Athayog Living&apos;s
 							Yoga Alliance (USA) accredited RYT-200 program. Weekend
-							format, based in Indiranagar — designed for working
+							format, based in Indiranagar, designed for working
 							professionals and students who want to teach without leaving
 							their current routine.
 						</p>
@@ -121,7 +121,7 @@ export default function TTCBangalorePage() {
 						<p className="answer">
 							Athayog Living&apos;s RYT-200 Yoga Teacher Training Course in
 							Bangalore is a Yoga Alliance (USA) accredited program that
-							prepares you to teach yoga confidently — whether you want to
+							prepares you to teach yoga confidently, whether you want to
 							become a full-time instructor or simply deepen your personal
 							practice. Held in the weekend format at our Indiranagar
 							studio, this 12-week course combines traditional yogic
@@ -139,7 +139,7 @@ export default function TTCBangalorePage() {
 							<span className="eyebrow">What makes this TTC special</span>
 							<h2>A teacher training built on authentic lineage</h2>
 							<p className="lead">
-								At Athayog, we don&apos;t just teach you asanas — we train
+								At Athayog, we don&apos;t just teach you asanas; we train
 								you to become a teacher rooted in the philosophy,
 								discipline and wisdom of traditional Yog.
 							</p>
@@ -154,11 +154,11 @@ export default function TTCBangalorePage() {
 								},
 								{
 									h: "Weekend Format",
-									p: "12 weeks · Saturdays & Sundays — ideal for working professionals and students.",
+									p: "12 weeks · Saturdays & Sundays, ideal for working professionals and students.",
 								},
 								{
 									h: "Authentic Lineage",
-									p: "Rooted in Bihar School of Yoga & SVYASA teachings — real yogic tradition.",
+									p: "Rooted in Bihar School of Yoga & SVYASA teachings, a real yogic tradition.",
 								},
 								{
 									h: "Expert Faculty",
@@ -209,7 +209,7 @@ export default function TTCBangalorePage() {
 								},
 								{
 									h: "Anatomy",
-									p: "Functional anatomy for yoga — understand the body in movement and stillness.",
+									p: "Functional anatomy for yoga: understand the body in movement and stillness.",
 								},
 								{
 									h: "Teaching Methodology",
@@ -347,7 +347,7 @@ export default function TTCBangalorePage() {
 							<span className="eyebrow">Pricing</span>
 							<h2>RYT-200 Teacher Training · Bangalore</h2>
 							<p className="lead" style={{ color: "#DCE2CE" }}>
-								Weekend format, 12 weeks — Yoga Alliance (USA) accredited.
+								Weekend format, 12 weeks, Yoga Alliance (USA) accredited.
 								Enrol now or enquire for the next batch.
 							</p>
 						</div>
@@ -441,7 +441,7 @@ export default function TTCBangalorePage() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Questions</span>
-							<h2>RYT-200 Teacher Training in Bangalore — FAQs</h2>
+							<h2>RYT-200 Teacher Training in Bangalore: FAQs</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -454,9 +454,9 @@ export default function TTCBangalorePage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									RYT-200 is a Registered Yoga Teacher credential at the
-									200-hour level, accredited by Yoga Alliance (USA) —
-									the most widely recognized international standard for
-									yoga teachers.
+									200-hour level, accredited by Yoga Alliance (USA), the
+									most widely recognized international standard for yoga
+									teachers.
 								</div>
 							</details>
 							<details>
@@ -467,7 +467,7 @@ export default function TTCBangalorePage() {
 								<div className={styles.faqAnswer}>
 									Yes. Athayog Living is a Registered Yoga School (RYS)
 									with Yoga Alliance (USA). On completion, you can
-									register as an RYT-200 teacher — recognized worldwide.
+									register as an RYT-200 teacher, recognized worldwide.
 								</div>
 							</details>
 							<details>
@@ -476,9 +476,8 @@ export default function TTCBangalorePage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									12 weeks, conducted on Saturdays and Sundays —
-									designed to fit alongside a full-time job or study
-									schedule.
+									12 weeks, conducted on Saturdays and Sundays, designed
+									to fit alongside a full-time job or study schedule.
 								</div>
 							</details>
 							<details>
@@ -490,7 +489,7 @@ export default function TTCBangalorePage() {
 									The curriculum covers asana, pranayama, meditation,
 									yogic philosophy (Patanjali&apos;s Yoga Sutras),
 									functional anatomy, teaching methodology and
-									supervised practicum — everything you need to teach
+									supervised practicum, everything you need to teach
 									with confidence.
 								</div>
 							</details>
@@ -512,7 +511,7 @@ export default function TTCBangalorePage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									At our studio in Indiranagar, HAL 2nd Stage (12th
-									Main), Bengaluru 560038 — convenient for Domlur, CV
+									Main), Bengaluru 560038, convenient for Domlur, CV
 									Raman Nagar, Koramangala and nearby.
 								</div>
 							</details>
@@ -539,7 +538,7 @@ export default function TTCBangalorePage() {
 								},
 								{
 									h: "Personal Training",
-									p: "One-on-one, goal-based yoga — from ₹14,999.",
+									p: "One-on-one, goal-based yoga, from ₹14,999.",
 									u: "/personal-yoga-training-indiranagar",
 								},
 								{
@@ -586,7 +585,7 @@ export default function TTCBangalorePage() {
 					</Reveal>
 					<Reveal>
 						<p>
-							RYT-200 Yoga Teacher Training in Bangalore — weekend format,
+							RYT-200 Yoga Teacher Training in Bangalore, weekend format,
 							globally recognized. Enrol now for the next batch.
 						</p>
 					</Reveal>
@@ -627,7 +626,7 @@ export default function TTCBangalorePage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "Product",
-						name: "Yoga Teacher Training RYT-200 — Weekend Batch",
+						name: "Yoga Teacher Training RYT-200: Weekend Batch",
 						description:
 							"200-hour yoga teacher training certification in Bengaluru. Weekend batches with Yoga Alliance, SVYASA, AYUSH recognition.",
 						brand: {

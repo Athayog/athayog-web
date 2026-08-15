@@ -84,7 +84,7 @@ export default function CareerPage() {
 						data: { ...data, resumeUrl },
 						email: {
 							to: "info@athayogliving.com",
-							subject: `New Career Application — ${value.fullName}`,
+							subject: `New Career Application: ${value.fullName}`,
 						},
 					}),
 				});

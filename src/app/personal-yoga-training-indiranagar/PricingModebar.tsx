@@ -65,7 +65,7 @@ export default function PricingModebar() {
 						<small>+ 5% GST · 12 days</small>
 					</div>
 					<p>
-						Twelve one-on-one sessions with your personalized plan — ideal to
+						Twelve one-on-one sessions with your personalized plan, ideal to
 						build a strong, consistent practice.
 					</p>
 					<div className={styles.incl}>
@@ -87,8 +87,8 @@ export default function PricingModebar() {
 						<small>+ 5% GST · 24 days</small>
 					</div>
 					<p>
-						Twenty-four sessions for deeper, lasting results — the most
-						popular choice for real transformation.
+						Twenty-four sessions for deeper, lasting results, the most popular
+						choice for real transformation.
 					</p>
 					<div className={styles.incl}>
 						Everything in 12 · extended progression · {p.loc}
@@ -108,7 +108,7 @@ export default function PricingModebar() {
 						<small>+ 5% GST · 12 days · for two</small>
 					</div>
 					<p>
-						Train together — twelve one-on-one sessions for two, sharing the
+						Train together, twelve one-on-one sessions for two, sharing the
 						journey and the motivation.
 					</p>
 					<div className={styles.incl}>Two people · 12 sessions · {p.loc}</div>
