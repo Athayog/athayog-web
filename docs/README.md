@@ -9,15 +9,16 @@ written for two audiences:
 
 ## Read this first
 
-| If you want to…                                   | Read                                   |
-| ------------------------------------------------- | -------------------------------------- |
-| Understand the whole system in 10 minutes         | [`architecture.md`](architecture.md)   |
-| Understand login, sessions and what is protected  | [`auth-security.md`](auth-security.md) |
-| Understand how payments and plans work            | [`payments.md`](payments.md)           |
-| Add or change a contact/booking form              | [`forms.md`](forms.md)                 |
-| Publish a blog or change SEO/sitemap/robots       | [`content-seo.md`](content-seo.md)     |
-| Deploy, configure env vars or update dependencies | [`deployment.md`](deployment.md)       |
-| Work here as an AI agent (conventions + pitfalls) | [`ai-workflow.md`](ai-workflow.md)     |
+| If you want to…                                   | Read                                         |
+| ------------------------------------------------- | -------------------------------------------- |
+| Understand the whole system in 10 minutes         | [`architecture.md`](architecture.md)         |
+| Understand login, sessions and what is protected  | [`auth-security.md`](auth-security.md)       |
+| Understand how payments and plans work            | [`payments.md`](payments.md)                 |
+| Add or change a contact/booking form              | [`forms.md`](forms.md)                       |
+| Publish a blog or change SEO/sitemap/robots       | [`content-seo.md`](content-seo.md)           |
+| Deploy, configure env vars or update dependencies | [`deployment.md`](deployment.md)             |
+| Go-live readiness (launch countdown)              | [`launch-checklist.md`](launch-checklist.md) |
+| Work here as an AI agent (conventions + pitfalls) | [`ai-workflow.md`](ai-workflow.md)           |
 
 ## Golden rules (see `ai-workflow.md` for details)
 
