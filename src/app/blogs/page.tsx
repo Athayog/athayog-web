@@ -4,6 +4,7 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { PostCard } from "@/components/PostCard";
+import { sortPostsByDate } from "@/lib/blog";
 import styles from "@/app/blogs/Blogs.module.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -24,12 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function BlogIndex() {
 	const client = createClient();
 	const page = await client.getByUID("page", "blogs");
-	const posts = await client.getAllByType("blog_post", {
-		orderings: [
-			{ field: "my.blog_post.publication_date", direction: "desc" },
-			{ field: "document.first_publication_date", direction: "desc" },
-		],
-	});
+	const posts = sortPostsByDate(await client.getAllByType("blog_post"), "desc");
 
 	return (
 		<main>

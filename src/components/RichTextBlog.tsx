@@ -1,6 +1,8 @@
-import type { RichTextField } from "@prismicio/client";
+import type { RichTextField, RTNode, RTTextNode } from "@prismicio/client";
 import type { JSXMapSerializer } from "@prismicio/react";
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
+import { paragraphBlock, splitTableBlock, type TableData } from "@/lib/blog";
+import styles from "@/components/RichTextBlog.module.css";
 
 const richTextComponents: JSXMapSerializer = {
 	heading1: ({ children }) => (
@@ -99,6 +101,114 @@ const richTextComponents: JSXMapSerializer = {
 	),
 };
 
+function BlogTable({ data }: { data: TableData }) {
+	return (
+		<div className={styles.tableWrap}>
+			<table className={styles.table}>
+				<thead>
+					<tr>
+						{data.headers.map((header, i) => (
+							<th key={i}>{header}</th>
+						))}
+					</tr>
+				</thead>
+				<tbody>
+					{data.rows.map((row, i) => (
+						<tr key={i}>
+							{row.map((cell, j) => (
+								<td key={j}>{cell}</td>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
+}
+
+function isTextBlock(block: RTNode): block is RTTextNode {
+	return block.type === "paragraph" || block.type === "preformatted";
+}
+
+function renderField(field: RichTextField) {
+	const blocks: RTNode[] = field ?? [];
+	const out: React.ReactNode[] = [];
+	let run: RTNode[] = [];
+
+	const flush = (key: string) => {
+		if (run.length > 0) {
+			out.push(
+				<PrismicRichText
+					key={key}
+					field={run as RichTextField}
+					components={richTextComponents}
+				/>,
+			);
+			run = [];
+		}
+	};
+
+	let i = 0;
+	while (i < blocks.length) {
+		const block = blocks[i];
+
+		if (
+			!isTextBlock(block) ||
+			(!block.text.includes("[table]") && !block.text.includes("[/table]"))
+		) {
+			run.push(block);
+			i++;
+			continue;
+		}
+
+		// Accumulate following text blocks if the closing marker is missing
+		// (a table pasted across multiple paragraphs).
+		let acc = block.text;
+		let endIdx = acc.indexOf("[/table]", acc.indexOf("[table]") + 7);
+		let j = i + 1;
+		while (endIdx === -1 && j < blocks.length) {
+			const next = blocks[j];
+			if (isTextBlock(next)) {
+				acc += "\n" + next.text;
+				endIdx = acc.indexOf("[/table]");
+			}
+			j++;
+		}
+
+		const split = splitTableBlock(acc);
+		if (!split.table) {
+			run.push(block);
+			i++;
+			continue;
+		}
+
+		flush(`pre-${i}`);
+		if (split.before) {
+			out.push(
+				<PrismicRichText
+					key={`before-${i}`}
+					field={[paragraphBlock(split.before)]}
+					components={richTextComponents}
+				/>,
+			);
+		}
+		out.push(<BlogTable key={`table-${i}`} data={split.table} />);
+		if (split.after) {
+			out.push(
+				<PrismicRichText
+					key={`after-${i}`}
+					field={[paragraphBlock(split.after)]}
+					components={richTextComponents}
+				/>,
+			);
+		}
+		i = j;
+	}
+	flush(`post-${i}`);
+
+	return out;
+}
+
 export function RichTextBlog({ field }: { field: RichTextField }) {
-	return <PrismicRichText field={field} components={richTextComponents} />;
+	return <>{renderField(field)}</>;
 }

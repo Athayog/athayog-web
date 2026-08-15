@@ -15,6 +15,33 @@ The web app only provides the rendering.
 | `src/app/api/exit-preview/route.ts`               | Clears preview cookie                                   |
 | `src/app/api/revalidate/route.ts`                 | `revalidateTag("prismic")` cache purge                  |
 | `src/components/PostCard.tsx`, `RichTextBlog.tsx` | Post card + rich text rendering                         |
+| `src/lib/blog.ts`                                 | Date sorting + `[table]` parsing helpers (unit tested)  |
+
+### Sorting
+
+The blog index sorts posts **newest first** by `publication_date`, falling back
+to `first_publication_date` for posts that lack the custom field (see
+`sortPostsByDate` in `src/lib/blog.ts`). The post page uses the same ordering
+and `getNextPost` for the "Next Blog" link, so it walks the same newest-first
+list as the index (wrapping from the oldest back to the newest). Do not rely
+on Prismic's `orderings` for this — the JS sort handles missing dates
+deterministically.
+
+### Tables in blog content
+
+Prismic rich text has **no native tables**, so editors use the convention:
+
+```
+[table]
+Factor | Group Class | Personal Session
+Pace | Fixed for the group | Adjusted to you
+[/table]
+```
+
+`RichTextBlog` detects `[table] ... [/table]` blocks, splits rows on `|`
+(first line = header), and renders a real styled `<table>`. Blocks may span
+multiple paragraphs; text before/after the markers is kept as normal
+paragraphs. Plain text without the markers renders as before.
 
 ### Caching behavior (`src/prismicio.ts`)
 

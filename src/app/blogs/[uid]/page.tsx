@@ -7,6 +7,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { RichTextBlog } from "@/components/RichTextBlog";
+import { getNextPost, sortPostsByDate } from "@/lib/blog";
 
 type Params = Promise<{ uid: string }>;
 
@@ -36,18 +37,9 @@ export default async function BlogPost({ params }: { params: Params }) {
 
 	const page = await client.getByUID("blog_post", uid).catch(() => notFound());
 
-	const posts = await client.getAllByType("blog_post", {
-		orderings: [{ field: "my.blog_post.publication_date", direction: "asc" }],
-	});
+	const posts = sortPostsByDate(await client.getAllByType("blog_post"));
 
-	const getNextPost = () => {
-		if (posts.length <= 1) return null;
-		const currentIndex = posts.findIndex((post) => post.uid === uid);
-		const nextIndex = (currentIndex + 1) % posts.length;
-		return posts[nextIndex];
-	};
-
-	const nextPost = getNextPost();
+	const nextPost = getNextPost(posts, uid);
 	const { slices, title, publication_date, description, featured_image } = page.data;
 
 	return (

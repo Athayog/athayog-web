@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@/prismicio";
+import { getPostDate } from "@/lib/blog";
 
 const ROOT_URL = "https://athayogliving.com";
 
@@ -26,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	const blogEntries = posts.map((post) => ({
 		url: `${ROOT_URL}/blogs/${post.uid}`,
-		lastModified: new Date(post.data.publication_date || post.first_publication_date),
+		lastModified: getPostDate(post),
 		changeFrequency: "monthly" as const,
 		priority: 0.6,
 	}));
