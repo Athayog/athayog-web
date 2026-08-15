@@ -105,4 +105,4 @@ const form = useForm({
 - Form data is stored **unencrypted** in Firestore and emailed. Do not collect
   sensitive data (payment details, government IDs) through forms.
 - The career form uploads files to Firebase Storage under `uploads/`; rules
-  should restrict uploads (size/type) — see `security-review.md`.
+  should restrict uploads (size/type).

@@ -5,9 +5,9 @@ Yoga and wellness platform for Athayog Living, built with Next.js 16.
 ## Documentation
 
 The full technical documentation lives in [`docs/`](docs/README.md): architecture,
-auth & security, payments, forms, content/SEO, deployment, a workflow guide for
-AI agents, and a living security review. **Read the docs before changing any
-flow, and update them when you do.**
+auth & security, payments, forms, content/SEO, deployment, and a workflow guide
+for AI agents. **Read the docs before changing any flow, and update them when
+you do.**
 
 ## Tech Stack
 

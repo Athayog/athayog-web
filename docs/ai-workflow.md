@@ -50,13 +50,13 @@ These are the rules that keep the project from becoming a mystery again:
 2. **Keep `GAPS.md` current** — mark completed items, add new pending items.
 3. **Never "fix" a flow by bypassing a server-side check.** Prices come from
    Firestore `plans/`, payment verification requires Razorpay HMAC, account
-   data requires the session cookie. If you think a check is wrong, document
-   the reasoning in `security-review.md` and discuss it — don't delete it.
+   data requires the session cookie. If you think a check is wrong, raise it
+   with the maintainer before deleting it.
 4. **Registry files must stay in sync.** The form collections enum + subjects
    in `src/app/api/submit-form/route.ts`; the plans list in
-   `scripts/seed-plans.ts` and `src/app/api/plans/seed/route.ts`;
-   `PLAN_NAMES` in `payment-success/page.tsx`; `indexedPages` in
-   `src/app/sitemap.ts`. Changing one side without the others is a bug.
+   `scripts/seed-plans.ts`; `PLAN_NAMES` in `payment-success/page.tsx`;
+   `indexedPages` in `src/app/sitemap.ts`. Changing one side without the
+   others is a bug.
 5. **Env vars**: never commit `.env*`; update `.env.example` when adding a
    variable; never add secrets with the `NEXT_PUBLIC_` prefix.
 6. **Explain, don't guess.** If you don't know why something exists, read the

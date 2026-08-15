@@ -87,7 +87,7 @@ function AccountPage() {
 	useEffect(() => {
 		if (!user) return;
 
-		fetch(`/api/courses?userId=${user.uid}`)
+		fetch(`/api/courses`)
 			.then((res) => {
 				if (!res.ok) throw new Error("Failed to fetch");
 				return res.json();

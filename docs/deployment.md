@@ -27,17 +27,18 @@ git-ignored. Keep both in sync.
 | `RAZORPAY_WEBHOOK_SECRET`             | `webhook` route                       | **secret** | must match Razorpay dashboard (⚠️ not yet configured — see GAPS.md) |
 | `NEXT_PUBLIC_PRISMIC_REPOSITORY_NAME` | `prismicio.ts`                        | public     |                                                                     |
 | `RESEND_API_KEY`                      | `lib/forms/email.ts`                  | **secret** | form-submission emails                                              |
+| `REVALIDATE_TOKEN`                    | `api/revalidate` route                | **secret** | shared secret for the `x-revalidate-token` header                   |
 | `NEXT_PUBLIC_GOOGLE_CLIENT_ID`        | `useGoogleOneTap.ts`                  | public     | ⚠️ **not currently set** — One Tap falls back to popup sign-in      |
 
-### Known dead/unused vars (present in `.env.local`, not referenced in code)
+### Dead/unused vars (removed from `.env.local`; do not re-add)
 
-`NEXT_PUBLIC_RESEND_API_KEY` (⚠️ remove — see security-review.md),
-`NEXT_PUBLIC_RECAPTCHA_SITE_KEY`, `RECAPTCHA_SECRET_KEY`,
-`NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_FACEBOOK_PIXEL` (GTM/FB ids are hardcoded in
-`components/TrackingScripts.tsx`), `NEXT_PUBLIC_GUPSHUP_USER_ID`,
-`NEXT_PUBLIC_GUPSHUP_PASSOWRD` (typo included), `NEXT_PUBLIC_SHOPIFY_*`,
-`NEXT_PUBLIC_WEB`. Platform vars (`VERCEL_*`, `TURBO_*`, `NX_DAEMON`) are
-injected by Vercel/Next, not config.
+`NEXT_PUBLIC_RESEND_API_KEY`, `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`,
+`RECAPTCHA_SECRET_KEY`, `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_FACEBOOK_PIXEL`
+(GTM/FB ids are hardcoded in `components/TrackingScripts.tsx`),
+`NEXT_PUBLIC_GUPSHUP_USER_ID`, `NEXT_PUBLIC_GUPSHUP_PASSOWRD` (typo included),
+`NEXT_PUBLIC_SHOPIFY_*`, `NEXT_PUBLIC_WEB`. Platform vars (`VERCEL_*`,
+`TURBO_*`, `NX_DAEMON`) are injected by Vercel/Next, not config. A stray
+`NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` remains unused in `.env.local`.
 
 ## Firestore
 
@@ -45,7 +46,7 @@ injected by Vercel/Next, not config.
   `npx firebase deploy --only firestore:indexes` (pending per GAPS.md).
 - **Security Rules**: not in the repo; must be configured in the Firebase
   console. The client SDK writes `users/{uid}` and Storage `uploads/` directly,
-  so rules must allow exactly those paths (see `security-review.md`).
+  so rules must allow exactly those paths.
 - **Plans**: seed with `npm run plans:seed`, verify with `npm run plans:check`
   (see `payments.md`).
 
@@ -102,4 +103,4 @@ injected by Vercel/Next, not config.
 - [ ] Razorpay webhook + secret configured (or intentionally still pending).
 - [ ] `.env.example` matches all env vars used by new code.
 - [ ] `GAPS.md` updated (mark completed items).
-- [ ] `security-review.md` updated for anything fixed/added.
+- [ ] New/edited route handlers have auth tests (401/403/503 cases).

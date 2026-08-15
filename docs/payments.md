@@ -11,7 +11,6 @@ verifies the payment signature → the `payments/` record is marked completed.
 | ------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `src/lib/razorpay.ts`                             | Firestore helpers: `getPlan`, `getActivePlans`, `createPaymentDoc`, `getPaymentsByUser` |
 | `src/app/api/plans/route.ts`                      | `GET` active plans (public, used by pricing sections)                                   |
-| `src/app/api/plans/seed/route.ts`                 | `GET` seeds the `plans` collection (dev utility)                                        |
 | `src/app/api/payments/create-order/route.ts`      | Creates Razorpay order + pending payment doc                                            |
 | `src/app/api/payments/verify/route.ts`            | Verifies checkout HMAC signature, marks completed                                       |
 | `src/app/api/payments/webhook/route.ts`           | Server-side confirmation via Razorpay webhook                                           |
@@ -99,8 +98,6 @@ Plans live in Firestore `plans/{planId}`:
   plans already exist.
 - **Check**: `npm run plans:check` (`scripts/check-plans.ts`) — fails the
   process if no active plans exist (used as a pre-deploy sanity check).
-- **Seed (HTTP)**: `GET /api/plans/seed` — same data, but **unauthenticated**
-  and **overwrites** existing docs (⚠️ see security-review.md).
 - **Public read**: `GET /api/plans` returns active plans (used by some pricing
   sections; most pages hardcode prices in JSX, see below).
 
@@ -122,10 +119,9 @@ Plans live in Firestore `plans/{planId}`:
 
 ## How to update payments
 
-- **Add a plan**: add it to `PLANS` in `scripts/seed-plans.ts` **and**
-  `src/app/api/plans/seed/route.ts` (keep both in sync), add its display name to
-  `PLAN_NAMES` in `src/app/payment-success/page.tsx`, and add the pricing card
-    - `PaymentModal` usage in the page(s).
+- **Add a plan**: add it to `PLANS` in `scripts/seed-plans.ts`, add its display
+  name to `PLAN_NAMES` in `src/app/payment-success/page.tsx`, and add the
+  pricing card + `PaymentModal` usage in the page(s).
 - **Change a price/GST**: update the plan doc in Firestore (or re-seed) and the
   hardcoded UI numbers. `total` is computed as
   `round(subtotal + subtotal * gstPercent / 100)`.

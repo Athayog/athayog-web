@@ -68,19 +68,18 @@ Changing the lifetime: edit `SESSION_EXPIRY` in
 
 ## Data access APIs and their auth
 
-| Endpoint                          | Auth                                              | Notes                                                   |
-| --------------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
-| `POST /api/auth/session`          | none (exchanges ID token; Admin SDK validates it) |                                                         |
-| `POST /api/auth/logout`           | none (just deletes cookie)                        |                                                         |
-| `POST /api/payments/create-order` | session cookie required                           | reads plan from Firestore (authoritative price)         |
-| `POST /api/payments/verify`       | none (relies on Razorpay HMAC signature)          | idempotent                                              |
-| `POST /api/payments/webhook`      | Razorpay HMAC signature                           | server-to-server                                        |
-| `GET /api/payments`               | session cookie required                           | filtered by `decoded.uid`                               |
-| `GET /api/courses`                | **none — takes `userId` as a query param**        | ⚠️ see security-review.md (HIGH)                        |
-| `GET /api/plans`                  | none (public pricing)                             |                                                         |
-| `GET /api/plans/seed`             | **none**                                          | ⚠️ dev utility exposed; see security-review.md (MEDIUM) |
-| `POST /api/revalidate`            | **none**                                          | ⚠️ see security-review.md (MEDIUM)                      |
-| `POST /api/submit-form`           | none (public forms) + IP rate limit               | in-memory, best-effort                                  |
+| Endpoint                          | Auth                                              | Notes                                           |
+| --------------------------------- | ------------------------------------------------- | ----------------------------------------------- |
+| `POST /api/auth/session`          | none (exchanges ID token; Admin SDK validates it) |                                                 |
+| `POST /api/auth/logout`           | none (just deletes cookie)                        |                                                 |
+| `POST /api/payments/create-order` | session cookie required                           | reads plan from Firestore (authoritative price) |
+| `POST /api/payments/verify`       | none (relies on Razorpay HMAC signature)          | idempotent                                      |
+| `POST /api/payments/webhook`      | Razorpay HMAC signature                           | server-to-server                                |
+| `GET /api/payments`               | session cookie required                           | filtered by `decoded.uid`                       |
+| `GET /api/courses`                | session cookie required                           | legacy purchases for the session uid            |
+| `GET /api/plans`                  | none (public pricing)                             |                                                 |
+| `POST /api/revalidate`            | `x-revalidate-token` header                       | must match `REVALIDATE_TOKEN` (503 if unset)    |
+| `POST /api/submit-form`           | none (public forms) + IP rate limit               | in-memory, best-effort                          |
 
 ## Secrets and env hygiene
 
@@ -91,10 +90,7 @@ Changing the lifetime: edit `SESSION_EXPIRY` in
   restricted by Firebase project settings / Razorpay dashboard.)
 - **Secret (server only, never `NEXT_PUBLIC_`)**:
   `FIREBASE_CLIENT_EMAIL`, `FIREBASE_PRIVATE_KEY`, `RAZORPAY_KEY_SECRET`,
-  `RAZORPAY_WEBHOOK_SECRET`, `RESEND_API_KEY`.
-- ⚠️ `.env.local` currently contains `NEXT_PUBLIC_RESEND_API_KEY` (unused but
-  dangerous if referenced client-side) and several dead vars — see
-  `security-review.md`.
+  `RAZORPAY_WEBHOOK_SECRET`, `RESEND_API_KEY`, `REVALIDATE_TOKEN`.
 - `.env*` files are git-ignored. The committed reference file is `.env.example`
   (root). Keep it in sync when adding/removing env vars.
 - Never log `FIREBASE_PRIVATE_KEY`, `RAZORPAY_KEY_SECRET` or full request
@@ -122,4 +118,5 @@ Changing the lifetime: edit `SESSION_EXPIRY` in
 - [ ] Razorpay webhook configured with `RAZORPAY_WEBHOOK_SECRET` (see payments.md).
 - [ ] No `console.log` of secrets; no new `NEXT_PUBLIC_` secret additions.
 - [ ] `npm run build` (eslint + vitest + next build) passes locally and in CI.
-- [ ] `security-review.md` items you've fixed are checked off.
+- [ ] Any new route handler checks its own auth (cookie / HMAC / token) and has
+      a test covering the unauthenticated case.

@@ -72,8 +72,8 @@ src/
 │   │   ├── auth/session     # POST: exchange Firebase ID token for __session cookie
 │   │   ├── auth/logout      # POST: clear __session cookie
 │   │   ├── payments/        # create-order, verify, webhook, GET history
-│   │   ├── plans/           # GET active plans, GET seed (dev utility)
-│   │   ├── courses/         # GET legacy user courses (⚠️ see security-review)
+│   │   ├── plans/           # GET active plans
+│   │   ├── courses/         # GET legacy user courses (session-required)
 │   │   ├── submit-form/     # POST: validated form → Firestore + email
 │   │   ├── preview | exit-preview | revalidate   # Prismic preview/cache
 │   ├── blogs/, blogs/[uid]/ # Prismic blog list + post (SliceZone)
@@ -100,19 +100,19 @@ src/
 
 ## Data model (Firestore)
 
-| Collection            | Purpose                                                          | Written by                                       |
-| --------------------- | ---------------------------------------------------------------- | ------------------------------------------------ |
-| `users/{uid}`         | Minimal user profile (uid, name, email, photo, createdAt, phone) | Client SDK on first sign-in                      |
-| `users/{uid}/courses` | **Legacy** purchase records (pre-Razorpay era)                   | Legacy system (read-only now)                    |
-| `plans/{planId}`      | Pricing plans (authoritative source for amounts)                 | `scripts/seed-plans.ts` or `GET /api/plans/seed` |
-| `payments/{autoId}`   | Razorpay payment records (pending → completed/failed)            | Server (Admin SDK) only                          |
-| `<form collection>`   | One collection per form (trialClasses, contactMessages, …)       | `POST /api/submit-form`                          |
-| `uploads/` (Storage)  | Resume / file attachments from forms                             | Client SDK (`lib/forms/upload.ts`)               |
+| Collection            | Purpose                                                          | Written by                         |
+| --------------------- | ---------------------------------------------------------------- | ---------------------------------- |
+| `users/{uid}`         | Minimal user profile (uid, name, email, photo, createdAt, phone) | Client SDK on first sign-in        |
+| `users/{uid}/courses` | **Legacy** purchase records (pre-Razorpay era)                   | Legacy system (read-only now)      |
+| `plans/{planId}`      | Pricing plans (authoritative source for amounts)                 | `scripts/seed-plans.ts`            |
+| `payments/{autoId}`   | Razorpay payment records (pending → completed/failed)            | Server (Admin SDK) only            |
+| `<form collection>`   | One collection per form (trialClasses, contactMessages, …)       | `POST /api/submit-form`            |
+| `uploads/` (Storage)  | Resume / file attachments from forms                             | Client SDK (`lib/forms/upload.ts`) |
 
 > **Firebase Security Rules are NOT stored in this repo.** They must be
 > configured in the Firebase console (project rules). The client SDK writes
 > `users/{uid}` and uploads files to Storage, so rules must allow exactly that
-> and deny everything else (see `security-review.md`).
+> and deny everything else.
 
 ## Request flows at a glance
 

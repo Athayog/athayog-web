@@ -1,16 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminFirestore } from "@/lib/firebaseAdmin";
+import { getAdminFirestore, verifySessionCookie } from "@/lib/firebaseAdmin";
 
 // LEGACY: Queries users/{userId}/courses subcollection for historical purchases.
-// Legacy documents have fields: courseName, duration, price, orderId, courseId.
-// These are mapped to the Course interface below for the account page.
-// For new Razorpay payment records, see /api/payments.
+// The uid always comes from the verified session cookie — the endpoint never
+// trusts a client-supplied userId. Legacy documents have fields: courseName,
+// duration, price, orderId, courseId. For new Razorpay payment records, see
+// /api/payments.
 
 export async function GET(request: NextRequest) {
-	const userId = request.nextUrl.searchParams.get("userId");
+	const session = request.cookies.get("__session")?.value;
+	if (!session) {
+		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+	}
 
-	if (!userId) {
-		return NextResponse.json({ message: "User ID is required" }, { status: 400 });
+	let uid: string;
+	try {
+		const decoded = await verifySessionCookie(session);
+		if (!decoded) {
+			return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+		}
+		uid = decoded.uid;
+	} catch {
+		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 	}
 
 	try {
@@ -18,7 +29,7 @@ export async function GET(request: NextRequest) {
 
 		const coursesSnapshot = await firestore
 			.collection("users")
-			.doc(userId)
+			.doc(uid)
 			.collection("courses")
 			.get();
 

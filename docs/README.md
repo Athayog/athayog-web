@@ -9,16 +9,15 @@ written for two audiences:
 
 ## Read this first
 
-| If you want to…                                   | Read                                       |
-| ------------------------------------------------- | ------------------------------------------ |
-| Understand the whole system in 10 minutes         | [`architecture.md`](architecture.md)       |
-| Understand login, sessions and what is protected  | [`auth-security.md`](auth-security.md)     |
-| Understand how payments and plans work            | [`payments.md`](payments.md)               |
-| Add or change a contact/booking form              | [`forms.md`](forms.md)                     |
-| Publish a blog or change SEO/sitemap/robots       | [`content-seo.md`](content-seo.md)         |
-| Deploy, configure env vars or update dependencies | [`deployment.md`](deployment.md)           |
-| Work here as an AI agent (conventions + pitfalls) | [`ai-workflow.md`](ai-workflow.md)         |
-| See known security issues and recommended fixes   | [`security-review.md`](security-review.md) |
+| If you want to…                                   | Read                                   |
+| ------------------------------------------------- | -------------------------------------- |
+| Understand the whole system in 10 minutes         | [`architecture.md`](architecture.md)   |
+| Understand login, sessions and what is protected  | [`auth-security.md`](auth-security.md) |
+| Understand how payments and plans work            | [`payments.md`](payments.md)           |
+| Add or change a contact/booking form              | [`forms.md`](forms.md)                 |
+| Publish a blog or change SEO/sitemap/robots       | [`content-seo.md`](content-seo.md)     |
+| Deploy, configure env vars or update dependencies | [`deployment.md`](deployment.md)       |
+| Work here as an AI agent (conventions + pitfalls) | [`ai-workflow.md`](ai-workflow.md)     |
 
 ## Golden rules (see `ai-workflow.md` for details)
 
@@ -38,4 +37,5 @@ written for two audiences:
   or deleted, update the doc.
 - When you add a feature, add a "How to update" section or extend an existing
   one.
-- `security-review.md` is a living audit: fix an item, check it off there.
+- Security requirements live in the code and its tests; keep them covered when
+  you touch an endpoint (see `ai-workflow.md`).

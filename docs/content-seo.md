@@ -30,8 +30,10 @@ The web app only provides the rendering.
 2. Previews: in Prismic use the preview URL (points at `/api/preview`) — works
    locally and in prod.
 3. To publish new content to the live site, trigger `/api/revalidate` (POST)
-   after publishing so cached pages rebuild. (⚠️ the endpoint is currently
-   unauthenticated — see `security-review.md`.)
+   after publishing so cached pages rebuild. The endpoint requires the
+   `x-revalidate-token` header to match `REVALIDATE_TOKEN` (returns 503 until
+   that env var is set). Example:
+   `curl -X POST https://athayogliving.com/api/revalidate -H "x-revalidate-token: <token>"`.
 
 ## SEO
 

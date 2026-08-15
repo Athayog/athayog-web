@@ -24,7 +24,7 @@ Run `npm run build` after changes — it catches TypeScript errors, missing expo
 
 **Always consult `GAPS.md` before starting work** — it tracks pending, in-progress, and completed infrastructure tasks. If idle between tasks, check GAPS.md and ask the user if they want to pick up an In Progress item or continue with the current workstream.
 
-**Always consult `docs/` before touching any flow** — `docs/README.md` indexes architecture, auth & security, payments, forms, content/SEO, deployment, an AI workflow guide, and a living security review. Update the relevant doc whenever you change behavior; never leave docs stale (see `docs/ai-workflow.md`).
+**Always consult `docs/` before touching any flow** — `docs/README.md` indexes architecture, auth & security, payments, forms, content/SEO, deployment, and an AI workflow guide. Update the relevant doc whenever you change behavior; never leave docs stale (see `docs/ai-workflow.md`).
 
 ## CSS Strategy: No Tailwind — Global Tokens + CSS Modules
 
