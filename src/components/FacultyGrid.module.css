@@ -1,0 +1,44 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 26px;
+}
+
+.card {
+	text-align: center;
+}
+
+.avatar {
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background: var(--sand);
+	margin: 0 auto 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--brand-deep);
+	font-family: var(--font-display);
+	font-style: italic;
+	border: 1px solid var(--line);
+	position: relative;
+	overflow: hidden;
+}
+
+.card h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 2px;
+}
+
+.role {
+	font-size: 0.82rem;
+	color: var(--brand-deep);
+	letter-spacing: 0.04em;
+	margin-bottom: 8px;
+}
+
+.card p {
+	font-size: 0.9rem;
+	color: var(--brand-deep);
+}

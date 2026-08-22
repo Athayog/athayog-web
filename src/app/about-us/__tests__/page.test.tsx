@@ -36,4 +36,17 @@ describe("about-us image health", () => {
 		render(<AboutUsPage />);
 		expect(screen.getByTestId("hero-priority")).toBeInTheDocument();
 	});
+
+	it("shows all four faculty members with photos", () => {
+		render(<AboutUsPage />);
+		for (const name of [
+			"Sharath Basavaraju",
+			"Esha Reddy",
+			"Ishita Kulkarni",
+			"Manoj Kumar",
+		]) {
+			expect(screen.getAllByText(name).length).toBeGreaterThan(0);
+		}
+		expect(screen.getAllByRole("img").length).toBeGreaterThanOrEqual(4);
+	});
 });

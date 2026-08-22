@@ -5,6 +5,8 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
 import { testimonialVideos } from "@/constants/testimonialVideos";
+import { TEACHERS } from "@/constants/teachers";
+import FacultyGrid from "@/components/FacultyGrid";
 import MapEmbed from "@/components/MapEmbed";
 import HeroImage from "@/app/about-us/HeroImage";
 import styles from "@/app/about-us/AboutUs.module.css";
@@ -356,6 +358,29 @@ export default function AboutUsPage() {
 								student.&quot;
 							</blockquote>
 						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="instructors">
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Your instructors</span>
+							<h2>Guided by experienced practitioners</h2>
+							<p className="lead">
+								Founder-led and taught by a trained faculty who practise
+								what they teach.
+							</p>
+						</div>
+					</Reveal>
+					<Reveal>
+						{/* Sharath is featured in the Founder section above */}
+						<FacultyGrid
+							teachers={TEACHERS.filter(
+								(t) => !t.role.startsWith("Founder"),
+							)}
+						/>
 					</Reveal>
 				</div>
 			</section>

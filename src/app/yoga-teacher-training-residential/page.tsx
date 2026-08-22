@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-residential/RTTC.module.css";
-import { TEACHERS } from "@/constants/teachers";
 
 export const metadata: Metadata = {
 	title: "Online RYT-200 Yoga Teacher Training | Athayog Living",
@@ -219,40 +218,6 @@ export default function RTTCPage() {
 									<h3>{c.h}</h3>
 									<p>{c.p}</p>
 								</div>
-							))}
-						</div>
-					</Reveal>
-				</div>
-			</section>
-
-			<section id="trainers" style={{ background: "var(--parchment)" }}>
-				<div className="wrap">
-					<Reveal>
-						<div className="section-head">
-							<span className="eyebrow">Your mentors</span>
-							<h2>Learn from the same faculty as our in-studio program</h2>
-						</div>
-					</Reveal>
-					<Reveal>
-						<div className={styles.facGrid}>
-							{TEACHERS.map((teacher) => (
-								<Reveal key={teacher.name}>
-									<div className={styles.fac}>
-										<div className={styles.facAvatar}>
-											<Image
-												src={teacher.photo}
-												alt={teacher.alt}
-												fill
-												style={{ objectFit: "cover" }}
-											/>
-										</div>
-										<h3>{teacher.name}</h3>
-										<div className={styles.facRole}>
-											{teacher.role}
-										</div>
-										<p>{teacher.bio}</p>
-									</div>
-								</Reveal>
 							))}
 						</div>
 					</Reveal>

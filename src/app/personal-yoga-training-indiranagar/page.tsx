@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
 import { testimonialVideos } from "@/constants/testimonialVideos";
-import { TEACHERS } from "@/constants/teachers";
 import MapEmbed from "@/components/MapEmbed";
 import PricingModebar from "@/app/personal-yoga-training-indiranagar/PricingModebar";
 import styles from "@/app/personal-yoga-training-indiranagar/PT.module.css";
@@ -401,43 +400,6 @@ export default function PersonalTrainingPage() {
 			</section>
 
 			{/* 8. Trainers */}
-			<section id="trainers" style={{ background: "var(--parchment)" }}>
-				<div className="wrap">
-					<Reveal>
-						<div className="section-head">
-							<span className="eyebrow">Your trainers</span>
-							<h2>Guided by certified practitioners</h2>
-							<p className="lead">
-								Founder-led and taught by an experienced faculty who
-								practise what they teach.
-							</p>
-						</div>
-					</Reveal>
-					<Reveal>
-						<div className={styles.facGrid}>
-							{TEACHERS.map((teacher) => (
-								<Reveal key={teacher.name}>
-									<div className={styles.fac}>
-										<div className={styles.facAvatar}>
-											<Image
-												src={teacher.photo}
-												alt={teacher.alt}
-												fill
-												style={{ objectFit: "cover" }}
-											/>
-										</div>
-										<h3>{teacher.name}</h3>
-										<div className={styles.facRole}>
-											{teacher.role}
-										</div>
-										<p>{teacher.bio}</p>
-									</div>
-								</Reveal>
-							))}
-						</div>
-					</Reveal>
-				</div>
-			</section>
 
 			{/* 9. Social Proof */}
 			<section id="reviews">

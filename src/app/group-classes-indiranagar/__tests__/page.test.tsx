@@ -48,17 +48,4 @@ describe("group-classes image health", () => {
 		render(<GroupClassesPage />);
 		expect(screen.getByTestId("hero-priority")).toBeInTheDocument();
 	});
-
-	it("shows all four faculty members with photos", () => {
-		render(<GroupClassesPage />);
-		for (const name of [
-			"Sharath Basavaraju",
-			"Esha Reddy",
-			"Ishita Kulkarni",
-			"Manoj Kumar",
-		]) {
-			expect(screen.getByText(name)).toBeInTheDocument();
-		}
-		expect(screen.getAllByRole("img").length).toBeGreaterThanOrEqual(4);
-	});
 });

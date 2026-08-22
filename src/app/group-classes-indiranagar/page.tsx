@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
 import { testimonialVideos } from "@/constants/testimonialVideos";
-import { TEACHERS } from "@/constants/teachers";
 import MapEmbed from "@/components/MapEmbed";
 import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
 import PaymentModal from "@/components/payments/PaymentModal";
@@ -631,39 +630,6 @@ export default function GroupClassesPage() {
 			</section>
 
 			{/* 7. Trainers */}
-			<section id="trainers">
-				<div className="wrap">
-					<Reveal>
-						<div className="section-head">
-							<span className="eyebrow">Your instructors</span>
-							<h2>Guided by experienced practitioners</h2>
-							<p className="lead">
-								Founder-led and taught by a trained faculty who practise
-								what they teach.
-							</p>
-						</div>
-					</Reveal>
-					<div className={styles.facGrid}>
-						{TEACHERS.map((teacher) => (
-							<Reveal key={teacher.name}>
-								<div className={styles.fac}>
-									<div className={styles.facAvatar}>
-										<Image
-											src={teacher.photo}
-											alt={teacher.alt}
-											fill
-											style={{ objectFit: "cover" }}
-										/>
-									</div>
-									<h3>{teacher.name}</h3>
-									<div className={styles.facRole}>{teacher.role}</div>
-									<p>{teacher.bio}</p>
-								</div>
-							</Reveal>
-						))}
-					</div>
-				</div>
-			</section>
 
 			{/* 8. Social proof */}
 			<section id="reviews" style={{ background: "var(--parchment)" }}>
