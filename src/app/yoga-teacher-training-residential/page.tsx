@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-residential/RTTC.module.css";
+import { TEACHERS } from "@/constants/teachers";
 
 export const metadata: Metadata = {
 	title: "Online RYT-200 Yoga Teacher Training | Athayog Living",
@@ -234,56 +235,25 @@ export default function RTTCPage() {
 					</Reveal>
 					<Reveal>
 						<div className={styles.facGrid}>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>
-									<Image
-										src="/sharath-basavaraju.png"
-										alt="Sharath Basavaraju"
-										fill
-										style={{ objectFit: "cover" }}
-									/>
-								</div>
-								<h3>Sharath Basavaraju</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Confirm credential"
-								>
-									[ Credential ] · Founder
-								</div>
-								<p className={styles.verify} title="Add bio">
-									[ Lead faculty. ]
-								</p>
-							</div>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
-								<h3 className={styles.verify} title="Add real name">
-									[ Faculty ]
-								</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Add credential"
-								>
-									[ Credential ]
-								</div>
-								<p className={styles.verify} title="Add specialization">
-									[ Asana & Philosophy ]
-								</p>
-							</div>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
-								<h3 className={styles.verify} title="Add real name">
-									[ Faculty ]
-								</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Add credential"
-								>
-									[ Credential ]
-								</div>
-								<p className={styles.verify} title="Add specialization">
-									[ Methodology & Practicum ]
-								</p>
-							</div>
+							{TEACHERS.map((teacher) => (
+								<Reveal key={teacher.name}>
+									<div className={styles.fac}>
+										<div className={styles.facAvatar}>
+											<Image
+												src={teacher.photo}
+												alt={teacher.alt}
+												fill
+												style={{ objectFit: "cover" }}
+											/>
+										</div>
+										<h3>{teacher.name}</h3>
+										<div className={styles.facRole}>
+											{teacher.role}
+										</div>
+										<p>{teacher.bio}</p>
+									</div>
+								</Reveal>
+							))}
 						</div>
 					</Reveal>
 				</div>

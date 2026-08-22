@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
 import { testimonialVideos } from "@/constants/testimonialVideos";
+import { TEACHERS } from "@/constants/teachers";
 import MapEmbed from "@/components/MapEmbed";
 import EnquireModal from "@/components/EnquireModal";
 import styles from "@/app/yoga-teacher-training-bangalore/TTC.module.css";
@@ -240,56 +241,25 @@ export default function TTCBangalorePage() {
 					</Reveal>
 					<Reveal>
 						<div className={styles.facGrid}>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>
-									<Image
-										src="/sharath-basavaraju.png"
-										alt="Sharath Basavaraju"
-										fill
-										style={{ objectFit: "cover" }}
-									/>
-								</div>
-								<h3>Sharath Basavaraju</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Confirm credential"
-								>
-									[ Credential ] · Founder & Lead Trainer
-								</div>
-								<p className={styles.verify} title="Add bio">
-									[ Years of practice & specialization. ]
-								</p>
-							</div>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
-								<h3 className={styles.verify} title="Add real name">
-									[ Faculty Name ]
-								</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Add credential"
-								>
-									[ Credential ]
-								</div>
-								<p className={styles.verify} title="Add specialization">
-									[ Philosophy / Asana / Anatomy ]
-								</p>
-							</div>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
-								<h3 className={styles.verify} title="Add real name">
-									[ Faculty Name ]
-								</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Add credential"
-								>
-									[ Credential ]
-								</div>
-								<p className={styles.verify} title="Add specialization">
-									[ Teaching Methodology / Practicum ]
-								</p>
-							</div>
+							{TEACHERS.map((teacher) => (
+								<Reveal key={teacher.name}>
+									<div className={styles.fac}>
+										<div className={styles.facAvatar}>
+											<Image
+												src={teacher.photo}
+												alt={teacher.alt}
+												fill
+												style={{ objectFit: "cover" }}
+											/>
+										</div>
+										<h3>{teacher.name}</h3>
+										<div className={styles.facRole}>
+											{teacher.role}
+										</div>
+										<p>{teacher.bio}</p>
+									</div>
+								</Reveal>
+							))}
 						</div>
 					</Reveal>
 				</div>

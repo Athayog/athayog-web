@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import TestimonialVideoCarousel from "@/components/TestimonialVideoCarousel";
 import { testimonialVideos } from "@/constants/testimonialVideos";
+import { TEACHERS } from "@/constants/teachers";
 import MapEmbed from "@/components/MapEmbed";
 import PricingModebar from "@/app/personal-yoga-training-indiranagar/PricingModebar";
 import styles from "@/app/personal-yoga-training-indiranagar/PT.module.css";
@@ -414,62 +415,25 @@ export default function PersonalTrainingPage() {
 					</Reveal>
 					<Reveal>
 						<div className={styles.facGrid}>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>
-									<Image
-										src="/sharath-basavaraju.png"
-										alt="Sharath Basavaraju"
-										fill
-										style={{ objectFit: "cover" }}
-									/>
-								</div>
-								<h3>Sharath Basavaraju</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Confirm credential"
-								>
-									[ Credential ] · Founder &amp; Lead Trainer
-								</div>
-								<p className={styles.verify} title="Add bio">
-									[ Years of practice &amp; specialization. ]
-								</p>
-							</div>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
-								<h3
-									className={styles.verify}
-									title="Add real trainer name"
-								>
-									[ Trainer Name ]
-								</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Add credential"
-								>
-									[ Credential ]
-								</div>
-								<p className={styles.verify} title="Add specialization">
-									[ Weight loss / therapy / prenatal. ]
-								</p>
-							</div>
-							<div className={styles.fac}>
-								<div className={styles.facAvatar}>[ photo ]</div>
-								<h3
-									className={styles.verify}
-									title="Add real trainer name"
-								>
-									[ Trainer Name ]
-								</h3>
-								<div
-									className={`${styles.facRole} ${styles.verify}`}
-									title="Add credential"
-								>
-									[ Credential ]
-								</div>
-								<p className={styles.verify} title="Add specialization">
-									[ Specialization. ]
-								</p>
-							</div>
+							{TEACHERS.map((teacher) => (
+								<Reveal key={teacher.name}>
+									<div className={styles.fac}>
+										<div className={styles.facAvatar}>
+											<Image
+												src={teacher.photo}
+												alt={teacher.alt}
+												fill
+												style={{ objectFit: "cover" }}
+											/>
+										</div>
+										<h3>{teacher.name}</h3>
+										<div className={styles.facRole}>
+											{teacher.role}
+										</div>
+										<p>{teacher.bio}</p>
+									</div>
+								</Reveal>
+							))}
 						</div>
 					</Reveal>
 				</div>
