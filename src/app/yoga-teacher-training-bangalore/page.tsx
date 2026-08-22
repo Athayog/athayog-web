@@ -231,7 +231,7 @@ export default function TTCBangalorePage() {
 				</div>
 			</section>
 
-			<section id="trainers" className="band">
+			<section id="trainers" style={{ background: "var(--parchment)" }}>
 				<div className="wrap">
 					<Reveal>
 						<div className="section-head">
