@@ -228,7 +228,7 @@ export default function Home() {
 									online.
 								</p>
 								<div className={styles.priceChip}>
-									From ₹14,999 · 12/24 sessions
+									From ₹18,999 · 12/24 sessions
 								</div>
 								<Link
 									href="/personal-yoga-training-indiranagar"
