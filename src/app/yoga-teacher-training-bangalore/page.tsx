@@ -74,10 +74,7 @@ export default function TTCBangalorePage() {
 							<a href="#enrol" className="btn btn-primary">
 								Enrol Now
 							</a>
-							<a
-								href="https://athayogliving.com/trial-classes"
-								className="btn btn-ghost"
-							>
+							<a href="/trial-classes" className="btn btn-ghost">
 								Book a Trial Class
 							</a>
 						</div>
@@ -344,9 +341,7 @@ export default function TTCBangalorePage() {
 					<Reveal>
 						<p className={styles.reassure}>
 							Price excludes 5% GST · EMI, UPI, cards, net banking accepted.{" "}
-							<a href="https://athayogliving.com/trial-classes">
-								Book a trial class →
-							</a>
+							<a href="/trial-classes">Book a trial class →</a>
 						</p>
 					</Reveal>
 				</div>
@@ -559,10 +554,7 @@ export default function TTCBangalorePage() {
 							<a href="#enrol" className="btn btn-cream">
 								Enrol Now
 							</a>
-							<a
-								href="https://athayogliving.com/trial-classes"
-								className="btn btn-light"
-							>
+							<a href="/trial-classes" className="btn btn-light">
 								Book a Trial Class
 							</a>
 							<a

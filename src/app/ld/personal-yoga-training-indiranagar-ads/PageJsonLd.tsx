@@ -46,7 +46,7 @@ export default function PageJsonLd() {
 				alternateName: "Athayog Living Yoga Studio Indiranagar",
 				slogan: "A Sanctum For The Spirit",
 				description:
-					"Certified yoga studio in Indiranagar, Bengaluru offering personal yoga training, group classes, a weight-loss program and RYT-200 teacher training.",
+					"Certified yoga studio in Indiranagar, Bengaluru offering personal yoga training, group classes and RYT-200 teacher training.",
 				url: "https://athayogliving.com/",
 				telephone: "+91-8690333111",
 				email: "info@athayogliving.com",

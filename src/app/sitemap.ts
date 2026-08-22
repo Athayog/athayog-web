@@ -14,7 +14,6 @@ const indexedPages = [
 	"/yoga-teacher-training-bangalore",
 	"/yoga-teacher-training-residential",
 	"/trial-classes",
-	"/weight-loss-program-indiranagar",
 	"/career",
 	"/picnics",
 	"/blogs",

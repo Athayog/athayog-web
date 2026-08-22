@@ -78,7 +78,7 @@ export default function AboutUsPage() {
 								<span className={styles.tick}>✓</span> Rooted in authentic
 								lineage
 							</span>
-							<span>Indiranagar &amp; Jayanagar</span>
+							<span>Indiranagar</span>
 						</div>
 					</div>
 					<HeroImage />
@@ -590,9 +590,6 @@ export default function AboutUsPage() {
 									Indiranagar, Bengaluru, Karnataka 560038
 								</p>
 								<p>+91 8690333111 · info@athayogliving.com</p>
-								<p style={{ fontSize: "0.9rem" }}>
-									A second branch in Jayanagar serves South Bengaluru.
-								</p>
 								<a
 									className={styles.dir}
 									href="https://maps.app.goo.gl/JpW1wbeDugHRp3ZKA"
@@ -655,7 +652,7 @@ export default function AboutUsPage() {
 								<div className={styles.faqAnswer}>
 									Group classes, one-on-one personal training, a 3-month
 									program, RYT-200 yoga teacher training, and workshops
-									across our Indiranagar and Jayanagar studios.
+									across our Indiranagar studio.
 								</div>
 							</details>
 							<details>
@@ -665,8 +662,7 @@ export default function AboutUsPage() {
 								</summary>
 								<div className={styles.faqAnswer}>
 									Our flagship studio is in Indiranagar, HAL 2nd Stage
-									(12th Main), Bengaluru 560038, with a second branch in
-									Jayanagar.
+									(12th Main), Bengaluru 560038.
 								</div>
 							</details>
 							<details>
@@ -719,7 +715,7 @@ export default function AboutUsPage() {
 						</div>
 					</Reveal>
 					<p className="micro" style={{ marginTop: 22 }}>
-						A Sanctum For The Spirit · Indiranagar &amp; Jayanagar, Bengaluru
+						A Sanctum For The Spirit · Indiranagar, Bengaluru
 					</p>
 				</div>
 			</section>

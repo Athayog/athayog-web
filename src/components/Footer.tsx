@@ -49,9 +49,8 @@ export default function Footer() {
 						<div className={styles.brand}>ATHAYOG LIVING</div>
 						<div className={styles.tag}>A Sanctum For The Spirit</div>
 						<p className={styles.desc}>
-							Authentic, certified yoga in Indiranagar &amp; Jayanagar,
-							group, personal, weight-loss and teacher training in
-							Bengaluru.
+							Authentic, certified yoga in Indiranagar: group, personal and
+							teacher training in Bengaluru.
 						</p>
 						<p className={styles.address}>
 							No. 3293, 1st Floor, 12th Main, HAL 2nd Stage, Indiranagar,

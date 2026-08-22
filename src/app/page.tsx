@@ -120,7 +120,7 @@ export default function Home() {
 								<span className={styles.tick}>✓</span> Certified, caring
 								teachers
 							</span>
-							<span>Indiranagar &amp; Jayanagar</span>
+							<span>Indiranagar</span>
 						</div>
 					</div>
 					<div
@@ -179,8 +179,7 @@ export default function Home() {
 							training and RYT-200 yoga teacher training. Our academy and
 							teachers are recognized by Yoga Alliance (USA), SVYASA and
 							AYUSH, so you practise with authentic guidance and globally
-							recognized credentials, in the heart of Indiranagar (with a
-							second branch in Jayanagar).
+							recognized credentials, in the heart of Indiranagar.
 						</p>
 					</Reveal>
 				</div>
@@ -557,8 +556,8 @@ export default function Home() {
 							>
 								The session was led by founder Sharath Basavaraju, with
 								Chief Guest Shri Tejasvi Surya. With our Indiranagar
-								flagship and a new second branch in Jayanagar, our
-								community continues to grow across Bengaluru.
+								flagship, our community continues to grow across
+								Bengaluru.
 							</p>
 						</div>
 					</Reveal>
@@ -585,7 +584,7 @@ export default function Home() {
 					<Reveal>
 						<div className="section-head">
 							<span className="eyebrow">Our studios</span>
-							<h2>Find us in Indiranagar &amp; Jayanagar</h2>
+							<h2>Find us in Indiranagar</h2>
 						</div>
 					</Reveal>
 					<Reveal>
@@ -611,15 +610,6 @@ export default function Home() {
 								>
 									Get directions <ArrowRight size={16} />
 								</a>
-								<div className={styles.branch}>
-									<h3>Jayanagar (branch)</h3>
-									<p
-										className={styles.verify}
-										title="Add the exact Jayanagar studio address"
-									>
-										[ Add Jayanagar studio address, Bengaluru 5600xx ]
-									</p>
-								</div>
 							</div>
 						</div>
 					</Reveal>
@@ -824,8 +814,7 @@ export default function Home() {
 						</div>
 					</Reveal>
 					<p className="micro">
-						Trusted by 850+ Athayogis across Indiranagar &amp; Jayanagar,
-						Bengaluru
+						Trusted by 850+ Athayogis in Indiranagar, Bengaluru
 					</p>
 				</div>
 			</section>

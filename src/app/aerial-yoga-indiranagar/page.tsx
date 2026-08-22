@@ -9,9 +9,9 @@ import MagnetForm from "@/app/aerial-yoga-indiranagar/MagnetForm";
 import styles from "@/app/aerial-yoga-indiranagar/AerialYoga.module.css";
 
 export const metadata: Metadata = {
-	title: "Aerial Yoga Classes in Indiranagar, Bangalore | ₹599 a Session | Athayog Living",
+	title: "Aerial Yoga Classes in Indiranagar, Bangalore | ₹699 a Session | Athayog Living",
 	description:
-		"Aerial yoga in Indiranagar, Bengaluru at Athayog Living — silk hammock-supported practice that builds strength, flexibility and balance while gently decompressing the spine. Friday 7:30 PM & Sunday 10:30 AM. ₹599 per session. Limited slots — book your class.",
+		"Aerial yoga in Indiranagar, Bengaluru at Athayog Living — silk hammock-supported practice that builds strength, flexibility and balance while gently decompressing the spine. Friday 7:30 PM & Sunday 10:30 AM. ₹699 per session. Limited slots — book your class.",
 	alternates: { canonical: "https://athayogliving.com/aerial-yoga-indiranagar" },
 };
 
@@ -73,7 +73,7 @@ export default function AerialYogaPage() {
 							decompressing the spine.
 						</p>
 						<span className={styles.priceChip}>
-							<strong>₹599 per session</strong> · Friday 7:30 PM &amp;
+							<strong>₹699 per session</strong> · Friday 7:30 PM &amp;
 							Sunday 10:30 AM · limited slots
 						</span>
 						<div className={styles.heroCta}>
@@ -155,7 +155,7 @@ export default function AerialYogaPage() {
 							better alignment and less strain, building strength,
 							flexibility and balance while gently decompressing the spine.
 							At Athayog Living in Indiranagar, aerial classes run Friday at
-							7:30 PM and Sunday at 10:30 AM for ₹599 a session, and are
+							7:30 PM and Sunday at 10:30 AM for ₹699 a session, and are
 							suitable for beginners and experienced practitioners alike.
 						</p>
 					</Reveal>
@@ -471,7 +471,7 @@ export default function AerialYogaPage() {
 								</ul>
 							</div>
 							<div className={styles.pcardBuy}>
-								<div className={styles.pcardAmt}>₹599</div>
+								<div className={styles.pcardAmt}>₹699</div>
 								<div className={styles.pcardTerm}>per session</div>
 								<a href="#book" className="btn btn-cream">
 									Book Your Class
@@ -588,7 +588,7 @@ export default function AerialYogaPage() {
 					<Reveal>
 						<h2>Fly beyond limits. Flow beyond fear.</h2>
 						<p>
-							Friday 7:30 PM · Sunday 10:30 AM · ₹599 a session · limited
+							Friday 7:30 PM · Sunday 10:30 AM · ₹699 a session · limited
 							slots.
 						</p>
 						<a href="#book" className="btn btn-cream">
@@ -724,7 +724,7 @@ export default function AerialYogaPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Aerial yoga is ₹599 per session. It&apos;s a paid,
+									Aerial yoga is ₹699 per session. It&apos;s a paid,
 									per-session class, separate from the standard
 									group-class membership, so you can simply book the
 									slots you want.
@@ -828,16 +828,6 @@ export default function AerialYogaPage() {
 							</a>
 							<a
 								className={styles.ex}
-								href="/weight-loss-program-indiranagar"
-							>
-								<div className={styles.exArrow}>
-									<ArrowRight size={18} />
-								</div>
-								<h3>Weight Loss Program</h3>
-								<p>Holistic 3-month transformation.</p>
-							</a>
-							<a
-								className={styles.ex}
 								href="/yoga-teacher-training-bangalore"
 							>
 								<div className={styles.exArrow}>
@@ -872,7 +862,7 @@ export default function AerialYogaPage() {
 						<span className="eyebrow">Book now</span>
 						<h2>Aerial yoga is here. Come and try it.</h2>
 						<p>
-							Silk-hammock yoga at Athayog Living, Indiranagar: ₹599 a
+							Silk-hammock yoga at Athayog Living, Indiranagar: ₹699 a
 							session, Friday evenings and Sunday mornings. Slots are
 							limited.
 						</p>
@@ -908,7 +898,7 @@ export default function AerialYogaPage() {
 
 			{/* 16. Sticky mobile CTA */}
 			<div className={styles.stickyCta}>
-				<span className={styles.stickyMeta}>Aerial Yoga · ₹599 / session</span>
+				<span className={styles.stickyMeta}>Aerial Yoga · ₹699 / session</span>
 				<a href="#book" className="btn btn-cream">
 					Book Now
 				</a>

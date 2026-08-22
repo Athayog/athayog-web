@@ -1,5 +1,5 @@
 // Faculty shown across the site's teacher sections (group classes, personal
-// training, weight loss, TTC pages). Central data so bios/photos stay in sync.
+// training and TTC pages). Central data so bios/photos stay in sync.
 // Photos live in public/images/teachers/.
 
 export interface Teacher {

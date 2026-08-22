@@ -471,11 +471,6 @@ export default function PersonalTrainingPage() {
 					<Reveal>
 						<TestimonialVideoCarousel videos={testimonialVideos} />
 					</Reveal>
-					<p className={styles.tplNote}>
-						Text testimonials below are templates: replace with real,
-						consented client reviews (ideally from Google, with names, areas
-						&amp; results).
-					</p>
 					<Reveal>
 						<div className={styles.tstGrid}>
 							{[
@@ -494,12 +489,7 @@ export default function PersonalTrainingPage() {
 							].map((t, i) => (
 								<div className={styles.tst} key={i}>
 									<p className={styles.tstQ}>&quot;{t.q}&quot;</p>
-									<div
-										className={`${styles.tstWho} ${styles.verify}`}
-										title="Verified reviewer"
-									>
-										{t.w}
-									</div>
+									<div className={styles.tstWho}>{t.w}</div>
 								</div>
 							))}
 						</div>

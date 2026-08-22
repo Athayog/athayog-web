@@ -625,9 +625,7 @@ export default function GroupClassesPage() {
 						Prices exclude 5% GST · terms apply. Pay via UPI, cards, net
 						banking, PayPal or EMI (HDFC, ICICI, Bank of Baroda, Federal Bank
 						&amp; more). New here?{" "}
-						<a href="https://athayogliving.com/trial-classes">
-							Start with a trial class →
-						</a>
+						<a href="/trial-classes">Start with a trial class →</a>
 					</p>
 				</div>
 			</section>
@@ -708,12 +706,6 @@ export default function GroupClassesPage() {
 						<TestimonialVideoCarousel videos={testimonialVideos} />
 					</Reveal>
 
-					<p className={styles.tplNote}>
-						Text testimonials below are templates. Replace with real,
-						consented member reviews (ideally from Google, with names &amp;
-						areas).
-					</p>
-
 					<div className={styles.tstGrid}>
 						<Reveal>
 							<div className={styles.tst}>
@@ -722,12 +714,7 @@ export default function GroupClassesPage() {
 									Small group, real attention, and I actually look
 									forward to it.&quot;
 								</p>
-								<div
-									className={`${styles.tstWho} ${styles.verify}`}
-									title="Verified reviewer"
-								>
-									Kanish R
-								</div>
+								<div className={styles.tstWho}>Kanish R</div>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -737,12 +724,7 @@ export default function GroupClassesPage() {
 									Harmony and now I&apos;m doing arm balances in Uttama
 									Sadhana. The progression is beautiful.&quot;
 								</p>
-								<div
-									className={`${styles.tstWho} ${styles.verify}`}
-									title="Verified reviewer"
-								>
-									Lavanika Bhandari
-								</div>
+								<div className={styles.tstWho}>Lavanika Bhandari</div>
 							</div>
 						</Reveal>
 						<Reveal>
@@ -752,12 +734,7 @@ export default function GroupClassesPage() {
 									despite work. Best value membership in
 									Indiranagar.&quot;
 								</p>
-								<div
-									className={`${styles.tstWho} ${styles.verify}`}
-									title="Verified reviewer"
-								>
-									Vidhya Narayanan
-								</div>
+								<div className={styles.tstWho}>Vidhya Narayanan</div>
 							</div>
 						</Reveal>
 					</div>

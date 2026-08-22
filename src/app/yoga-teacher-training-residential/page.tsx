@@ -492,10 +492,7 @@ export default function RTTCPage() {
 							<a href="#enrol" className="btn btn-cream">
 								Enrol Now
 							</a>
-							<a
-								href="https://athayogliving.com/trial-classes"
-								className="btn btn-light"
-							>
+							<a href="/trial-classes" className="btn btn-light">
 								Book a Trial Class
 							</a>
 							<a
