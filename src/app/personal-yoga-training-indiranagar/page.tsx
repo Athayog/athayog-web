@@ -459,12 +459,7 @@ export default function PersonalTrainingPage() {
 								<div className={styles.statLbl}>transformations</div>
 							</div>
 							<div className={styles.stat}>
-								<div
-									className={`${styles.statBig} ${styles.verify}`}
-									title="Add verified rating"
-								>
-									4.9★
-								</div>
+								<div className={styles.statBig}>4.9★</div>
 								<div className={styles.statLbl}>average rating</div>
 							</div>
 							<div className={styles.stat}>
@@ -656,9 +651,7 @@ export default function PersonalTrainingPage() {
 									Indiranagar, Bengaluru, Karnataka 560038
 								</p>
 								<p>+91 8690333111 · info@athayogliving.com</p>
-								<p className={styles.verify} title="Add studio hours">
-									[ Open: add days &amp; hours ]
-								</p>
+								<p>Open: Mon–Fri 5 AM–9 PM · Sat–Sun 5 AM–8 PM</p>
 								<p style={{ fontSize: "0.9rem" }}>
 									Serving Indiranagar, Domlur, CV Raman Nagar,
 									Koramangala &amp; nearby, with at-home sessions on

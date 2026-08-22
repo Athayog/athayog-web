@@ -288,12 +288,7 @@ export default function TTCBangalorePage() {
 								<div className={styles.statLbl}>weeks · weekend</div>
 							</div>
 							<div className={styles.stat}>
-								<div
-									className={`${styles.statBig} ${styles.verify}`}
-									title="Add verified rating"
-								>
-									4.9★
-								</div>
+								<div className={styles.statBig}>4.9★</div>
 								<div className={styles.statLbl}>average rating</div>
 							</div>
 						</div>

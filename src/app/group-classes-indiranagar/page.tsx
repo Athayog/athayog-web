@@ -322,14 +322,8 @@ export default function GroupClassesPage() {
 							<h2>Group class timetable: Indiranagar</h2>
 							<p className="lead">
 								Morning and evening batches, seven days a week. Pick a
-								time that fits your life.{" "}
-								<span
-									className={styles.verify}
-									title="Update monthly from your latest schedule PDF"
-								>
-									(Schedule shown for reference; download the latest
-									below.)
-								</span>
+								time that fits your life. (Schedule shown for reference;
+								download the latest below.)
 							</p>
 						</div>
 					</Reveal>
@@ -698,12 +692,7 @@ export default function GroupClassesPage() {
 						</Reveal>
 						<Reveal>
 							<div className={styles.stat}>
-								<div
-									className={`${styles.statBig} ${styles.verify}`}
-									title="Add verified rating"
-								>
-									4.9★
-								</div>
+								<div className={styles.statBig}>4.9★</div>
 								<div className={styles.statLbl}>average rating</div>
 							</div>
 						</Reveal>

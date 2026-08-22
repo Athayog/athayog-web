@@ -448,12 +448,7 @@ export default function WeightLossPage() {
 								<div className={styles.statLbl}>Athayogis</div>
 							</div>
 							<div className={styles.stat}>
-								<div
-									className={`${styles.statBig} ${styles.verify}`}
-									title="Add verified rating"
-								>
-									4.9★
-								</div>
+								<div className={styles.statBig}>4.9★</div>
 								<div className={styles.statLbl}>average rating</div>
 							</div>
 						</div>
@@ -544,13 +539,7 @@ export default function WeightLossPage() {
 									₹[fee]
 								</div>
 								<div className={styles.buyTerm}>
-									for the full 3-month program{" "}
-									<span
-										className={styles.verify}
-										title="Confirm if GST applies"
-									>
-										(+ GST if applicable)
-									</span>
+									for the full 3-month program (+ 5% GST)
 								</div>
 								<EnquireModal
 									service="Weight Loss Program"
