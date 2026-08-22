@@ -47,7 +47,7 @@ export default function PersonalYogaTrainingIndiranagarPage() {
 				messagePlaceholder="Tell us about your goals or concerns"
 				successMessage="Thank you! We'll get back to you shortly."
 				errorMessage="Something went wrong. Please try again."
-				backgroundImage="/images/landing-page-hero-2.jpg"
+				backgroundImage="/images/landing/landing-page-hero-2.jpg"
 				ctaButtonHref="/contact-us"
 				formKey="personal_training_indiranagar"
 			/>
@@ -80,7 +80,7 @@ export default function PersonalYogaTrainingIndiranagarPage() {
 			<ImageFeatureSection
 				title="What Are Personal Yoga Sessions?"
 				description="Personal yoga sessions are one-on-one classes where every aspect of the practice, from posture selection to pace, intensity and progression, is customized to your needs."
-				image="/images/mental-health/2.png"
+				image="/images/mental-health/wellbeing.png"
 				imageAlt="One-on-one yoga session with instructor guiding a student"
 				features={[
 					{
@@ -152,7 +152,7 @@ export default function PersonalYogaTrainingIndiranagarPage() {
 						id: "weight",
 						type: "text-image-side",
 						text: "Weight management with balanced, sustainable yoga routines",
-						image: "/images/mental-health/1.png",
+						image: "/images/mental-health/mindfulness.png",
 						imageAlt: "Yoga practice for strength and balance",
 						imagePosition: "left",
 					},
@@ -224,7 +224,7 @@ export default function PersonalYogaTrainingIndiranagarPage() {
 			/>
 			<SplitContentSection
 				title="Guided by Experienced Yoga Professionals"
-				titleImage="/images/Who_Chooses.png"
+				titleImage="/images/landing/who-chooses.png"
 				titleImageAlt="Peaceful yoga studio"
 				items={[
 					{ id: "1", text: "Alignment and injury prevention" },

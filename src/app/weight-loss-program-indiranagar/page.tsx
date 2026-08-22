@@ -98,7 +98,7 @@ export default function WeightLossPage() {
 						style={{ position: "relative", overflow: "hidden" }}
 					>
 						<Image
-							src="/hero-warrior-pose.png"
+							src="/images/heroes/hero-warrior-pose.jpg"
 							alt="Dynamic warrior pose practice, strength-building yoga at Athayog Living, Indiranagar"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"

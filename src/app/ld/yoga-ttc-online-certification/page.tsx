@@ -36,7 +36,7 @@ export default function OnlineTTCPage() {
 					"Limited cohort for depth & focus",
 				]}
 				ctaButtonText="Check Eligibility & Apply"
-				backgroundImage="/images/landing-page-hero-10.jpg"
+				backgroundImage="/images/landing/landing-page-hero-10.jpg"
 				ctaButtonHref="/contact-us"
 				formKey="ttc_online"
 				submitButtonText="Send Enquiry"
@@ -53,7 +53,7 @@ export default function OnlineTTCPage() {
 			<ImageFeatureSection
 				title="Is This Online Yoga Teacher Training Right for You?"
 				description="This online TTC is suitable if you"
-				image="/images/landing-page-hero-11.jpg"
+				image="/images/landing/landing-page-hero-11.jpg"
 				imageAlt="Group of people practicing yoga in a peaceful studio"
 				features={[
 					{
@@ -102,28 +102,28 @@ export default function OnlineTTCPage() {
 						title: "Asana Practice & Alignment",
 						description:
 							"Safe, mindful practice with functional understanding",
-						image: "/images/warrior_pose.png",
+						image: "/images/landing/warrior-pose.jpg",
 						imageAlt: "Asana practice and alignment",
 					},
 					{
 						id: "2",
 						title: "Pranayama & Breath Awareness",
 						description: "Understanding breath regulation and its effects",
-						image: "/images/pranayama.png",
+						image: "/images/landing/pranayama.jpg",
 						imageAlt: "Pranayama breathing techniques",
 					},
 					{
 						id: "3",
 						title: "Meditation & Inner Practices",
 						description: "Foundational techniques for focus and clarity",
-						image: "/images/Medi.jpg",
+						image: "/images/landing/meditation.jpg",
 						imageAlt: "Meditation and inner practices",
 					},
 					{
 						id: "4",
 						title: "Yoga Philosophy & Ethics",
 						description: "Classical concepts applied to modern life",
-						image: "/images/ethics.jpg",
+						image: "/images/landing/ethics.jpg",
 						imageAlt: "Yoga philosophy study",
 					},
 					{
@@ -131,21 +131,21 @@ export default function OnlineTTCPage() {
 						title: "Applied Anatomy",
 						description:
 							"Understanding the body for safe teaching (non-medical)",
-						image: "/images/anatomy.jpg",
+						image: "/images/landing/anatomy.jpg",
 						imageAlt: "Teaching methodology",
 					},
 					{
 						id: "6",
 						title: "Teaching Methodology",
 						description: "Cueing, sequencing, observation, and correction",
-						image: "/images/teaching.jpg",
+						image: "/images/landing/teaching.jpg",
 						imageAlt: "Teaching methodology",
 					},
 					{
 						id: "7",
 						title: "Practice Teaching & Feedback",
 						description: "Guided teaching practice with faculty input",
-						image: "/images/feedback.jpg",
+						image: "/images/landing/feedback.jpg",
 						imageAlt: "Practice teaching and feedback",
 					},
 				]}
@@ -179,7 +179,7 @@ export default function OnlineTTCPage() {
 
 			<SplitContentSection
 				title="Guided by Experienced Teachers"
-				titleImage="/images/certification.jpg"
+				titleImage="/images/landing/certification.jpg"
 				titleImageAlt="Peaceful yoga studio"
 				items={[
 					{ id: "1", text: "Safety and alignment" },
@@ -191,7 +191,7 @@ export default function OnlineTTCPage() {
 
 			<ImageFeatureSection
 				title="Certification & Professional Outcomes"
-				image="/images/teaching.jpg"
+				image="/images/landing/teaching.jpg"
 				imageAlt="Group of people practicing yoga in a peaceful studio"
 				reverseLayout={true}
 				features={[

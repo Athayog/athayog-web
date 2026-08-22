@@ -36,7 +36,7 @@ export default function ResidentialYogaPage() {
 					"Limited intake for depth and focus",
 				]}
 				ctaButtonText="Check Eligibility & Program Availability"
-				backgroundImage="/images/residential.jpg"
+				backgroundImage="/images/landing/residential.jpg"
 				ctaButtonHref="/contact-us"
 				formKey="ryt_residential"
 				submitButtonText="Send Enquiry"
@@ -79,7 +79,7 @@ export default function ResidentialYogaPage() {
 			<ImageFeatureSection
 				title="What Is a Residential Yoga Program at AthaYog Living?"
 				description="A residential yoga program at AthaYog Living is a full-time, immersive yogic experience where participants live on campus and follow a structured daily routine guided by experienced instructors."
-				image="/images/residential-yoga.jpg"
+				image="/images/landing/residential-yoga.jpg"
 				imageAlt="Group of people practicing yoga in a peaceful studio"
 				features={[
 					{
@@ -115,7 +115,7 @@ export default function ResidentialYogaPage() {
 						id: "silence",
 						type: "text-image-side",
 						text: "Periods of silence and reflection",
-						image: "/images/pranayama.png",
+						image: "/images/landing/pranayama.jpg",
 						imageAlt: "Pranayama practice",
 						imagePosition: "right",
 					},
@@ -123,7 +123,7 @@ export default function ResidentialYogaPage() {
 						id: "learning",
 						type: "text-image-side",
 						text: "Guided learning and practice sessions",
-						image: "/images/Medi.jpg",
+						image: "/images/landing/meditation.jpg",
 						imageAlt: "Guided learning",
 						imagePosition: "left",
 					},
@@ -155,7 +155,7 @@ export default function ResidentialYogaPage() {
 
 			<SplitContentSection
 				title="Who Typically Chooses This Program"
-				titleImage="/images/Who_Chooses.png"
+				titleImage="/images/landing/who-chooses.png"
 				titleImageAlt="Peaceful yoga studio"
 				items={[
 					{ id: "1", text: "Burned-out professionals seeking clarity" },

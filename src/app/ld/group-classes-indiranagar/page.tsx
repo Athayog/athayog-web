@@ -45,7 +45,7 @@ export default function GroupClassesIndiranagarPage() {
 				messagePlaceholder="Any questions or requirements?"
 				successMessage="Thank you! We'll get back to you shortly."
 				errorMessage="Something went wrong. Please try again."
-				backgroundImage="/images/anatomy.jpg"
+				backgroundImage="/images/landing/anatomy.jpg"
 				ctaButtonHref="/contact-us"
 				formKey="group_classes_indiranagar"
 			/>
@@ -143,7 +143,7 @@ export default function GroupClassesIndiranagarPage() {
 			<ImageFeatureSection
 				title="Who Commonly Joins Our Indiranagar Group Classes"
 				description="Our group classes are designed for everyday practitioners looking to build consistency, balance, and wellbeing."
-				image="/images/mental-health/2.png"
+				image="/images/mental-health/wellbeing.png"
 				imageAlt="Group yoga class at AthaYog Living studio in Indiranagar"
 				features={[
 					{

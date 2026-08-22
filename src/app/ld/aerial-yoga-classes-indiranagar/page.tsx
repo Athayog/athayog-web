@@ -31,7 +31,7 @@ export default function AerialYogaIndiranagarPage() {
 					text: "Get 8 Sessions – ₹4,699",
 					href: "https://rzp.io/rzp/0Abz1tpq",
 				}}
-				backgroundImage="/images/landing-page-hero-4.jpg"
+				backgroundImage="/images/heroes/aerial-yoga.jpg"
 			/>
 			<InfoBarSection
 				items={[

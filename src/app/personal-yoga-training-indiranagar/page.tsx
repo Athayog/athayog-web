@@ -100,7 +100,7 @@ export default function PersonalTrainingPage() {
 						style={{ position: "relative", overflow: "hidden" }}
 					>
 						<Image
-							src="/hero-personal-training.png"
+							src="/images/heroes/hero-personal-training.jpg"
 							alt="Certified yoga trainer providing one-on-one personal training at Athayog Living, Indiranagar"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"

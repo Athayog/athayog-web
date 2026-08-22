@@ -18,7 +18,7 @@ export default function SoundMeditationIndiranagarPage() {
 					"No prior meditation experience required",
 					"Safe, guided, and deeply restorative",
 				]}
-				backgroundImage="/images/Sound.jpg"
+				backgroundImage="/images/landing/sound-meditation.jpg"
 				primaryCTA={{ text: "Book Session – ₹899", href: "#" }}
 				secondaryCTA={{ text: "4 Sessions – ₹3,299", href: "#" }}
 			/>

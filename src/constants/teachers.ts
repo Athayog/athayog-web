@@ -13,7 +13,7 @@ export interface Teacher {
 export const TEACHERS: Teacher[] = [
 	{
 		name: "Sharath Basavaraju",
-		photo: "/sharath-basavaraju.png",
+		photo: "/images/teachers/sharath-basavaraju.jpg",
 		alt: "Sharath Basavaraju, Founder and Principal Teacher of Athayog Living",
 		role: "Founder & Principal Teacher · MSc Yoga, PhD candidate (SVYASA)",
 		bio: "Yoga educator and researcher with 10+ years and 10,000+ teaching hours, leading Athayog's classes and teacher training.",

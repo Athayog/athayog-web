@@ -93,7 +93,7 @@ export default function GroupClassesPage() {
 						style={{ position: "relative", overflow: "hidden" }}
 					>
 						<Image
-							src="/hero-group-classes.png"
+							src="/images/heroes/hero-group-classes.jpg"
 							alt="Small-batch group yoga class in session at Athayog Living studio, Indiranagar"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"

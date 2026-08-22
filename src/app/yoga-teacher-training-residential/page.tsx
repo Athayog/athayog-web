@@ -93,7 +93,7 @@ export default function RTTCPage() {
 						style={{ position: "relative", overflow: "hidden" }}
 					>
 						<Image
-							src="/hero-certification.jpg"
+							src="/images/heroes/hero-certification.jpg"
 							alt="RYT-200 yoga teacher training graduates receiving certification at Athayog Living"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"

@@ -98,7 +98,7 @@ export default function TTCBangalorePage() {
 						style={{ position: "relative", overflow: "hidden" }}
 					>
 						<Image
-							src="/hero-teaching.jpg"
+							src="/images/heroes/hero-teaching.jpg"
 							alt="Yoga teacher training weekend batch in session at Athayog Living, Indiranagar"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"

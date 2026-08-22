@@ -101,7 +101,7 @@ export default function AerialYogaPage() {
 					</div>
 					<div className={styles.heroMedia}>
 						<Image
-							src="/landing-page-hero-4.jpg"
+							src="/images/heroes/aerial-yoga.jpg"
 							alt="Aerial yoga at Athayog Living, Indiranagar: silk hammock practice"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"

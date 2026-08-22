@@ -54,7 +54,7 @@ export default function Home() {
 		name: "Athayog Living",
 		url: "https://athayogliving.com/",
 		logo: "https://athayogliving.com/Logo.png",
-		image: "https://athayogliving.com/hero-home.jpg",
+		image: "https://athayogliving.com/images/heroes/hero-home.jpg",
 		telephone: "+918690333111",
 		priceRange: "₹599–₹32,399",
 		email: "info@athayogliving.com",
@@ -128,7 +128,7 @@ export default function Home() {
 						style={{ position: "relative", overflow: "hidden" }}
 					>
 						<Image
-							src="/hero-home.jpg"
+							src="/images/heroes/hero-home.jpg"
 							alt="Group yoga class in session at Athayog Living studio, Indiranagar, Bengaluru"
 							fill
 							sizes="(max-width: 960px) 0vw, 40vw"
@@ -431,7 +431,7 @@ export default function Home() {
 							style={{ position: "relative", overflow: "hidden" }}
 						>
 							<Image
-								src="/sharath-basavaraju.png"
+								src="/images/teachers/sharath-basavaraju.jpg"
 								alt="Sharath Basavaraju, Founder of Athayog Living"
 								fill
 								style={{ objectFit: "cover" }}
@@ -568,7 +568,7 @@ export default function Home() {
 							style={{ position: "relative", overflow: "hidden" }}
 						>
 							<Image
-								src="/hero-event-yoga-day.jpg"
+								src="/images/heroes/hero-event-yoga-day.jpg"
 								alt="Yoga Arambha 2025: community yoga practice led by Sharath Basavaraju at Kittur Rani Chennamma Stadium"
 								fill
 								sizes="(max-width: 960px) 100vw, 50vw"

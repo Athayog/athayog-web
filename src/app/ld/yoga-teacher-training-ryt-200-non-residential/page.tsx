@@ -36,7 +36,7 @@ export default function NonResidentialYogaPage() {
 					"Limited batch intake for focused learning",
 				]}
 				ctaButtonText="Check Program Fit & Availability"
-				backgroundImage="/images/certification.jpg"
+				backgroundImage="/images/landing/certification.jpg"
 				ctaButtonHref="/contact-us"
 				formKey="ryt200_non_residential"
 				submitButtonText="Send Enquiry"
@@ -108,7 +108,7 @@ export default function NonResidentialYogaPage() {
 			<ImageFeatureSection
 				title="Batch Timings Designed Around Work Life"
 				description="The program schedule is structured to support consistency without disrupting professional responsibilities."
-				image="/images/feedback.jpg"
+				image="/images/landing/feedback.jpg"
 				imageAlt="Online yoga class with instructor guiding students"
 				features={[
 					{
@@ -180,7 +180,7 @@ export default function NonResidentialYogaPage() {
 
 			<SplitContentSection
 				title="Program Duration, Commitment & Investment"
-				titleImage="/images/anatomy.jpg"
+				titleImage="/images/landing/anatomy.jpg"
 				titleImageAlt="Peaceful yoga studio"
 				items={[
 					{ id: "1", text: "Multiple duration options available" },
