@@ -158,7 +158,7 @@ export default function TTCBangalorePage() {
 								},
 								{
 									h: "Authentic Lineage",
-									p: "Rooted in Bihar School of Yoga & SVYASA teachings, a real yogic tradition.",
+									p: "Rooted in authentic yogic lineage and SVYASA teachings, a real yogic tradition.",
 								},
 								{
 									h: "Expert Faculty",

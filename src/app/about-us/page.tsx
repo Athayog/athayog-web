@@ -121,12 +121,12 @@ export default function AboutUsPage() {
 					<Reveal>
 						<p className="answer">
 							Athayog Living is a certified yoga studio in Indiranagar,
-							Bengaluru, founded by Sharath Basavaraju, who was trained
-							through the teachings of the Bihar School of Yoga and holds a
-							formal yogic education from SVYASA. The studio offers group
-							classes, personal training and RYT-200 teacher training, all
-							rooted in authentic tradition and recognized by Yoga Alliance
-							(USA), SVYASA and AYUSH.
+							Bengaluru, founded in 2020 by Sharath Basavaraju, a yoga
+							educator and researcher who holds an MSc in Yoga from SVYASA
+							University and is pursuing a PhD in Yoga there. The studio
+							offers group classes, personal training and RYT-200 teacher
+							training, all rooted in authentic tradition and recognized by
+							Yoga Alliance (USA), SVYASA and AYUSH.
 						</p>
 					</Reveal>
 				</div>
@@ -254,11 +254,17 @@ export default function AboutUsPage() {
 									fontSize: "1.05rem",
 								}}
 							>
-								Even as an idea still taking shape, Athayog&apos;s purpose
-								was clear: the faith in Yog had to be restored. As a young
-								teenager, Sharath was intrigued by his grandfather&apos;s
-								sadhana, finding inspiration in his discipline and
-								perseverance, traits he would come to embody himself.
+								Sharath Basavaraju is a yoga educator, researcher and
+								entrepreneur who founded Athayog in 2020. He holds an MSc
+								in Yoga and is pursuing a PhD in Yoga at SVYASA
+								University, with a strong focus on research, education and
+								the contemporary application of yoga. With over 10 years
+								of teaching experience, he has completed 10,000+ teaching
+								hours and reached 25,000+ individuals through yoga
+								programs, workshops and large-scale initiatives, including
+								engagements with government organisations, Ministry
+								initiatives, police personnel, the Indian Air Force,
+								corporates and educational institutions.
 							</p>
 							<p
 								style={{
@@ -267,19 +273,32 @@ export default function AboutUsPage() {
 									fontSize: "1.05rem",
 								}}
 							>
-								His initiation into the world of Yog came through the
-								teachings of{" "}
-								<strong>
-									Swami Satyananda Saraswati at the Bihar School of Yoga
-								</strong>
-								, followed by a formal yogic education at the{" "}
-								<strong>
-									Swami Vivekananda Yoga Anusandhana Samsthana (SVYASA)
-								</strong>
-								. With the blessings of his gurus, his practice evolved
-								into a way of being. His intent: to share these learnings
-								and guide people toward transformation through consistent,
-								directed and self-motivated effort.
+								Before founding Athayog, Sharath served as Yoga Format
+								Head at Cult.fit, after beginning his professional journey
+								with a1000yoga Academy. He has received formal spiritual
+								initiation from the Ramakrishna Mission and is a disciple
+								of Srimat Swami Gautamananda Maharaj. His approach to yoga
+								is deeply inspired by the teachings of Sri Ramakrishna
+								Paramahamsa, Holy Mother Sri Sarada Devi and Swami
+								Vivekananda, while respectfully drawing wisdom from other
+								great yoga masters and traditions.
+							</p>
+							<p
+								style={{
+									margin: "0 0 12px",
+									color: "var(--brand-deep)",
+									fontSize: "1.05rem",
+								}}
+							>
+								Recognised as one of the younger yoga professionals to
+								receive Ministry of AYUSH accreditation, Sharath is
+								actively involved in the research and development of yoga.
+								Through Athayog, his vision is to integrate traditional
+								yogic wisdom with contemporary scientific understanding,
+								helping people cultivate physical strength, mental
+								resilience, emotional balance and inner growth, while
+								nurturing the next generation of authentic and responsible
+								yoga teachers.
 							</p>
 							<ul className={styles.authList}>
 								<li>
@@ -291,8 +310,8 @@ export default function AboutUsPage() {
 								<li>
 									<span className={styles.authKey}>Lineage</span>
 									<span>
-										Teachings of Swami Satyananda Saraswati · Bihar
-										School of Yoga
+										Ramakrishna Mission · disciple of Srimat Swami
+										Gautamananda Maharaj
 									</span>
 								</li>
 								<li>
@@ -300,8 +319,22 @@ export default function AboutUsPage() {
 										Formal education
 									</span>
 									<span>
-										Swami Vivekananda Yoga Anusandhana Samsthana
-										(SVYASA)
+										MSc in Yoga, pursuing PhD in Yoga at SVYASA
+										University
+									</span>
+								</li>
+								<li>
+									<span className={styles.authKey}>Experience</span>
+									<span>
+										10+ years · 10,000+ teaching hours · 25,000+
+										individuals
+									</span>
+								</li>
+								<li>
+									<span className={styles.authKey}>Recognition</span>
+									<span>
+										Ministry of AYUSH accreditation · active yoga
+										researcher
 									</span>
 								</li>
 								<li>
@@ -344,17 +377,18 @@ export default function AboutUsPage() {
 					<Reveal>
 						<div className={styles.lineage}>
 							<div className={styles.lin}>
-								<h3>Bihar School of Yoga</h3>
+								<h3>Ramakrishna Mission</h3>
 								<p>
-									Founder&apos;s initiation through the teachings of
-									Swami Satyananda Saraswati.
+									Founder&apos;s formal spiritual initiation; disciple
+									of Srimat Swami Gautamananda Maharaj.
 								</p>
 							</div>
 							<div className={styles.lin}>
-								<h3>SVYASA</h3>
+								<h3>SVYASA University</h3>
 								<p>
-									Formal yogic education from Swami Vivekananda Yoga
-									Anusandhana Samsthana, Bengaluru.
+									MSc in Yoga, with doctoral research in progress at
+									Swami Vivekananda Yoga Anusandhana Samsthana,
+									Bengaluru.
 								</p>
 							</div>
 							<div className={styles.lin}>
@@ -590,12 +624,12 @@ export default function AboutUsPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Athayog Living was founded by Sharath Basavaraju, its
-									Principal Teacher. Inspired as a teenager by his
-									grandfather&apos;s sadhana, he was initiated into Yog
-									through the teachings of Swami Satyananda Saraswati at
-									the Bihar School of Yoga, and holds a formal yogic
-									education from SVYASA.
+									Athayog Living was founded in 2020 by Sharath
+									Basavaraju, its Principal Teacher. A yoga educator and
+									researcher, he holds an MSc in Yoga from SVYASA
+									University and is pursuing a PhD in Yoga there, with
+									formal spiritual initiation from the Ramakrishna
+									Mission.
 								</div>
 							</details>
 							<details>
@@ -604,11 +638,13 @@ export default function AboutUsPage() {
 									<span className={styles.faqIcon}>+</span>
 								</summary>
 								<div className={styles.faqAnswer}>
-									Our teaching is rooted in genuine lineage, the Bihar
-									School of Yoga and SVYASA, and stays true to the
-									philosophy and practice of traditional Yog, rather
-									than a purely fitness-led approach. We&apos;re also
-									recognized by Yoga Alliance (USA) and AYUSH.
+									Our teaching is rooted in genuine lineage, grounded in
+									the founder&apos;s spiritual initiation from the
+									Ramakrishna Mission and his formal yogic education at
+									SVYASA University, and stays true to the philosophy
+									and practice of traditional Yog, rather than a purely
+									fitness-led approach. We&apos;re also recognized by
+									Yoga Alliance (USA) and AYUSH.
 								</div>
 							</details>
 							<details>
