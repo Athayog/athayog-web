@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "staging": "authentication-test-7c342",
+    "production": "athayog-e4ff7"
+  },
+  "targets": {},
+  "etags": {}
+}

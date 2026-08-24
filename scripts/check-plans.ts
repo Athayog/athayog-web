@@ -3,24 +3,38 @@ import { resolve } from "path";
 import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
-// Load .env.local
-const envPath = resolve(import.meta.dirname, "..", ".env.local");
+// Load the env file (defaults to .env.local; use ENV_FILE=.env.prod for
+// the production project, e.g. ENV_FILE=.env.prod npm run plans:seed)
+const envPath = resolve(import.meta.dirname, "..", process.env.ENV_FILE || ".env.local");
 if (existsSync(envPath)) {
 	const content = readFileSync(envPath, "utf-8");
-	for (const line of content.split("\n")) {
-		const trimmed = line.trim();
+	const lines = content.split("\n");
+	let i = 0;
+	while (i < lines.length) {
+		const trimmed = lines[i].trim();
+		i++;
 		if (!trimmed || trimmed.startsWith("#")) continue;
 		const eq = trimmed.indexOf("=");
 		if (eq === -1) continue;
 		const key = trimmed.slice(0, eq).trim();
-		const value = trimmed
-			.slice(eq + 1)
-			.trim()
-			.replace(/^["']|["']$/g, "");
-		process.env[key] = value;
+		let value = trimmed.slice(eq + 1).trim();
+		// Support multi-line quoted values (e.g. a private key pasted with
+		// real line breaks) by consuming lines until the closing quote.
+		if (
+			(value.startsWith('"') || value.startsWith("'")) &&
+			!value.endsWith(value[0])
+		) {
+			const quote = value[0];
+			while (i < lines.length) {
+				value += "\n" + lines[i].trim();
+				i++;
+				if (value.endsWith(quote)) break;
+			}
+		}
+		process.env[key] = value.replace(/^["']|["']$/g, "");
 	}
 } else {
-	console.error("❌ .env.local not found. Create one from .env.example");
+	console.error("❌ Env file not found. Create one from .env.example");
 	process.exit(1);
 }
 

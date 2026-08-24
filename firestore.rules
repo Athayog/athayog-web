@@ -1,0 +1,28 @@
+rules_version = "2";
+
+// Firebase Security Rules for the Athayog Living Firestore project.
+//
+// The client SDK is used ONLY for:
+//   - creating/reading the signed-in user's own doc: users/{uid}
+// Everything else (plans, payments, form collections) is written/read
+// exclusively by the server (Firebase Admin SDK), which bypasses these
+// rules. Those paths are therefore denied to clients.
+//
+// Deploy with:
+//   firebase deploy --only firestore:rules --project <prodProjectId>
+service cloud.firestore {
+	match /databases/{database}/documents {
+		// Users: the signed-in user may read/write their own profile doc
+		// (created on first sign-in by the client SDK).
+		match /users/{userId} {
+			allow read, write: if request.auth != null && request.auth.uid == userId;
+		}
+
+		// Deny client access to everything else (users' subcollections such
+		// as legacy courses, plans, payments, form collections). These are
+		// server-only; the Admin SDK bypasses rules entirely.
+		match /{document=**} {
+			allow read, write: if false;
+		}
+	}
+}

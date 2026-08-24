@@ -16,9 +16,9 @@ Two lists: **A — code fixes I can do right now** (agent), **B — ops/config y
 
 ## B. Ops / config (human — Vercel, Firebase, Razorpay, Resend)
 
-- [ ] **B1 (P0)** Deploy Firestore indexes to PROD: `npx firebase deploy --only firestore:indexes` — without them, payment history + `create-order` 500.
-- [ ] **B2 (P0)** Seed plans in PROD Firestore: `npm run plans:seed` then `npm run plans:check`.
-- [ ] **B3 (P0)** Firebase Security Rules: allow only `users/{uid}` own-doc writes + `uploads/` own uploads; deny client reads of `plans/`, `payments/`, form collections.
+- [x] **B1 (P0)** Deploy Firestore indexes to PROD: `npx firebase deploy --only firestore:indexes` — without them, payment history + `create-order` 500.
+- [x] **B2 (P0)** Seed plans in PROD Firestore: `npm run plans:seed` then `npm run plans:check`.
+- [x] **B3 (P0)** Firebase Security Rules: allow only `users/{uid}` own-doc writes + `uploads/` own uploads; deny client reads of `plans/`, `payments/`, form collections. → deployed to prod via `firebase deploy --only firestore:rules,storage`.
 - [ ] **B4 (P1)** Firebase authorized domains: add `https://athayogliving.com` (else Google sign-in fails); enable Phone auth.
 - [ ] **B5 (P1)** Razorpay: switch to **live** keys (`rzp_live_*`), whitelist the domain, **activate webhook** (`/api/payments/webhook`, event `payment.captured`, secret = `RAZORPAY_WEBHOOK_SECRET`).
 - [ ] **B6 (P1)** Vercel env (Production): set `REVALIDATE_TOKEN` (else blog revalidation 503s), verify all `.env.example` vars incl. `FIREBASE_PRIVATE_KEY` (`\n` escapes), `RESEND_API_KEY`, `RAZORPAY_*`, `NEXT_PUBLIC_*`.

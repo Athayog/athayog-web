@@ -1,0 +1,30 @@
+rules_version = "2";
+
+// Firebase Storage Security Rules for the Athayog Living project.
+//
+// The client SDK uploads form files (e.g. resumes) to uploads/ via
+// lib/forms/upload.ts. Files are referenced by URL in Firestore and in
+// notification emails, so read access is public (URLs are unguessable).
+// Writes require a signed-in user and size/type limits.
+//
+// Deploy with:
+//   firebase deploy --only storage --project <prodProjectId>
+// (storage rules deploy via the `storage` target; combined with firestore:
+//   firebase deploy --only firestore:rules,storage --project <prodProjectId>)
+service firebase.storage {
+	match /b/{bucket}/o {
+		match /uploads/{allPaths=**} {
+			allow read: if true;
+			allow write: if request.auth != null
+				&& request.resource.size < 10 * 1024 * 1024
+				&& request.resource.contentType.matches(
+					"application/pdf|application/msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document|image/.*"
+				);
+		}
+
+		// Everything else: no client access.
+		match /{allPaths=**} {
+			allow read, write: if false;
+		}
+	}
+}
