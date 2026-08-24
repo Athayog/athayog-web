@@ -34,6 +34,9 @@ function createRequest(body: unknown, reqIp?: string) {
 describe("POST /api/submit-form", () => {
 	beforeEach(() => {
 		vi.clearAllMocks();
+		// Tests must not inherit FORM_EMAIL_TO from the environment (e.g.
+		// Vercel build env during `next build`).
+		delete process.env.FORM_EMAIL_TO;
 	});
 
 	it("returns 201 for an approved form collection", async () => {
@@ -66,6 +69,21 @@ describe("POST /api/submit-form", () => {
 			data: { name: "John" },
 			collection: "trialClasses",
 		});
+	});
+
+	it("honors FORM_EMAIL_TO when configured", async () => {
+		process.env.FORM_EMAIL_TO = "leads@example.com";
+		const { sendFormEmail } = await import("@/lib/forms/email");
+		const req = createRequest({
+			collection: "trialClasses",
+			data: { name: "John" },
+		});
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		const res = await POST(req as any);
+		expect(res.status).toBe(201);
+		expect(sendFormEmail).toHaveBeenCalledWith(
+			expect.objectContaining({ to: "leads@example.com" }),
+		);
 	});
 
 	it("returns 400 for missing collection", async () => {
