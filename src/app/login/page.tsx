@@ -215,30 +215,34 @@ function LoginContent() {
 							</button>
 						)}
 
-						<div className={styles.divider}>
-							<span>or</span>
-						</div>
+						{/* Phone/OTP sign-in is disabled until Firebase phone-auth billing is
+						    enabled. Keep this code intact for future re-enablement. */}
+						<div style={{ display: "none" }}>
+							<div className={styles.divider}>
+								<span>or</span>
+							</div>
 
-						<div className={styles.phoneSection}>
-							<label htmlFor="phone" className={styles.phoneLabel}>
-								Sign in with phone
-							</label>
-							<input
-								id="phone"
-								type="tel"
-								placeholder="+91 98765 43210"
-								value={phone}
-								onChange={(e) => setPhone(e.target.value)}
-								className={styles.phoneInput}
-							/>
-							<button
-								type="button"
-								onClick={handleSendOtpClick}
-								disabled={otpLoading || !phone}
-								className={`btn btn-primary ${styles.submitBtn}`}
-							>
-								{otpLoading ? "Sending OTP..." : "Get OTP"}
-							</button>
+							<div className={styles.phoneSection}>
+								<label htmlFor="phone" className={styles.phoneLabel}>
+									Sign in with phone
+								</label>
+								<input
+									id="phone"
+									type="tel"
+									placeholder="+91 98765 43210"
+									value={phone}
+									onChange={(e) => setPhone(e.target.value)}
+									className={styles.phoneInput}
+								/>
+								<button
+									type="button"
+									onClick={handleSendOtpClick}
+									disabled={otpLoading || !phone}
+									className={`btn btn-primary ${styles.submitBtn}`}
+								>
+									{otpLoading ? "Sending OTP..." : "Get OTP"}
+								</button>
+							</div>
 						</div>
 
 						<p className={styles.signup}>
