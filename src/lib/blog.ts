@@ -79,9 +79,17 @@ export function splitTableBlock(text: string): TableSplit {
 	let table: TableData | null = null;
 	if (lines.length > 0) {
 		const splitRow = (line: string) => line.split("|").map((cell) => cell.trim());
+		const headers = splitRow(lines[0]);
+		// Pad short rows so every row has the same number of cells as the
+		// header (a ragged row otherwise renders a broken-looking table).
+		const padRow = (cells: string[]) => {
+			const padded = [...cells];
+			while (padded.length < headers.length) padded.push("");
+			return padded.slice(0, headers.length);
+		};
 		table = {
-			headers: splitRow(lines[0]),
-			rows: lines.slice(1).map(splitRow),
+			headers,
+			rows: lines.slice(1).map(splitRow).map(padRow),
 		};
 	}
 

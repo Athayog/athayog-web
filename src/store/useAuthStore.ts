@@ -12,6 +12,7 @@ interface UserSnapshot {
 	displayName: string | null;
 	email: string | null;
 	photoURL: string | null;
+	phoneNumber: string | null;
 }
 
 interface AuthState {
@@ -69,6 +70,7 @@ const useAuthStore = create<AuthState>()(
 								displayName: user.displayName,
 								email: user.email,
 								photoURL: user.photoURL,
+								phoneNumber: user.phoneNumber,
 							},
 							loading: false,
 							isAuthenticated: true,
@@ -116,6 +118,7 @@ const useAuthStore = create<AuthState>()(
 							displayName: user.displayName,
 							email: user.email,
 							photoURL: user.photoURL,
+							phoneNumber: user.phoneNumber,
 						},
 						isAuthenticated: true,
 					});
@@ -190,6 +193,7 @@ const useAuthStore = create<AuthState>()(
 							displayName: user.displayName,
 							email: user.email,
 							photoURL: user.photoURL,
+							phoneNumber: user.phoneNumber,
 						},
 						isAuthenticated: true,
 					});

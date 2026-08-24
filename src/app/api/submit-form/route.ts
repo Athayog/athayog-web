@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { getAdminFirestore } from "@/lib/firebaseAdmin";
 import { sendFormEmail } from "@/lib/forms/email";
+import { strings, optional } from "@/lib/forms/schemas";
 
 const rateMap = new Map<string, number>();
 
@@ -55,9 +56,23 @@ function isRateLimited(key: string, windowMs = 60_000, max = 5) {
 	return false;
 }
 
+// Common PII fields are validated with the same rules as the client forms
+// (see lib/forms/schemas.ts). Unknown fields pass through so collection-
+// specific fields are never rejected.
+const dataSchema = z
+	.object({
+		fullName: strings.name.optional().or(z.literal("")),
+		name: strings.name.optional().or(z.literal("")),
+		email: optional.email,
+		phone: optional.phone,
+		phoneNumber: optional.phone,
+		message: optional.message,
+	})
+	.passthrough();
+
 const bodySchema = z.object({
 	collection: collectionSchema,
-	data: z.record(z.string(), z.unknown()),
+	data: dataSchema,
 });
 
 export async function POST(request: NextRequest) {
@@ -82,7 +97,9 @@ export async function POST(request: NextRequest) {
 
 		const formConfig = formConfigs[parsed.collection];
 		if ("subject" in formConfig) {
-			sendFormEmail({
+			// Awaited so the email completes before the serverless function
+			// returns; failures are logged inside sendFormEmail.
+			await sendFormEmail({
 				to: "info@athayogliving.com",
 				subject: formConfig.subject,
 				data: parsed.data,

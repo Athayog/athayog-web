@@ -63,7 +63,7 @@ export default function RTTCPage() {
 						</p>
 						<span className={styles.priceChip}>
 							Yoga Alliance (USA) · RYT-200 · live online ·{" "}
-							<strong>from ₹19,999</strong>
+							<strong>from ₹14,999</strong>
 						</span>
 						<div className={styles.heroCta}>
 							<a href="#enrol" className="btn btn-primary">

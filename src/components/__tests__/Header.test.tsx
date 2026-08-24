@@ -50,6 +50,7 @@ describe("Header component", () => {
 				displayName: "Jane Doe",
 				email: "jane@example.com",
 				photoURL: null,
+				phoneNumber: null,
 			},
 		});
 

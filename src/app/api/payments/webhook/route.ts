@@ -24,6 +24,30 @@ export async function POST(request: NextRequest) {
 		// 2. Parse event
 		const event = JSON.parse(rawBody);
 
+		if (event.event === "payment.failed") {
+			// Mark the matching pending order as failed so abandoned/failed
+			// checkouts don't show as forever-"pending".
+			const payment = event.payload.payment?.entity;
+			const razorpayOrderId = payment?.order_id;
+			if (razorpayOrderId) {
+				const db = getAdminFirestore();
+				const failedOrder = await db
+					.collection("payments")
+					.where("razorpayOrderId", "==", razorpayOrderId)
+					.where("status", "==", "pending")
+					.limit(1)
+					.get();
+				if (!failedOrder.empty) {
+					await failedOrder.docs[0].ref.update({
+						status: "failed",
+						razorpayPaymentId: payment.id || null,
+						verifiedAt: new Date(),
+					});
+				}
+			}
+			return NextResponse.json({ received: true }, { status: 200 });
+		}
+
 		if (event.event !== "payment.captured") {
 			return NextResponse.json({ received: true }, { status: 200 });
 		}

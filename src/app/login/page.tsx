@@ -34,7 +34,10 @@ function GoogleIcon() {
 function LoginContent() {
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	const redirectPath = searchParams.get("redirect") || "/";
+	// Only allow internal redirects (no protocol-relative or external URLs).
+	const rawRedirect = searchParams.get("redirect") || "/";
+	const redirectPath =
+		rawRedirect.startsWith("/") && !rawRedirect.startsWith("//") ? rawRedirect : "/";
 
 	const {
 		user,

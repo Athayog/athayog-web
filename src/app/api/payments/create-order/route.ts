@@ -4,10 +4,16 @@ import { getPlan, getActivePlans, createPaymentDoc } from "@/lib/razorpay";
 
 // Dynamic import for Razorpay (avoids build-time init)
 async function getRazorpay() {
+	if (!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+		console.error(
+			"[create-order] Razorpay keys are not configured. Set NEXT_PUBLIC_RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET.",
+		);
+		throw new Error("Razorpay is not configured");
+	}
 	const Razorpay = (await import("razorpay")).default;
 	return new Razorpay({
-		key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
-		key_secret: process.env.RAZORPAY_KEY_SECRET!,
+		key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+		key_secret: process.env.RAZORPAY_KEY_SECRET,
 	});
 }
 

@@ -31,6 +31,7 @@ describe("AccountMenu component", () => {
 				displayName: "John Doe",
 				email: "john@example.com",
 				photoURL: null,
+				phoneNumber: null,
 			},
 		});
 

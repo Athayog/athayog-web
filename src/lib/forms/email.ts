@@ -58,8 +58,10 @@ export async function sendFormEmail({
 			subject,
 			html,
 		});
-	} catch {
-		// Email delivery failure should not break form submission
+	} catch (err) {
+		// Email delivery failure should not break form submission,
+		// but it must be visible in logs (otherwise leads go silent).
+		console.error(`[email] failed to send "${subject}" to ${to}:`, err);
 	}
 }
 

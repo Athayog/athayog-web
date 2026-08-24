@@ -100,7 +100,7 @@ export default function Home() {
 							SVYASA and AYUSH.
 						</p>
 						<span className={styles.priceChip}>
-							Group classes from ₹599 · personal from ₹14,999 ·{" "}
+							Group classes from ₹599 · personal from ₹18,999 ·{" "}
 							<strong>trial class</strong>
 						</span>
 						<div className={styles.heroCta}>

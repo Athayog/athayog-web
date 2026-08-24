@@ -83,6 +83,7 @@ function AccountPage() {
 	// NEW: Razorpay transactions from top-level payments/ collection
 	const [payments, setPayments] = useState<any[]>([]); // eslint-disable-line @typescript-eslint/no-explicit-any
 	const [paymentsLoading, setPaymentsLoading] = useState(true);
+	const [paymentsError, setPaymentsError] = useState(false);
 
 	useEffect(() => {
 		if (!user) return;
@@ -111,6 +112,7 @@ function AccountPage() {
 				setPaymentsLoading(false);
 			})
 			.catch(() => {
+				setPaymentsError(true);
 				setPaymentsLoading(false);
 			});
 	}, [user]);
@@ -302,6 +304,12 @@ function AccountPage() {
 											</td>
 										</tr>
 									))
+								) : paymentsError ? (
+									<tr>
+										<td colSpan={4} className={styles.emptyRow}>
+											Failed to load payment history
+										</td>
+									</tr>
 								) : payments.length === 0 ? (
 									<tr>
 										<td colSpan={4} className={styles.emptyRow}>

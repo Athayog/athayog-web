@@ -55,7 +55,7 @@ export default function PaymentModal({
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const router = useRouter();
-	const { isAuthenticated, setRedirectPath } = useAuthStore();
+	const { isAuthenticated, setRedirectPath, userSnapshot } = useAuthStore();
 
 	const handleClick = useCallback(async () => {
 		setError(null);
@@ -103,7 +103,11 @@ export default function PaymentModal({
 				name: "Athayog Living",
 				description: planName,
 				order_id: razorpayOrderId,
-				prefill: { name: "", email: "", contact: "" },
+				prefill: {
+					name: userSnapshot?.displayName || "",
+					email: userSnapshot?.email || "",
+					contact: userSnapshot?.phoneNumber || "",
+				},
 				theme: { color: "#566B3F" },
 				modal: {
 					ondismiss: () => {

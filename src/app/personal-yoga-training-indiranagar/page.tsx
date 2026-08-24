@@ -11,7 +11,7 @@ import styles from "@/app/personal-yoga-training-indiranagar/PT.module.css";
 export const metadata: Metadata = {
 	title: "Personal Yoga Training in Indiranagar | One-on-One Sessions | Athayog Living",
 	description:
-		"Book one-on-one personal yoga sessions in Indiranagar, Bangalore. Certified trainers, customized plans for weight loss, flexibility, back pain, stress and more. Studio, home or online. Start from ₹14,999.",
+		"Book one-on-one personal yoga sessions in Indiranagar, Bangalore. Certified trainers, customized plans for weight loss, flexibility, back pain, stress and more. Studio, home or online. Start from ₹18,999.",
 	alternates: {
 		canonical: "https://athayogliving.com/personal-yoga-training-indiranagar",
 	},
@@ -70,7 +70,7 @@ export default function PersonalTrainingPage() {
 						</p>
 						<span className={styles.priceChip}>
 							Certified trainers · studio / home / online · packages from{" "}
-							<strong>₹14,999</strong> · trial class
+							<strong>₹18,999</strong> · trial class
 						</span>
 						<div className={styles.heroCta}>
 							<a href="#book" className="btn btn-primary">
