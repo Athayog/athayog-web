@@ -446,3 +446,20 @@ section {
 		transform: none;
 	}
 }
+
+/* Resume-after-login: highlight the pricing card the user intended to buy */
+.resume-highlight {
+	outline: 3px solid var(--brand);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+.resume-note {
+	background: var(--cream);
+	color: var(--brand-deep);
+	padding: 10px 16px;
+	border-radius: 6px;
+	margin: 0 0 24px;
+	font-size: 0.9rem;
+	text-align: center;
+}

@@ -29,6 +29,7 @@ vi.mock("@/lib/firebase", () => ({
 
 vi.mock("next/navigation", () => ({
 	useRouter: () => ({ push: vi.fn() }),
+	useSearchParams: () => new URLSearchParams(),
 }));
 
 import GroupClassesPage from "../page";

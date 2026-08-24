@@ -61,9 +61,11 @@ export default function PaymentModal({
 		setError(null);
 
 		// 1. Auth gate — send the user to login and bring them back to the
-		// pricing section afterwards so they can resume checkout.
+		// pricing section (highlighting their intended plan) so they can
+		// resume checkout after signing in.
 		if (!isAuthenticated) {
-			const resumePath = window.location.pathname + "#pricing";
+			const resumePath =
+				window.location.pathname + `?plan=${encodeURIComponent(planId)}#pricing`;
 			router.push(`/login?redirect=${encodeURIComponent(resumePath)}`);
 			return;
 		}

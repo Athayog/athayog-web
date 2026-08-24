@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
@@ -7,6 +8,7 @@ import { testimonialVideos } from "@/constants/testimonialVideos";
 import MapEmbed from "@/components/MapEmbed";
 import MagnetForm from "@/app/group-classes-indiranagar/MagnetForm";
 import PaymentModal from "@/components/payments/PaymentModal";
+import ResumePlan from "@/components/ResumePlan";
 import styles from "@/app/group-classes-indiranagar/GroupClasses.module.css";
 
 export const metadata: Metadata = {
@@ -493,9 +495,12 @@ export default function GroupClassesPage() {
 							</p>
 						</div>
 					</Reveal>
+					<Suspense fallback={null}>
+						<ResumePlan />
+					</Suspense>
 					<div className={styles.priceGrid}>
 						<Reveal>
-							<div className={styles.tier}>
+							<div id={"plan-group-drop-in"} className={styles.tier}>
 								<h3>Drop-in</h3>
 								<div className={styles.amt}>₹599</div>
 								<div className={styles.permo}>walk-in · single class</div>
@@ -514,7 +519,7 @@ export default function GroupClassesPage() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<div className={styles.tier}>
+							<div id={"plan-group-1-month"} className={styles.tier}>
 								<h3>1 Month</h3>
 								<div className={styles.amt}>₹4,999</div>
 								<div className={styles.permo}>
@@ -535,7 +540,7 @@ export default function GroupClassesPage() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<div className={styles.tier}>
+							<div id={"plan-group-3-month"} className={styles.tier}>
 								<h3>3 Months</h3>
 								<div className={styles.amt}>₹9,999</div>
 								<div className={styles.permo}>
@@ -556,7 +561,10 @@ export default function GroupClassesPage() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<div className={`${styles.tier} ${styles.feature}`}>
+							<div
+								id={"plan-group-6-month"}
+								className={`${styles.tier} ${styles.feature}`}
+							>
 								<span className={styles.badge}>Best value</span>
 								<h3>6 Months</h3>
 								<div className={styles.amt}>₹15,999</div>
@@ -578,7 +586,10 @@ export default function GroupClassesPage() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<div className={`${styles.tier} ${styles.feature}`}>
+							<div
+								id={"plan-group-12-month"}
+								className={`${styles.tier} ${styles.feature}`}
+							>
 								<span className={styles.badge}>Best value</span>
 								<h3>12 Months</h3>
 								<div className={styles.amt}>₹25,999</div>
@@ -601,7 +612,7 @@ export default function GroupClassesPage() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<div className={styles.tier}>
+							<div id={"plan-group-couple-year"} className={styles.tier}>
 								<h3>Couple · 1 Year</h3>
 								<div className={styles.amt}>₹32,399</div>
 								<div className={styles.permo}>365 days · for two</div>

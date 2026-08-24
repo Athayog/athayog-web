@@ -209,6 +209,14 @@ function LoginContent() {
 							Sign in to access your account and classes.
 						</p>
 
+						{redirectPath !== "/" && (
+							<div className={styles.redirectNote}>
+								{redirectPath.includes("#pricing")
+									? "Sign in to continue your enrollment. You'll return to the pricing section."
+									: "Sign in to continue. We'll return you to where you left off."}
+							</div>
+						)}
+
 						{gisLoaded ? (
 							<div
 								ref={googleButtonRef}

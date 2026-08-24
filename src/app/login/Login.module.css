@@ -233,3 +233,13 @@
 		font-size: 1.2rem;
 	}
 }
+
+.redirectNote {
+	background: var(--brand-deep);
+	color: var(--cream);
+	padding: 10px 14px;
+	border-radius: 6px;
+	margin: 0 0 18px;
+	font-size: 0.9rem;
+	text-align: center;
+}

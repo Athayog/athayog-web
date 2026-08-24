@@ -57,7 +57,9 @@ describe("PaymentModal component", () => {
 		fireEvent.click(button);
 
 		// Should send the user to login with a redirect back to the pricing
-		// section so they can resume checkout after signing in.
-		expect(pushMock).toHaveBeenCalledWith("/login?redirect=%2F%23pricing");
+		// section (highlighting their intended plan) so they can resume.
+		expect(pushMock).toHaveBeenCalledWith(
+			"/login?redirect=%2F%3Fplan%3Dgroup-monthly%23pricing",
+		);
 	});
 });
