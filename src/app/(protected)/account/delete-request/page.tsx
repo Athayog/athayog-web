@@ -156,9 +156,14 @@ export default function DeleteRequestPage() {
 											: "not-allowed",
 								}}
 							>
-								{form.state.isSubmitting
-									? "Submitting…"
-									: "Yes, Delete My Account"}
+								{form.state.isSubmitting ? (
+									<>
+										<span className="btnSpinner" aria-hidden="true" />
+										Submitting…
+									</>
+								) : (
+									"Yes, Delete My Account"
+								)}
 							</button>
 						</div>
 					</div>

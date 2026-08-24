@@ -201,9 +201,17 @@ export default function MagnetForm() {
 				type="submit"
 				className="btn btn-cream"
 				disabled={form.state.isSubmitting}
+				aria-busy={form.state.isSubmitting}
 				style={{ justifyContent: "center" }}
 			>
-				{form.state.isSubmitting ? "Submitting…" : "Book My Trial Class"}
+				{form.state.isSubmitting ? (
+					<>
+						<span className="btnSpinner" aria-hidden="true" />
+						Submitting…
+					</>
+				) : (
+					"Book My Trial Class"
+				)}
 			</button>
 			<span className={styles.lmMini}>
 				We&apos;ll call or WhatsApp you to confirm. No obligation.

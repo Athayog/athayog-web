@@ -20,8 +20,16 @@ export function SubmitButton({
 			type="submit"
 			className={className || "btn btn-primary"}
 			disabled={disabled || isSubmitting}
+			aria-busy={isSubmitting}
 		>
-			{isSubmitting ? "Submitting…" : children}
+			{isSubmitting ? (
+				<>
+					<span className="btnSpinner" aria-hidden="true" />
+					Submitting…
+				</>
+			) : (
+				children
+			)}
 		</button>
 	);
 }

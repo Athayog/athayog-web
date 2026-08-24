@@ -463,3 +463,22 @@ section {
 	font-size: 0.9rem;
 	text-align: center;
 }
+
+/* Spinner inside submit buttons while a form is submitting */
+.btnSpinner {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border: 2px solid currentColor;
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: btnSpin 0.7s linear infinite;
+	margin-right: 8px;
+	vertical-align: -2px;
+}
+
+@keyframes btnSpin {
+	to {
+		transform: rotate(360deg);
+	}
+}

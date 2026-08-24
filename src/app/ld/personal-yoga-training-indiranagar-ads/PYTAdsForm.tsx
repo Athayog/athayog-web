@@ -188,9 +188,17 @@ export default function PYTAdsForm() {
 				type="submit"
 				className="btn btn-primary"
 				disabled={form.state.isSubmitting}
+				aria-busy={form.state.isSubmitting}
 				style={{ width: "100%", justifyContent: "center" }}
 			>
-				{form.state.isSubmitting ? "Submitting..." : "Get My Free Trial"}
+				{form.state.isSubmitting ? (
+					<>
+						<span className="btnSpinner" aria-hidden="true" />
+						Submitting…
+					</>
+				) : (
+					"Get My Free Trial"
+				)}
 			</button>
 
 			{form.state.errorMap.onSubmit && (
