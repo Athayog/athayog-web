@@ -52,6 +52,7 @@ export default function TrialClassesPage() {
 					const body = await res.json().catch(() => ({}));
 					throw new Error(body.error || "Failed to submit");
 				}
+
 				setSubmitted(true);
 			} catch (err) {
 				setFormError(
@@ -79,7 +80,6 @@ export default function TrialClassesPage() {
 			</main>
 		);
 	}
-
 	return (
 		<main className={styles.page}>
 			<div className="wrap">
