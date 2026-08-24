@@ -42,7 +42,7 @@ export default function ThankYouPage() {
 						Back to Home
 					</Link>
 					<a
-						href="https://wa.me/918690333111"
+						href="https://wa.me/919611771434"
 						className="btn btn-ghost"
 						target="_blank"
 						rel="noopener noreferrer"

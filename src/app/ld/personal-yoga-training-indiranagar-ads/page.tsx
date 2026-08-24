@@ -141,12 +141,12 @@ export default function PYTAdsPage() {
 						<div className={styles.formOr}>or reach us instantly</div>
 						<a
 							className={`btn ${styles.waBtn}`}
-							href="https://wa.me/918690333111?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
+							href="https://wa.me/919611771434?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
 							target="_blank"
 							rel="noopener noreferrer"
 							style={{ width: "100%", justifyContent: "center" }}
 						>
-							WhatsApp 86903 33111
+							WhatsApp 96117 71434
 						</a>
 						<p className={styles.formFine}>
 							No obligation. By submitting you agree to be contacted about
@@ -462,14 +462,14 @@ export default function PYTAdsPage() {
 							</a>
 							<a
 								className="btn btn-light"
-								href="https://wa.me/918690333111?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
+								href="https://wa.me/919611771434?text=Hi%20Athayog%2C%20I'd%20like%20to%20book%20a%20free%20personal%20yoga%20training%20trial%20in%20Indiranagar."
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								WhatsApp Us
 							</a>
-							<a href="tel:+918690333111" className="btn btn-light">
-								Call 86903 33111
+							<a href="tel:+919611771434" className="btn btn-light">
+								Call 96117 71434
 							</a>
 						</div>
 					</Reveal>

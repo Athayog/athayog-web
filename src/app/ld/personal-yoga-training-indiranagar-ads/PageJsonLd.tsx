@@ -48,7 +48,7 @@ export default function PageJsonLd() {
 				description:
 					"Certified yoga studio in Indiranagar, Bengaluru offering personal yoga training, group classes and RYT-200 teacher training.",
 				url: "https://athayogliving.com/",
-				telephone: "+91-8690333111",
+				telephone: "+91-9611771434",
 				email: "info@athayogliving.com",
 				priceRange: "\u20B9\u20B9",
 				address: {

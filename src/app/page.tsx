@@ -55,7 +55,7 @@ export default function Home() {
 		url: "https://athayogliving.com/",
 		logo: "https://athayogliving.com/Logo.png",
 		image: "https://athayogliving.com/images/heroes/hero-home.jpg",
-		telephone: "+918690333111",
+		telephone: "+919611771434",
 		priceRange: "₹599–₹32,399",
 		email: "info@athayogliving.com",
 		address: {
@@ -601,7 +601,7 @@ export default function Home() {
 									No. 3293, 1st Floor, 12th Main, HAL 2nd Stage,
 									Indiranagar, Bengaluru, Karnataka 560038
 								</p>
-								<p>+91 8690333111 · info@athayogliving.com</p>
+								<p>+91 9611771434 · info@athayogliving.com</p>
 								<a
 									className={styles.dir}
 									href="https://maps.app.goo.gl/JpW1wbeDugHRp3ZKA"
@@ -803,7 +803,7 @@ export default function Home() {
 								Start Your Yoga Journey
 							</Link>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-light"
 							>
 								WhatsApp Us

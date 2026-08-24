@@ -206,7 +206,7 @@ export default function MagnetForm() {
 				{form.state.isSubmitting ? "Submitting…" : "Reserve My Slot"}
 			</button>
 			<span className={styles.lmMini}>
-				Or call / WhatsApp <strong>86903 33111</strong>, and we&apos;ll confirm
+				Or call / WhatsApp <strong>96117 71434</strong>, and we&apos;ll confirm
 				right away.
 			</span>
 		</form>

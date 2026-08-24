@@ -96,7 +96,7 @@ export default function ContactUsPage() {
 
 							<div className={styles.contactItem}>
 								<Phone className={styles.icon} />
-								<a href="tel:+918690333111">+91 8690333111</a>
+								<a href="tel:+919611771434">+91 9611771434</a>
 							</div>
 
 							<div className={styles.contactItem}>

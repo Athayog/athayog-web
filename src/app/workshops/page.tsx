@@ -64,7 +64,7 @@ export default function WorkshopsPage() {
 						<EnquireModal service="Workshop" pageSource="workshops">
 							<span className="btn btn-primary">Enquire Now</span>
 						</EnquireModal>
-						<a href="https://wa.me/918690333111" className="btn btn-ghost">
+						<a href="https://wa.me/919611771434" className="btn btn-ghost">
 							WhatsApp Us
 						</a>
 					</div>
@@ -159,7 +159,7 @@ export default function WorkshopsPage() {
 									No. 3293, 1st Floor, 12th Main, HAL 2nd Stage,
 									Indiranagar, Bengaluru, Karnataka 560038
 								</p>
-								<p>+91 8690333111 · info@athayogliving.com</p>
+								<p>+91 9611771434 · info@athayogliving.com</p>
 								<a
 									className={styles.dir}
 									href="https://maps.app.goo.gl/JpW1wbeDugHRp3ZKA"
@@ -195,7 +195,7 @@ export default function WorkshopsPage() {
 								<span className="btn btn-cream">Enquire Now</span>
 							</EnquireModal>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-light"
 							>
 								WhatsApp Us

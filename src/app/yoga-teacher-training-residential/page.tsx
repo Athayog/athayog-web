@@ -70,7 +70,7 @@ export default function RTTCPage() {
 								Enrol Now
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-ghost"
 							>
 								WhatsApp Us
@@ -304,7 +304,7 @@ export default function RTTCPage() {
 					<Reveal>
 						<p className={styles.reassure}>
 							Prices exclude 5% GST · EMI, UPI, cards accepted.{" "}
-							<a href="https://wa.me/918690333111">WhatsApp us →</a>
+							<a href="https://wa.me/919611771434">WhatsApp us →</a>
 						</p>
 					</Reveal>
 				</div>
@@ -461,7 +461,7 @@ export default function RTTCPage() {
 								Book a Trial Class
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-light"
 							>
 								WhatsApp Us

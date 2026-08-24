@@ -77,7 +77,7 @@ export default function PersonalTrainingPage() {
 								Book Your Trial Class
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-ghost"
 							>
 								WhatsApp Us
@@ -602,7 +602,7 @@ export default function PersonalTrainingPage() {
 									No. 3293, 1st Floor, 12th Main, HAL 2nd Stage,
 									Indiranagar, Bengaluru, Karnataka 560038
 								</p>
-								<p>+91 8690333111 · info@athayogliving.com</p>
+								<p>+91 9611771434 · info@athayogliving.com</p>
 								<p>Open: Mon–Fri 5 AM–9 PM · Sat–Sun 5 AM–8 PM</p>
 								<p style={{ fontSize: "0.9rem" }}>
 									Serving Indiranagar, Domlur, CV Raman Nagar,
@@ -808,13 +808,13 @@ export default function PersonalTrainingPage() {
 								Book Your Trial Class
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-light"
 							>
 								WhatsApp Us
 							</a>
-							<a href="tel:+918690333111" className="btn btn-light">
-								Call +91 86903 33111
+							<a href="tel:+919611771434" className="btn btn-light">
+								Call +91 96117 71434
 							</a>
 						</div>
 					</Reveal>

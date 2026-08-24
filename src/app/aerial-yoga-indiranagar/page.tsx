@@ -81,10 +81,10 @@ export default function AerialYogaPage() {
 								Book Your Class Today
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-ghost"
 							>
-								WhatsApp 86903 33111
+								WhatsApp 96117 71434
 							</a>
 						</div>
 						<div className={styles.trustRow}>
@@ -477,7 +477,7 @@ export default function AerialYogaPage() {
 									Book Your Class
 								</a>
 								<a
-									href="https://wa.me/918690333111"
+									href="https://wa.me/919611771434"
 									className="btn btn-light"
 								>
 									WhatsApp to Reserve
@@ -492,7 +492,7 @@ export default function AerialYogaPage() {
 					<Reveal>
 						<p className={styles.reassure}>
 							Interested in a regular aerial practice?{" "}
-							<a href="https://wa.me/918690333111">
+							<a href="https://wa.me/919611771434">
 								Ask us about multi-session packages
 							</a>
 							.
@@ -622,7 +622,7 @@ export default function AerialYogaPage() {
 									Indiranagar, Bengaluru, Karnataka 560038
 								</p>
 								<p>
-									Call / WhatsApp: <strong>+91 86903 33111</strong> ·
+									Call / WhatsApp: <strong>+91 96117 71434</strong> ·
 									info@athayogliving.com
 								</p>
 								<p style={{ fontSize: "0.9rem" }}>
@@ -738,7 +738,7 @@ export default function AerialYogaPage() {
 								<div className={styles.faqAnswer}>
 									Yes, slots are limited by the number of hammocks, so
 									we recommend reserving ahead. Call or WhatsApp us on
-									86903 33111 to confirm your place.
+									96117 71434 to confirm your place.
 								</div>
 							</details>
 							<details>
@@ -871,12 +871,12 @@ export default function AerialYogaPage() {
 								Book Your Class
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-light"
 							>
-								WhatsApp 86903 33111
+								WhatsApp 96117 71434
 							</a>
-							<a href="tel:+918690333111" className="btn btn-light">
+							<a href="tel:+919611771434" className="btn btn-light">
 								Call Us
 							</a>
 						</div>
@@ -918,7 +918,7 @@ export default function AerialYogaPage() {
 								alternateName: "Athayog Living Yoga Academy",
 								slogan: "A Sanctum For The Spirit",
 								url: "https://athayogliving.com/",
-								telephone: "+91-8690333111",
+								telephone: "+91-9611771434",
 								email: "info@athayogliving.com",
 								priceRange: "₹₹",
 								image: "https://images.prismic.io/athayog/Zvf-FrVsGrYSwGfu_Unfilled_LOGO.png",

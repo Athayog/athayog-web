@@ -57,7 +57,7 @@ export default function Footer() {
 							Bengaluru, Karnataka 560038
 						</p>
 						<p className={styles.contact}>
-							+91 8690333111 · info@athayogliving.com
+							+91 9611771434 · info@athayogliving.com
 						</p>
 					</div>
 
