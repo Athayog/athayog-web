@@ -436,7 +436,9 @@ export default function GroupClassesPage() {
 										<td>Rhythm of being</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Yoga with Props</td>
-										<td>—</td>
+										<td className={styles.tdPaid}>
+											Aerial Yoga (paid)
+										</td>
 										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Rhythm of being</td>
 									</tr>
