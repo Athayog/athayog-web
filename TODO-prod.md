@@ -19,11 +19,12 @@ Two lists: **A — code fixes I can do right now** (agent), **B — ops/config y
 - [x] **B1 (P0)** Deploy Firestore indexes to PROD: `npx firebase deploy --only firestore:indexes` — without them, payment history + `create-order` 500.
 - [x] **B2 (P0)** Seed plans in PROD Firestore: `npm run plans:seed` then `npm run plans:check`.
 - [x] **B3 (P0)** Firebase Security Rules: allow only `users/{uid}` own-doc writes + `uploads/` own uploads; deny client reads of `plans/`, `payments/`, form collections. → deployed to prod via `firebase deploy --only firestore:rules,storage`.
-- [ ] **B4 (P1)** Firebase authorized domains: add `https://athayogliving.com` (else Google sign-in fails); enable Phone auth.
-- [ ] **B5 (P1)** Razorpay: switch to **live** keys (`rzp_live_*`), whitelist the domain, **activate webhook** (`/api/payments/webhook`, event `payment.captured`, secret = `RAZORPAY_WEBHOOK_SECRET`).
-- [ ] **B6 (P1)** Vercel env (Production): set `REVALIDATE_TOKEN` (else blog revalidation 503s), verify all `.env.example` vars incl. `FIREBASE_PRIVATE_KEY` (`\n` escapes), `RESEND_API_KEY`, `RAZORPAY_*`, `NEXT_PUBLIC_*`.
+- [x] **B4 (P1)** Firebase authorized domains: add `https://athayogliving.com` (else Google sign-in fails); enable Phone auth. → already configured on prod.
+- [x] **B5 (P1)** Razorpay: switch to **live** keys (`rzp_live_*`), whitelist the domain, **activate webhook** (`/api/payments/webhook`, event `payment.captured`, secret = `RAZORPAY_WEBHOOK_SECRET`).
+- [x] **B6 (P1)** Vercel env (Production): set `REVALIDATE_TOKEN` (else blog revalidation 503s), verify all `.env.example` vars incl. `FIREBASE_PRIVATE_KEY` (`\n` escapes), `RESEND_API_KEY`, `RAZORPAY_*`, `NEXT_PUBLIC_*`.
 - [ ] **B7 (P1)** Resend: verify the sending domain so `noreply@athayogliving.com` can send (else form emails fail silently).
-- [ ] **B8 (P2)** Prismic: confirm the `page` doc with uid `blogs` exists + blog posts published (else `/blogs` 500s).
+- [x] **B8 (P2)** Prismic: confirm the `page` doc with uid `blogs` exists + blog posts published (else `/blogs` 500s). → verified live: /blogs 200 with posts.
+- [ ] **B8.5 (P0) 🔴 Deploy current `main` to Vercel PROD** — the live site is serving an OLD build (`robots.txt` shows `/user/*`, no teachers/founder update, sitemap has no blogs). Check Vercel project linkage + production branch = `main`, fix if pointing at the legacy repo, then redeploy and re-verify.
 - [ ] **B9 (P2)** Domain/SEO: SSL + domain on Vercel, Search Console verification (meta already present), confirm GTM `GTM-N4LH3M3` + FB pixel `1011750923226651` are your real IDs.
 - [ ] **B10 (P3)** Replace the June-dated schedule PDF link (group-classes) with the current month.
 - [ ] **B11 (P3)** Proper 512×512 favicon (current `icon.png` is a logo copy).
