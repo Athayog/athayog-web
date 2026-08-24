@@ -98,9 +98,10 @@ export async function POST(request: NextRequest) {
 		const formConfig = formConfigs[parsed.collection];
 		if ("subject" in formConfig) {
 			// Awaited so the email completes before the serverless function
-			// returns; failures are logged inside sendFormEmail.
+			// returns; failures are logged inside sendFormEmail. The recipient
+			// is configurable (FORM_EMAIL_TO) for testing/redirecting leads.
 			await sendFormEmail({
-				to: "info@athayogliving.com",
+				to: process.env.FORM_EMAIL_TO || "info@athayogliving.com",
 				subject: formConfig.subject,
 				data: parsed.data,
 				collection: parsed.collection,
