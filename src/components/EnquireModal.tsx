@@ -346,10 +346,19 @@ export default function EnquireModal({
 									type="submit"
 									className="btn btn-primary"
 									disabled={form.state.isSubmitting}
+									aria-busy={form.state.isSubmitting}
 								>
-									{form.state.isSubmitting
-										? "Sending…"
-										: "Send Enquiry"}
+									{form.state.isSubmitting ? (
+										<>
+											<span
+												className="btnSpinner"
+												aria-hidden="true"
+											/>
+											Sending…
+										</>
+									) : (
+										"Send Enquiry"
+									)}
 								</button>
 							</div>
 						</form>
