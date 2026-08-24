@@ -9,7 +9,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [ ] **Razorpay webhook activation** — Before production deploy: configure webhook URL in Razorpay Dashboard (Settings → Webhooks → `https://athayogliving.com/api/payments/webhook`, subscribe to `payment.captured`, copy secret to `.env.local` as `RAZORPAY_WEBHOOK_SECRET`).
 - [ ] **Firestore indexes deployment** — Deploy composite indexes from `firestore.indexes.json`: `firebase deploy --only firestore:indexes`.
 - [ ] **TTC page clarification** — `/yoga-teacher-training-residential` is currently serving as the Online TTC page (temp). The real Residential program needs a redesign.
-- [ ] **Proper favicon/icon** — Current `icon.png` is a copy of Logo.png. Needs a proper square icon (512×512).
+- [x] **Proper favicon/icon** — Generated 512×512 `icon.png` + 180×180 `apple-touch-icon.png` from the logo (2025-08).
 - [ ] **Analytics** — Pick one: Vercel Analytics or GA, for page views & lead conversions.
 - [ ] **Jayanagar branch** — Removed from the site (homepage + copy, 2025-08) because the branch isn't active. Decide whether to relaunch a South Bengaluru branch; if so, re-add with a real address.
 - [ ] **Weight-loss program** — Discontinued; page and all references removed (2025-08). Re-add only if the program relaunches (needs pricing + testimonials).
