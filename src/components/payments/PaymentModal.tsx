@@ -138,7 +138,7 @@ export default function PaymentModal({
 			setError(err instanceof Error ? err.message : "Something went wrong");
 			setLoading(false);
 		}
-	}, [planId, planName, isAuthenticated, setRedirectPath, router]);
+	}, [planId, planName, isAuthenticated, setRedirectPath, router, userSnapshot]);
 
 	return (
 		<>

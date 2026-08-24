@@ -24,7 +24,7 @@ Two lists: **A — code fixes I can do right now** (agent), **B — ops/config y
 - [x] **B6 (P1)** Vercel env (Production): set `REVALIDATE_TOKEN` (else blog revalidation 503s), verify all `.env.example` vars incl. `FIREBASE_PRIVATE_KEY` (`\n` escapes), `RESEND_API_KEY`, `RAZORPAY_*`, `NEXT_PUBLIC_*`.
 - [ ] **B7 (P1)** Resend: verify the sending domain so `noreply@athayogliving.com` can send (else form emails fail silently).
 - [x] **B8 (P2)** Prismic: confirm the `page` doc with uid `blogs` exists + blog posts published (else `/blogs` 500s). → verified live: /blogs 200 with posts.
-- [ ] **B8.5 (P0) 🔴 Deploy current `main` to Vercel PROD** — the live site is serving an OLD build (`robots.txt` shows `/user/*`, no teachers/founder update, sitemap has no blogs). Check Vercel project linkage + production branch = `main`, fix if pointing at the legacy repo, then redeploy and re-verify.
+- [x] **B8.5 (P0) 🔴 Deploy current `main` to Vercel PROD** — the live site is serving an OLD build (`robots.txt` shows `/user/*`, no teachers/founder update, sitemap has no blogs). Check Vercel project linkage + production branch = `main`, fix if pointing at the legacy repo, then redeploy and re-verify. → ✅ deployed 2025-08: build 8bb4238 live, all markers verified.
 - [ ] **B9 (P2)** Domain/SEO: SSL + domain on Vercel, Search Console verification (meta already present), confirm GTM `GTM-N4LH3M3` + FB pixel `1011750923226651` are your real IDs.
 - [ ] **B10 (P3)** Replace the June-dated schedule PDF link (group-classes) with the current month.
 - [ ] **B11 (P3)** Proper 512×512 favicon (current `icon.png` is a logo copy).
