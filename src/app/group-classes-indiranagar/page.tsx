@@ -469,7 +469,7 @@ export default function GroupClassesPage() {
 					</div>
 					<div style={{ marginTop: 22 }}>
 						<a
-							href="https://athayog.cdn.prismic.io/athayog/ahx2NgeQX7-eWdYw_ScheduleJune26.pdf"
+							href="/schedule-group-classes.pdf"
 							className="btn btn-ghost"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -1035,7 +1035,7 @@ export default function GroupClassesPage() {
 						<Reveal>
 							<a
 								className={styles.ex}
-								href="https://athayog.cdn.prismic.io/athayog/ahx2NgeQX7-eWdYw_ScheduleJune26.pdf"
+								href="/schedule-group-classes.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
