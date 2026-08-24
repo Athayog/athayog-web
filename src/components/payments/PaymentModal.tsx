@@ -55,15 +55,16 @@ export default function PaymentModal({
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const router = useRouter();
-	const { isAuthenticated, setRedirectPath, userSnapshot } = useAuthStore();
+	const { isAuthenticated, userSnapshot } = useAuthStore();
 
 	const handleClick = useCallback(async () => {
 		setError(null);
 
-		// 1. Auth gate
+		// 1. Auth gate — send the user to login and bring them back to the
+		// pricing section afterwards so they can resume checkout.
 		if (!isAuthenticated) {
-			setRedirectPath(window.location.pathname + "#pricing");
-			router.push("/login");
+			const resumePath = window.location.pathname + "#pricing";
+			router.push(`/login?redirect=${encodeURIComponent(resumePath)}`);
 			return;
 		}
 
@@ -138,7 +139,7 @@ export default function PaymentModal({
 			setError(err instanceof Error ? err.message : "Something went wrong");
 			setLoading(false);
 		}
-	}, [planId, planName, isAuthenticated, setRedirectPath, router, userSnapshot]);
+	}, [planId, planName, isAuthenticated, router, userSnapshot]);
 
 	return (
 		<>

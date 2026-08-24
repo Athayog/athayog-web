@@ -56,6 +56,8 @@ describe("PaymentModal component", () => {
 		const button = screen.getByRole("button", { name: "Subscribe Now" });
 		fireEvent.click(button);
 
-		expect(pushMock).toHaveBeenCalledWith("/login");
+		// Should send the user to login with a redirect back to the pricing
+		// section so they can resume checkout after signing in.
+		expect(pushMock).toHaveBeenCalledWith("/login?redirect=%2F%23pricing");
 	});
 });

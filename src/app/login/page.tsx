@@ -35,9 +35,9 @@ function LoginContent() {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	// Only allow internal redirects (no protocol-relative or external URLs).
-	const rawRedirect = searchParams.get("redirect") || "/";
-	const redirectPath =
-		rawRedirect.startsWith("/") && !rawRedirect.startsWith("//") ? rawRedirect : "/";
+	const rawRedirect = searchParams.get("redirect") || "";
+	const validRedirect =
+		rawRedirect.startsWith("/") && !rawRedirect.startsWith("//") ? rawRedirect : "";
 
 	const {
 		user,
@@ -48,6 +48,8 @@ function LoginContent() {
 		handleSignInWithOtp,
 		clearError,
 	} = useAuthStore();
+	const storeRedirectPath = useAuthStore((s) => s.redirectPath);
+	const clearRedirectPath = useAuthStore((s) => s.setRedirectPath);
 
 	const [phone, setPhone] = useState("");
 	const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -59,15 +61,24 @@ function LoginContent() {
 	const otpInputRefs = useRef<(HTMLInputElement | null)[]>([]);
 	const googleButtonRef = useRef<HTMLDivElement | null>(null);
 
+	// URL param wins; fall back to the store value (e.g. PaymentModal used
+	// setRedirectPath) so users always resume where they left off.
+	const redirectPath = validRedirect || storeRedirectPath || "/";
+
+	const finishRedirect = useCallback(() => {
+		clearRedirectPath(null);
+		router.push(redirectPath);
+	}, [clearRedirectPath, router, redirectPath]);
+
 	useEffect(() => {
 		if (user) {
-			router.push(redirectPath);
+			finishRedirect();
 		}
-	}, [user, router, redirectPath]);
+	}, [user, finishRedirect]);
 
 	const handleGoogleSuccess = useCallback(() => {
-		router.push(redirectPath);
-	}, [router, redirectPath]);
+		finishRedirect();
+	}, [finishRedirect]);
 
 	const handleGoogleError = useCallback((errorMsg: string) => {
 		setGoogleError(errorMsg);
@@ -117,7 +128,7 @@ function LoginContent() {
 	const handleGooglePopup = async () => {
 		try {
 			await handleSignIn();
-			router.push(redirectPath);
+			finishRedirect();
 		} catch {
 			// Error handled by store
 		}
