@@ -824,7 +824,7 @@ export default function AerialYogaPage() {
 									<ArrowRight size={18} />
 								</div>
 								<h3>Personal Training</h3>
-								<p>One-on-one, goal-based, from ₹14,999.</p>
+								<p>One-on-one, goal-based, from ₹18,999.</p>
 							</a>
 							<a
 								className={styles.ex}

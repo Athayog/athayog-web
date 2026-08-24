@@ -406,7 +406,7 @@ export default function RTTCPage() {
 								},
 								{
 									h: "Personal Training",
-									p: "One-on-one, goal-based, from ₹14,999.",
+									p: "One-on-one, goal-based, from ₹18,999.",
 									u: "/personal-yoga-training-indiranagar",
 								},
 								{
