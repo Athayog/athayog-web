@@ -399,9 +399,13 @@ export default function CareerPage() {
 						</div>
 
 						<div className={styles.submitRow}>
-							<SubmitButton isSubmitting={form.state.isSubmitting}>
-								Submit Application
-							</SubmitButton>
+							<form.Subscribe selector={(s) => s.isSubmitting}>
+								{(isSubmitting) => (
+									<SubmitButton isSubmitting={isSubmitting}>
+										Submit Application
+									</SubmitButton>
+								)}
+							</form.Subscribe>
 						</div>
 					</form>
 				</div>

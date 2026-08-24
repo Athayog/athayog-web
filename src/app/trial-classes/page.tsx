@@ -189,9 +189,13 @@ export default function TrialClassesPage() {
 						</div>
 
 						<div className={styles.submitRow}>
-							<SubmitButton isSubmitting={form.state.isSubmitting}>
-								Book Trial Class
-							</SubmitButton>
+							<form.Subscribe selector={(s) => s.isSubmitting}>
+								{(isSubmitting) => (
+									<SubmitButton isSubmitting={isSubmitting}>
+										Book Trial Class
+									</SubmitButton>
+								)}
+							</form.Subscribe>
 						</div>
 					</form>
 				</div>

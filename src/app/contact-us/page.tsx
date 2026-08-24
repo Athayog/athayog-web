@@ -163,9 +163,13 @@ export default function ContactUsPage() {
 							/>
 
 							<div className={styles.submitRow}>
-								<SubmitButton isSubmitting={form.state.isSubmitting}>
-									Send Details
-								</SubmitButton>
+								<form.Subscribe selector={(s) => s.isSubmitting}>
+									{(isSubmitting) => (
+										<SubmitButton isSubmitting={isSubmitting}>
+											Send Details
+										</SubmitButton>
+									)}
+								</form.Subscribe>
 							</div>
 						</form>
 					</div>

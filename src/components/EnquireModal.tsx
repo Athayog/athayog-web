@@ -342,24 +342,28 @@ export default function EnquireModal({
 							</form.Field>
 
 							<div className={styles.submitRow}>
-								<button
-									type="submit"
-									className="btn btn-primary"
-									disabled={form.state.isSubmitting}
-									aria-busy={form.state.isSubmitting}
-								>
-									{form.state.isSubmitting ? (
-										<>
-											<span
-												className="btnSpinner"
-												aria-hidden="true"
-											/>
-											Sending…
-										</>
-									) : (
-										"Send Enquiry"
+								<form.Subscribe selector={(s) => s.isSubmitting}>
+									{(isSubmitting) => (
+										<button
+											type="submit"
+											className="btn btn-primary"
+											disabled={isSubmitting}
+											aria-busy={isSubmitting}
+										>
+											{isSubmitting ? (
+												<>
+													<span
+														className="btnSpinner"
+														aria-hidden="true"
+													/>
+													Sending…
+												</>
+											) : (
+												"Send Enquiry"
+											)}
+										</button>
 									)}
-								</button>
+								</form.Subscribe>
 							</div>
 						</form>
 					</>

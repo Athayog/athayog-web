@@ -141,12 +141,13 @@ export default function NewsletterForm() {
 				)}
 			</form.Field>
 
-			<SubmitButton
-				isSubmitting={form.state.isSubmitting}
-				className="btn btn-cream"
-			>
-				Begin Your Mindful Journey
-			</SubmitButton>
+			<form.Subscribe selector={(s) => s.isSubmitting}>
+				{(isSubmitting) => (
+					<SubmitButton isSubmitting={isSubmitting} className="btn btn-cream">
+						Begin Your Mindful Journey
+					</SubmitButton>
+				)}
+			</form.Subscribe>
 			<span className={styles.lmMini}>No spam, just wellness in your inbox.</span>
 		</form>
 	);

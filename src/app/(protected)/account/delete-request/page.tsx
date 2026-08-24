@@ -101,11 +101,15 @@ export default function DeleteRequestPage() {
 								Something went wrong. Please try again.
 							</p>
 						)}
-						<SubmitButton isSubmitting={form.state.isSubmitting}>
-							{form.state.isSubmitting
-								? "Submitting…"
-								: "Submit Deletion Request"}
-						</SubmitButton>
+						<form.Subscribe selector={(s) => s.isSubmitting}>
+							{(isSubmitting) => (
+								<SubmitButton isSubmitting={isSubmitting}>
+									{isSubmitting
+										? "Submitting…"
+										: "Submit Deletion Request"}
+								</SubmitButton>
+							)}
+						</form.Subscribe>
 					</form>
 				)}
 			</div>
@@ -138,33 +142,45 @@ export default function DeleteRequestPage() {
 							>
 								Cancel
 							</button>
-							<button
-								type="button"
-								disabled={
-									confirmText !== "DELETE" || form.state.isSubmitting
-								}
-								onClick={() => form.handleSubmit()}
-								className="btn"
-								style={{
-									background:
-										confirmText === "DELETE" ? "#b33a3a" : undefined,
-									color: confirmText === "DELETE" ? "#fff" : undefined,
-									opacity: confirmText === "DELETE" ? 1 : 0.4,
-									cursor:
-										confirmText === "DELETE"
-											? "pointer"
-											: "not-allowed",
-								}}
-							>
-								{form.state.isSubmitting ? (
-									<>
-										<span className="btnSpinner" aria-hidden="true" />
-										Submitting…
-									</>
-								) : (
-									"Yes, Delete My Account"
+							<form.Subscribe selector={(s) => s.isSubmitting}>
+								{(isSubmitting) => (
+									<button
+										type="button"
+										disabled={
+											confirmText !== "DELETE" || isSubmitting
+										}
+										onClick={() => form.handleSubmit()}
+										className="btn"
+										style={{
+											background:
+												confirmText === "DELETE"
+													? "#b33a3a"
+													: undefined,
+											color:
+												confirmText === "DELETE"
+													? "#fff"
+													: undefined,
+											opacity: confirmText === "DELETE" ? 1 : 0.4,
+											cursor:
+												confirmText === "DELETE"
+													? "pointer"
+													: "not-allowed",
+										}}
+									>
+										{isSubmitting ? (
+											<>
+												<span
+													className="btnSpinner"
+													aria-hidden="true"
+												/>
+												Submitting…
+											</>
+										) : (
+											"Yes, Delete My Account"
+										)}
+									</button>
 								)}
-							</button>
+							</form.Subscribe>
 						</div>
 					</div>
 				</div>

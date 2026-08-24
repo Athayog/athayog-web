@@ -197,22 +197,26 @@ export default function MagnetForm() {
 				)}
 			</form.Field>
 
-			<button
-				type="submit"
-				className="btn btn-cream"
-				disabled={form.state.isSubmitting}
-				aria-busy={form.state.isSubmitting}
-				style={{ justifyContent: "center" }}
-			>
-				{form.state.isSubmitting ? (
-					<>
-						<span className="btnSpinner" aria-hidden="true" />
-						Submitting…
-					</>
-				) : (
-					"Reserve My Slot"
+			<form.Subscribe selector={(s) => s.isSubmitting}>
+				{(isSubmitting) => (
+					<button
+						type="submit"
+						className="btn btn-cream"
+						disabled={isSubmitting}
+						aria-busy={isSubmitting}
+						style={{ justifyContent: "center" }}
+					>
+						{isSubmitting ? (
+							<>
+								<span className="btnSpinner" aria-hidden="true" />
+								Submitting…
+							</>
+						) : (
+							"Reserve My Slot"
+						)}
+					</button>
 				)}
-			</button>
+			</form.Subscribe>
 			<span className={styles.lmMini}>
 				Or call / WhatsApp <strong>96117 71434</strong>, and we&apos;ll confirm
 				right away.

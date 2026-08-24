@@ -161,11 +161,15 @@ export default function YogaProgramHeroSection({
 							{status === "error" && (
 								<p className={styles.errorText}>{errorMessage}</p>
 							)}
-							<SubmitButton isSubmitting={form.state.isSubmitting}>
-								{form.state.isSubmitting
-									? submittingButtonText
-									: submitButtonText}
-							</SubmitButton>
+							<form.Subscribe selector={(s) => s.isSubmitting}>
+								{(isSubmitting) => (
+									<SubmitButton isSubmitting={isSubmitting}>
+										{isSubmitting
+											? submittingButtonText
+											: submitButtonText}
+									</SubmitButton>
+								)}
+							</form.Subscribe>
 						</form>
 					)}
 				</div>

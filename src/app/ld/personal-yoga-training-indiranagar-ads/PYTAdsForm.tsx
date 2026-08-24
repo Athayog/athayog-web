@@ -184,22 +184,26 @@ export default function PYTAdsForm() {
 				)}
 			</form.Field>
 
-			<button
-				type="submit"
-				className="btn btn-primary"
-				disabled={form.state.isSubmitting}
-				aria-busy={form.state.isSubmitting}
-				style={{ width: "100%", justifyContent: "center" }}
-			>
-				{form.state.isSubmitting ? (
-					<>
-						<span className="btnSpinner" aria-hidden="true" />
-						Submitting…
-					</>
-				) : (
-					"Get My Free Trial"
+			<form.Subscribe selector={(s) => s.isSubmitting}>
+				{(isSubmitting) => (
+					<button
+						type="submit"
+						className="btn btn-primary"
+						disabled={isSubmitting}
+						aria-busy={isSubmitting}
+						style={{ width: "100%", justifyContent: "center" }}
+					>
+						{isSubmitting ? (
+							<>
+								<span className="btnSpinner" aria-hidden="true" />
+								Submitting…
+							</>
+						) : (
+							"Get My Free Trial"
+						)}
+					</button>
 				)}
-			</button>
+			</form.Subscribe>
 
 			{form.state.errorMap.onSubmit && (
 				<div

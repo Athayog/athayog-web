@@ -310,9 +310,13 @@ export default function PicnicsPage() {
 								</div>
 
 								<div className={styles.submitRow}>
-									<SubmitButton isSubmitting={form.state.isSubmitting}>
-										Sign Up for Excursion
-									</SubmitButton>
+									<form.Subscribe selector={(s) => s.isSubmitting}>
+										{(isSubmitting) => (
+											<SubmitButton isSubmitting={isSubmitting}>
+												Sign Up for Excursion
+											</SubmitButton>
+										)}
+									</form.Subscribe>
 								</div>
 							</form>
 						)}
