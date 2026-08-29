@@ -614,7 +614,7 @@ export default function GroupClassesPage() {
 						<Reveal>
 							<div id={"plan-group-couple-year"} className={styles.tier}>
 								<h3>Couple · 1 Year</h3>
-								<div className={styles.amt}>₹32,399</div>
+								<div className={styles.amt}>₹42,599</div>
 								<div className={styles.permo}>365 days · for two</div>
 								<p>
 									Practise together for a year and keep each other
@@ -949,7 +949,7 @@ export default function GroupClassesPage() {
 								<div className={styles.faqAnswer}>
 									A drop-in is ₹599. Subscriptions are ₹4,999 (1 month),
 									₹9,999 (3 months), ₹15,999 (6 months) and ₹25,999 (12
-									months); a couple 1-year membership is ₹32,399. All
+									months); a couple 1-year membership is ₹42,599. All
 									prices exclude 5% GST.
 								</div>
 							</details>

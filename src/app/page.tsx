@@ -56,7 +56,7 @@ export default function Home() {
 		logo: "https://athayogliving.com/Logo.png",
 		image: "https://athayogliving.com/images/heroes/hero-home.jpg",
 		telephone: "+919611771434",
-		priceRange: "₹599–₹32,399",
+		priceRange: "₹599–₹42,599",
 		email: "info@athayogliving.com",
 		address: {
 			"@type": "PostalAddress",
