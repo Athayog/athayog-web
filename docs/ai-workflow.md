@@ -73,6 +73,42 @@ These are the rules that keep the project from becoming a mystery again:
 - [ ] Docs updated for the change (see black-box rules).
 - [ ] `git status` shows only intended files.
 
+## Pull request and commit workflow
+
+Use a short-lived branch created from `main` using the pattern
+`<type>/<short-description>`, for example `docs/create-security-policy`.
+
+Use Conventional Commits for commit and pull request titles:
+
+```text
+<type>(<scope>): <imperative summary>
+```
+
+Common types are `feat`, `fix`, `docs`, `refactor`, `perf`, `test`, `chore`,
+`build`, and `ci`. Use a scope when it adds useful context, keep the summary
+concise and lowercase, and do not add a period or the issue number. GitHub adds
+the pull request number automatically.
+
+Examples:
+
+- `docs(security): add project security policy`
+- `fix(payments): keep displayed plans in sync with checkout`
+- `feat(forms): add picnic registration form`
+
+Before opening a pull request:
+
+1. Rebase or update the branch from `main` when needed.
+2. Run the relevant checks, including `npm run format:check`, `npm run lint`,
+   `npm test`, and `npm run build` for application changes.
+3. Review the diff and confirm that no secrets or unrelated files are included.
+4. Open the pull request with a short summary, implementation details,
+   verification performed, deployment/configuration notes, and any follow-up
+   work.
+
+Pull requests should pass CI and receive review before being merged into
+`main`. Prefer squash merging so each completed change is represented by one
+clear commit on the production branch.
+
 ## Next.js 16 pitfalls (things that burned this repo before)
 
 - `middleware.ts` → use `src/proxy.ts` with `export function proxy()`.
