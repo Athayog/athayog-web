@@ -59,7 +59,7 @@
 		"prettier": "^3.9.5",
 		"server-only": "^0.0.1",
 		"tsx": "^4.23.12",
-		"typescript": "^5",
+		"typescript": "^7",
 		"vitest": "^4.1.11"
 	}
 }
