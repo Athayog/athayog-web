@@ -20,10 +20,8 @@ const enquireSchema = z.object({
 const SERVICE_OPTIONS = [
 	{ value: "Group class", label: "Group class" },
 	{ value: "Personal Training", label: "Personal Training" },
-	{
-		value: "Teachers Training course",
-		label: "Teachers Training course",
-	},
+	{ value: "Workshop", label: "Workshop" },
+	{ value: "Yoga Teacher Training", label: "Yoga Teacher Training" },
 ];
 
 type EnquireModalProps = {
@@ -35,7 +33,7 @@ type EnquireModalProps = {
 
 export default function EnquireModal({
 	children,
-	service = "Group class",
+	service,
 	plan,
 	pageSource = "",
 }: EnquireModalProps) {
@@ -49,7 +47,7 @@ export default function EnquireModal({
 			email: "",
 			phone: "",
 			location: "",
-			serviceLookingFor: service,
+			serviceLookingFor: service || "",
 			source: "",
 			message: "",
 		},
@@ -270,6 +268,7 @@ export default function EnquireModal({
 										<select
 											className={styles.input}
 											value={field.state.value}
+											disabled={Boolean(service)}
 											onChange={(e) =>
 												field.handleChange(e.target.value)
 											}
