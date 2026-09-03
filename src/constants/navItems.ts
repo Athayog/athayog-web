@@ -36,7 +36,12 @@ export const navItems: NavItem[] = [
 					},
 					{
 						label: "Teacher Training Course (RYT 200) – Online",
-						path: "/yoga-teacher-training-residential",
+						path: "/yoga-ttc-online-certification",
+						type: "nav",
+					},
+					{
+						label: "Teacher Training Course (RYT 200) – Residential",
+						path: "/residential-yoga-teacher-training-bangalore",
 						type: "nav",
 					},
 				],

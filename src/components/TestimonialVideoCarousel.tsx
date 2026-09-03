@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
 import type { TestimonialVideo } from "@/constants/testimonialVideos";
 import styles from "@/components/TestimonialVideoCarousel.module.css";
@@ -34,7 +35,7 @@ export default function TestimonialVideoCarousel({
 					onClick={() => scroll(-1)}
 					aria-label="Show previous testimonials"
 				>
-					<span aria-hidden="true">←</span>
+					<ChevronLeft size={22} strokeWidth={1.8} aria-hidden="true" />
 				</button>
 				<button
 					type="button"
@@ -42,7 +43,7 @@ export default function TestimonialVideoCarousel({
 					onClick={() => scroll(1)}
 					aria-label="Show next testimonials"
 				>
-					<span aria-hidden="true">→</span>
+					<ChevronRight size={22} strokeWidth={1.8} aria-hidden="true" />
 				</button>
 			</div>
 			<div className={styles.track} ref={trackRef}>
