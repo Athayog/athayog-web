@@ -204,6 +204,11 @@
 	font-weight: 600;
 }
 
+.tdMeditation {
+	color: var(--brand-deep);
+	font-weight: 600;
+}
+
 .legend {
 	display: flex;
 	flex-wrap: wrap;

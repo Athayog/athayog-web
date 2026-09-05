@@ -319,12 +319,12 @@ export default function GroupClassesPage() {
 				<div className="wrap">
 					<Reveal>
 						<div className="section-head">
-							<span className="eyebrow">Weekly schedule</span>
+							<span className="eyebrow">September 2026 schedule</span>
 							<h2>Group class timetable: Indiranagar</h2>
 							<p className="lead">
 								Morning and evening batches, seven days a week. Pick a
-								time that fits your life. (Schedule shown for reference;
-								download the latest below.)
+								time that fits your life. Schedule valid for September
+								2026.
 							</p>
 						</div>
 					</Reveal>
@@ -349,52 +349,52 @@ export default function GroupClassesPage() {
 									</tr>
 									<tr>
 										<td className={styles.tcol}>6:00–7:00</td>
-										<td>Transcending Transition</td>
-										<td>Rhythm of being</td>
-										<td>Yoga with Props</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
-										<td>Universal Harmony</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Rhythm of being</td>
+										<td>Universal Harmony</td>
 										<td>Hatha Vinyasa</td>
+										<td>Transcending Transition</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>7:00–8:00</td>
-										<td>Rhythm of being</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
-										<td>Transcending Transition</td>
 										<td>Universal Harmony</td>
+										<td>Transcending Transition</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Yoga with Props</td>
-										<td>Hatha Vinyasa</td>
+										<td>Rhythm of being</td>
 										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Hatha Vinyasa</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>8:00–9:00</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
-										<td>Universal Harmony</td>
 										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Rhythm of being</td>
+										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Yoga with Props</td>
 										<td>Hatha Vinyasa</td>
-										<td>Transcending Transition</td>
-										<td>Rhythm of being</td>
+										<td>Universal Harmony</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>9:30–10:30</td>
-										<td>Universal Harmony</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
-										<td>Yoga with Props</td>
 										<td>Hatha Vinyasa</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Rhythm of being</td>
 										<td>Transcending Transition</td>
+										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Yoga with Props</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>10:30–12:00</td>
-										<td>—</td>
-										<td>—</td>
-										<td>—</td>
-										<td>—</td>
-										<td>—</td>
-										<td>—</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
 										<td className={styles.tdPaid}>
 											Aerial Yoga (paid)
 										</td>
@@ -404,45 +404,47 @@ export default function GroupClassesPage() {
 									</tr>
 									<tr>
 										<td className={styles.tcol}>4:00–5:00</td>
-										<td>Universal Harmony</td>
-										<td>Yoga with Props</td>
 										<td>Hatha Vinyasa</td>
+										<td>Yoga with Props</td>
+										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Transcending Transition</td>
 										<td>Rhythm of being</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>5:00–6:00</td>
-										<td>Yoga with Props</td>
-										<td>Hatha Vinyasa</td>
-										<td>Transcending Transition</td>
 										<td>Rhythm of being</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Hatha Vinyasa</td>
+										<td>Yoga with Props</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Universal Harmony</td>
+										<td>Transcending Transition</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>6:00–7:00</td>
-										<td>Hatha Vinyasa</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Transcending Transition</td>
-										<td>Rhythm of being</td>
+										<td>Hatha Vinyasa</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
-										<td>Yoga with Props</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Universal Harmony</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>7:30–8:30</td>
-										<td>Transcending Transition</td>
 										<td>Rhythm of being</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Universal Harmony</td>
+										<td>Transcending Transition</td>
 										<td>Yoga with Props</td>
 										<td className={styles.tdPaid}>
 											Aerial Yoga (paid)
 										</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
-										<td>Rhythm of being</td>
+										<td className={styles.tdMeditation}>
+											Sound Meditation
+										</td>
+										<td>Hatha Vinyasa</td>
 									</tr>
 								</tbody>
 							</table>
@@ -453,9 +455,7 @@ export default function GroupClassesPage() {
 						<span>Intermediate</span>
 						<span>Advanced</span>
 						<span>Meditation / Pranayama</span>
-						<span style={{ color: "var(--clay)" }}>
-							Aerial / Sound (paid)
-						</span>
+						<span style={{ color: "var(--clay)" }}>Aerial Yoga (paid)</span>
 					</div>
 					<div className={styles.schedNote}>
 						<ul>
