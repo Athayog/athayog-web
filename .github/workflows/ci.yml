@@ -43,6 +43,13 @@ jobs:
             - name: Guard Firebase Admin major version (Vercel CJS compat)
               run: node -e "const v=require('./node_modules/firebase-admin/package.json').version; if (!v.startsWith('12.')) { console.error('firebase-admin v'+v+' is not Vercel/CJS compatible - keep the 12.x line (jose@4). See docs/deployment.md'); process.exit(1); }"
 
+            # Supply-chain guard (Shai-Hulud class npm attacks): npm ci uses the
+            # committed lockfile; audit fails CI on any HIGH severity advisory
+            # (known + accepted: a moderate uuid advisory inside firebase-admin v12
+            # whose only fix is the Vercel-breaking v14 upgrade).
+            - name: Audit dependencies (fail on HIGH)
+              run: npm audit --audit-level=high
+
             - name: Check Formatting
               run: npm run format:check
 
