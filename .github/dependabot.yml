@@ -7,6 +7,11 @@ updates:
       open-pull-requests-limit: 10
       labels:
           - dependencies
+      ignore:
+          # firebase-admin must stay on the 12.x line: v13+/v14 pulls in
+          # ESM-only jose@6 which breaks Vercel's CommonJS server bundle
+          # (ERR_REQUIRE_ESM). Upgrade deliberately + test on a preview first.
+          - dependency-name: firebase-admin
 
     - package-ecosystem: github-actions
       directory: "/"

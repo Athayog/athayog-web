@@ -40,6 +40,9 @@ jobs:
             - name: Install dependencies
               run: npm ci --legacy-peer-deps
 
+            - name: Guard Firebase Admin major version (Vercel CJS compat)
+              run: node -e "const v=require('./node_modules/firebase-admin/package.json').version; if (!v.startsWith('12.')) { console.error('firebase-admin v'+v+' is not Vercel/CJS compatible - keep the 12.x line (jose@4). See docs/deployment.md'); process.exit(1); }"
+
             - name: Check Formatting
               run: npm run format:check
 
