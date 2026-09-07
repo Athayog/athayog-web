@@ -123,10 +123,10 @@ export default function ResidentialYogaTeacherTrainingPage() {
 								Enroll Now
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-ghost"
 							>
-								WhatsApp 86903 33111
+								WhatsApp +91 96117 71434
 							</a>
 						</div>
 						<div className={styles.chips}>
@@ -405,7 +405,7 @@ export default function ResidentialYogaTeacherTrainingPage() {
 					</Reveal>
 					<p className={styles.reassure}>
 						Limited places per batch.{" "}
-						<a href="https://wa.me/918690333111">
+						<a href="https://wa.me/919611771434">
 							WhatsApp us for the next start date →
 						</a>
 					</p>
@@ -627,13 +627,13 @@ export default function ResidentialYogaTeacherTrainingPage() {
 								Enroll Now
 							</a>
 							<a
-								href="https://wa.me/918690333111"
+								href="https://wa.me/919611771434"
 								className="btn btn-light"
 							>
 								WhatsApp Us
 							</a>
-							<a href="tel:+918690333111" className="btn btn-light">
-								Call 86903 33111
+							<a href="tel:+919611771434" className="btn btn-light">
+								Call +91 96117 71434
 							</a>
 						</div>
 						<p className={styles.micro}>Train · live · teach · transform</p>
