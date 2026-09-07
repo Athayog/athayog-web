@@ -7,6 +7,7 @@ import Providers from "@/components/Providers";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import CookieBanner from "@/components/CookieBanner";
+import ContactFab from "@/components/ContactFab";
 import TrackingScripts from "@/components/TrackingScripts";
 import "@/app/globals.css";
 
@@ -97,6 +98,7 @@ export default function RootLayout({
 				</Providers>
 				<PrismicPreview repositoryName={repositoryName} />
 				<CookieBanner />
+				<ContactFab />
 			</body>
 		</html>
 	);

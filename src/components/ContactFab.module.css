@@ -1,0 +1,148 @@
+.wrap {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 55;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
+}
+
+@media (max-width: 640px) {
+	.wrap {
+		right: 14px;
+		/* Clear the full-width mobile sticky CTA bar used on marketing pages. */
+		bottom: 92px;
+	}
+}
+
+.fab {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	border: none;
+	display: grid;
+	place-items: center;
+	background: var(--brand-deep);
+	color: var(--cream);
+	cursor: pointer;
+	box-shadow:
+		0 8px 22px rgba(43, 46, 36, 0.28),
+		0 0 0 1px rgba(245, 243, 234, 0.12) inset;
+	transition:
+		transform 0.2s ease,
+		background 0.2s ease;
+}
+
+.fab:hover {
+	background: var(--brand-dark);
+	transform: translateY(-2px);
+}
+
+.fab:focus-visible {
+	outline: 2px solid var(--brand-deep);
+	outline-offset: 3px;
+}
+
+.panel {
+	display: flex;
+	flex-direction: column;
+	width: min(252px, calc(100vw - 40px));
+	background: var(--parchment);
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	box-shadow: 0 12px 32px rgba(43, 46, 36, 0.18);
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(8px) scale(0.98);
+	transform-origin: bottom right;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 0.18s ease,
+		transform 0.18s ease,
+		visibility 0.18s;
+}
+
+.panelOpen {
+	opacity: 1;
+	transform: none;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.panelTitle {
+	font-family: var(--font-label);
+	font-size: 0.68rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--brand-deep);
+	padding: 12px 14px 8px;
+}
+
+.option {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 14px 12px;
+	color: var(--ink);
+}
+
+.option + .option {
+	border-top: 1px solid var(--line-soft);
+}
+
+.option:hover {
+	background: var(--cream);
+}
+
+.option:focus-visible {
+	outline: 2px solid var(--brand-deep);
+	outline-offset: -2px;
+}
+
+.optionIcon {
+	flex: 0 0 auto;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: #fff;
+}
+
+.waIcon {
+	background: #25d366;
+}
+
+.callIcon {
+	background: var(--brand);
+}
+
+.optionLabel,
+.optionMeta {
+	display: block;
+}
+
+.optionLabel {
+	font-weight: 600;
+	font-size: 0.92rem;
+	line-height: 1.3;
+}
+
+.optionMeta {
+	font-size: 0.76rem;
+	color: var(--brand-deep);
+	margin-top: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fab {
+		transition: none;
+	}
+
+	.panel {
+		transition: none;
+	}
+}
