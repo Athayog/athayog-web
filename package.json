@@ -28,7 +28,7 @@
 		"@radix-ui/react-collapsible": "^1.1.16",
 		"@radix-ui/react-dialog": "^1.1.19",
 		"@radix-ui/react-dropdown-menu": "^2.1.20",
-		"@tanstack/react-form-nextjs": "^1.33.2",
+		"@tanstack/react-form-nextjs": "^1.33.5",
 		"firebase": "^12.18.0",
 		"firebase-admin": "^12.7.0",
 		"lucide-react": "^1.25.0",
