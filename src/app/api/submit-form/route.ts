@@ -17,11 +17,13 @@ const formConfigs = {
 	resume: { subject: "New Career Application" },
 	trialClasses: { subject: "New Trial Class" },
 	deleteAccount: {},
-	group_classes_indiranagar: {},
-	personal_training_indiranagar: {},
-	ryt200_non_residential: {},
-	ryt_residential: {},
-	ttc_online: {},
+	group_classes_indiranagar: { subject: "New Group Classes Lead (Landing Page)" },
+	personal_training_indiranagar: {
+		subject: "New Personal Training Lead (Landing Page)",
+	},
+	ryt200_non_residential: { subject: "New RYT 200 Non-Residential Lead" },
+	ryt_residential: { subject: "New Residential TTC Lead" },
+	ttc_online: { subject: "New Online TTC Lead" },
 } as const;
 
 const collectionSchema = z.enum([
