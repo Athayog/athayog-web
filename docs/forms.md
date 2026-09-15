@@ -51,7 +51,7 @@ const form = useForm({
    (`x-forwarded-for`), max 5 requests per 60s → `429`.
    ⚠️ In-memory means it resets per serverless instance and can be bypassed;
    acceptable for a lead form, not a security boundary.
-2. **Validate**: `bodySchema` — `collection` must be one of the 16 allowed
+2. **Validate**: `bodySchema` — `collection` must be one of the 15 allowed
    names (Zod enum), `data` is a record. Returns `400` with Zod issues on
    failure.
 3. **Write**: `db.collection(collection).add({ ...data, createdAt })`.
@@ -63,26 +63,33 @@ const form = useForm({
 
 ### Collection registry (keep in sync!)
 
-| Collection (`collection` value) | Email subject                   | Used by                                                 |
-| ------------------------------- | ------------------------------- | ------------------------------------------------------- |
-| `aerialTrial`                   | New Aerial Yoga Booking         | `/aerial-yoga-indiranagar` MagnetForm                   |
-| `contactMessages`               | New Contact Message             | `/contact-us`                                           |
-| `enquiries`                     | New Enquiry                     | EnquireModal (TTC pages)                                |
-| `groupTrial`                    | New Group Trial                 | `/group-classes-indiranagar` MagnetForm                 |
-| `newsletter`                    | New Newsletter Signup           | NewsletterForm (homepage footer area)                   |
-| `personalAdsLead`               | New Personal Yoga Training Lead | `/ld/personal-yoga-training-indiranagar-ads` PYTAdsForm |
-| `picnicForm`                    | New Picnic Sign Up              | `/picnics`                                              |
-| `resume`                        | New Career Application          | `/career` (includes resume file URL)                    |
-| `trialClasses`                  | New Trial Class                 | `/trial-classes`                                        |
-| `deleteAccount`                 | _(no email)_                    | `/account/delete-request`                               |
-| `group_classes_indiranagar`     | _(no email)_                    | legacy landing form                                     |
-| `personal_training_indiranagar` | _(no email)_                    | legacy landing form                                     |
-| `ryt200_non_residential`        | _(no email)_                    | legacy landing form                                     |
-| `ryt_residential`               | _(no email)_                    | legacy landing form                                     |
-| `ttc_online`                    | _(no email)_                    | legacy landing form                                     |
+| Collection (`collection` value) | Email subject                             | Used by                                                                    |
+| ------------------------------- | ----------------------------------------- | -------------------------------------------------------------------------- |
+| `aerialTrial`                   | New Aerial Yoga Booking                   | `/aerial-yoga-indiranagar` MagnetForm                                      |
+| `contactMessages`               | New Contact Message                       | `/contact-us`                                                              |
+| `enquiries`                     | New Enquiry                               | EnquireModal (TTC pages)                                                   |
+| `groupTrial`                    | New Group Trial                           | `/group-classes-indiranagar` MagnetForm                                    |
+| `newsletter`                    | New Newsletter Signup                     | NewsletterForm (homepage footer area)                                      |
+| `personalAdsLead`               | New Personal Yoga Training Lead           | `/ld/personal-yoga-training-indiranagar-ads` PYTAdsForm                    |
+| `picnicForm`                    | New Picnic Sign Up                        | `/picnics`                                                                 |
+| `resume`                        | New Career Application                    | `/career` (includes resume file URL)                                       |
+| `trialClasses`                  | New Trial Class                           | `/trial-classes`                                                           |
+| `deleteAccount`                 | _(no email)_                              | `/account/delete-request`                                                  |
+| `group_classes_indiranagar`     | New Group Classes Lead (Landing Page)     | `/ld/group-classes-indiranagar` YogaProgramHeroSection                     |
+| `personal_training_indiranagar` | New Personal Training Lead (Landing Page) | `/ld/personal-yoga-training-indiranagar` YogaProgramHeroSection            |
+| `ryt200_non_residential`        | New RYT 200 Non-Residential Lead          | `/ld/yoga-teacher-training-ryt-200-non-residential` YogaProgramHeroSection |
+| `ryt_residential`               | New Residential TTC Lead                  | `/ld/residential-yoga-teacher-training` YogaProgramHeroSection             |
+| `ttc_online`                    | New Online TTC Lead                       | `/ld/yoga-ttc-online-certification` YogaProgramHeroSection                 |
 
 **Both** the Zod `collectionSchema` enum and the `formConfigs` map live in
 `src/app/api/submit-form/route.ts`. If you add a form, add it to both.
+
+> **A `201` response does not mean an email was sent.** The lead is written to
+> Firestore first, and `sendFormEmail` silently no-ops when the collection has
+> no `subject`, when `RESEND_API_KEY` is unset, or when Resend rejects the send
+> (the error is only logged). Every lead form must have a subject here, and
+> email delivery must be confirmed in the Resend dashboard, not by the HTTP
+> status. `deleteAccount` is the only intentionally silent collection.
 
 ## How to add a new form
 
