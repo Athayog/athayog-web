@@ -75,11 +75,11 @@ const form = useForm({
 | `resume`                        | New Career Application                    | `/career` (includes resume file URL)                                       |
 | `trialClasses`                  | New Trial Class                           | `/trial-classes`                                                           |
 | `deleteAccount`                 | _(no email)_                              | `/account/delete-request`                                                  |
-| `group_classes_indiranagar`     | New Group Classes Lead (Landing Page)     | `/ld/group-classes-indiranagar` YogaProgramHeroSection                     |
+| `group_classes_indiranagar`     | New Group Classes Lead (Landing Page)     | `/ld/group-classes-indiranagar` GroupClassesLdForm                         |
 | `personal_training_indiranagar` | New Personal Training Lead (Landing Page) | `/ld/personal-yoga-training-indiranagar` YogaProgramHeroSection            |
 | `ryt200_non_residential`        | New RYT 200 Non-Residential Lead          | `/ld/yoga-teacher-training-ryt-200-non-residential` YogaProgramHeroSection |
 | `ryt_residential`               | New Residential TTC Lead                  | `/ld/residential-yoga-teacher-training` YogaProgramHeroSection             |
-| `ttc_online`                    | New Online TTC Lead                       | `/ld/yoga-ttc-online-certification` YogaProgramHeroSection                 |
+| `ttc_online`                    | New Online TTC Lead                       | `/ld/yoga-ttc-online-certification` TtcOnlineLdForm                        |
 
 **Both** the Zod `collectionSchema` enum and the `formConfigs` map live in
 `src/app/api/submit-form/route.ts`. If you add a form, add it to both.

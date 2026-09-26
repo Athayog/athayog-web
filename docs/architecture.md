@@ -134,13 +134,23 @@ src/
 ## Landing pages (`src/app/ld/*`)
 
 `src/app/ld/` contains marketing landing pages (aerial yoga, personal training,
-TTC variants, sound meditation, etc.). They are composed from the reusable
-section kit in `src/components/landing/` (hero, features, comparison, pricing
-cards, FAQ, testimonials, final CTA…). Each has a `layout.tsx` with metadata
-that sets `robots: { index: false, follow: false }` so they stay out of search
-indexes (they are ad/lead pages). They use their own small forms
-(`MagnetForm`, `PYTAdsForm`) which post to `/api/submit-form` with dedicated
-collection names.
+TTC variants, sound meditation, etc.). Two flavours exist:
+
+- **Section-kit pages** — composed from the reusable section kit in
+  `src/components/landing/` (hero, features, comparison, pricing cards, FAQ,
+  testimonials, final CTA…).
+- **Bespoke ports** — a page-specific `<Page>.module.css` that renders the
+  approved design directly, wrapped in the global `Reveal` component. Examples:
+  `personal-yoga-training-indiranagar-ads` (`PYTAds`), `group-classes-indiranagar`
+  (`GroupClassesLd`) and `yoga-ttc-online-certification` (`TtcOnlineLd`). These
+  drop the design's `:root` block, reuse the tokens in `src/app/globals.css`,
+  and keep only page-specific rules in the module.
+
+Every page has a `layout.tsx` with its own metadata and sets
+`robots: { index: false, follow: false }` (paid-only) or
+`{ index: false, follow: true }` so link equity still flows. They use their own
+small forms (`MagnetForm`, `PYTAdsForm`, `GroupClassesLdForm`, `TtcOnlineLdForm`)
+which post to `/api/submit-form` with dedicated collection names.
 
 ## Conventions that keep this codebase consistent
 

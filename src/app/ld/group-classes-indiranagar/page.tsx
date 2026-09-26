@@ -1,248 +1,623 @@
-"use client";
+import { ArrowRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import MapEmbed from "@/components/MapEmbed";
+import GroupClassesLdForm from "@/app/ld/group-classes-indiranagar/GroupClassesLdForm";
+import PageJsonLd from "@/app/ld/group-classes-indiranagar/PageJsonLd";
+import styles from "@/app/ld/group-classes-indiranagar/GroupClassesLd.module.css";
 
-import {
-	MapPin,
-	Users,
-	Clock,
-	GraduationCap,
-	Activity,
-	Briefcase,
-	Brain,
-	PersonStanding,
-	Heart,
-	Play,
-	CalendarDays,
-	Sun,
-	ThumbsUp,
-} from "lucide-react";
-import YogaProgramHeroSection from "@/components/landing/YogaProgramHeroSection";
-import FeatureSection from "@/components/landing/FeatureSection";
-import ClassOverviewSection from "@/components/landing/ClassOverviewSection";
-import ComparisonSection from "@/components/landing/ComparisonSection";
-import ImageFeatureSection from "@/components/landing/ImageFeatureSection";
-import TestimonialCTASection from "@/components/landing/TestimonialCTASection";
-import FAQCTASection from "@/components/landing/FAQCTASection";
+const MAP_SRC =
+	"https://www.google.com/maps?q=Athayog%20Living%20Indiranagar%20Bengaluru&output=embed";
 
-export default function GroupClassesIndiranagarPage() {
+const WHATSAPP_HREF =
+	"https://wa.me/919611771434?text=Hi%2C%20I%27d%20like%20details%20on%20your%20group%20yoga%20classes%20in%20Indiranagar%20-%20batch%20timings%2C%20trial%20and%20fees.";
+
+const HERO_POINTS = [
+	"Small batch group classes",
+	"Morning and evening timings",
+	"Beginner-friendly structure",
+	"Centrally located in Indiranagar",
+];
+
+const FIT_POINTS = [
+	"You live or work near Indiranagar, Domlur, CV Raman Nagar or Koramangala",
+	"You want instructor-led group yoga sessions",
+	"You prefer fixed, routine-building timings",
+	"You are a beginner, or restarting yoga",
+	"You want flexibility, stress relief and daily movement",
+];
+
+const WHY_POINTS = [
+	"Near Indiranagar",
+	"Structured yoga",
+	"Small batches",
+	"Clean, focused studio",
+];
+
+const CLASS_STEPS = [
+	"Gentle warm-up and mobility",
+	"Guided asana practice, based on batch level",
+	"Pranayama and breath awareness",
+	"Relaxation or short meditation",
+	"Cool-down and closing guidance",
+];
+
+const BATCH_POINTS = [
+	"Morning yoga classes for energy and focus",
+	"Evening yoga classes for stress relief after work",
+	"Fixed schedules to build consistency",
+	"Limited participants per batch for quality attention",
+];
+
+const COMPARISON_BAD = [
+	"Overcrowded rooms",
+	"One routine for everyone",
+	"Limited instructor attention",
+];
+
+const COMPARISON_GOOD = [
+	"Small, focused batches",
+	"Instructor-led corrections",
+	"Structured progression",
+	"Calm, distraction-free environment",
+];
+
+const PERSONAS = [
+	"Working professionals with long hours",
+	"Beginners starting yoga for the first time",
+	"People dealing with stress or stiffness",
+	"Anyone wanting daily movement and balance",
+	"Long-term wellness seekers",
+];
+
+const MEMBERSHIP_POINTS = [
+	"Trial class before you commit",
+	"Monthly and long-term plans available",
+	"Morning and evening batch options",
+	"No pressure to continue if it is not the right fit",
+];
+
+const TESTIMONIALS = [
+	"The small batch size made it easy to stay consistent.",
+	"A great option for beginners who want proper guidance.",
+	"Convenient location and calm environment, easy to continue.",
+];
+
+const FAQS = [
+	{
+		q: "Are these group yoga classes suitable for beginners?",
+		a: "Yes. Beginners are guided carefully with clear instructions and proper demonstrations.",
+	},
+	{
+		q: "Can I attend a trial class?",
+		a: "Yes. A trial class is available for a nominal fee. If you purchase a subscription within 48 hours, the trial fee is adjusted against your subscription.",
+	},
+	{
+		q: "How big are the batches?",
+		a: "Batch sizes are kept limited to ensure adequate instructor attention for each participant.",
+	},
+	{
+		q: "What if I miss a class?",
+		a: "Our team will guide you on how to maintain continuity wherever possible.",
+	},
+	{
+		q: "Is the studio close to Indiranagar's main areas?",
+		a: "Yes. The studio is centrally located in Indiranagar, HAL 2nd Stage, and is easily accessible.",
+	},
+];
+
+export default function GroupClassesLdPage() {
 	return (
-		<main>
-			<YogaProgramHeroSection
-				title="Group Yoga Classes in Indiranagar & Nearby"
-				description="Join instructor-led group yoga classes in Indiranagar designed for consistency, correct practice, and long-term wellness."
-				features={[
-					"Small batch group classes",
-					"Morning & evening timings",
-					"Beginner-friendly structure",
-					"Centrally located in Indiranagar, Bangalore",
-				]}
-				ctaButtonText="Book a Trial Class"
-				submitButtonText="Send Enquiry"
-				submittingButtonText="Sending…"
-				formSubmitUrl="/api/submit-form"
-				namePlaceholder="Your name"
-				emailPlaceholder="you@example.com"
-				phonePlaceholder="Phone number"
-				messagePlaceholder="Any questions or requirements?"
-				successMessage="Thank you! We'll get back to you shortly."
-				errorMessage="Something went wrong. Please try again."
-				backgroundImage="/images/landing/anatomy.jpg"
-				ctaButtonHref="/contact-us"
-				formKey="group_classes_indiranagar"
-			/>
-			<FeatureSection
-				title="Are These Group Yoga Classes Right for You?"
-				description="These group classes are well suited for individuals looking to build a steady, guided yoga practice as part of their daily routine."
-				features={[
-					{ icon: <MapPin />, title: "Live or work near Indiranagar" },
-					{
-						icon: <Users />,
-						title: "Want instructor-led group yoga sessions",
-					},
-					{
-						icon: <Clock />,
-						title: "Prefer fixed, routine-building timings",
-					},
-					{
-						icon: <GraduationCap />,
-						title: "Are a beginner or restarting yoga",
-					},
-					{
-						icon: <Activity />,
-						title: "Seek flexibility, stress relief, and daily movement",
-					},
-				]}
-			/>
-			<ClassOverviewSection
-				mainTitle="Why Choose Group Yoga Classes in Indiranagar at AthaYog Living"
-				highlights={[
-					"Near Indiranagar",
-					"Structured yoga",
-					"Small batches",
-					"Clean, focused studio",
-				]}
-				sections={[
-					{
-						title: "What to Expect in Our Group Yoga Classes",
-						subtitle: "A Typical Class Includes:",
-						items: [
-							{ id: "1", text: "Gentle warm-up and mobility" },
-							{
-								id: "2",
-								text: "Guided asana practice (based on batch level)",
-							},
-							{ id: "3", text: "Pranayama and breath awareness" },
-							{ id: "4", text: "Relaxation or short meditation" },
-							{ id: "5", text: "Cool-down and closing guidance" },
-						],
-					},
-					{
-						title: "Morning & Evening Yoga Batches Available",
-						subtitle:
-							"We offer flexible batch timings to fit real-life schedules.",
-						items: [
-							{
-								id: "1",
-								text: "Morning yoga classes for energy and focus",
-							},
-							{
-								id: "2",
-								text: "Evening yoga classes for stress relief after work",
-							},
-							{ id: "3", text: "Fixed schedules to build consistency" },
-							{
-								id: "4",
-								text: "Limited participants per batch for quality attention",
-							},
-						],
-						note: "Batch availability changes, so booking is recommended.",
-					},
-				]}
-				ctaText="Check Today's Available Batches"
-				ctaHref="/contact-us"
-			/>
-			<ComparisonSection
-				mainTitle="How Our Group Yoga Classes Are Different"
-				leftColumn={{
-					title: "Typical Group Yoga Classes",
-					items: [
-						{ id: "1", text: "Overcrowded rooms" },
-						{ id: "2", text: "One routine for everyone" },
-						{ id: "3", text: "Limited instructor attention" },
-					],
-				}}
-				rightColumn={{
-					title: "AthaYog Group Yoga Classes",
-					items: [
-						{ id: "1", text: "Small, focused batches" },
-						{ id: "2", text: "Instructor-led corrections" },
-						{ id: "3", text: "Structured progression" },
-						{ id: "4", text: "Calm, distraction-free environment" },
-					],
-				}}
-			/>
-			<ImageFeatureSection
-				title="Who Commonly Joins Our Indiranagar Group Classes"
-				description="Our group classes are designed for everyday practitioners looking to build consistency, balance, and wellbeing."
-				image="/images/mental-health/wellbeing.png"
-				imageAlt="Group yoga class at AthaYog Living studio in Indiranagar"
-				features={[
-					{
-						icon: <Briefcase />,
-						text: "Working professionals managing long hours",
-					},
-					{
-						icon: <GraduationCap />,
-						text: "Beginners starting yoga for the first time",
-					},
-					{
-						icon: <Brain />,
-						text: "Individuals dealing with stress or stiffness",
-					},
-					{
-						icon: <PersonStanding />,
-						text: "People looking for daily movement and balance",
-					},
-					{ icon: <Heart />, text: "Long-term wellness seekers" },
-				]}
-			/>
-			<FeatureSection
-				title="Flexible Membership Options"
-				description="Our group yoga programs are designed to be simple and transparent."
-				features={[
-					{ icon: <Play />, title: "Trial class before commitment" },
-					{
-						icon: <CalendarDays />,
-						title: "Monthly and long-term plans available",
-					},
-					{
-						icon: <Sun />,
-						title: "Morning and evening batch options",
-					},
-					{
-						icon: <ThumbsUp />,
-						title: "No pressure to continue if it's not the right fit",
-					},
-				]}
-			/>
-			<TestimonialCTASection
-				ctaButtonText="Get Trial & Fee Details"
-				ctaButtonHref="/contact-us"
-				sectionTitle="What Our Members Say"
-				testimonials={[
-					{
-						id: "1",
-						text: "The small batch size made it easy to stay consistent.",
-					},
-					{
-						id: "2",
-						text: "Great option for beginners who want proper guidance.",
-					},
-					{
-						id: "3",
-						text: "Convenient location and calm environment, easy to continue.",
-					},
-				]}
-				finalText="Real local experiences. No exaggerated promises."
-			/>
-			<FAQCTASection
-				sectionTitle="Frequently Asked Questions"
-				subtext="Start Your Yoga Practice Near Indiranagar. Without Overthinking It"
-				primaryCtaText="Book a Trial Class"
-				secondaryCtaText="Call / WhatsApp Us for batch timings and directions"
-				faqs={[
-					{
-						id: "1",
-						question: "Are these group yoga classes suitable for beginners?",
-						answer: "Yes. Beginners are guided carefully with clear instructions and proper demonstrations.",
-					},
-					{
-						id: "2",
-						question: "Can I attend a trial class?",
-						answer: "Yes. A trial class is available for a nominal fee. If you purchase a subscription within 48 hours, the trial fee will be adjusted against your subscription.",
-					},
-					{
-						id: "3",
-						question: "How big are the batches?",
-						answer: "Batch sizes are kept limited to ensure adequate instructor attention for each participant.",
-					},
-					{
-						id: "4",
-						question: "What if I miss a class?",
-						answer: "Our team will guide you on how to maintain continuity wherever possible.",
-					},
-					{
-						id: "5",
-						question: "Is the studio close to Indiranagar's main areas?",
-						answer: "Yes. The studio is centrally located in Indiranagar and is easily accessible.",
-					},
-				]}
-				onPrimaryCtaClick={() => {
-					window.open("tel:+919611771434", "_self");
-				}}
-				onSecondaryCtaClick={() => {
-					window.open("https://wa.me/+919611771434", "_blank");
-				}}
-			/>
+		<main className={styles.page}>
+			<PageJsonLd />
+
+			<section className={styles.hero}>
+				<svg
+					className={`${styles.mandalaBg} ${styles.mandalaSpin}`}
+					viewBox="0 0 200 200"
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="0.5"
+					aria-hidden="true"
+				>
+					<circle cx="100" cy="100" r="96" />
+					<circle cx="100" cy="100" r="78" />
+					<circle cx="100" cy="100" r="58" />
+					<circle cx="100" cy="100" r="38" />
+					<circle cx="100" cy="100" r="18" />
+					{Array.from({ length: 12 }, (_, i) => (
+						<ellipse
+							key={i}
+							cx="100"
+							cy="52"
+							rx="11"
+							ry="30"
+							transform={`rotate(${i * 30} 100 100)`}
+						/>
+					))}
+				</svg>
+
+				<div className={`wrap ${styles.heroGrid}`}>
+					<div>
+						<span className="eyebrow">
+							Group Yoga Classes · Indiranagar, Bangalore
+						</span>
+						<h1>
+							Group Yoga Classes in <em>Indiranagar</em> and Nearby
+						</h1>
+						<p className={styles.heroSub}>
+							Instructor-led group yoga classes in Indiranagar, built for
+							consistency, correct practice and long-term wellbeing. Morning
+							and evening batches, beginner-friendly.
+						</p>
+						<ul className={styles.heroList}>
+							{HERO_POINTS.map((point) => (
+								<li key={point}>
+									<span className={styles.ck}>✓</span> {point}
+								</li>
+							))}
+						</ul>
+						<div className={styles.heroCta}>
+							<a href="#enquire" className="btn btn-primary">
+								Book a Trial Class
+							</a>
+							<a
+								href={WHATSAPP_HREF}
+								className="btn btn-ghost"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								WhatsApp Us
+							</a>
+						</div>
+					</div>
+
+					<div className={styles.formCard} id="enquire">
+						<span className={styles.badge}>Book a trial</span>
+						<div className={styles.fh}>Check batch timings and trial</div>
+						<div className={styles.fs}>
+							Share a few details and we will send today&apos;s available
+							morning and evening batches, trial and fee details.
+						</div>
+						<GroupClassesLdForm />
+						<div className={styles.formOr}>Prefer a quick chat?</div>
+						<a
+							className={`btn ${styles.waBtn} ${styles.fullBtn}`}
+							href={WHATSAPP_HREF}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Chat with Athayog Living on WhatsApp"
+						>
+							<svg
+								viewBox="0 0 24 24"
+								fill="currentColor"
+								width="19"
+								height="19"
+								aria-hidden="true"
+							>
+								<path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2 .8.5 1.2.6 1.4.5.2-.1.5-.6.7-.8.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z" />
+							</svg>
+							Chat with us on WhatsApp
+						</a>
+						<p className={styles.waNote}>
+							<span className={styles.dot} aria-hidden="true" /> We usually
+							reply within a few minutes
+						</p>
+						<p className={styles.formFine}>
+							By sending this enquiry you agree to be contacted about
+							classes and accept our{" "}
+							<a
+								href="/privacy-policy"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								privacy policy
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<div className={styles.trustbar}>
+				<div className="wrap">
+					<div className={styles.trustbarInner}>
+						<span>
+							<b>Small</b> focused batches
+						</span>
+						<span>
+							<b>Morning</b> and evening timings
+						</span>
+						<span>
+							<b>Beginner</b> friendly
+						</span>
+						<span>Yoga Alliance · SVYASA · AYUSH recognised</span>
+					</div>
+				</div>
+			</div>
+
+			<section className={styles.aeo}>
+				<div className="wrap">
+					<Reveal>
+						<p className="answer" id="aeo-answer">
+							Athayog Living runs instructor-led group yoga classes in
+							Indiranagar, Bengaluru, in small batches with morning and
+							evening timings. Each class moves through a gentle warm-up,
+							guided asana practice for your batch level, pranayama and
+							breath awareness, and a short relaxation or meditation.
+							Classes are beginner-friendly, the studio is centrally located
+							in HAL 2nd Stage, and a trial class is available before you
+							commit. Batch places are limited, so booking ahead is
+							recommended.
+						</p>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="fit">
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Is this right for you?</span>
+							<h2>Are these group yoga classes right for you?</h2>
+							<p className="lead">
+								A strong fit if you want a steady, guided practice as part
+								of your daily routine.
+							</p>
+						</div>
+					</Reveal>
+					<Reveal>
+						<ul className={styles.checklist}>
+							{FIT_POINTS.map((point) => (
+								<li key={point}>
+									<span className={styles.ck}>✓</span> {point}
+								</li>
+							))}
+						</ul>
+					</Reveal>
+				</div>
+			</section>
+
+			<section className={styles.parchment}>
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Why Athayog Living</span>
+							<h2>
+								Why choose group yoga classes in Indiranagar at Athayog
+								Living
+							</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<div className={styles.why}>
+							{WHY_POINTS.map((point) => (
+								<div key={point}>
+									<div className={styles.whyIc} aria-hidden="true">
+										◍
+									</div>
+									<h3>{point}</h3>
+								</div>
+							))}
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="class">
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">What to expect</span>
+							<h2>What a typical group yoga class includes</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<ul className={styles.numlist}>
+							{CLASS_STEPS.map((step) => (
+								<li key={step}>{step}</li>
+							))}
+						</ul>
+					</Reveal>
+				</div>
+			</section>
+
+			<section className={styles.parchment}>
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Timings</span>
+							<h2>Morning and evening yoga batches</h2>
+							<p className="lead">
+								Flexible batch timings that fit real-life schedules in and
+								around Indiranagar.
+							</p>
+						</div>
+					</Reveal>
+					<Reveal>
+						<ul className={styles.numlist}>
+							{BATCH_POINTS.map((point) => (
+								<li key={point}>{point}</li>
+							))}
+						</ul>
+					</Reveal>
+					<Reveal>
+						<p className={styles.batchNote}>
+							Batch availability changes, so booking ahead is recommended.
+						</p>
+					</Reveal>
+					<Reveal>
+						<div className={styles.batchesCta}>
+							<a href="#enquire" className="btn btn-primary">
+								Check Today&apos;s Available Batches
+							</a>
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="difference">
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">The difference</span>
+							<h2>How our group yoga classes are different</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<div className={styles.compare}>
+							<div className={`${styles.cmp} ${styles.cmpPlain}`}>
+								<h3>Typical group yoga classes</h3>
+								<ul>
+									{COMPARISON_BAD.map((item) => (
+										<li key={item}>{item}</li>
+									))}
+								</ul>
+							</div>
+							<div className={`${styles.cmp} ${styles.cmpGood}`}>
+								<span className={styles.cmpTag}>Recommended</span>
+								<h3>Athayog group yoga classes</h3>
+								<ul>
+									{COMPARISON_GOOD.map((item) => (
+										<li key={item}>{item}</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section className={styles.parchment}>
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Our members</span>
+							<h2>Who commonly joins our Indiranagar group classes</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<div className={styles.persona}>
+							{PERSONAS.map((persona) => (
+								<div key={persona}>
+									<div className={styles.personaIc} aria-hidden="true">
+										◍
+									</div>
+									{persona}
+								</div>
+							))}
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="membership">
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Simple and transparent</span>
+							<h2>Flexible membership options</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<ul className={styles.checklist}>
+							{MEMBERSHIP_POINTS.map((point) => (
+								<li key={point}>
+									<span className={styles.ck}>✓</span> {point}
+								</li>
+							))}
+						</ul>
+					</Reveal>
+					<Reveal>
+						<div className={styles.membershipCta}>
+							<a href="#enquire" className={`btn ${styles.goldBtn}`}>
+								Get Trial &amp; Fee Details
+							</a>
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="reviews" className={styles.parchment}>
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">What members say</span>
+							<h2>Real local experiences</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<div className={styles.tstRow}>
+							{TESTIMONIALS.map((quote) => (
+								<div key={quote} className={styles.tst}>
+									<p className={styles.tstQ}>&ldquo;{quote}&rdquo;</p>
+								</div>
+							))}
+						</div>
+					</Reveal>
+					<Reveal>
+						<p className={styles.tstNote}>
+							Real local experiences, with no exaggerated promises.{" "}
+							<span
+								className="verify"
+								title="Attribute with real names or link Google reviews to strengthen trust"
+							>
+								[ attribute with real reviewer names / link Google reviews
+								]
+							</span>
+						</p>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="location">
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Find us</span>
+							<h2>Centrally located in Indiranagar</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<div className={styles.locCard}>
+							<div className={styles.locMap}>
+								<MapEmbed
+									src={MAP_SRC}
+									title="Athayog Living Indiranagar map"
+								/>
+							</div>
+							<div className={styles.locBody}>
+								<h3>Athayog Living, Indiranagar</h3>
+								<p>
+									No. 3293, 1st Floor, 12th Main, HAL 2nd Stage,
+									Indiranagar, Bengaluru, Karnataka 560038
+								</p>
+								<p>
+									Easily reached from Domlur, CV Raman Nagar,
+									Koramangala and nearby.
+								</p>
+								<p>
+									Call: <strong>9611771434</strong> ·
+									info@athayogliving.com
+								</p>
+								<a
+									className={styles.dir}
+									href="https://maps.app.goo.gl/JpW1wbeDugHRp3ZKA"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Get directions <ArrowRight size={16} />
+								</a>
+							</div>
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section>
+				<div className="wrap">
+					<Reveal>
+						<div className={styles.ctaBand}>
+							<h2>Start your yoga practice near Indiranagar</h2>
+							<p>
+								Without overthinking it. Book a trial class and find your
+								batch.
+							</p>
+							<a href="#enquire" className="btn btn-cream">
+								Book a Trial Class
+							</a>
+							<a
+								href={WHATSAPP_HREF}
+								className={`btn ${styles.waBtn}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								WhatsApp Us
+							</a>
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section id="faq" className={styles.parchment}>
+				<div className="wrap">
+					<Reveal>
+						<div className="section-head">
+							<span className="eyebrow">Questions</span>
+							<h2>Group yoga classes in Indiranagar, FAQs</h2>
+						</div>
+					</Reveal>
+					<Reveal>
+						<div className={styles.faqWrap}>
+							{FAQS.map((faq, i) => (
+								<details
+									key={faq.q}
+									className={styles.faqItem}
+									open={i === 0}
+								>
+									<summary className={styles.faqQ}>
+										{faq.q}
+										<span className={styles.faqIc}>+</span>
+									</summary>
+									<div className={styles.faqA}>{faq.a}</div>
+								</details>
+							))}
+						</div>
+					</Reveal>
+				</div>
+			</section>
+
+			<section className="final">
+				<div className="wrap">
+					<Reveal>
+						<span className="eyebrow">Book now</span>
+						<h2>
+							Start your yoga practice near Indiranagar, without
+							overthinking it
+						</h2>
+						<p>
+							Small-batch, instructor-led group yoga classes with morning
+							and evening timings. Begin with a trial.
+						</p>
+						<div className="final-cta">
+							<a href="#enquire" className="btn btn-cream">
+								Book a Trial Class
+							</a>
+							<a
+								href={WHATSAPP_HREF}
+								className="btn btn-light"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								WhatsApp Us
+							</a>
+							<a href="tel:+919611771434" className="btn btn-light">
+								Call 96117 71434
+							</a>
+						</div>
+						<p className={styles.motto}>A Sanctum For The Spirit</p>
+					</Reveal>
+				</div>
+			</section>
+
+			<div className={styles.stickyCta}>
+				<a
+					href="tel:+919611771434"
+					className={`btn btn-light ${styles.stickyCall}`}
+				>
+					Call
+				</a>
+				<a
+					href={WHATSAPP_HREF}
+					className={`btn ${styles.waBtn}`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					WhatsApp
+				</a>
+				<a href="#enquire" className="btn btn-cream">
+					Book Trial
+				</a>
+			</div>
 		</main>
 	);
 }
