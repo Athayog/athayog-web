@@ -184,20 +184,13 @@
 }
 
 .formSuccess {
+	padding: 52px 10px;
+	margin: 0;
 	text-align: center;
-	padding: 20px 0;
-}
-
-.formSuccessTitle {
 	font-family: var(--font-display);
-	font-size: 1.6rem;
-	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 1.55;
 	color: var(--brand-deep);
-}
-
-.formSuccessText {
-	color: var(--brand-deep);
-	font-size: 0.95rem;
 }
 
 .formOr {

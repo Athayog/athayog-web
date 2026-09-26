@@ -203,48 +203,11 @@ export default function TtcOnlineLdPage() {
 					</div>
 
 					<div className={styles.formCard} id="enquire">
-						<span className={styles.badge}>Enquire now</span>
-						<div className={styles.fh}>Speak to us about the next cohort</div>
-						<div className={styles.fs}>
-							Share a few details and we will guide you on eligibility,
-							schedule fit and the application.
-						</div>
-						<TtcOnlineLdForm />
-						<div className={styles.formOr}>Prefer a quick chat?</div>
-						<a
-							className={`btn ${styles.waBtn} ${styles.fullBtn}`}
-							href={WHATSAPP_HREF}
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="Chat with Athayog Living on WhatsApp"
-						>
-							<svg
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								width="19"
-								height="19"
-								aria-hidden="true"
-							>
-								<path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2 .8.5 1.2.6 1.4.5.2-.1.5-.6.7-.8.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z" />
-							</svg>
-							Chat with us on WhatsApp
-						</a>
-						<p className={styles.waNote}>
-							<span className={styles.dot} aria-hidden="true" /> We usually
-							reply within a few minutes
-						</p>
-						<p className={styles.formFine}>
-							By sending this enquiry you agree to be contacted about the
-							course and accept our{" "}
-							<a
-								href="/privacy-policy"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								privacy policy
-							</a>
-							. No obligation.
-						</p>
+						<TtcOnlineLdForm
+							badge="Enquire now"
+							title="Speak to us about the next cohort"
+							intro="Share a few details and we will guide you on eligibility, schedule fit and the application."
+						/>
 					</div>
 				</div>
 			</section>
