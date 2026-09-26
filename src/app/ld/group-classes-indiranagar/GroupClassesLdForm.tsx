@@ -1,13 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
+import FormStatus from "@/components/forms/FormStatus";
 import { optional, strings } from "@/lib/forms/schemas";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
 import styles from "@/app/ld/group-classes-indiranagar/GroupClassesLd.module.css";
 
 const WHATSAPP_HREF =
 	"https://wa.me/919611771434?text=Hi%2C%20I%27d%20like%20details%20on%20your%20group%20yoga%20classes%20in%20Indiranagar%20-%20batch%20timings%2C%20trial%20and%20fees.";
+
+const SUCCESS_MESSAGE =
+	"Thank you. We have your details and will share today's available batches, trial and fee details shortly.";
 
 const enquirySchema = z.object({
 	name: strings.name,
@@ -27,24 +33,42 @@ export default function GroupClassesLdForm({
 	title,
 	intro,
 }: GroupClassesLdFormProps) {
+	const { notifySuccess, notifyError } = useFormFeedback();
+	const [formError, setFormError] = useState<string | null>(null);
+
 	const form = useForm({
 		defaultValues: { name: "", phone: "", email: "", message: "" },
 		onSubmit: async ({ value }) => {
-			const res = await fetch("/api/submit-form", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					collection: "group_classes_indiranagar",
-					data: value,
-					email: {
-						to: "info@athayogliving.com",
-						subject: `New Group Classes Lead (Landing Page): ${value.name}`,
-					},
-				}),
-			});
-			if (!res.ok) {
-				const body = await res.json().catch(() => ({}));
-				throw new Error(body.error || "Failed to submit. Please try again.");
+			setFormError(null);
+			try {
+				const res = await fetch("/api/submit-form", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						collection: "group_classes_indiranagar",
+						data: value,
+						email: {
+							to: "info@athayogliving.com",
+							subject: `New Group Classes Lead (Landing Page): ${value.name}`,
+						},
+					}),
+				});
+				if (!res.ok) {
+					const body = await res.json().catch(() => ({}));
+					throw new Error(body.error || "Failed to submit. Please try again.");
+				}
+				notifySuccess({
+					title: "Enquiry sent",
+					message: SUCCESS_MESSAGE,
+					source: "group_classes_indiranagar",
+				});
+			} catch (err) {
+				const message =
+					err instanceof Error
+						? err.message
+						: "Something went wrong. Please try again.";
+				setFormError(message);
+				notifyError(message);
 			}
 		},
 	});
@@ -53,15 +77,7 @@ export default function GroupClassesLdForm({
 		<form.Subscribe selector={(s) => s.isSubmitSuccessful}>
 			{(submitted) => (
 				<>
-					<div role="status" aria-live="polite">
-						{submitted && (
-							<p className={styles.formSuccess}>
-								Thank you. We have your details and will share
-								today&apos;s available batches, trial and fee details
-								shortly.
-							</p>
-						)}
-					</div>
+					<FormStatus submitted={submitted} message={SUCCESS_MESSAGE} />
 
 					{!submitted && (
 						<>
@@ -234,15 +250,11 @@ export default function GroupClassesLdForm({
 									)}
 								</form.Subscribe>
 
-								<form.Subscribe selector={(s) => s.errorMap.onSubmit}>
-									{(error) =>
-										error ? (
-											<div className={styles.formErrorText}>
-												{error}
-											</div>
-										) : null
-									}
-								</form.Subscribe>
+								{formError && (
+									<div className={styles.formErrorText}>
+										{formError}
+									</div>
+								)}
 							</form>
 
 							<div className={styles.formOr}>Prefer a quick chat?</div>

@@ -1,13 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
+import FormStatus from "@/components/forms/FormStatus";
 import { optional, strings } from "@/lib/forms/schemas";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
 import styles from "@/app/ld/yoga-ttc-online-certification/TtcOnlineLd.module.css";
 
 const WHATSAPP_HREF =
 	"https://wa.me/919611771434?text=Hi%2C%20I%27d%20like%20details%20on%20the%20Online%20Yoga%20Teacher%20Training%20-%20cohort%20dates%2C%20eligibility%20and%20fees.";
+
+const SUCCESS_MESSAGE =
+	"Thank you. We have your details and will guide you on eligibility, schedule fit and the application for the next cohort.";
 
 const enquirySchema = z.object({
 	name: strings.name,
@@ -23,24 +29,42 @@ type TtcOnlineLdFormProps = {
 };
 
 export default function TtcOnlineLdForm({ badge, title, intro }: TtcOnlineLdFormProps) {
+	const { notifySuccess, notifyError } = useFormFeedback();
+	const [formError, setFormError] = useState<string | null>(null);
+
 	const form = useForm({
 		defaultValues: { name: "", phone: "", email: "", message: "" },
 		onSubmit: async ({ value }) => {
-			const res = await fetch("/api/submit-form", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					collection: "ttc_online",
-					data: value,
-					email: {
-						to: "info@athayogliving.com",
-						subject: `New Online TTC Lead: ${value.name}`,
-					},
-				}),
-			});
-			if (!res.ok) {
-				const body = await res.json().catch(() => ({}));
-				throw new Error(body.error || "Failed to submit. Please try again.");
+			setFormError(null);
+			try {
+				const res = await fetch("/api/submit-form", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						collection: "ttc_online",
+						data: value,
+						email: {
+							to: "info@athayogliving.com",
+							subject: `New Online TTC Lead: ${value.name}`,
+						},
+					}),
+				});
+				if (!res.ok) {
+					const body = await res.json().catch(() => ({}));
+					throw new Error(body.error || "Failed to submit. Please try again.");
+				}
+				notifySuccess({
+					title: "Enquiry sent",
+					message: SUCCESS_MESSAGE,
+					source: "ttc_online",
+				});
+			} catch (err) {
+				const message =
+					err instanceof Error
+						? err.message
+						: "Something went wrong. Please try again.";
+				setFormError(message);
+				notifyError(message);
 			}
 		},
 	});
@@ -49,15 +73,7 @@ export default function TtcOnlineLdForm({ badge, title, intro }: TtcOnlineLdForm
 		<form.Subscribe selector={(s) => s.isSubmitSuccessful}>
 			{(submitted) => (
 				<>
-					<div role="status" aria-live="polite">
-						{submitted && (
-							<p className={styles.formSuccess}>
-								Thank you. We have your details and will guide you on
-								eligibility, schedule fit and the application for the next
-								cohort.
-							</p>
-						)}
-					</div>
+					<FormStatus submitted={submitted} message={SUCCESS_MESSAGE} />
 
 					{!submitted && (
 						<>
@@ -230,15 +246,11 @@ export default function TtcOnlineLdForm({ badge, title, intro }: TtcOnlineLdForm
 									)}
 								</form.Subscribe>
 
-								<form.Subscribe selector={(s) => s.errorMap.onSubmit}>
-									{(error) =>
-										error ? (
-											<div className={styles.formErrorText}>
-												{error}
-											</div>
-										) : null
-									}
-								</form.Subscribe>
+								{formError && (
+									<div className={styles.formErrorText}>
+										{formError}
+									</div>
+								)}
 							</form>
 
 							<div className={styles.formOr}>Prefer a quick chat?</div>

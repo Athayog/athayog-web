@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { FormField } from "@/components/forms/FormField";
 import { SubmitButton } from "@/components/forms/SubmitButton";
+import FormStatus from "@/components/forms/FormStatus";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
 import { strings } from "@/lib/forms/schemas";
 import useAuthStore from "@/store/useAuthStore";
@@ -51,6 +53,7 @@ export default function YogaProgramHeroSection({
 }: YogaProgramHeroProps) {
 	const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 	const userSnapshot = useAuthStore((s) => s.userSnapshot);
+	const { notifySuccess, notifyError } = useFormFeedback();
 
 	const form = useForm({
 		defaultValues: {
@@ -69,8 +72,14 @@ export default function YogaProgramHeroSection({
 				});
 				if (!res.ok) throw new Error();
 				setStatus("success");
+				notifySuccess({
+					title: "Enquiry sent",
+					message: successMessage,
+					source: formKey,
+				});
 			} catch {
 				setStatus("error");
+				notifyError(errorMessage);
 			}
 		},
 	});
@@ -107,9 +116,11 @@ export default function YogaProgramHeroSection({
 				</div>
 
 				<div className={styles.formCard}>
-					{status === "success" ? (
-						<div className={styles.statusMessage}>{successMessage}</div>
-					) : (
+					<FormStatus
+						submitted={status === "success"}
+						message={successMessage}
+					/>
+					{status !== "success" && (
 						<form
 							onSubmit={(e) => {
 								e.preventDefault();

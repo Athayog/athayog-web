@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { FormField } from "@/components/forms/FormField";
 import { SubmitButton } from "@/components/forms/SubmitButton";
+import FormStatus from "@/components/forms/FormStatus";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
 import { strings } from "@/lib/forms/schemas";
 import useAuthStore from "@/store/useAuthStore";
@@ -13,6 +15,7 @@ export default function DeleteRequestPage() {
 	const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 	const [showConfirm, setShowConfirm] = useState(false);
 	const [confirmText, setConfirmText] = useState("");
+	const { notifySuccess, notifyError } = useFormFeedback();
 	const userSnapshot = useAuthStore((s) => s.userSnapshot);
 
 	const form = useForm({
@@ -33,8 +36,14 @@ export default function DeleteRequestPage() {
 				});
 				if (!res.ok) throw new Error();
 				setStatus("success");
+				notifySuccess({
+					title: "Request received",
+					message:
+						"Your deletion request has been received. We will process it within 30 business days.",
+				});
 			} catch {
 				setStatus("error");
+				notifyError("Something went wrong. Please try again.");
 			}
 		},
 	});
@@ -56,15 +65,12 @@ export default function DeleteRequestPage() {
 					days. This action cannot be undone.
 				</p>
 
-				{status === "success" ? (
-					<div className={styles.success}>
-						<h2 className={styles.successTitle}>Request Received</h2>
-						<p className={styles.successText}>
-							Your deletion request has been received. We will process it
-							within 30 business days.
-						</p>
-					</div>
-				) : (
+				<FormStatus
+					submitted={status === "success"}
+					title="Request Received"
+					message="Your deletion request has been received. We will process it within 30 business days."
+				/>
+				{status !== "success" && (
 					<form onSubmit={handleSubmit} className={styles.form}>
 						<FormField
 							form={form}

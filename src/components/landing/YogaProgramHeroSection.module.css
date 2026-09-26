@@ -116,14 +116,6 @@
 	margin-bottom: 20px;
 }
 
-.statusMessage {
-	padding: 48px 24px;
-	text-align: center;
-	font-family: var(--font-display);
-	font-size: 1.2rem;
-	color: var(--brand-deep);
-}
-
 .errorText {
 	color: var(--clay);
 	font-size: 0.85rem;
