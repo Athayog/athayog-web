@@ -4,8 +4,10 @@ import { useState } from "react";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
 import { FormField } from "@/components/forms/FormField";
+import FormStatus from "@/components/forms/FormStatus";
 import { SubmitButton } from "@/components/forms/SubmitButton";
 import { zodField } from "@/lib/forms/validate";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { strings, optional } from "@/lib/forms/schemas";
 import { uploadFormFile } from "@/lib/forms/upload";
 import styles from "@/app/career/Career.module.css";
@@ -42,6 +44,7 @@ const designationOptions = [
 export default function CareerPage() {
 	const [submitted, setSubmitted] = useState(false);
 	const [formError, setFormError] = useState<string | null>(null);
+	const { notifySuccess, notifyError } = useFormFeedback();
 
 	const form = useForm({
 		defaultValues: {
@@ -93,322 +96,338 @@ export default function CareerPage() {
 					throw new Error(body.error || "Failed to submit");
 				}
 				setSubmitted(true);
+				notifySuccess({ title: "Application submitted" });
 			} catch (err) {
-				setFormError(
+				const message =
 					err instanceof Error
 						? err.message
-						: "Something went wrong. Please try again.",
-				);
+						: "Something went wrong. Please try again.";
+				setFormError(message);
+				notifyError(message);
 			}
 		},
 	});
 
-	if (submitted) {
-		return (
-			<main className={styles.page}>
-				<div className="wrap">
-					<div className={styles.success}>
-						<span className="eyebrow">Thank You</span>
-						<h2>Application Submitted</h2>
-						<p className="lead">
-							We&apos;ve received your application and will review it
-							shortly. If your profile matches, our team will reach out.
-						</p>
-					</div>
-				</div>
-			</main>
-		);
-	}
-
 	return (
 		<main className={styles.page}>
 			<div className="wrap">
-				<div className={styles.container}>
-					<div className={styles.head}>
-						<span className="eyebrow">Join Our Team</span>
-						<h1>Athayog Career</h1>
-						<p className="lead">Shape Your Career in Wellness with Us</p>
-					</div>
+				<FormStatus
+					submitted={submitted}
+					titleAs="h1"
+					title="Application Submitted"
+					message="We've received your application and will review it shortly. If your profile matches, our team will reach out."
+				/>
+				{!submitted && (
+					<>
+						<div className={styles.container}>
+							<div className={styles.head}>
+								<span className="eyebrow">Join Our Team</span>
+								<h1>Athayog Career</h1>
+								<p className="lead">
+									Shape Your Career in Wellness with Us
+								</p>
+							</div>
 
-					<div className={styles.content}>
-						<div className={styles.contentSection}>
-							<h3 className={styles.contentTitle}>
-								Spreading the Yogic way of life in the modern world
-							</h3>
-							<p className={styles.contentText}>
-								AthaYog Living Academy is committed to transform
-								people&apos;s lives through the traditional teachings of
-								Yoga. We educate everyone in our space, online, onsite and
-								even in the corporate world to seek their true potential
-								through the tools of the ancient wisdom.
-							</p>
-						</div>
+							<div className={styles.content}>
+								<div className={styles.contentSection}>
+									<h3 className={styles.contentTitle}>
+										Spreading the Yogic way of life in the modern
+										world
+									</h3>
+									<p className={styles.contentText}>
+										AthaYog Living Academy is committed to transform
+										people&apos;s lives through the traditional
+										teachings of Yoga. We educate everyone in our
+										space, online, onsite and even in the corporate
+										world to seek their true potential through the
+										tools of the ancient wisdom.
+									</p>
+								</div>
 
-						<div className={styles.contentSection}>
-							<h3 className={styles.contentTitle}>
-								Life At Athayog Living / Working At Athayog Living
-							</h3>
-							<p className={styles.contentText}>
-								We are a dynamic team of young, energetic and diverse
-								individuals united by our shared love for Yoga. We strive
-								hard to guide people who join our academy with
-								transformative tools of Yoga.
-							</p>
-							<p className={styles.contentText}>
-								Our day starts early as we educate different groups of
-								people across Bangalore providing them with time, space
-								and guidance to embody the practice of Yoga in the modern
-								lifestyle. When we are not teaching, we practice, learn,
-								share our knowledge and stay updated to be our best selves
-								as educators for our members who show up on their mats
-								every single day.
-							</p>
-						</div>
+								<div className={styles.contentSection}>
+									<h3 className={styles.contentTitle}>
+										Life At Athayog Living / Working At Athayog Living
+									</h3>
+									<p className={styles.contentText}>
+										We are a dynamic team of young, energetic and
+										diverse individuals united by our shared love for
+										Yoga. We strive hard to guide people who join our
+										academy with transformative tools of Yoga.
+									</p>
+									<p className={styles.contentText}>
+										Our day starts early as we educate different
+										groups of people across Bangalore providing them
+										with time, space and guidance to embody the
+										practice of Yoga in the modern lifestyle. When we
+										are not teaching, we practice, learn, share our
+										knowledge and stay updated to be our best selves
+										as educators for our members who show up on their
+										mats every single day.
+									</p>
+								</div>
 
-						<div className={styles.contentSection}>
-							<h3 className={styles.contentTitle}>
-								Why Choose To Work At Athayog?
-							</h3>
-							<p className={styles.contentText}>
-								As an organisation that provides wellness and education,
-								we evolve everyday being around people and learning from
-								them in return as we guide them through their personal
-								journey. When you work at AthaYog Living, you receive as
-								much as you share, you learn as much as you guide people
-								and an abundance of transformation happens within
-								yourself. That&apos;s what the power of Yoga does when you
-								spread the teachings to people who truly seek. And as you
-								help people get closer to their true selves, you discover
-								more about yourself whether you are inside the class or
-								outside guiding people.
-							</p>
-						</div>
-					</div>
-
-					{formError && <div className={styles.errorBanner}>{formError}</div>}
-
-					<form
-						onSubmit={(e) => {
-							e.preventDefault();
-							e.stopPropagation();
-							form.handleSubmit();
-						}}
-					>
-						<div className={styles.section}>
-							<h3 className={styles.sectionTitle}>Personal Information</h3>
-
-							<div className={styles.row}>
-								<div className={styles.full}>
-									<FormField
-										form={form}
-										name="fullName"
-										label="Full Name"
-										validators={{
-											onChange: zodField(
-												careerSchema.shape.fullName,
-											),
-										}}
-									/>
+								<div className={styles.contentSection}>
+									<h3 className={styles.contentTitle}>
+										Why Choose To Work At Athayog?
+									</h3>
+									<p className={styles.contentText}>
+										As an organisation that provides wellness and
+										education, we evolve everyday being around people
+										and learning from them in return as we guide them
+										through their personal journey. When you work at
+										AthaYog Living, you receive as much as you share,
+										you learn as much as you guide people and an
+										abundance of transformation happens within
+										yourself. That&apos;s what the power of Yoga does
+										when you spread the teachings to people who truly
+										seek. And as you help people get closer to their
+										true selves, you discover more about yourself
+										whether you are inside the class or outside
+										guiding people.
+									</p>
 								</div>
 							</div>
 
-							<div className={styles.row}>
-								<FormField
-									form={form}
-									name="email"
-									label="Email"
-									type="email"
-									validators={{
-										onChange: zodField(careerSchema.shape.email),
-									}}
-								/>
-								<FormField
-									form={form}
-									name="phone"
-									label="Phone Number"
-									type="tel"
-									validators={{
-										onChange: zodField(careerSchema.shape.phone),
-									}}
-								/>
-							</div>
+							{formError && (
+								<div className={styles.errorBanner}>{formError}</div>
+							)}
 
-							<div className={styles.row}>
-								<div className={styles.full}>
-									<FormField
-										form={form}
-										name="currentLocation"
-										label="Current Location"
-										validators={{
-											onChange: zodField(
-												careerSchema.shape.currentLocation,
-											),
-										}}
-									/>
+							<form
+								onSubmit={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									form.handleSubmit();
+								}}
+							>
+								<div className={styles.section}>
+									<h3 className={styles.sectionTitle}>
+										Personal Information
+									</h3>
+
+									<div className={styles.row}>
+										<div className={styles.full}>
+											<FormField
+												form={form}
+												name="fullName"
+												label="Full Name"
+												validators={{
+													onChange: zodField(
+														careerSchema.shape.fullName,
+													),
+												}}
+											/>
+										</div>
+									</div>
+
+									<div className={styles.row}>
+										<FormField
+											form={form}
+											name="email"
+											label="Email"
+											type="email"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.email,
+												),
+											}}
+										/>
+										<FormField
+											form={form}
+											name="phone"
+											label="Phone Number"
+											type="tel"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.phone,
+												),
+											}}
+										/>
+									</div>
+
+									<div className={styles.row}>
+										<div className={styles.full}>
+											<FormField
+												form={form}
+												name="currentLocation"
+												label="Current Location"
+												validators={{
+													onChange: zodField(
+														careerSchema.shape
+															.currentLocation,
+													),
+												}}
+											/>
+										</div>
+									</div>
 								</div>
-							</div>
+
+								<hr className={styles.divider} />
+
+								<div className={styles.section}>
+									<h3 className={styles.sectionTitle}>
+										Work Information
+									</h3>
+
+									<div className={styles.row}>
+										<div className={styles.full}>
+											<FormField
+												form={form}
+												name="designation"
+												label="Designation Applying For"
+												as="select"
+												placeholder="Select Designation"
+												options={designationOptions}
+												validators={{
+													onChange: zodField(
+														careerSchema.shape.designation,
+													),
+												}}
+											/>
+										</div>
+									</div>
+
+									<div className={styles.row}>
+										<FormField
+											form={form}
+											name="currentCompany"
+											label="Current Company"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.currentCompany,
+												),
+											}}
+										/>
+										<FormField
+											form={form}
+											name="experienceInYears"
+											label="Experience (Years)"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.experienceInYears,
+												),
+											}}
+										/>
+									</div>
+
+									<div className={styles.row}>
+										<FormField
+											form={form}
+											name="currentCTC"
+											label="Current CTC"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.currentCTC,
+												),
+											}}
+										/>
+										<FormField
+											form={form}
+											name="expectedCTC"
+											label="Expected CTC"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.expectedCTC,
+												),
+											}}
+										/>
+									</div>
+
+									<div className={styles.row}>
+										<FormField
+											form={form}
+											name="noticePeriod"
+											label="Notice Period"
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.noticePeriod,
+												),
+											}}
+										/>
+										<FormField
+											form={form}
+											name="willingToRelocate"
+											label="Willing to Relocate"
+											as="select"
+											placeholder="Select"
+											options={yesNoOptions}
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.willingToRelocate,
+												),
+											}}
+										/>
+									</div>
+
+									<div className={styles.row}>
+										<FormField
+											form={form}
+											name="offerInHand"
+											label="Any Offer in Hand?"
+											as="select"
+											placeholder="Select"
+											options={yesNoOptions}
+											validators={{
+												onChange: zodField(
+													careerSchema.shape.offerInHand,
+												),
+											}}
+										/>
+										<FormField
+											form={form}
+											name="flexibleWithSplitShift"
+											label="Flexible with Split Shift?"
+											as="select"
+											placeholder="Select"
+											options={yesNoOptions}
+											validators={{
+												onChange: zodField(
+													careerSchema.shape
+														.flexibleWithSplitShift,
+												),
+											}}
+										/>
+									</div>
+
+									<div className={styles.row}>
+										<div className={styles.full}>
+											<FormField
+												form={form}
+												name="questionsOrComments"
+												label="Questions or Comments"
+												as="textarea"
+												hint="Optional"
+											/>
+										</div>
+									</div>
+
+									<div className={styles.row}>
+										<div className={styles.full}>
+											<FormField
+												form={form}
+												name="resumeFile"
+												label="Upload Resume"
+												as="file"
+												accept=".pdf"
+												maxSizeMb={5}
+												hint="PDF only, max 5MB"
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div className={styles.submitRow}>
+									<form.Subscribe selector={(s) => s.isSubmitting}>
+										{(isSubmitting) => (
+											<SubmitButton isSubmitting={isSubmitting}>
+												Submit Application
+											</SubmitButton>
+										)}
+									</form.Subscribe>
+								</div>
+							</form>
 						</div>
-
-						<hr className={styles.divider} />
-
-						<div className={styles.section}>
-							<h3 className={styles.sectionTitle}>Work Information</h3>
-
-							<div className={styles.row}>
-								<div className={styles.full}>
-									<FormField
-										form={form}
-										name="designation"
-										label="Designation Applying For"
-										as="select"
-										placeholder="Select Designation"
-										options={designationOptions}
-										validators={{
-											onChange: zodField(
-												careerSchema.shape.designation,
-											),
-										}}
-									/>
-								</div>
-							</div>
-
-							<div className={styles.row}>
-								<FormField
-									form={form}
-									name="currentCompany"
-									label="Current Company"
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.currentCompany,
-										),
-									}}
-								/>
-								<FormField
-									form={form}
-									name="experienceInYears"
-									label="Experience (Years)"
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.experienceInYears,
-										),
-									}}
-								/>
-							</div>
-
-							<div className={styles.row}>
-								<FormField
-									form={form}
-									name="currentCTC"
-									label="Current CTC"
-									validators={{
-										onChange: zodField(careerSchema.shape.currentCTC),
-									}}
-								/>
-								<FormField
-									form={form}
-									name="expectedCTC"
-									label="Expected CTC"
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.expectedCTC,
-										),
-									}}
-								/>
-							</div>
-
-							<div className={styles.row}>
-								<FormField
-									form={form}
-									name="noticePeriod"
-									label="Notice Period"
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.noticePeriod,
-										),
-									}}
-								/>
-								<FormField
-									form={form}
-									name="willingToRelocate"
-									label="Willing to Relocate"
-									as="select"
-									placeholder="Select"
-									options={yesNoOptions}
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.willingToRelocate,
-										),
-									}}
-								/>
-							</div>
-
-							<div className={styles.row}>
-								<FormField
-									form={form}
-									name="offerInHand"
-									label="Any Offer in Hand?"
-									as="select"
-									placeholder="Select"
-									options={yesNoOptions}
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.offerInHand,
-										),
-									}}
-								/>
-								<FormField
-									form={form}
-									name="flexibleWithSplitShift"
-									label="Flexible with Split Shift?"
-									as="select"
-									placeholder="Select"
-									options={yesNoOptions}
-									validators={{
-										onChange: zodField(
-											careerSchema.shape.flexibleWithSplitShift,
-										),
-									}}
-								/>
-							</div>
-
-							<div className={styles.row}>
-								<div className={styles.full}>
-									<FormField
-										form={form}
-										name="questionsOrComments"
-										label="Questions or Comments"
-										as="textarea"
-										hint="Optional"
-									/>
-								</div>
-							</div>
-
-							<div className={styles.row}>
-								<div className={styles.full}>
-									<FormField
-										form={form}
-										name="resumeFile"
-										label="Upload Resume"
-										as="file"
-										accept=".pdf"
-										maxSizeMb={5}
-										hint="PDF only, max 5MB"
-									/>
-								</div>
-							</div>
-						</div>
-
-						<div className={styles.submitRow}>
-							<form.Subscribe selector={(s) => s.isSubmitting}>
-								{(isSubmitting) => (
-									<SubmitButton isSubmitting={isSubmitting}>
-										Submit Application
-									</SubmitButton>
-								)}
-							</form.Subscribe>
-						</div>
-					</form>
-				</div>
+					</>
+				)}
 			</div>
 		</main>
 	);

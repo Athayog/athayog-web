@@ -1,0 +1,121 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
+import TtcOnlineLdForm from "../TtcOnlineLdForm";
+import { useToastStore } from "@/store/useToastStore";
+
+const PROPS = {
+	badge: "Enquire now",
+	title: "Speak to us about the next cohort",
+	intro: "Share a few details and we will guide you on eligibility.",
+};
+
+describe("TtcOnlineLdForm confirmation", () => {
+	beforeEach(() => {
+		useToastStore.setState({ toasts: [] });
+		vi.stubGlobal(
+			"fetch",
+			vi.fn().mockResolvedValue({ ok: true, json: async () => ({}) }),
+		);
+		vi.stubGlobal("fbq", vi.fn());
+	});
+
+	afterEach(() => {
+		vi.unstubAllGlobals();
+	});
+
+	async function submit() {
+		const user = userEvent.setup();
+		await user.type(screen.getByLabelText("Name"), "Priya");
+		await user.type(screen.getByLabelText("Phone"), "9876543210");
+		await user.selectOptions(screen.getByLabelText(/preferred batch/i), "Weekend");
+		await user.click(screen.getByRole("button", { name: /send enquiry/i }));
+	}
+
+	it("offers weekday and weekend as the batch options", () => {
+		render(<TtcOnlineLdForm {...PROPS} />);
+
+		const select = screen.getByLabelText(/preferred batch/i);
+		expect(select.tagName).toBe("SELECT");
+		expect(screen.getByRole("option", { name: "Weekday" })).toBeInTheDocument();
+		expect(screen.getByRole("option", { name: "Weekend" })).toBeInTheDocument();
+	});
+
+	it("will not submit until a batch is chosen", async () => {
+		const user = userEvent.setup();
+		render(<TtcOnlineLdForm {...PROPS} />);
+
+		await user.type(screen.getByLabelText("Name"), "Priya");
+		await user.type(screen.getByLabelText("Phone"), "9876543210");
+		await user.click(screen.getByRole("button", { name: /send enquiry/i }));
+
+		expect(
+			await screen.findByText(/please select weekday or weekend/i),
+		).toBeInTheDocument();
+		expect(fetch).not.toHaveBeenCalled();
+	});
+
+	it("replaces the whole card body with the confirmation", async () => {
+		render(<TtcOnlineLdForm {...PROPS} />);
+		await submit();
+
+		expect(await screen.findByText(/thank you/i)).toBeInTheDocument();
+
+		expect(
+			screen.queryByRole("button", { name: /send enquiry/i }),
+		).not.toBeInTheDocument();
+		expect(screen.queryByText(PROPS.title)).not.toBeInTheDocument();
+		expect(screen.queryByText(PROPS.intro)).not.toBeInTheDocument();
+		expect(screen.queryByRole("link", { name: /whatsapp/i })).not.toBeInTheDocument();
+	});
+
+	it("raises a success toast and fires the lead pixel", async () => {
+		render(<TtcOnlineLdForm {...PROPS} />);
+		await submit();
+		await screen.findByText(/thank you/i);
+
+		const [toast] = useToastStore.getState().toasts;
+		expect(toast).toMatchObject({ variant: "success", title: "Enquiry sent" });
+		expect(window.fbq).toHaveBeenCalledWith("track", "Lead", {
+			source: "ttc_online",
+		});
+	});
+
+	it("raises an error toast when the api fails", async () => {
+		vi.stubGlobal(
+			"fetch",
+			vi.fn().mockResolvedValue({
+				ok: false,
+				json: async () => ({ error: "Too many requests." }),
+			}),
+		);
+		render(<TtcOnlineLdForm {...PROPS} />);
+		await submit();
+
+		await vi.waitFor(() => {
+			const [toast] = useToastStore.getState().toasts;
+			expect(toast).toMatchObject({
+				variant: "error",
+				title: "Something went wrong",
+				message: "Too many requests.",
+			});
+		});
+		expect(window.fbq).not.toHaveBeenCalled();
+	});
+
+	it("posts to the online TTC collection", async () => {
+		render(<TtcOnlineLdForm {...PROPS} />);
+		await submit();
+		await screen.findByText(/thank you/i);
+
+		const [, init] = vi.mocked(fetch).mock.calls[0];
+		const body = JSON.parse(init?.body as string);
+		expect(body.collection).toBe("ttc_online");
+		expect(body.data).toMatchObject({
+			name: "Priya",
+			phone: "9876543210",
+			batchPreference: "Weekend",
+		});
+	});
+});

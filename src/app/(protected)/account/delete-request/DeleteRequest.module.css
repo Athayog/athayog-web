@@ -37,29 +37,6 @@
 	gap: 0;
 }
 
-.success {
-	text-align: center;
-	padding: 48px 24px;
-	background: #fff;
-	border: 1px solid var(--line);
-	border-radius: 4px;
-}
-
-.successTitle {
-	font-family: var(--font-display);
-	font-size: 1.3rem;
-	font-weight: 600;
-	color: var(--brand-deep);
-	margin-bottom: 8px;
-}
-
-.successText {
-	font-size: 0.95rem;
-	line-height: 1.6;
-	color: var(--ink);
-	opacity: 0.7;
-}
-
 .overlay {
 	position: fixed;
 	inset: 0;

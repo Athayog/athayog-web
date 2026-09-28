@@ -5,6 +5,8 @@ import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
 import { zodField } from "@/lib/forms/validate";
 import { strings, optional } from "@/lib/forms/schemas";
+import FormStatus from "@/components/forms/FormStatus";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import styles from "@/components/EnquireModal.module.css";
 
 const enquireSchema = z.object({
@@ -40,6 +42,7 @@ export default function EnquireModal({
 	const [open, setOpen] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
 	const [formError, setFormError] = useState<string | null>(null);
+	const { notifySuccess, notifyError } = useFormFeedback();
 
 	const form = useForm({
 		defaultValues: {
@@ -75,12 +78,18 @@ export default function EnquireModal({
 					throw new Error(body.error || "Failed to submit");
 				}
 				setSubmitted(true);
+				notifySuccess({
+					title: "Enquiry sent",
+					message: "We'll get back to you within 24 hours.",
+					source: "enquiries",
+				});
 			} catch (err) {
-				setFormError(
+				const message =
 					err instanceof Error
 						? err.message
-						: "Something went wrong. Please try again.",
-				);
+						: "Something went wrong. Please try again.";
+				setFormError(message);
+				notifyError(message);
 			}
 		},
 	});
@@ -115,19 +124,13 @@ export default function EnquireModal({
 					×
 				</button>
 
-				{submitted ? (
-					<div className={styles.success}>
-						<h3>Enquiry Sent</h3>
-						<p
-							style={{
-								color: "var(--brand-deep)",
-								fontSize: "0.95rem",
-							}}
-						>
-							We&apos;ll get back to you within 24 hours.
-						</p>
-					</div>
-				) : (
+				<FormStatus
+					submitted={submitted}
+					title="Enquiry Sent"
+					message="We'll get back to you within 24 hours."
+					compact
+				/>
+				{!submitted && (
 					<>
 						{formError && (
 							<div className={styles.errorBanner}>{formError}</div>

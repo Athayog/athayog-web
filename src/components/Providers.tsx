@@ -1,6 +1,7 @@
 "use client";
 
 import { ProgressProvider } from "@bprogress/next/app";
+import ToastRegion from "@/components/ToastRegion";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
 	return (
@@ -11,6 +12,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 			shallowRouting
 		>
 			{children}
+			<ToastRegion />
 		</ProgressProvider>
 	);
 }

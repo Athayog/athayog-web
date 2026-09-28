@@ -41,3 +41,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# lead/form exports contain real customer PII - never commit (repo is public)
+/exports/

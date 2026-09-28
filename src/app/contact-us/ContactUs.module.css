@@ -79,17 +79,6 @@
 	justify-content: center;
 }
 
-.success {
-	text-align: center;
-	padding: 48px 0;
-	max-width: 560px;
-	margin: 0 auto;
-}
-
-.success h2 {
-	margin-bottom: 8px;
-}
-
 .errorBanner {
 	background: rgba(176, 115, 74, 0.12);
 	color: var(--clay);

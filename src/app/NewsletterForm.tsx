@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
+import FormStatus from "@/components/forms/FormStatus";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
 import { strings } from "@/lib/forms/schemas";
 import { SubmitButton } from "@/components/forms/SubmitButton";
@@ -16,6 +18,7 @@ const newsletterSchema = z.object({
 export default function NewsletterForm() {
 	const [submitted, setSubmitted] = useState(false);
 	const [formError, setFormError] = useState<string | null>(null);
+	const { notifySuccess, notifyError } = useFormFeedback();
 
 	const form = useForm({
 		defaultValues: { name: "", email: "" },
@@ -39,34 +42,31 @@ export default function NewsletterForm() {
 					throw new Error(body.error || "Failed to submit");
 				}
 				setSubmitted(true);
+				notifySuccess({
+					title: "You're in",
+					message:
+						"Welcome to the Athayog community. We'll send you yoga tips, wellness insights and special offers.",
+					source: "newsletter",
+				});
 			} catch (err) {
-				setFormError(
+				const message =
 					err instanceof Error
 						? err.message
-						: "Something went wrong. Please try again.",
-				);
+						: "Something went wrong. Please try again.";
+				setFormError(message);
+				notifyError(message);
 			}
 		},
 	});
 
 	if (submitted) {
 		return (
-			<div style={{ textAlign: "center" }}>
-				<h3
-					style={{
-						fontFamily: "var(--font-display)",
-						fontSize: "1.8rem",
-						color: "var(--cream)",
-						marginBottom: 8,
-					}}
-				>
-					You&apos;re In
-				</h3>
-				<p style={{ color: "#f0f3e9", fontSize: "0.95rem" }}>
-					Welcome to the Athayog community. We&apos;ll send you yoga tips,
-					wellness insights and special offers.
-				</p>
-			</div>
+			<FormStatus
+				submitted={submitted}
+				title="You're In"
+				message="Welcome to the Athayog community. We'll send you yoga tips, wellness insights and special offers."
+				tone="onDark"
+			/>
 		);
 	}
 

@@ -75,11 +75,11 @@ const form = useForm({
 | `resume`                        | New Career Application                    | `/career` (includes resume file URL)                                       |
 | `trialClasses`                  | New Trial Class                           | `/trial-classes`                                                           |
 | `deleteAccount`                 | _(no email)_                              | `/account/delete-request`                                                  |
-| `group_classes_indiranagar`     | New Group Classes Lead (Landing Page)     | `/ld/group-classes-indiranagar` YogaProgramHeroSection                     |
+| `group_classes_indiranagar`     | New Group Classes Lead (Landing Page)     | `/ld/group-classes-indiranagar` GroupClassesLdForm                         |
 | `personal_training_indiranagar` | New Personal Training Lead (Landing Page) | `/ld/personal-yoga-training-indiranagar` YogaProgramHeroSection            |
 | `ryt200_non_residential`        | New RYT 200 Non-Residential Lead          | `/ld/yoga-teacher-training-ryt-200-non-residential` YogaProgramHeroSection |
 | `ryt_residential`               | New Residential TTC Lead                  | `/ld/residential-yoga-teacher-training` YogaProgramHeroSection             |
-| `ttc_online`                    | New Online TTC Lead                       | `/ld/yoga-ttc-online-certification` YogaProgramHeroSection                 |
+| `ttc_online`                    | New Online TTC Lead                       | `/ld/yoga-ttc-online-certification` TtcOnlineLdForm                        |
 
 **Both** the Zod `collectionSchema` enum and the `formConfigs` map live in
 `src/app/api/submit-form/route.ts`. If you add a form, add it to both.
@@ -91,6 +91,43 @@ const form = useForm({
 > email delivery must be confirmed in the Resend dashboard, not by the HTTP
 > status. `deleteAccount` is the only intentionally silent collection.
 
+## Submit feedback (confirmation, toast, conversions)
+
+Every form shares one feedback path, so a submission behaves the same way
+wherever it happens:
+
+- **`src/components/forms/FormStatus.tsx`** renders the in-place confirmation.
+  Pass `submitted`, `message`, and optionally `title`, `titleAs="h1"`,
+  `tone="onDark"` (dark bands) and `compact` (modal). Omit `title` for the
+  single-sentence treatment used on the landing page hero cards. Use
+  `titleAs="h1"` when the confirmation replaces a page's only heading, so the
+  page still has exactly one `<h1>`.
+- **`src/components/ToastRegion.tsx`** is the site's only notification region.
+  It is mounted once in `src/components/Providers.tsx`, renders **empty into the
+  initial HTML** (so the live region exists before content is appended, which is
+  what makes the announcement reliable on VoiceOver), and is announced via
+  `role="status" aria-live="polite"`. Toasts auto-dismiss after 6s and can be
+  dismissed manually.
+- **`src/lib/forms/useFormFeedback.ts`** is the hook that ties a submit outcome
+  to both. Call `notifySuccess({ title, message, source })` once on success and
+  `notifyError(message)` on failure.
+
+`FormStatus` is deliberately **not** a live region. The toast owns the
+announcement; two live regions for one submission would be read out twice.
+
+### Conversion tracking
+
+`notifySuccess` calls `trackLead(source)` (`src/lib/analytics.ts`), which fires
+the Facebook `Lead` event and, when `NEXT_PUBLIC_GOOGLE_ADS_ID` is set, a Google
+Ads conversion. Both are no-ops if the pixel is absent and can never throw, so a
+blocked pixel cannot break a submit.
+
+**Pass `source` only for genuine lead conversions.** It is deliberately omitted
+for the career application (`resume`) and account-deletion (`deleteAccount`)
+submissions so they do not inflate conversion reporting. The Facebook pixel is
+loaded on `/thank-you`; no lead form redirects there any more, which is why the
+event is now fired on submit instead.
+
 ## How to add a new form
 
 1. Add Zod fields to `src/lib/forms/schemas.ts` (or reuse `strings.*` /
@@ -100,9 +137,12 @@ const form = useForm({
 3. Register the collection in `src/app/api/submit-form/route.ts`:
     - add the name to `collectionSchema` (z.enum),
     - add `{ subject: "..." }` to `formConfigs` if it should email.
-4. Add a test under `src/app/api/submit-form/__tests__/` (existing tests cover
+4. Wire up the shared feedback: render `<FormStatus />` and call
+   `notifySuccess` / `notifyError` from `useFormFeedback()` (see above). Do not
+   hand-roll a success block or a live region.
+5. Add a test under `src/app/api/submit-form/__tests__/` (existing tests cover
    validation, rate limit, email).
-5. Update this table. Run `npm run format` + `npm run build`.
+6. Update this table. Run `npm run format` + `npm run build`.
 
 ## Notes & caveats
 

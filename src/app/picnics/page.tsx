@@ -5,6 +5,8 @@ import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
 import { FormField } from "@/components/forms/FormField";
 import { SubmitButton } from "@/components/forms/SubmitButton";
+import FormStatus from "@/components/forms/FormStatus";
+import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
 import { strings } from "@/lib/forms/schemas";
 import Reveal from "@/components/Reveal";
@@ -45,6 +47,7 @@ const features = [
 export default function PicnicsPage() {
 	const [submitted, setSubmitted] = useState(false);
 	const [formError, setFormError] = useState<string | null>(null);
+	const { notifySuccess, notifyError } = useFormFeedback();
 
 	const form = useForm({
 		defaultValues: {
@@ -79,12 +82,19 @@ export default function PicnicsPage() {
 					throw new Error(body.error || "Failed to submit");
 				}
 				setSubmitted(true);
+				notifySuccess({
+					title: "Sign-up received",
+					message:
+						"We've received your sign-up. We'll reach out soon with details about upcoming excursions.",
+					source: "picnicForm",
+				});
 			} catch (err) {
-				setFormError(
+				const message =
 					err instanceof Error
 						? err.message
-						: "Something went wrong. Please try again.",
-				);
+						: "Something went wrong. Please try again.";
+				setFormError(message);
+				notifyError(message);
 			}
 		},
 	});
@@ -153,15 +163,12 @@ export default function PicnicsPage() {
 							<div className={styles.errorBanner}>{formError}</div>
 						)}
 
-						{submitted ? (
-							<div className={styles.success}>
-								<h3>Thank You!</h3>
-								<p>
-									We&apos;ve received your sign-up. We&apos;ll reach out
-									soon with details about upcoming excursions.
-								</p>
-							</div>
-						) : (
+						<FormStatus
+							submitted={submitted}
+							title="Thank You!"
+							message="We've received your sign-up. We'll reach out soon with details about upcoming excursions."
+						/>
+						{!submitted && (
 							<form
 								onSubmit={(e) => {
 									e.preventDefault();
