@@ -29,8 +29,32 @@ describe("TtcOnlineLdForm confirmation", () => {
 		const user = userEvent.setup();
 		await user.type(screen.getByLabelText("Name"), "Priya");
 		await user.type(screen.getByLabelText("Phone"), "9876543210");
+		await user.selectOptions(screen.getByLabelText(/preferred batch/i), "Weekend");
 		await user.click(screen.getByRole("button", { name: /send enquiry/i }));
 	}
+
+	it("offers weekday and weekend as the batch options", () => {
+		render(<TtcOnlineLdForm {...PROPS} />);
+
+		const select = screen.getByLabelText(/preferred batch/i);
+		expect(select.tagName).toBe("SELECT");
+		expect(screen.getByRole("option", { name: "Weekday" })).toBeInTheDocument();
+		expect(screen.getByRole("option", { name: "Weekend" })).toBeInTheDocument();
+	});
+
+	it("will not submit until a batch is chosen", async () => {
+		const user = userEvent.setup();
+		render(<TtcOnlineLdForm {...PROPS} />);
+
+		await user.type(screen.getByLabelText("Name"), "Priya");
+		await user.type(screen.getByLabelText("Phone"), "9876543210");
+		await user.click(screen.getByRole("button", { name: /send enquiry/i }));
+
+		expect(
+			await screen.findByText(/please select weekday or weekend/i),
+		).toBeInTheDocument();
+		expect(fetch).not.toHaveBeenCalled();
+	});
 
 	it("replaces the whole card body with the confirmation", async () => {
 		render(<TtcOnlineLdForm {...PROPS} />);
@@ -88,6 +112,10 @@ describe("TtcOnlineLdForm confirmation", () => {
 		const [, init] = vi.mocked(fetch).mock.calls[0];
 		const body = JSON.parse(init?.body as string);
 		expect(body.collection).toBe("ttc_online");
-		expect(body.data).toMatchObject({ name: "Priya", phone: "9876543210" });
+		expect(body.data).toMatchObject({
+			name: "Priya",
+			phone: "9876543210",
+			batchPreference: "Weekend",
+		});
 	});
 });

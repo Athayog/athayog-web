@@ -143,6 +143,7 @@
 }
 
 .formField input,
+.formField select,
 .formField textarea {
 	width: 100%;
 	padding: 12px 14px;
@@ -160,12 +161,14 @@
 }
 
 .formField input:focus,
+.formField select:focus,
 .formField textarea:focus {
 	outline: none;
 	border-color: var(--brand);
 }
 
 .formFieldError input,
+.formFieldError select,
 .formFieldError textarea {
 	border-color: var(--clay);
 }

@@ -19,8 +19,11 @@ const enquirySchema = z.object({
 	name: strings.name,
 	phone: strings.phone,
 	email: optional.email,
+	batchPreference: z.string().min(1, "Please select weekday or weekend"),
 	message: optional.message,
 });
+
+const batchOptions = ["Weekday", "Weekend"];
 
 type TtcOnlineLdFormProps = {
 	badge: string;
@@ -33,7 +36,13 @@ export default function TtcOnlineLdForm({ badge, title, intro }: TtcOnlineLdForm
 	const [formError, setFormError] = useState<string | null>(null);
 
 	const form = useForm({
-		defaultValues: { name: "", phone: "", email: "", message: "" },
+		defaultValues: {
+			name: "",
+			phone: "",
+			email: "",
+			batchPreference: "",
+			message: "",
+		},
 		onSubmit: async ({ value }) => {
 			setFormError(null);
 			try {
@@ -181,6 +190,51 @@ export default function TtcOnlineLdForm({ badge, title, intro }: TtcOnlineLdForm
 												}
 												onBlur={field.handleBlur}
 											/>
+											{field.state.meta.errors?.length > 0 && (
+												<div className={styles.fieldError}>
+													{field.state.meta.errors.join(", ")}
+												</div>
+											)}
+										</div>
+									)}
+								</form.Field>
+
+								<form.Field
+									name="batchPreference"
+									validators={{
+										onChange: zodField(
+											enquirySchema.shape.batchPreference,
+										),
+									}}
+								>
+									{(field) => (
+										<div
+											className={`${styles.formField} ${
+												field.state.meta.errors?.length
+													? styles.formFieldError
+													: ""
+											}`}
+										>
+											<label htmlFor="ttc-batch">
+												Preferred batch
+											</label>
+											<select
+												id="ttc-batch"
+												value={field.state.value}
+												onChange={(e) =>
+													field.handleChange(e.target.value)
+												}
+												onBlur={field.handleBlur}
+											>
+												<option value="">
+													Weekday or weekend?
+												</option>
+												{batchOptions.map((option) => (
+													<option key={option} value={option}>
+														{option}
+													</option>
+												))}
+											</select>
 											{field.state.meta.errors?.length > 0 && (
 												<div className={styles.fieldError}>
 													{field.state.meta.errors.join(", ")}
