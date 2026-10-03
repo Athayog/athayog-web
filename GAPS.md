@@ -11,6 +11,7 @@ Foundational items to cover before building content pages. Add to this list free
 - [x] **TTC page clarification** — Residential TTC is at `/residential-yoga-teacher-training-bangalore`; `/yoga-teacher-training-residential` redirects to the online TTC page at `/yoga-ttc-online-certification`.
 - [x] **Proper favicon/icon** — Generated 512×512 `icon.png` + 180×180 `apple-touch-icon.png` from the logo (2025-08).
 - [ ] **Analytics** — Pick one: Vercel Analytics or GA, for page views & lead conversions.
+- [ ] **Review unresolved npm audit advisories by 2026-10-10** — `braces@3.0.3` (ESLint toolchain) and `node-forge@1.4.0` (firebase-admin 12 dependency) have high severity advisories with no patched release as of 2026-10-03. Recheck advisories and update dependencies when fixes are available; keep `firebase-admin` on v12 until its CommonJS compatibility is verified.
 - [ ] **Jayanagar branch** — Removed from the site (homepage + copy, 2025-08) because the branch isn't active. Decide whether to relaunch a South Bengaluru branch; if so, re-add with a real address.
 - [ ] **Weight-loss program** — Discontinued; page and all references removed (2025-08). Re-add only if the program relaunches (needs pricing + testimonials).
 
