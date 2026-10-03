@@ -101,6 +101,10 @@ paragraphs. Plain text without the markers renders as before.
 - Page copy → edit the `src/app/*/page.tsx` JSX (see `ai-workflow.md` for
   conventions; be careful with the site's em-dash-free copy style in visible
   page text).
+- Group class timetable → update the month-specific rows in
+  `src/app/group-classes-indiranagar/page.tsx` from the approved schedule, and
+  replace `public/schedule-group-classes.pdf` with the matching PDF. Keep the
+  month label, HTML table, and downloadable PDF in sync.
 - Sitemap/robots → edit `src/app/sitemap.ts` / `src/app/robots.ts` and rebuild.
 - OG image → `src/app/opengraph-image.tsx` (brand colors/tokens from
   `globals.css`).

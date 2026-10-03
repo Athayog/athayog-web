@@ -307,7 +307,7 @@ export default function GroupClassesPage() {
 							}}
 						>
 							Also on the timetable: <strong>Yoga with Props</strong>,{" "}
-							<strong>Pranayama &amp; Trataka</strong>, and{" "}
+							<strong>Trataka Pranayama</strong>, and{" "}
 							<strong>Aerial Yoga</strong> (a paid, per-session class).
 						</p>
 					</Reveal>
@@ -319,12 +319,11 @@ export default function GroupClassesPage() {
 				<div className="wrap">
 					<Reveal>
 						<div className="section-head">
-							<span className="eyebrow">September 2026 schedule</span>
+							<span className="eyebrow">October 2026 schedule</span>
 							<h2>Group class timetable: Indiranagar</h2>
 							<p className="lead">
 								Morning and evening batches, seven days a week. Pick a
-								time that fits your life. Schedule valid for September
-								2026.
+								time that fits your life. Schedule valid for October 2026.
 							</p>
 						</div>
 					</Reveal>
@@ -349,43 +348,43 @@ export default function GroupClassesPage() {
 									</tr>
 									<tr>
 										<td className={styles.tcol}>6:00–7:00</td>
+										<td>Hatha Vinyasa</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Rhythm of being</td>
-										<td>Universal Harmony</td>
-										<td>Hatha Vinyasa</td>
+										<td>Yoga with Props</td>
 										<td>Transcending Transition</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Universal Harmony</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>7:00–8:00</td>
 										<td>Universal Harmony</td>
 										<td>Transcending Transition</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Yoga with Props</td>
 										<td>Rhythm of being</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Hatha Vinyasa</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>8:00–9:00</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
-										<td>Rhythm of being</td>
-										<td>Universal Harmony</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Yoga with Props</td>
+										<td>Rhythm of being</td>
 										<td>Hatha Vinyasa</td>
 										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Transcending Transition</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>9:30–10:30</td>
-										<td>Hatha Vinyasa</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Rhythm of being</td>
-										<td>Transcending Transition</td>
-										<td>Universal Harmony</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Universal Harmony</td>
 										<td>Yoga with Props</td>
+										<td>Hatha Vinyasa</td>
+										<td>Transcending Transition</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>10:30–12:00</td>
@@ -404,47 +403,45 @@ export default function GroupClassesPage() {
 									</tr>
 									<tr>
 										<td className={styles.tcol}>4:00–5:00</td>
+										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Hatha Vinyasa</td>
 										<td>Yoga with Props</td>
-										<td>Universal Harmony</td>
+										<td>Rhythm of being</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
 										<td>Transcending Transition</td>
-										<td>Rhythm of being</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>5:00–6:00</td>
+										<td>Yoga with Props</td>
 										<td>Rhythm of being</td>
 										<td>Uttama Sadhana (Advance Asana)</td>
-										<td>Hatha Vinyasa</td>
-										<td>Yoga with Props</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Hatha Vinyasa</td>
 										<td>Transcending Transition</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>6:00–7:00</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
-										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
-										<td>Transcending Transition</td>
 										<td>Hatha Vinyasa</td>
-										<td>Uttama Sadhana (Advance Asana)</td>
+										<td>Transcending Transition</td>
+										<td>Rhythm of being</td>
 										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
+										<td>Yoga with Props</td>
 										<td>Universal Harmony</td>
+										<td>Uttama Sadhana (Advance Asana)</td>
 									</tr>
 									<tr>
 										<td className={styles.tcol}>7:30–8:30</td>
-										<td>Rhythm of being</td>
-										<td>Universal Harmony</td>
 										<td>Transcending Transition</td>
+										<td>Hatha Vinyasa</td>
 										<td>Yoga with Props</td>
+										<td>Trataka Pranayama</td>
 										<td className={styles.tdPaid}>
 											Aerial Yoga (paid)
 										</td>
-										<td className={styles.tdMeditation}>
-											Sound Meditation
-										</td>
-										<td>Hatha Vinyasa</td>
+										<td>Rhythm of being</td>
+										<td>Uttama Sadhana (Inversions / Arm Balance)</td>
 									</tr>
 								</tbody>
 							</table>
