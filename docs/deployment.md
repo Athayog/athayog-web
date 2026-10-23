@@ -110,6 +110,22 @@ Remove an entry as soon as a fix ships. Never add one just to turn a build green
    then deploy and smoke-test login, one form, and one payment.
 6. Update `README.md` stack table and this doc if the stack changes.
 
+### Node.js runtime
+
+Production (Vercel Functions), CI and local dev are all on **Node 24.x**.
+
+- Vercel Functions currently accepts **22.x or 24.x**. Node 26.x is available on
+  Vercel Sandboxes, which is a different product and not where this app runs.
+- `package.json` declares `"engines": { "node": "24.x" }`, and
+  `.github/dependabot.yml` ignores `@types/node` major bumps, because
+  `@types/node` majors track Node majors. Types ahead of the runtime let code
+  compile against APIs that do not exist in production — a failure mode that is
+  invisible at build time and only surfaces at runtime.
+- To move to a new Node line, change all four together in one PR: the Vercel
+  project's Node.js version, `node-version` in `.github/workflows/ci.yml`,
+  `engines` in `package.json`, and `@types/node` (then drop the dependabot
+  ignore so minor/patch updates flow again).
+
 ## Deploy checklist
 
 - [ ] `npm run build` green locally.

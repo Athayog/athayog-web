@@ -12,6 +12,13 @@ updates:
           # ESM-only jose@6 which breaks Vercel's CommonJS server bundle
           # (ERR_REQUIRE_ESM). Upgrade deliberately + test on a preview first.
           - dependency-name: firebase-admin
+          # @types/node must track the Node major that Vercel Functions can run
+          # (currently 24.x). Types ahead of the runtime let code compile against
+          # APIs that do not exist in production. Bump this together with the
+          # Vercel Node setting and CI's node-version.
+          - dependency-name: "@types/node"
+            update-types:
+                - version-update:semver-major
 
     - package-ecosystem: github-actions
       directory: "/"
