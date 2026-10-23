@@ -59,12 +59,26 @@ git-ignored. Keep both in sync.
 
 ## CI / quality gates
 
-- `.github/workflows/ci.yml`: format:check → lint → typecheck (`tsc --noEmit`)
-  → vitest → `next build`, on push/PR to `main`. Uses dummy env vars.
+- `.github/workflows/ci.yml`: audit gate → format:check → lint → typecheck
+  (`tsc --noEmit`) → vitest → `next build`, on push/PR to `main`. Uses dummy
+  env vars.
 - Local: `npm run build` = `eslint . && vitest run && next build`.
 - Pre-commit: Husky + lint-staged run prettier + eslint on staged files.
 - `.npmrc` sets `legacy-peer-deps=true` (needed for the Prismic ↔ Next.js 16
   peer conflict; do not fight it, do not re-add `--legacy-peer-deps` flags).
+
+### Accepted advisories
+
+`scripts/audit-gate.mjs` fails CI on any HIGH/CRITICAL advisory that is not in
+its `ACCEPTED` map. The map exists because some advisories have **no patched
+release at all**, so a raw `npm audit --audit-level=high` can never pass and
+eventually gets ignored. Each entry must carry a reason and a way out:
+
+| Advisory              | Package      | Why it is accepted                                                                                                           |
+| --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `GHSA-86w9-cpqp-85rv` | `node-forge` | No patched `node-forge` release exists. The only npm fix is `firebase-admin` 14, which breaks the Vercel build (CJS/`jose`). |
+
+Remove an entry as soon as a fix ships. Never add one just to turn a build green.
 
 ## Scripts
 
@@ -92,8 +106,8 @@ git-ignored. Keep both in sync.
 4. **Never** add `--legacy-peer-deps` or `--force` to installs manually — the
    project already handles the Prismic conflict via `.npmrc`.
 5. After any dependency change, run the full gate: `npm run format:check`,
-   `npm run lint`, `npm test`, `npm run build`, then deploy and smoke-test
-   login, one form, and one payment.
+   `npm run lint`, `npm test`, `npm run build`, and `node scripts/audit-gate.mjs`,
+   then deploy and smoke-test login, one form, and one payment.
 6. Update `README.md` stack table and this doc if the stack changes.
 
 ## Deploy checklist
