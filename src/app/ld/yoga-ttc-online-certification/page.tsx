@@ -525,10 +525,7 @@ export default function TtcOnlineLdPage() {
 
 			<div className={styles.stickyCta}>
 				<span className={styles.stickyMeta}>Online TTC · live cohorts</span>
-				<a
-					href="tel:+919611771434"
-					className={`btn btn-light ${styles.stickyCall}`}
-				>
+				<a href="tel:+919611771434" className="btn btn-light">
 					Call
 				</a>
 				<a href={APPLY_HREF} className="btn btn-cream">

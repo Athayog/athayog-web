@@ -566,11 +566,6 @@
 	color: var(--brand-light);
 }
 
-.stickyCall {
-	border-color: var(--brand-light);
-	color: var(--brand-light);
-}
-
 /* Responsive */
 @media (max-width: 960px) {
 	.heroGrid,
@@ -592,10 +587,6 @@
 }
 
 @media (max-width: 640px) {
-	.page {
-		padding-bottom: 64px;
-	}
-
 	.heroList,
 	.checklist,
 	.numlist,

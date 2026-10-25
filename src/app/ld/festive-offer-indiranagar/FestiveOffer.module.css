@@ -587,11 +587,6 @@
 	display: none;
 }
 
-.stickyCall {
-	border-color: var(--brand-light);
-	color: var(--brand-light);
-}
-
 /* Responsive */
 @media (max-width: 960px) {
 	.plans,
@@ -605,10 +600,6 @@
 }
 
 @media (max-width: 640px) {
-	.page {
-		padding-bottom: 64px;
-	}
-
 	.why {
 		grid-template-columns: 1fr;
 	}

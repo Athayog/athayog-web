@@ -330,10 +330,7 @@ export default function FestiveOfferPage() {
 			</section>
 
 			<div className={styles.stickyCta}>
-				<a
-					href="tel:+919611771434"
-					className={`btn btn-light ${styles.stickyCall}`}
-				>
+				<a href="tel:+919611771434" className="btn btn-light">
 					Call
 				</a>
 				<a
