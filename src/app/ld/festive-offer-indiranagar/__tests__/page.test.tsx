@@ -1,5 +1,7 @@
-import { describe, it, expect, vi } from "vitest";
+import { beforeEach, describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { usePlanPickStore } from "@/app/ld/festive-offer-indiranagar/planPickStore";
 
 vi.mock("next/navigation", () => ({
 	useRouter: () => ({ push: vi.fn() }),
@@ -9,6 +11,10 @@ vi.mock("next/navigation", () => ({
 import FestiveOfferPage from "../page";
 
 describe("ld/festive-offer-indiranagar page", () => {
+	beforeEach(() => {
+		usePlanPickStore.setState({ pendingPlan: null });
+	});
+
 	it("renders a single h1", () => {
 		render(<FestiveOfferPage />);
 		const headings = screen.getAllByRole("heading", { level: 1 });
@@ -43,5 +49,22 @@ describe("ld/festive-offer-indiranagar page", () => {
 		render(<FestiveOfferPage />);
 		expect(document.getElementById("claim")).toBeInTheDocument();
 		expect(document.getElementById("plans")).toBeInTheDocument();
+	});
+
+	it("preselects the plan when its pricing card is claimed", async () => {
+		const user = userEvent.setup();
+		render(<FestiveOfferPage />);
+
+		const cards = screen.getAllByRole("link", { name: /claim this offer/i });
+		expect(cards).toHaveLength(3);
+
+		// The three cards must still jump to the form.
+		for (const card of cards) {
+			expect(card).toHaveAttribute("href", "#claim");
+		}
+
+		await user.click(cards[2]);
+
+		expect(screen.getByLabelText(/plan you want/i)).toHaveValue("12-Month, ₹21,999");
 	});
 });

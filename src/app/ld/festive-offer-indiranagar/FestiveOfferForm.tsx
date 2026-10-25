@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "@tanstack/react-form-nextjs";
 import { z } from "zod";
 import FormStatus from "@/components/forms/FormStatus";
+import { usePlanPickStore } from "@/app/ld/festive-offer-indiranagar/planPickStore";
+import { PLAN_OPTIONS } from "@/app/ld/festive-offer-indiranagar/plans";
 import { strings } from "@/lib/forms/schemas";
 import { useFormFeedback } from "@/lib/forms/useFormFeedback";
 import { zodField } from "@/lib/forms/validate";
@@ -21,16 +23,11 @@ const claimSchema = z.object({
 	plan: z.string().min(1, "Please select a plan"),
 });
 
-const planOptions = [
-	"3-Month, ₹9,449",
-	"6-Month, ₹13,999",
-	"12-Month, ₹21,999",
-	"Not sure yet, please advise",
-];
-
 export default function FestiveOfferForm() {
 	const { notifySuccess, notifyError } = useFormFeedback();
 	const [formError, setFormError] = useState<string | null>(null);
+	const pendingPlan = usePlanPickStore((s) => s.pendingPlan);
+	const clearPlan = usePlanPickStore((s) => s.clear);
 
 	const form = useForm({
 		defaultValues: { name: "", phone: "", plan: "" },
@@ -68,6 +65,12 @@ export default function FestiveOfferForm() {
 			}
 		},
 	});
+
+	useEffect(() => {
+		if (!pendingPlan) return;
+		form.setFieldValue("plan", pendingPlan);
+		clearPlan();
+	}, [pendingPlan, form, clearPlan]);
 
 	return (
 		<form.Subscribe selector={(s) => s.isSubmitSuccessful}>
@@ -190,7 +193,7 @@ export default function FestiveOfferForm() {
 												onBlur={field.handleBlur}
 											>
 												<option value="">Select a plan</option>
-												{planOptions.map((option) => (
+												{PLAN_OPTIONS.map((option) => (
 													<option key={option} value={option}>
 														{option}
 													</option>

@@ -4,10 +4,12 @@ import userEvent from "@testing-library/user-event";
 
 import FestiveOfferForm from "../FestiveOfferForm";
 import { useToastStore } from "@/store/useToastStore";
+import { usePlanPickStore } from "@/app/ld/festive-offer-indiranagar/planPickStore";
 
 describe("FestiveOfferForm", () => {
 	beforeEach(() => {
 		useToastStore.setState({ toasts: [] });
+		usePlanPickStore.setState({ pendingPlan: null });
 		vi.stubGlobal(
 			"fetch",
 			vi.fn().mockResolvedValue({ ok: true, json: async () => ({}) }),
@@ -99,5 +101,13 @@ describe("FestiveOfferForm", () => {
 			});
 		});
 		expect(window.fbq).not.toHaveBeenCalled();
+	});
+
+	it("applies a plan chosen from a pricing card, then clears it", () => {
+		usePlanPickStore.getState().choose("3-Month, ₹9,449");
+		render(<FestiveOfferForm />);
+
+		expect(screen.getByLabelText(/plan you want/i)).toHaveValue("3-Month, ₹9,449");
+		expect(usePlanPickStore.getState().pendingPlan).toBeNull();
 	});
 });

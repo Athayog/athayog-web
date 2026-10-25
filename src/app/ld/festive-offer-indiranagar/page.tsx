@@ -1,5 +1,7 @@
 import { CalendarCheck, Gift, HeartPulse, Wind } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import ClaimPlanLink from "@/app/ld/festive-offer-indiranagar/ClaimPlanLink";
+import { PLAN_OPTIONS } from "@/app/ld/festive-offer-indiranagar/plans";
 import FestiveOfferForm from "@/app/ld/festive-offer-indiranagar/FestiveOfferForm";
 import PageJsonLd from "@/app/ld/festive-offer-indiranagar/PageJsonLd";
 import styles from "@/app/ld/festive-offer-indiranagar/FestiveOffer.module.css";
@@ -17,6 +19,7 @@ const STRIP = [
 const PLANS = [
 	{
 		term: "3-Month",
+		option: PLAN_OPTIONS[0],
 		mrp: "₹10,499",
 		now: "₹9,449",
 		save: "Save ₹1,050",
@@ -25,6 +28,7 @@ const PLANS = [
 	},
 	{
 		term: "6-Month",
+		option: PLAN_OPTIONS[1],
 		mrp: "₹16,799",
 		now: "₹13,999",
 		save: "Save ₹2,800",
@@ -33,6 +37,7 @@ const PLANS = [
 	},
 	{
 		term: "12-Month",
+		option: PLAN_OPTIONS[2],
 		mrp: "₹27,299",
 		now: "₹21,999",
 		save: "Save ₹5,300 · best value",
@@ -194,14 +199,10 @@ export default function FestiveOfferPage() {
 									<div className={styles.planNow}>{plan.now}</div>
 									<div className={styles.planSave}>{plan.save}</div>
 									<div className={styles.planPer}>{plan.per}</div>
-									<a
-										href="#claim"
-										className={`btn ${
-											plan.featured ? styles.goldBtn : "btn-ghost"
-										}`}
-									>
-										Claim This Offer
-									</a>
+									<ClaimPlanLink
+										plan={plan.option}
+										featured={plan.featured}
+									/>
 								</div>
 							))}
 						</div>
