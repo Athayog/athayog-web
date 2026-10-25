@@ -286,9 +286,15 @@
 }
 
 .whyIc {
-	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
 	color: var(--brand-deep);
-	margin-bottom: 6px;
+	margin-bottom: 10px;
+}
+
+.whyIc svg {
+	width: 28px;
+	height: 28px;
 }
 
 .why h3 {

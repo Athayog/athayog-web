@@ -1,3 +1,4 @@
+import { CalendarCheck, Gift, HeartPulse, Wind } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import FestiveOfferForm from "@/app/ld/festive-offer-indiranagar/FestiveOfferForm";
 import PageJsonLd from "@/app/ld/festive-offer-indiranagar/PageJsonLd";
@@ -40,7 +41,12 @@ const PLANS = [
 	},
 ];
 
-const WHY = ["Build consistency", "Better health", "Stress relief", "Festive savings"];
+const WHY = [
+	{ icon: CalendarCheck, label: "Build consistency" },
+	{ icon: HeartPulse, label: "Better health" },
+	{ icon: Wind, label: "Stress relief" },
+	{ icon: Gift, label: "Festive savings" },
+];
 
 const STEPS = [
 	{
@@ -220,12 +226,12 @@ export default function FestiveOfferPage() {
 					</Reveal>
 					<Reveal>
 						<div className={styles.why}>
-							{WHY.map((item) => (
-								<div key={item}>
+							{WHY.map(({ icon: Icon, label }) => (
+								<div key={label}>
 									<div className={styles.whyIc} aria-hidden="true">
-										◍
+										<Icon size={28} />
 									</div>
-									<h3>{item}</h3>
+									<h3>{label}</h3>
 								</div>
 							))}
 						</div>
