@@ -587,6 +587,17 @@
 	display: none;
 }
 
+.stickyCta a {
+	justify-content: center;
+}
+
+/* Dark label on a light fill, so it stays legible next to the filled CTAs. */
+.stickyCall {
+	background: var(--brand-light);
+	border-color: var(--brand-light);
+	color: var(--ink);
+}
+
 /* Responsive */
 @media (max-width: 960px) {
 	.plans,
