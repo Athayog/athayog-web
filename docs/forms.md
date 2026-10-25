@@ -68,6 +68,7 @@ const form = useForm({
 | `aerialTrial`                   | New Aerial Yoga Booking                   | `/aerial-yoga-indiranagar` MagnetForm                                      |
 | `contactMessages`               | New Contact Message                       | `/contact-us`                                                              |
 | `enquiries`                     | New Enquiry                               | EnquireModal (TTC pages)                                                   |
+| `festiveOffer`                  | New Festive Offer Claim                   | `/ld/festive-offer-indiranagar` FestiveOfferForm                           |
 | `groupTrial`                    | New Group Trial                           | `/group-classes-indiranagar` MagnetForm                                    |
 | `newsletter`                    | New Newsletter Signup                     | NewsletterForm (homepage footer area)                                      |
 | `personalAdsLead`               | New Personal Yoga Training Lead           | `/ld/personal-yoga-training-indiranagar-ads` PYTAdsForm                    |

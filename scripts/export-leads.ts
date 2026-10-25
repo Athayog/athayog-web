@@ -70,6 +70,7 @@ const firebaseCredentials = {
 const COLLECTIONS = [
 	{ id: "contactMessages", label: "Contact messages", lead: true },
 	{ id: "enquiries", label: "Enquiries (enquire modal)", lead: true },
+	{ id: "festiveOffer", label: "Festive offer claims", lead: true },
 	{ id: "trialClasses", label: "Trial classes", lead: true },
 	{ id: "aerialTrial", label: "Aerial yoga bookings", lead: true },
 	{ id: "groupTrial", label: "Group class trials", lead: true },
