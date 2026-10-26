@@ -652,12 +652,18 @@
 }
 
 .stickyCta a {
-	flex: 1;
+	justify-content: center;
 }
 
+/* Dark label on a light fill, so it stays legible next to the filled CTAs. */
 .stickyCall {
+	background: var(--brand-light);
 	border-color: var(--brand-light);
-	color: var(--brand-light);
+	color: var(--ink);
+}
+
+.stickyCta a {
+	flex: 1;
 }
 
 /* Responsive */
@@ -682,10 +688,6 @@
 }
 
 @media (max-width: 640px) {
-	.page {
-		padding-bottom: 64px;
-	}
-
 	.heroList,
 	.checklist,
 	.numlist,
