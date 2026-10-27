@@ -64,6 +64,10 @@ export default function Footer() {
 					<div className={styles.col}>
 						<h4 className={styles.colTitle}>What We Offer</h4>
 						<nav className={styles.colLinks}>
+							{/* TODO: Remove this link after the festive offer ends. */}
+							<Link href="/ld/festive-offer-indiranagar">
+								Festive Offer
+							</Link>
 							<Link href="/group-classes-indiranagar">Group Classes</Link>
 							<Link href="/personal-yoga-training-indiranagar">
 								Personal Training
