@@ -14,15 +14,11 @@ import { execFileSync } from "node:child_process";
 //   - remove the entry as soon as a fix ships
 //   - never add an advisory just to make a red build green
 
-const ACCEPTED = new Map([
-	[
-		"GHSA-86w9-cpqp-85rv",
-		"node-forge RSA PKCS#1 v1.5 signature verification (via firebase-admin v12). " +
-			"No patched node-forge release exists. The only npm fix is firebase-admin 14, " +
-			"which breaks the Vercel build (jose@6 / ERR_REQUIRE_ESM). Revisit when " +
-			"firebase-admin can move off v12.",
-	],
-]);
+// Currently empty: node-forge 1.4.2 cleared the last accepted advisory
+// (GHSA-86w9-cpqp-85rv), which was held open only because no patched
+// node-forge release existed. Keep this empty unless an advisory is
+// genuinely unfixable.
+const ACCEPTED = new Map();
 
 function runAudit() {
 	try {
