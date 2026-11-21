@@ -105,10 +105,13 @@ Remove an entry as soon as a fix ships. Never add one just to turn a build green
    framework docs in `node_modules/next/dist/docs/`.
 4. **Never** add `--legacy-peer-deps` or `--force` to installs manually — the
    project already handles the Prismic conflict via `.npmrc`.
-5. After any dependency change, run the full gate: `npm run format:check`,
+5. `next.config.ts` sets `experimental.agentUpgrade: "security"` (Next.js
+   16.4+), so dev/build warn about affected releases and `next upgrade --agent`
+   defaults to the security policy. It does not install upgrades by itself.
+6. After any dependency change, run the full gate: `npm run format:check`,
    `npm run lint`, `npm test`, `npm run build`, and `node scripts/audit-gate.mjs`,
    then deploy and smoke-test login, one form, and one payment.
-6. Update `README.md` stack table and this doc if the stack changes.
+7. Update `README.md` stack table and this doc if the stack changes.
 
 ### Node.js runtime
 
